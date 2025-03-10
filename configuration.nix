@@ -161,7 +161,7 @@ fonts.packages = with pkgs; [
   noto-fonts
   noto-fonts-cjk-sans
   noto-fonts-emoji
-  (nerdfonts.override { fonts = [ "Hack" ]; })
+  pkgs.nerd-fonts.hack
 ];
 
   # Some programs need SUID wrappers, can be configured further or are
