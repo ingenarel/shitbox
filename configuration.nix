@@ -149,6 +149,7 @@
   	enable = true;
 	xwayland.enable = true;
   };
+  programs.nix-ld.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
 swapDevices = [{
