@@ -68,6 +68,8 @@
     # ];
   };
 
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -97,6 +99,24 @@
     gnumake
     keyd
     fuzzel
+    killall
+    ntfs3g
+    nodejs
+    ardour
+    python3
+    blender
+    shotcut
+    audacity
+    obs-studio
+    vlc
+    unzip
+    ncmpcpp
+    mpd
+    mpc
+    cava
+    neomutt
+    mutt-wizard
+    pulseaudio
   ];
   programs.zsh.enable = true;
   programs.hyprland = {
@@ -104,6 +124,13 @@
 	xwayland.enable = true;
   };
   users.defaultUserShell = pkgs.zsh;
+
+fonts.packages = with pkgs; [
+  noto-fonts
+  noto-fonts-cjk-sans
+  noto-fonts-emoji
+  (nerdfonts.override { fonts = [ "Hack" ]; })
+];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -117,6 +144,29 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+services.keyd = {
+  enable = true;
+  keyboards = {
+    default = {
+      ids = [ "*" ];
+      settings = {
+        main = {
+          rightalt = "esc";
+        };
+      };
+    };
+  };
+};
+
+# services.greetd = {
+#     enable = true;
+#     settings = {
+#       default_session = {
+#         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+#         user = "greeter";
+#       };
+#     };
+#   };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
