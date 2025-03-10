@@ -120,6 +120,29 @@
     mutt-wizard
     pulseaudio
     pavucontrol
+    lutris
+    # proton-ge-bin
+    grim
+    slurp
+    wget
+    wl-clipboard
+    wtype
+    pyright
+    clang-tools
+    lua-language-server
+    bash-language-server
+    # termux-language-server
+    ltex-ls
+    yaml-language-server
+    rust-analyzer
+    # codelldb
+    python313Packages.debugpy
+    # bash-debug-adapter
+    black
+    stylua
+    beautysh
+    nil
+    ripgrep
   ];
   programs.zsh.enable = true;
   programs.hyprland = {
