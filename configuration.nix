@@ -117,6 +117,7 @@
     neomutt
     mutt-wizard
     pulseaudio
+    pavucontrol
   ];
   programs.zsh.enable = true;
   programs.hyprland = {
