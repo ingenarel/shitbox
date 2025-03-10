@@ -94,7 +94,6 @@
     git
     w3m
     btop
-    gcc
     clang
     fzf
     zoxide
