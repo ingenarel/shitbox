@@ -102,6 +102,7 @@
     glab
     bemoji
     rustup
+    yt-dlp
   ];
 
   programs = {
