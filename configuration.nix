@@ -108,6 +108,7 @@
         withOpengl = true;
       })
       .overrideAttrs (_: {doCheck = false;}))
+    gimp-with-plugins
   ];
 
   programs = {
