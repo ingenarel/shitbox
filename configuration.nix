@@ -103,6 +103,11 @@
     bemoji
     rustup
     yt-dlp
+    ((pkgs.ffmpeg-full.override {
+        withUnfree = true;
+        withOpengl = true;
+      })
+      .overrideAttrs (_: {doCheck = false;}))
   ];
 
   programs = {
