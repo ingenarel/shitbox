@@ -100,6 +100,7 @@
     zsh
     github-cli
     glab
+    bemoji
   ];
 
   programs = {
