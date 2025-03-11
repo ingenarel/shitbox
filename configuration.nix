@@ -107,6 +107,14 @@
       xwayland.enable = true;
     };
     nix-ld.enable = true;
+    starship = {
+      enable = true;
+      settings = {
+        status = {
+          disabled = false;
+        };
+      };
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
