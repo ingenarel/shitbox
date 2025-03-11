@@ -68,7 +68,7 @@
     mutt-wizard
     ncmpcpp
     neomutt
-    # neovim
+    neovim
     nil
     nodejs
     ntfs3g
@@ -98,12 +98,6 @@
     yazi
     zoxide
     zsh
-    (
-      neovim.overrideAttrs (finalAttrs: previousAttrs: {
-        src = builtins.fetchTarball "https://github.com/neovim/neovim/archive/master.tar.gz";
-        version = "unstable";
-      })
-    )
   ];
 
   programs = {
