@@ -99,6 +99,7 @@
     zoxide
     zsh
     github-cli
+    glab
   ];
 
   programs = {
