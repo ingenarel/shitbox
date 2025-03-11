@@ -5,53 +5,20 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
-  # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "NixOSBaby"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostName = "NixOSBaby";
+  networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Dhaka";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    # keyMap = "us";
-    # useXkbConfig = true; # use xkb.options in tty.
-  };
+  console = { font = "Lat2-Terminus16"; };
 
   nixpkgs.config.allowUnfree = true;
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -59,175 +26,121 @@
 
   virtualisation.waydroid.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ingenarel = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    # packages = with pkgs; [
-    #   tree
-    # ];
+    extraGroups = [ "wheel" ];
   };
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    hyprland
-    fastfetch
-    waybar
-    librewolf
-    yazi
-    lazygit
-    zsh
-    tmux
-    kitty
-    vesktop
-    keepassxc
-    lsd
-    git
-    w3m
-    btop
-    clang
-    fzf
-    zoxide
-    starship
-    gnumake
-    keyd
-    fuzzel
-    killall
-    ntfs3g
-    nodejs
     ardour
-    python3
-    blender
-    shotcut
     audacity
-    obs-studio
-    vlc
-    unzip
-    ncmpcpp
-    mpd
-    mpc
+    bash-language-server
+    beautysh
+    black
+    blender
+    btop
     cava
-    neomutt
-    mutt-wizard
-    pulseaudio
-    pavucontrol
-    lutris
-    # proton-ge-bin
+    clang
+    clang-tools
+    fastfetch
+    fuzzel
+    fzf
+    git
+    gnumake
     grim
+    hyprland
+    keepassxc
+    keyd
+    killall
+    kitty
+    lazygit
+    librewolf
+    lsd
+    ltex-ls
+    lua-language-server
+    lutris
+    mpc
+    mpd
+    mutt-wizard
+    ncmpcpp
+    neomutt
+    neovim
+    nil
+    nodejs
+    ntfs3g
+    obs-studio
+    pavucontrol
+    pulseaudio
+    pyright
+    python3
+    python313Packages.debugpy
+    qemu
+    ripgrep
+    rust-analyzer
+    shotcut
     slurp
+    starship
+    stylua
+    tmux
+    unzip
+    vesktop
+    vlc
+    w3m
+    waybar
     wget
     wl-clipboard
     wtype
-    pyright
-    clang-tools
-    lua-language-server
-    bash-language-server
-    # termux-language-server
-    ltex-ls
     yaml-language-server
-    rust-analyzer
-    # codelldb
-    python313Packages.debugpy
-    # bash-debug-adapter
-    black
-    stylua
-    beautysh
-    nil
-    ripgrep
+    yazi
+    zoxide
+    zsh
   ];
-  programs.zsh.enable = true;
-  programs.hyprland = {
-  	enable = true;
-	xwayland.enable = true;
+
+  programs = {
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    nix-ld.enable = true;
   };
-  programs.nix-ld.enable = true;
+
   users.defaultUserShell = pkgs.zsh;
 
-swapDevices = [{
+  swapDevices = [{
     device = "/swapfile";
     size = 8 * 1024;
   }];
 
-fonts.packages = with pkgs; [
-  noto-fonts
-  noto-fonts-cjk-sans
-  noto-fonts-emoji
-  pkgs.nerd-fonts.hack
-];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    pkgs.nerd-fonts.hack
+  ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-services.keyd = {
-  enable = true;
-  keyboards = {
-    default = {
-      ids = [ "*" ];
-      settings = {
-        main = {
-          rightalt = "esc";
-        };
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = { main = { rightalt = "esc"; }; };
       };
     };
   };
-};
 
-# services.greetd = {
-#     enable = true;
-#     settings = {
-#       default_session = {
-#         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-#         user = "greeter";
-#       };
-#     };
-#   };
+  # services.greetd = {
+  #     enable = true;
+  #     settings = {
+  #       default_session = {
+  #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+  #         user = "greeter";
+  #       };
+  #     };
+  #   };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
