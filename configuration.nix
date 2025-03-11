@@ -1,11 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports = [ ./hardware-configuration.nix ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [./hardware-configuration.nix];
 
   boot.loader.grub.device = "/dev/sda";
 
@@ -15,7 +17,7 @@
   time.timeZone = "Asia/Dhaka";
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = { font = "Lat2-Terminus16"; };
+  console = {font = "Lat2-Terminus16";};
 
   nixpkgs.config.allowUnfree = true;
 
@@ -28,10 +30,10 @@
 
   users.users.ingenarel = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = ["wheel"];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
     ardour
@@ -66,7 +68,7 @@
     mutt-wizard
     ncmpcpp
     neomutt
-    neovim
+    # neovim
     nil
     nodejs
     ntfs3g
@@ -96,6 +98,12 @@
     yazi
     zoxide
     zsh
+    (
+      neovim.overrideAttrs (finalAttrs: previousAttrs: {
+        src = builtins.fetchTarball "https://github.com/neovim/neovim/archive/master.tar.gz";
+        version = "unstable";
+      })
+    )
   ];
 
   programs = {
@@ -109,10 +117,12 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  swapDevices = [{
-    device = "/swapfile";
-    size = 8 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -125,23 +135,25 @@
     enable = true;
     keyboards = {
       default = {
-        ids = [ "*" ];
-        settings = { main = { rightalt = "esc"; }; };
+        ids = ["*"];
+        settings = {main = {rightalt = "esc";};};
       };
     };
   };
 
-  # services.greetd = {
-  #     enable = true;
-  #     settings = {
-  #       default_session = {
-  #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-  #         user = "greeter";
-  #       };
-  #     };
-  #   };
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+
+  systemd.services.greetd = {
+    restartIfChanged = false;
+  };
 
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
-
