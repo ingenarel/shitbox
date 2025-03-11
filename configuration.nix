@@ -98,6 +98,7 @@
     yazi
     zoxide
     zsh
+    github-cli
   ];
 
   programs = {
