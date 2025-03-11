@@ -101,6 +101,7 @@
     github-cli
     glab
     bemoji
+    rustup
   ];
 
   programs = {
