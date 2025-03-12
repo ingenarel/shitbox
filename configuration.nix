@@ -109,6 +109,7 @@
       })
       .overrideAttrs (_: {doCheck = false;}))
     gimp-with-plugins
+    zathura
   ];
 
   programs = {
