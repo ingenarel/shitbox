@@ -81,7 +81,7 @@
     qemu
     ripgrep
     rust-analyzer
-    shotcut
+    kdePackages.kdenlive
     slurp
     starship
     stylua
