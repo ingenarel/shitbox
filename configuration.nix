@@ -110,6 +110,11 @@
       .overrideAttrs (_: {doCheck = false;}))
     gimp-with-plugins
     zathura
+    swaynotificationcenter
+    nicotine-plus
+    sweet
+    hyprlandPlugins.hyprexpo
+    libnotify
   ];
 
   programs = {
@@ -168,10 +173,17 @@
         };
       };
     };
+    mpd = {
+      enable = true;
+      musicDirectory = "/home/ingenarel/Music";
+    };
+    hypridle.enable = true;
   };
 
-  systemd.services.greetd = {
-    restartIfChanged = false;
+  systemd.services = {
+    greetd = {
+      restartIfChanged = false;
+    };
   };
 
   system.stateVersion = "24.11"; # Did you read the comment?
