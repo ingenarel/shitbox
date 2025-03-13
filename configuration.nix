@@ -123,6 +123,7 @@
       enable = true;
       xwayland.enable = true;
     };
+    hyprlock.enable = true;
     nix-ld.enable = true;
     starship = {
       enable = true;
@@ -177,7 +178,6 @@
       enable = true;
       musicDirectory = "/home/ingenarel/Music";
     };
-    hypridle.enable = true;
   };
 
   systemd.services = {
