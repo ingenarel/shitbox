@@ -59,7 +59,7 @@
     lazygit
     librewolf
     lsd
-    ltex-ls
+    ltex-ls-plus
     lua-language-server
     lutris
     mpc
