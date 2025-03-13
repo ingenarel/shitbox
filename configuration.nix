@@ -55,7 +55,6 @@
     hyprland
     keepassxc
     keyd
-    killall
     kitty
     lazygit
     librewolf
