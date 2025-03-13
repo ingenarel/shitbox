@@ -114,6 +114,7 @@
     sweet
     hyprlandPlugins.hyprexpo
     libnotify
+    zrythm
   ];
 
   programs = {
