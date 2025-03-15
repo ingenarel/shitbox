@@ -9,7 +9,11 @@
 }: {
   imports = [./hardware-configuration.nix];
 
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub = {
+    device = "/dev/sda";
+    memtest86.enable = true;
+    useOSProber = true;
+  };
 
   networking.hostName = "NixOSBaby";
   networking.networkmanager.enable = true;
