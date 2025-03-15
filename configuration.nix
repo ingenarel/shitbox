@@ -126,6 +126,7 @@
     libnotify
     zrythm
     arch-install-scripts
+    mediainfo
   ];
 
   programs = {
