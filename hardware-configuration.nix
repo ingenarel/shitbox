@@ -54,6 +54,24 @@
     };
   };
 
+  # # /dev/sda3
+  # UUID=8A981C24981C10F5   /mnt/C          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+  #
+  # # /dev/sdb5 LABEL=New\134x20Volume
+  # UUID=BEFAB4C0FAB475ED   /mnt/A          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+  #
+  # # /dev/sdc1 LABEL=New\134x20Volume
+  # UUID=C6EC17A7EC1790B3   /mnt/D          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+  #
+  # # /dev/sdc2 LABEL=New\134x20Volume
+  # UUID=86C81E2DC81E1C4D   /mnt/E          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+  #
+  # # /dev/sdc3 LABEL=New\134x20Volume
+  # UUID=323A45D13A4592B1   /mnt/F          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+  #
+  # # /dev/sdc5 LABEL=Johurul's
+  # UUID=32AE4DACAE4D6985   /mnt/G          ntfs            rw,user_id=0,group_id=0,allow_other,blksize=4096        0 0
+
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
