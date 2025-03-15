@@ -83,7 +83,9 @@
     ntfs3g
     obs-studio
     pavucontrol
-    pulseaudio
+    # pulseaudio
+    # jack
+    # alsa
     pyright
     python3
     python313Packages.debugpy
@@ -126,6 +128,7 @@
     libnotify
     zrythm
     arch-install-scripts
+    # pwvucontrol
     mediainfo
   ];
 
