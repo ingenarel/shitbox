@@ -125,6 +125,7 @@
     hyprlandPlugins.hyprexpo
     libnotify
     zrythm
+    arch-install-scripts
   ];
 
   programs = {
