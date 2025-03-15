@@ -89,7 +89,7 @@
     python313Packages.debugpy
     qemu
     ripgrep
-    rust-analyzer
+    # rust-analyzer
     kdePackages.kdenlive
     slurp
     starship
