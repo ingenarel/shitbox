@@ -72,7 +72,6 @@
     keyd
     kitty
     lazygit
-    librewolf
     lsd
     ltex-ls-plus
     lua-language-server
