@@ -134,6 +134,7 @@
     zrythm
     arch-install-scripts
     mediainfo
+    inputs.zen-browser.packages."${system}".twilight-official
   ];
 
   programs = {
