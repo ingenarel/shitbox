@@ -128,7 +128,6 @@
     libnotify
     zrythm
     arch-install-scripts
-    pwvucontrol
     mediainfo
   ];
 
