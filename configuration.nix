@@ -2,6 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -62,7 +63,7 @@
     git
     gnumake
     grim
-    hyprland
+    # hyprland
     keepassxc
     keyd
     kitty
@@ -124,7 +125,7 @@
     swaynotificationcenter
     nicotine-plus
     sweet
-    hyprlandPlugins.hyprexpo
+    # hyprlandPlugins.hyprexpo
     libnotify
     zrythm
     arch-install-scripts
@@ -135,6 +136,8 @@
     zsh.enable = true;
     hyprland = {
       enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
     };
     hyprlock.enable = true;
