@@ -44,7 +44,11 @@
     extraGroups = ["wheel"];
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+  };
 
   environment.systemPackages = with pkgs; [
     ardour
