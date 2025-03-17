@@ -68,7 +68,6 @@
     git
     gnumake
     grim
-    # hyprland
     keepassxc
     keyd
     kitty
@@ -88,15 +87,11 @@
     ntfs3g
     obs-studio
     pavucontrol
-    # pulseaudio
-    # jack
-    # alsa
     pyright
     python3
     python313Packages.debugpy
     qemu
     ripgrep
-    # rust-analyzer
     kdePackages.kdenlive
     slurp
     starship
@@ -129,13 +124,13 @@
     swaynotificationcenter
     nicotine-plus
     sweet
-    # hyprlandPlugins.hyprexpo
     libnotify
     zrythm
     arch-install-scripts
     mediainfo
     inputs.zen-browser.packages."${system}".twilight-official
     vimiv-qt
+    swww
   ];
 
   programs = {
