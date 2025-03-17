@@ -135,7 +135,7 @@
     arch-install-scripts
     mediainfo
     inputs.zen-browser.packages."${system}".twilight-official
-    mpd-discord-rpc
+    vimiv-qt
   ];
 
   programs = {
