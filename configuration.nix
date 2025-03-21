@@ -131,6 +131,7 @@
     inputs.zen-browser.packages."${system}".twilight-official
     vimiv-qt
     swww
+    gcc
   ];
 
   programs = {
