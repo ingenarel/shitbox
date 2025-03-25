@@ -103,6 +103,7 @@
     python313Packages.debugpy
     qemu
     ripgrep
+    rmpc
     rustup
     slurp
     starship
