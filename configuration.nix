@@ -52,10 +52,12 @@
   };
 
   environment.systemPackages = with pkgs; [
+    arch-install-scripts
     ardour
     audacity
     bash-language-server
     beautysh
+    bemoji
     black
     blender
     btop
@@ -65,23 +67,32 @@
     fastfetch
     fuzzel
     fzf
+    gcc
+    gimp-with-plugins
     git
+    github-cli
+    glab
     gnumake
     grim
+    inputs.zen-browser.packages."${system}".twilight-official
+    kdePackages.kdenlive
     keepassxc
     keyd
     kitty
     lazygit
+    libnotify
     lsd
     ltex-ls-plus
     lua-language-server
     lutris
+    mediainfo
     mpc
     mpd
     mutt-wizard
     ncmpcpp
     neomutt
     neovim
+    nicotine-plus
     nil
     nodejs
     ntfs3g
@@ -92,13 +103,17 @@
     python313Packages.debugpy
     qemu
     ripgrep
-    kdePackages.kdenlive
+    rustup
     slurp
     starship
     stylua
+    swaynotificationcenter
+    sweet
+    swww
     tmux
     unzip
     vesktop
+    vimiv-qt
     vlc
     w3m
     waybar
@@ -107,31 +122,20 @@
     wtype
     yaml-language-server
     yazi
-    zoxide
-    zsh
-    github-cli
-    glab
-    bemoji
-    rustup
     yt-dlp
-    ((pkgs.ffmpeg-full.override {
-        withUnfree = true;
-        withOpengl = true;
-      })
-      .overrideAttrs (_: {doCheck = false;}))
-    gimp-with-plugins
     zathura
-    swaynotificationcenter
-    nicotine-plus
-    sweet
-    libnotify
+    zoxide
     zrythm
-    arch-install-scripts
-    mediainfo
-    inputs.zen-browser.packages."${system}".twilight-official
-    vimiv-qt
-    swww
-    gcc
+    zsh
+    (
+      (
+        pkgs.ffmpeg-full.override {
+          withUnfree = true;
+          withOpengl = true;
+        }
+      )
+      .overrideAttrs (_: {doCheck = false;})
+    )
   ];
 
   programs = {
