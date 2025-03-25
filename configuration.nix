@@ -117,6 +117,7 @@
     swww
     tmux
     unzip
+    usbutils
     vesktop
     vimiv-qt
     vlc
