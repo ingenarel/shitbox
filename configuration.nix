@@ -14,7 +14,7 @@
   boot.loader.grub = {
     device = "/dev/sda";
     memtest86.enable = true;
-    useOSProber = true;
+    # useOSProber = true;
   };
 
   networking.hostName = "NixOSBaby";
