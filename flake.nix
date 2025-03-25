@@ -1,3 +1,4 @@
+# vim: set ts=2 sw=2 sts=2:
 {
   description = "A very basic flake";
 
@@ -9,6 +10,7 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {nixpkgs, ...} @ inputs: {

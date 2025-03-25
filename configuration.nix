@@ -96,7 +96,6 @@
     mutt-wizard
     ncmpcpp
     neomutt
-    neovim
     nicotine-plus
     nil
     nodejs
@@ -166,6 +165,7 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     };
     fuse.userAllowOther = true;
   };
