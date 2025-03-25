@@ -17,8 +17,10 @@
     # useOSProber = true;
   };
 
-  networking.hostName = "NixOSBaby";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "NixOSBaby";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Asia/Dhaka";
 
@@ -26,17 +28,6 @@
   console = {font = "Lat2-Terminus16";};
 
   nixpkgs.config.allowUnfree = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
 
   virtualisation.waydroid.enable = true;
 
@@ -225,6 +216,16 @@
           name "My PipeWire Output"
         }
       '';
+    };
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      jack.enable = true;
+      wireplumber.enable = true;
     };
   };
 
