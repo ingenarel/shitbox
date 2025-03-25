@@ -46,7 +46,11 @@
   };
 
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      max-jobs = 2;
+      cores = 2;
+    };
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
   };
