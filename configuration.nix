@@ -92,6 +92,7 @@
     mediainfo
     mpc
     mpd
+    mtpfs
     mutt-wizard
     ncmpcpp
     neomutt
@@ -166,6 +167,7 @@
       enable = true;
       defaultEditor = true;
     };
+    fuse.userAllowOther = true;
   };
 
   users.defaultUserShell = pkgs.zsh;
