@@ -124,6 +124,8 @@
     zoxide
     zrythm
     zsh
+    wineWowPackages.stable
+    winetricks
     (
       (
         pkgs.ffmpeg-full.override {
