@@ -229,6 +229,7 @@
       jack.enable = true;
       wireplumber.enable = true;
     };
+    tailscale.enable = true;
   };
 
   systemd.services = {
