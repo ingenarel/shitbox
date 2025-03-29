@@ -39,11 +39,11 @@
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
-      max-jobs = 2;
+      max-jobs = 1;
       cores = 2;
     };
-    daemonCPUSchedPolicy = "idle";
-    daemonIOSchedClass = "idle";
+    # daemonCPUSchedPolicy = "idle";
+    # daemonIOSchedClass = "idle";
   };
 
   environment.systemPackages = with pkgs; [
