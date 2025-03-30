@@ -48,7 +48,6 @@
 
   environment.systemPackages = with pkgs; [
     arch-install-scripts
-    ardour
     audacity
     bash-language-server
     beautysh
@@ -124,7 +123,6 @@
     yt-dlp
     zathura
     zoxide
-    zrythm
     zsh
     (
       (
