@@ -115,6 +115,8 @@
     w3m
     waybar
     wget
+    winetricks
+    wineWowPackages.stable
     wl-clipboard
     wtype
     yaml-language-server
@@ -124,8 +126,6 @@
     zoxide
     zrythm
     zsh
-    wineWowPackages.stable
-    winetricks
     (
       (
         pkgs.ffmpeg-full.override {
