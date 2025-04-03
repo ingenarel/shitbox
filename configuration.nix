@@ -107,6 +107,7 @@
     swww
     tmux
     unzip
+    unrar
     usbutils
     vesktop
     vimiv-qt
