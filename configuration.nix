@@ -107,8 +107,8 @@
     sweet
     swww
     tmux
-    unzip
     unrar
+    unzip
     usbutils
     vesktop
     vimiv-qt
