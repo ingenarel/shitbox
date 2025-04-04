@@ -95,6 +95,7 @@
     pyright
     python3
     python313Packages.debugpy
+    qbittorrent
     qemu
     ripgrep
     rmpc
