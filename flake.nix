@@ -1,6 +1,5 @@
-# vim: set ts=2 sw=2 sts=2:
 {
-    description = "A very basic flake";
+    description = "My fucking system config";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
