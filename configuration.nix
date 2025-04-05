@@ -240,6 +240,10 @@
             XDG_RUNTIME_DIR = "/run/user/1000";
         };
     };
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
 
     system.stateVersion = "24.11"; # Did you read the comment?
 }
