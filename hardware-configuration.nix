@@ -25,32 +25,32 @@
         "/mnt/C" = {
             device = "/dev/disk/by-uuid/8A981C24981C10F5";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
         "/mnt/A" = {
             device = "/dev/disk/by-uuid/BEFAB4C0FAB475ED";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
         "/mnt/D" = {
             device = "/dev/disk/by-uuid/C6EC17A7EC1790B3";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
         "/mnt/E" = {
             device = "/dev/disk/by-uuid/86C81E2DC81E1C4D";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
         "/mnt/F" = {
             device = "/dev/disk/by-uuid/323A45D13A4592B1";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
         "/mnt/G" = {
             device = "/dev/disk/by-uuid/32AE4DACAE4D6985";
             fsType = "ntfs-3g";
-            options = ["rw" "uid=0"];
+            options = ["rw" "uid=1000"];
         };
     };
 
