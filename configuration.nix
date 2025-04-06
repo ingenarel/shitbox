@@ -90,6 +90,7 @@
         nodejs
         ntfs3g
         obs-studio
+        p7zip
         pavucontrol
         pyright
         python3
@@ -115,8 +116,8 @@
         w3m
         waybar
         wget
-        winetricks
         wineWowPackages.stable
+        winetricks
         wl-clipboard
         wtype
         yaml-language-server
