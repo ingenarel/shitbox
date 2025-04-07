@@ -68,6 +68,7 @@
         gnumake
         grim
         inputs.zen-browser.packages."${system}".twilight-official
+        inputs.yazi.packages."${system}".default
         kdePackages.kdenlive
         keepassxc
         keyd
