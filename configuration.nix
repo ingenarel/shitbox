@@ -140,13 +140,6 @@
 
     users.defaultUserShell = pkgs.zsh;
 
-    swapDevices = [
-        {
-            device = "/swapfile";
-            size = 8 * 1024;
-        }
-    ];
-
     fonts.packages = with pkgs; [
         noto-fonts
         noto-fonts-cjk-sans
