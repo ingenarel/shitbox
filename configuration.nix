@@ -78,7 +78,6 @@
         mtpfs
         mutt-wizard
         neomutt
-        nicotine-plus
         nil
         nodejs
         ntfs3g

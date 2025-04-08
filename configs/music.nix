@@ -6,5 +6,6 @@
         ncmpcpp
         rmpc
         cava
+        nicotine-plus
     ];
 }
