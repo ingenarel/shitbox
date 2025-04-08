@@ -30,32 +30,22 @@
         };
     };
 
-    outputs = {nixpkgs, ...} @ inputs: {
+    outputs = {
+        nixpkgs,
+        home-manager,
+        ...
+    } @ inputs: {
         nixosConfigurations.NixOSBaby = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;}; # this is the important part
             modules = [
                 ./configuration.nix
+                home-manager.nixosModules.home-manager
+                {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.ingenarel = ./home.nix;
+                }
             ];
         };
     };
-
-    # outputs = {
-    #   self,
-    #   nixpkgs,
-    #   ...
-    # }: let
-    #   system = "x86_64-linux";
-    #   pkgs = import nixpkgs {
-    #     inherit system;
-    #     config.allowUnfree = true;
-    #   };
-    #   lib = nixpkgs.lib;
-    # in {
-    #   nixosConfigurations = {
-    #     NixOSBaby = lib.nixosSystem {
-    #       inherit system;
-    #       modules = [./configuration.nix];
-    #     };
-    #   };
-    # };
 }

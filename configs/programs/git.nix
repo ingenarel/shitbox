@@ -5,4 +5,9 @@
         glab
         lazygit
     ];
+    home-manager.users.ingenarel.programs.git = {
+        enable = true;
+        userName = "ingenarel";
+        userEmail = "ingenarelitems@gmail.com";
+    };
 }
