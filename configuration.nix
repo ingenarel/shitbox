@@ -70,7 +70,6 @@
         lsd
         ltex-ls-plus
         lua-language-server
-        lutris
         mtpfs
         mutt-wizard
         neomutt
@@ -98,8 +97,6 @@
         vlc
         w3m
         wget
-        wineWowPackages.stable
-        winetricks
         yaml-language-server
         yazi
         yt-dlp
@@ -167,11 +164,6 @@
             wireplumber.enable = true;
         };
         tailscale.enable = true;
-    };
-
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
     };
 
     system.stateVersion = "24.11"; # Did you read the comment?
