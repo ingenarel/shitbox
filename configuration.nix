@@ -8,7 +8,7 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix ./configs/hyprland/init.nix ./configs/mpd/init.nix];
+    imports = [./hardware-configuration.nix ./configs/window-manager.nix ./configs/programs/mpd/init.nix];
 
     boot.loader.grub = {
         device = "/dev/sda";
@@ -58,7 +58,6 @@
         clang
         clang-tools
         fastfetch
-        fuzzel
         fzf
         gcc
         gimp-with-plugins
@@ -66,7 +65,6 @@
         github-cli
         glab
         gnumake
-        grim
         inputs.zen-browser.packages."${system}".twilight-official
         inputs.yazi.packages."${system}".default
         kdePackages.kdenlive
@@ -74,7 +72,6 @@
         keyd
         kitty
         lazygit
-        libnotify
         lsd
         ltex-ls-plus
         lua-language-server
@@ -103,9 +100,6 @@
         slurp
         starship
         stylua
-        swaynotificationcenter
-        sweet
-        swww
         tmux
         unrar
         unzip
@@ -114,12 +108,9 @@
         vimiv-qt
         vlc
         w3m
-        waybar
         wget
         wineWowPackages.stable
         winetricks
-        wl-clipboard
-        wtype
         yaml-language-server
         yazi
         yt-dlp
@@ -183,15 +174,6 @@
                 };
             };
         };
-        greetd = {
-            enable = true;
-            settings = {
-                default_session = {
-                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-                    user = "greeter";
-                };
-            };
-        };
         pipewire = {
             enable = true;
             pulse.enable = true;
@@ -205,11 +187,6 @@
         tailscale.enable = true;
     };
 
-    systemd.services = {
-        greetd = {
-            restartIfChanged = false;
-        };
-    };
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
