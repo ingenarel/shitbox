@@ -11,7 +11,10 @@
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
         neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
         alejandra.url = "github:kamadorueda/alejandra";
-        yazi.url = "github:sxyazi/yazi";
+        yazi = {
+            url = "github:sxyazi/yazi";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
