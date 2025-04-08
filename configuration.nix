@@ -8,7 +8,7 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix];
+    imports = [./hardware-configuration.nix ./configs/hyprland/init.nix];
 
     boot.loader.grub = {
         device = "/dev/sda";
@@ -141,13 +141,6 @@
 
     programs = {
         zsh.enable = true;
-        hyprland = {
-            enable = true;
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-            portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-            xwayland.enable = true;
-        };
-        hyprlock.enable = true;
         nix-ld.enable = true;
         starship = {
             enable = true;
