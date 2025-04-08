@@ -127,13 +127,6 @@
 
     users.defaultUserShell = pkgs.zsh;
 
-    fonts.packages = with pkgs; [
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-emoji
-        pkgs.nerd-fonts.hack
-    ];
-
     services = {
         keyd = {
             enable = true;
