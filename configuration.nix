@@ -8,7 +8,7 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix ./configs/window-manager.nix ./configs/programs/mpd/init.nix];
+    imports = [./hardware-configuration.nix ./configs/window-manager.nix ./configs/music.nix];
 
     boot.loader.grub = {
         device = "/dev/sda";
@@ -54,7 +54,6 @@
         black
         blender
         btop
-        cava
         clang
         clang-tools
         fastfetch
@@ -76,11 +75,8 @@
         ltex-ls-plus
         lua-language-server
         lutris
-        mediainfo
-        mpc
         mtpfs
         mutt-wizard
-        ncmpcpp
         neomutt
         nicotine-plus
         nil
@@ -95,7 +91,6 @@
         qbittorrent
         qemu
         ripgrep
-        rmpc
         rustup
         slurp
         starship
