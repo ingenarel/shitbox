@@ -90,7 +90,6 @@
         w3m
         wget
         yaml-language-server
-        yazi
         yt-dlp
         zoxide
         zsh
