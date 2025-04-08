@@ -9,7 +9,10 @@
         #   inputs.hyprland.follows = "hyprland";
         # };
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
-        neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+        neovim-nightly-overlay = {
+            url = "github:nix-community/neovim-nightly-overlay";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         alejandra.url = "github:kamadorueda/alejandra";
         yazi = {
             url = "github:sxyazi/yazi";
