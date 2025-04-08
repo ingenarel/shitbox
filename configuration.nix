@@ -47,12 +47,10 @@
 
     environment.systemPackages = with pkgs; [
         arch-install-scripts
-        audacity
         bash-language-server
         beautysh
         bemoji
         black
-        blender
         btop
         clang
         clang-tools
@@ -66,7 +64,6 @@
         gnumake
         inputs.zen-browser.packages."${system}".twilight-official
         inputs.yazi.packages."${system}".default
-        kdePackages.kdenlive
         keepassxc
         keyd
         kitty
@@ -81,7 +78,6 @@
         nil
         nodejs
         ntfs3g
-        obs-studio
         p7zip
         pavucontrol
         pyright
