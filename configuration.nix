@@ -85,7 +85,6 @@
         qemu
         ripgrep
         rustup
-        slurp
         starship
         stylua
         tmux

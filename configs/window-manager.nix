@@ -9,6 +9,7 @@
         waybar
         wl-clipboard
         wtype
+        slurp
     ];
     imports = [./programs/hyprland/init.nix];
 
