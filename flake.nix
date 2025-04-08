@@ -12,6 +12,10 @@
         neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
         alejandra.url = "github:kamadorueda/alejandra";
         yazi.url = "github:sxyazi/yazi";
+        home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {nixpkgs, ...} @ inputs: {
