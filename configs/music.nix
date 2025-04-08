@@ -1,4 +1,4 @@
-{pkgs}: {
+{pkgs, ...}: {
     imports = [./programs/mpd.nix];
     environment.systemPackages = with pkgs; [
         mediainfo
