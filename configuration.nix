@@ -8,7 +8,7 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix ./configs/gui.nix ./configs/music.nix];
+    imports = [./hardware-configuration.nix ./configs/gui.nix ./configs/music.nix ./configs/programs/git.nix];
 
     boot.loader.grub = {
         device = "/dev/sda";
@@ -57,13 +57,9 @@
         fastfetch
         fzf
         gcc
-        git
-        github-cli
-        glab
         gnumake
         inputs.yazi.packages."${system}".default
         keyd
-        lazygit
         lsd
         ltex-ls-plus
         lua-language-server
