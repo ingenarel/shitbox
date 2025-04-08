@@ -61,11 +61,8 @@
         github-cli
         glab
         gnumake
-        inputs.zen-browser.packages."${system}".twilight-official
         inputs.yazi.packages."${system}".default
-        keepassxc
         keyd
-        kitty
         lazygit
         lsd
         ltex-ls-plus
@@ -81,7 +78,6 @@
         pyright
         python3
         python313Packages.debugpy
-        qbittorrent
         qemu
         ripgrep
         rustup
@@ -91,15 +87,11 @@
         unrar
         unzip
         usbutils
-        vesktop
-        vimiv-qt
-        vlc
         w3m
         wget
         yaml-language-server
         yazi
         yt-dlp
-        zathura
         zoxide
         zsh
         (
