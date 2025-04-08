@@ -57,7 +57,6 @@
         fastfetch
         fzf
         gcc
-        gimp-with-plugins
         git
         github-cli
         glab

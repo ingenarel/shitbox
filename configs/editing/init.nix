@@ -4,5 +4,6 @@
         blender
         kdePackages.kdenlive
         obs-studio
+        gimp-with-plugins
     ];
 }
