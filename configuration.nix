@@ -8,7 +8,7 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix ./configs/window-manager.nix ./configs/music.nix];
+    imports = [./hardware-configuration.nix ./configs/gui.nix ./configs/music.nix];
 
     boot.loader.grub = {
         device = "/dev/sda";
