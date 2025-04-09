@@ -16,7 +16,6 @@
         enable = true;
         package = null;
         portalPackage = null;
-        systemd.enable = false;
         plugins = [inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo];
         extraConfig = builtins.readFile ./config/hyprland.conf;
     };
