@@ -12,4 +12,10 @@
         };
         hyprlock.enable = true;
     };
+    home-manager.users.ingenarel.wayland.windowManager.hyprland = {
+        enable = true;
+        package = null;
+        portalPackage = null;
+        systemd.enable = false;
+    };
 }
