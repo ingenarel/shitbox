@@ -1,0 +1,2 @@
+CompileFlags:
+    Add: [-Wall, -Wextra, -Wshadow, -Wconversion, -Wformat=2, -Winline, -Wundef, -Wpointer-arith, -Wpedantic, -Wstrict-aliasing, -Wcast-align, -fsafe-buffer-usage-suggestions, -Winvalid-constexpr ]
