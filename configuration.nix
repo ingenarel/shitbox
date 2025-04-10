@@ -16,6 +16,7 @@
         ./configs/programs/neovim/init.nix
         ./configs/programs/zsh/init.nix
         ./configs/programs/clangd/init.nix
+        ./configs/programs/kitty/init.nix
     ];
 
     boot.loader.grub = {
