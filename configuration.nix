@@ -17,6 +17,7 @@
         ./configs/programs/zsh/init.nix
         ./configs/programs/clangd/init.nix
         ./configs/programs/kitty/init.nix
+        ./configs/programs/tmux/init.nix
     ];
 
     boot.loader.grub = {
