@@ -1,0 +1,110 @@
+#TODO: open an issue about snippets not working properly in windows with crlf line endings.
+# accidentally founded out this. i think it may be happening because carriage returns are messing with coq.
+snippet int main(void){return 0;}
+abbr int main(void){return 0;}
+alias main
+    int main(void){
+        ${0}
+
+        return 0;
+    }
+
+snippet #include <stdio.h>
+abbr #include <stdio.h>
+alias stdio
+    #include <stdio.h>
+    ${0}
+
+snippet #include <${0}.h>
+abbr #include <${0}.h>
+alias #include
+alias header
+     #include <${0}.h>
+
+snippet if (${0}){}
+abbr if (${0}){}
+alias if
+    if (${0}){
+    }
+
+snippet else if (${0}){}
+abbr else if (${0}){}
+alias elseif
+alias elif
+    else if (${0}){
+    }
+
+snippet else (${0}){}
+abbr else (${0}){}
+alias else
+    else (${0}){
+    }
+
+snippet printf("Enter ${1:} => "); scanf("${2:fstring}", &${3:var});
+abbr printf("Enter ${1:} => "); scanf("${2:fstring}", &${3:var});
+alias scanf
+    printf("Enter ${1:} => "); scanf("${2:fstring}", &${3:var});
+
+snippet case ${0}:break;
+abbr case ${0}:break;
+alias case
+    case ${1}:
+        break;
+    ${0}
+
+snippet printf("${0}");
+abbr printf("${0}");
+alias printf
+    printf("${0}");
+
+snippet switch(${0}){default:break;}
+abbr switch(${0}){default:break;}
+alias switch
+    switch(${0}){
+        default:
+            break;
+    }
+
+snippet default:break;
+abbr default:break;
+alias default
+    default:
+        ${0}
+        break;
+
+snippet while(${0}){}
+abbr while(${0}){}
+alias while
+    while(${0}){
+    }
+
+snippet do{}while(${0});
+abbr do{}while(${0});
+alias do
+    do{
+    }while(${0});
+
+snippet for (${0}){}
+abbr for (${0}){}
+alias for
+    for (${0}){
+    }
+
+snippet for (unsigned int i = 0; i < ${0}; i++){}
+abbr for (unsigned int i = 0; i < ${0}; i++){}
+alias for
+    for (unsigned int i = 0; i < ${0}; i++){
+    }
+
+snippet for (unsigned int i = 1; i <= ${0}; i++){}
+abbr for (unsigned int i = 1; i <= ${0}; i++){}
+alias for
+    for (unsigned int i = 1; i <= ${0}; i++){
+    }
+
+snippet #define ARR_LEN(n) (int) (sizeof(n) / sizeof(n[0]))${0}
+abbr #define ARR_LEN(n) (int) (sizeof(n) / sizeof(n[0]))${0}
+alias arr_len
+alias arrary_length
+    #define ARR_LEN(n) (int) (sizeof(n) / sizeof(n[0]))
+    ${0}

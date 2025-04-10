@@ -8,7 +8,13 @@
     pkgs,
     ...
 }: {
-    imports = [./hardware-configuration.nix ./configs/gui.nix ./configs/music.nix ./configs/programs/git.nix];
+    imports = [
+        ./hardware-configuration.nix
+        ./configs/gui.nix
+        ./configs/music.nix
+        ./configs/programs/git.nix
+        ./configs/programs/neovim/init.nix
+    ];
 
     boot.loader.grub = {
         device = "/dev/sda";
@@ -111,11 +117,6 @@
                     disabled = false;
                 };
             };
-        };
-        neovim = {
-            enable = true;
-            defaultEditor = true;
-            package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
         };
         fuse.userAllowOther = true;
     };

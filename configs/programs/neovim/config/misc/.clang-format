@@ -1,0 +1,7 @@
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+IndentCaseLabels: true
+SortIncludes: true
+ColumnLimit: 120
+IndentWidth: 4
