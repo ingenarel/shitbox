@@ -1,0 +1,9 @@
+- Dependencies:
+    - starship
+    - fzf
+    - zoxide
+    - yazi
+- Clone this repo using `git clone https://github.com/ingenarel/zsh-config.git ~/.config/zsh`
+- Probably delete the line where i extend the path.
+- The main `~/.zshrc` should just be `source ~/.config/zsh/init.zsh`
+- Enjoy as you run zsh and shit starts auto installing (hopefully)

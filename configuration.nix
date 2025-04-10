@@ -14,6 +14,7 @@
         ./configs/music.nix
         ./configs/programs/git.nix
         ./configs/programs/neovim/init.nix
+        ./configs/programs/zsh/init.nix
     ];
 
     boot.loader.grub = {
@@ -94,7 +95,6 @@
         yaml-language-server
         yt-dlp
         zoxide
-        zsh
         (
             (
                 pkgs.ffmpeg-full.override {
@@ -108,7 +108,6 @@
     ];
 
     programs = {
-        zsh.enable = true;
         nix-ld.enable = true;
         starship = {
             enable = true;
@@ -120,8 +119,6 @@
         };
         fuse.userAllowOther = true;
     };
-
-    users.defaultUserShell = pkgs.zsh;
 
     services = {
         keyd = {
