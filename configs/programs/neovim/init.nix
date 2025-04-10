@@ -10,7 +10,5 @@
         vimAlias = true;
         viAlias = true;
     };
-    home-manager.users.ingenarel = {
-        home.file.".config/nvim".source = ./config;
-    };
+    home-manager.users.ingenarel.home.file.".config/nvim".source = ./config;
 }
