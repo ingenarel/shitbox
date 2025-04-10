@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-    imports = [./programs/mpd.nix];
+    imports = [./programs/mpd.nix ./programs/cava/init.nix];
     environment.systemPackages = with pkgs; [
         mediainfo
         mpc
