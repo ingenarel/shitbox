@@ -68,6 +68,7 @@
         fzf
         gcc
         gnumake
+        gource
         inputs.yazi.packages."${system}".default
         keyd
         lsd
