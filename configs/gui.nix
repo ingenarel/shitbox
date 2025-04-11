@@ -3,12 +3,11 @@
     pkgs,
     ...
 }: {
-    imports = [./editing/init.nix ./gaming.nix ./window-manager.nix];
+    imports = [./editing/init.nix ./gaming.nix ./window-manager.nix ./programs/kitty/init.nix];
 
     environment.systemPackages = with pkgs; [
         inputs.zen-browser.packages."${system}".twilight-official
         keepassxc
-        kitty
         qbittorrent
         vesktop
         vimiv-qt
