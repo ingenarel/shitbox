@@ -3,8 +3,8 @@
         git
         github-cli
         glab
-        lazygit
     ];
+    imports = [./lazygit/init.nix];
     home-manager.users.ingenarel.programs.git = {
         enable = true;
         userName = "ingenarel";
