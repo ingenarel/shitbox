@@ -6,12 +6,11 @@
         swaynotificationcenter
         sweet
         swww
-        waybar
         wl-clipboard
         wtype
         slurp
     ];
-    imports = [./programs/hyprland/init.nix];
+    imports = [./programs/hyprland/init.nix ./programs/waybar/init.nix];
 
     services.greetd = {
         enable = true;
