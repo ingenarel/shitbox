@@ -28,6 +28,10 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nixcord = {
+            url = "github:kaylorben/nixcord";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {
