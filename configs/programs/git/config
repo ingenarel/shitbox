@@ -1,0 +1,12 @@
+[user]
+	email = ingenarelitems@gmail.com
+	name = ingenarel
+	signingkey = /home/ingenarel/.ssh/git.pub
+[gpg]
+	format = ssh
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true

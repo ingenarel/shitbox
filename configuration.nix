@@ -12,7 +12,7 @@
         ./hardware-configuration.nix
         ./configs/gui.nix
         ./configs/music.nix
-        ./configs/programs/git.nix
+        ./configs/programs/git/init.nix
         ./configs/programs/neovim/init.nix
         ./configs/programs/zsh/init.nix
         ./configs/programs/clangd/init.nix
