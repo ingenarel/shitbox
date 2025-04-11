@@ -4,7 +4,6 @@
         mediainfo
         mpc
         rmpc
-        cava
         nicotine-plus
     ];
 }
