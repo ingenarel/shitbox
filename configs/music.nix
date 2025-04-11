@@ -1,9 +1,8 @@
 {pkgs, ...}: {
-    imports = [./programs/mpd.nix ./programs/cava/init.nix];
+    imports = [./programs/mpd.nix ./programs/cava/init.nix ./programs/ncmpcpp/init.nix];
     environment.systemPackages = with pkgs; [
         mediainfo
         mpc
-        ncmpcpp
         rmpc
         cava
         nicotine-plus
