@@ -89,7 +89,6 @@
         rustup
         starship
         stylua
-        tmux
         unrar
         unzip
         usbutils
