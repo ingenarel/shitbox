@@ -7,6 +7,8 @@ pkgs.mkShell {
         export STATE_SYMLINK="$HOME/.local/state/$NVIM_APPNAME"
         export CACHE_SYMLINK="$HOME/.cache/$NVIM_APPNAME"
 
+        alias lazygit="lazygit -ucf $HOME/.config/lazygit/config.yml"
+
         [ -L "$DATA_SYMLINK" ] || ln -s "$HOME/.local/share/nvim" "$DATA_SYMLINK"
         [ -L "$STATE_SYMLINK" ] || ln -s "$HOME/.local/state/nvim" "$STATE_SYMLINK"
         [ -L "$CACHE_SYMLINK" ] || ln -s "$HOME/.cache/nvim" "$CACHE_SYMLINK"
