@@ -11,7 +11,9 @@
                 openASAR.enable = false;
             };
             vesktop.enable = true;
+            quickCss = builtins.readFile ./theme.css;
             config = {
+                useQuickCss = true;
                 frameless = true;
                 transparent = true;
                 disableMinSize = true;
