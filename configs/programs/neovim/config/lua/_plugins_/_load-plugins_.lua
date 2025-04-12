@@ -28,7 +28,7 @@ require("lazy").setup {
             require("_plugins_._color-picker-setup_"),
             require("_plugins_._lualine-setup_"),
             require("_plugins_._autopairs-setup_"),
-            require("_plugins_._telescope_"),
+            require("_plugins_._telescope-setup_"),
             require("_plugins_._ibl-setup_"),
             { "lewis6991/gitsigns.nvim", config = true },
             require("_plugins_._metapack-setup_"),
