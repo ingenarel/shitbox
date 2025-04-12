@@ -98,7 +98,6 @@
         yaml-language-server
         yt-dlp
         zoxide
-        gnupg
         (
             (
                 pkgs.ffmpeg-full.override {
@@ -122,6 +121,10 @@
             };
         };
         fuse.userAllowOther = true;
+        gnupg.agent = {
+            enable = true;
+            pinentryPackage = pkgs.pinentry-curses;
+        };
     };
 
     services = {
