@@ -11,7 +11,7 @@ end
 alt_keymap("<M-]>", "<C-]>")
 alt_keymap("<M-d>", "<C-d>")
 alt_keymap("<M-i>", "<C-i>")
-alt_keymap("<M-l>", "<C-l>:ColorizerReloadAllBuffers<CR>")
+alt_keymap("<M-l>", "<C-l><CMD>ColorizerReloadAllBuffers<CR>")
 alt_keymap("<M-n>", "<C-n>")
 alt_keymap("<M-o>", "<C-o>")
 alt_keymap("<M-p>", "<C-p>")
@@ -206,7 +206,7 @@ vim.keymap.set("n", "<leader>f", function()
 end, { desc = "find files" })
 CK_SetKeymap_n(
     "<leader>F",
-    ":FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>",
+    "<CMD>FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>",
     "Yazi"
 )
 vim.keymap.set("n", "<leader>gf", function()
@@ -217,7 +217,7 @@ end, { desc = "find files+gitfiles" })
 -- terminal {{{1
 CK_SetKeymap_n(
     "<leader><leader>t",
-    ":FloatermNew --width=1.0 --height=0.9 --title=TERMINAL --titleposition=center<CR>",
+    "<CMD>FloatermNew --width=1.0 --height=0.9 --title=TERMINAL --titleposition=center<CR>",
     "Terminal"
 )
 
@@ -266,20 +266,20 @@ local function CK_set_color_picker_keymaps(base_key, mode) -- this function and 
 end
 CK_set_color_picker_keymaps("<leader>cpr", "replace")
 CK_set_color_picker_keymaps("<leader>cpi", "insert")
-CK_SetKeymap_n("<leader>cpRh", ":ColorPickerReformat hex<CR>") -- color picker reformat hex
-CK_SetKeymap_n("<leader>cpRr", ":ColorPickerReformat rgb<CR>") -- color picker reformat rgb
-CK_SetKeymap_n("<leader>cpRa", ":ColorPickerReformat rgba<CR>") -- color picker reformat rgba
+CK_SetKeymap_n("<leader>cpRh", "<CMD>ColorPickerReformat hex<CR>") -- color picker reformat hex
+CK_SetKeymap_n("<leader>cpRr", "<CMD>ColorPickerReformat rgb<CR>") -- color picker reformat rgb
+CK_SetKeymap_n("<leader>cpRa", "<CMD>ColorPickerReformat rgba<CR>") -- color picker reformat rgba
 -- color-picker }}}1
 
 -- dap {{{1
 vim.keymap.set("n", "<leader>dd", function()
     require("dapui").toggle()
 end, { desc = "Dap ui toggle" })
-CK_SetKeymap_n("<leader>db", ":DapToggleBreakpoint<CR>", "Breakpoint toggle")
-CK_SetKeymap_n("<leader>d<CR><CR>", ":DapContinue<CR>", "DapContinue")
-CK_Submap("<leader>dl", ":DapStepOver<CR>", "<leader>d", { desc = "DapStepOver", wait = 100 })
-CK_Submap("<leader>dj", ":DapStepInto<CR>", "<leader>d", { desc = "DapStepInto", wait = 100 })
-CK_Submap("<leader>dh", ":DapStepOut<CR>", "<leader>d", { desc = "DapStepOut", wait = 100 })
+CK_SetKeymap_n("<leader>db", "<CMD>DapToggleBreakpoint<CR>", "Breakpoint toggle")
+CK_SetKeymap_n("<leader>d<CR><CR>", "<CMD>DapContinue<CR>", "DapContinue")
+CK_Submap("<leader>dl", "<CMD>DapStepOver<CR>", "<leader>d", { desc = "DapStepOver", wait = 100 })
+CK_Submap("<leader>dj", "<CMD>DapStepInto<CR>", "<leader>d", { desc = "DapStepInto", wait = 100 })
+CK_Submap("<leader>dh", "<CMD>DapStepOut<CR>", "<leader>d", { desc = "DapStepOut", wait = 100 })
 -- kms("<Leader>dr", function() require("dap").repl.open() end)
 -- kms("<Leader>dl", function() require("dap").run_last() end)
 -- dap }}}1
@@ -293,9 +293,9 @@ wk.add {
     { "<leader>phi", proxy = "<leader>pih" },
 }
 
-CK_SetKeymap_n("<leader>D", ":Dashboard<CR>", "Dashboard")
-CK_SetKeymap_n("<leader>l", ":set wrap!<CR>", "Toggles line wrap")
-CK_SetKeymap_n("<leader><m-t>", ":InspectTree<CR>", "Inspect Treesitter tree")
+CK_SetKeymap_n("<leader>D", "<CMD>Dashboard<CR>", "Dashboard")
+CK_SetKeymap_n("<leader>l", "<CMD>set wrap!<CR>", "Toggles line wrap")
+CK_SetKeymap_n("<leader><m-t>", "<CMD>InspectTree<CR>", "Inspect Treesitter tree")
 vim.keymap.set("n", "<Up>", ":<Up>", { desc = "Previous command", silent = true, noremap = true })
 
 require("_configs_._keybinds_._git_")
