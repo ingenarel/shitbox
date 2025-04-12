@@ -3,13 +3,18 @@
     pkgs,
     ...
 }: {
-    imports = [./editing/init.nix ./gaming.nix ./window-manager.nix ./programs/kitty/init.nix];
+    imports = [
+        ./editing/init.nix
+        ./gaming.nix
+        ./window-manager.nix
+        ./programs/kitty/init.nix
+        ./programs/discord-client/init.nix
+    ];
 
     environment.systemPackages = with pkgs; [
         inputs.zen-browser.packages."${system}".twilight-official
         keepassxc
         qbittorrent
-        vesktop
         vimiv-qt
         vlc
         zathura
