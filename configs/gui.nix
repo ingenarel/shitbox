@@ -8,7 +8,7 @@
         ./gaming.nix
         ./window-manager.nix
         ./programs/kitty/init.nix
-        ./programs/discord-client/init.nix
+        ./programs/discord.nix
     ];
 
     environment.systemPackages = with pkgs; [

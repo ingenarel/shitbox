@@ -1,8 +1,13 @@
-{...}: {
+{inputs, ...}: {
     imports = [
-        ./disable-discord.nix
+        inputs.nixcord.homeManagerModules.nixcord
     ];
     home-manager.users.ingenarel.programs.nixcord = {
+        discord = {
+            enable = false;
+            vencord.enable = false;
+            openASAR.enable = false;
+        };
         vesktop.enable = true;
         config = {
             frameless = true;
