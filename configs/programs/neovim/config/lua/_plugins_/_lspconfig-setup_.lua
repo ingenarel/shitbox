@@ -62,13 +62,6 @@ return {
             },
         }
 
-        -- TODO: make a good clangd setup from the config
-        -- current i'm putting a config.yaml file in my clangd config dir.
-        -- ```yaml
-        -- CompileFlags:
-        --   Add: [-Wall, -Wextra]
-        -- ```
-
         lspconfig.clangd.setup {}
 
         lspconfig.bashls.setup {
