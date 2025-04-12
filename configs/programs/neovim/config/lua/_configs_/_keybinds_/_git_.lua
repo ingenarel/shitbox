@@ -3,15 +3,6 @@ CK_SetKeymap_n(
     ":FloatermNew --width=0.97 --height=0.97 --title=LAZYGIT --titleposition=center lazygit<CR>",
     "Lazygit"
 )
-vim.keymap.set("n", "<leader>gb", function()
-    require("telescope.builtin").git_branches()
-end, { desc = "git branch list" })
-vim.keymap.set("n", "<leader>glc", function()
-    require("telescope.builtin").git_commits()
-end, { desc = "git commit list" })
-vim.keymap.set("n", "<leader>gs", function()
-    require("telescope.builtin").git_status()
-end, { desc = "git status" })
 CK_SetKeymap_n("<leader>ga", ":!git add %", "Add current file to git")
 CK_SetKeymap_n("<leader>gA", ":!git add -A<CR>", "Add all files to git")
 CK_SetKeymap_n("<leader>gr", ":!git reset %<CR>", "Git reset")

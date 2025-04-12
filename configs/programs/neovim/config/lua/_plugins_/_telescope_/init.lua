@@ -100,5 +100,6 @@ return {
         }
         require("telescope").load_extension("undo")
         require("telescope").load_extension("fzf")
+        require("_plugins_._telescope_._keybinds_")
     end,
 }
