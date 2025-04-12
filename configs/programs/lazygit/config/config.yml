@@ -217,7 +217,7 @@ gui:
   # switchToFilesAfterStashApply: true
 
 # Config relating to git
-# git:
+git:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
   # paging:
     # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
@@ -285,7 +285,7 @@ gui:
   # branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
 
   # If true, do not spawn a separate process when using GPG
-  # overrideGpg: false
+  overrideGpg: true
 
   # If true, do not allow force pushes
   # disableForcePushing: false
