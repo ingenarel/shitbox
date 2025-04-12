@@ -98,6 +98,7 @@
         yaml-language-server
         yt-dlp
         zoxide
+        gnupg
         (
             (
                 pkgs.ffmpeg-full.override {
