@@ -109,7 +109,7 @@ return {
                                 return 0
                             end
                             vim.cmd("helpg " .. help .. "\\c")
-                            CK_SimKeys("<CR><C-w>w<C-w>c:Telescope quickfix<CR>")
+                            CK_SimKeys("<CR><C-w>w<C-w>c<CMD>Telescope quickfix<CR>")
                         end,
                         key = "H",
                         key_format = " %s",

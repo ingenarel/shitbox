@@ -1,6 +1,6 @@
 CK_SetKeymap_n(
     "<leader>gg",
-    ":FloatermNew --width=0.97 --height=0.97 --title=LAZYGIT --titleposition=center lazygit<CR>",
+    "<CMD>FloatermNew --width=0.97 --height=0.97 --title=LAZYGIT --titleposition=center lazygit<CR>",
     "Lazygit"
 )
 vim.keymap.set("n", "<leader>gb", function()
@@ -13,8 +13,8 @@ vim.keymap.set("n", "<leader>gs", function()
     require("telescope.builtin").git_status()
 end, { desc = "git status" })
 CK_SetKeymap_n("<leader>ga", ":!git add %", "Add current file to git")
-CK_SetKeymap_n("<leader>gA", ":!git add -A<CR>", "Add all files to git")
-CK_SetKeymap_n("<leader>gr", ":!git reset %<CR>", "Git reset")
+CK_SetKeymap_n("<leader>gA", "<CMD>!git add -A<CR>", "Add all files to git")
+CK_SetKeymap_n("<leader>gr", "<CMD>!git reset %<CR>", "Git reset")
 
 ---@nodoc CK_GitWrapperCommit() {{{1
 ---@nodoc docs {{{2
