@@ -2,7 +2,6 @@
 
 sshDecryptedFile="$HOME/.config/nixos-config/configs/secrets/ssh/git"
 sshEncryptedFile="$HOME/.config/nixos-config/configs/secrets/ssh/git.gpg"
-sshPublicKey="$HOME/.config/nixos-config/configs/secrets/ssh/git.pub"
 kdbxDecryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/Passwords.kdbx"
 kdbxEncryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/Passwords.kdbx.gpg"
 kdbxBackupDecryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/PasswordsBackup.kdbx"
@@ -48,7 +47,6 @@ elif [[ "$2" == "decrypt" ]]; then
     encryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
     cp -f "$sshDecryptedFile" "$HOME/.ssh/git"
     chmod 600 "$HOME/.ssh/git"
-    cp -f "$sshPublicKey" "$HOME/.ssh/git.pub"
     encryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
 else

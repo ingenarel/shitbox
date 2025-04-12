@@ -18,6 +18,7 @@
         ./configs/programs/clangd/init.nix
         ./configs/programs/kitty/init.nix
         ./configs/programs/tmux/init.nix
+        ./configs/secrets/init.nix
     ];
 
     boot.loader.grub = {
