@@ -277,9 +277,18 @@ vim.keymap.set("n", "<leader>dd", function()
 end, { desc = "Dap ui toggle" })
 CK_SetKeymap_n("<leader>db", "<CMD>DapToggleBreakpoint<CR>", "Breakpoint toggle")
 CK_SetKeymap_n("<leader>d<CR><CR>", "<CMD>DapContinue<CR>", "DapContinue")
-CK_Submap("<leader>dl", "<CMD>DapStepOver<CR>", "<leader>d", { desc = "DapStepOver", wait = 100 })
-CK_Submap("<leader>dj", "<CMD>DapStepInto<CR>", "<leader>d", { desc = "DapStepInto", wait = 100 })
-CK_Submap("<leader>dh", "<CMD>DapStepOut<CR>", "<leader>d", { desc = "DapStepOut", wait = 100 })
+vim.keymap.set("n", "<leader>dl", function()
+    require("dap").step_over()
+    require("which-key").show { keys = "<leader>d", loop = true }
+end, { desc = "DapStepOver" })
+vim.keymap.set("n", "<leader>dj", function()
+    require("dap").step_into()
+    require("which-key").show { keys = "<leader>d", loop = true }
+end, { desc = "DapStepInto" })
+vim.keymap.set("n", "<leader>dh", function()
+    require("dap").step_out()
+    require("which-key").show { keys = "<leader>d", loop = true }
+end, { desc = "DapStepOut" })
 -- kms("<Leader>dr", function() require("dap").repl.open() end)
 -- kms("<Leader>dl", function() require("dap").run_last() end)
 -- dap }}}1
