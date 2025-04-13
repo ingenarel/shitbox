@@ -78,7 +78,6 @@
         p7zip
         pavucontrol
         pyright
-        python3
         qemu
         ripgrep
         rustup
