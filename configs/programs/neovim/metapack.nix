@@ -11,7 +11,7 @@
         ltex-ls-plus
         lua-language-server
         nil
-        python313Packages.debugpy
+        (pkgs.python313.withPackages (python313Packages: [python313Packages.debugpy]))
         stylua
         yaml-language-server
     ];
