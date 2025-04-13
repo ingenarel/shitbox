@@ -23,8 +23,12 @@ return {
                     else
                         cb {
                             type = "executable",
-                            command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python",
-                            args = { "-m", "debugpy.adapter" },
+                            -- command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python",
+                            -- args = { "-m", "debugpy.adapter" },
+                            command = "python",
+                            -- command = "debugpy",
+                            args = { "-Xfrozen_modules=off", "-m", "debugpy.adapter" },
+                            -- args = { "-Xfrozen_modules=off" },
                             options = {
                                 source_filetype = "python",
                             },
