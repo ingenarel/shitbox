@@ -1,6 +1,7 @@
 return {
-    "ingenarel/metapack.nvim",
-    branch = "dev",
+    -- "ingenarel/metapack.nvim",
+    -- branch = "dev",
+    dir = "~/coding/git/metapack.nvim",
     dependencies = {
         {
             "williamboman/mason.nvim",

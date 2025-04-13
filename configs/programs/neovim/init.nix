@@ -11,5 +11,5 @@
         viAlias = true;
     };
     imports = [./metapack.nix];
-    home-manager.users.ingenarel.home.file.".config/nvim".source = ./config;
+    home-manager.users.ingenarel.home.file.".config/nvim".source = ./nvim;
 }
