@@ -92,32 +92,32 @@ end, { desc = "ↆ help grep" })
 
 vim.keymap.set("n", "<leader>ws=", function()
     vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) + 1)
-    require("which-key").show { keys = "<leader>ws", loop = true }
+    require("which-key").show { keys = "<leader>ws" }
 end, { desc = "Height++" })
 
 vim.keymap.set("n", "<leader>ws-", function()
     vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) - 1)
-    require("which-key").show { keys = "<leader>ws", loop = true }
+    require("which-key").show { keys = "<leader>ws" }
 end, { desc = "Height--" })
 
 vim.keymap.set("n", "<leader>ws.", function()
     vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) + 1)
-    require("which-key").show { keys = "<leader>ws", loop = true }
+    require("which-key").show { keys = "<leader>ws" }
 end, { desc = "Width++" })
 
 vim.keymap.set("n", "<leader>ws,", function()
     vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) + 1)
-    require("which-key").show { keys = "<leader>ws", loop = true }
+    require("which-key").show { keys = "<leader>ws" }
 end, { desc = "Width--" })
 
 vim.keymap.set("n", "<leader>wss=", function()
     vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) + 1)
     vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) + 1)
-    require("which-key").show { keys = "<leader>wss", loop = true }
+    require("which-key").show { keys = "<leader>wss" }
 end, { desc = "Size++" })
 
 vim.keymap.set("n", "<leader>wss-", function()
     vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) - 1)
     vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) - 1)
-    require("which-key").show { keys = "<leader>wss", loop = true }
+    require("which-key").show { keys = "<leader>wss" }
 end, { desc = "Size--" })
