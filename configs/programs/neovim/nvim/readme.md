@@ -33,8 +33,6 @@ you know the basic stuff and the configuring, you can probably figure it out.
 - i couldn't figure out how to make codelldb stop at the breakpoints in windows. or maybe i'm just dumb.
 - you can update the stuff by just hitting F5
 - keybindings:
-    - `:` is remapped to `;` and `:` is remapped to `:` for visual and normal mode. ik i'm weird, but i just feel
-      comfortable with this remap
     - space is used as the leader key
     - i usually map my right alt key to <ESC>, and caps lock to ctrl. on windows, i use powertoys, on linux i used keyd.
     - mapped a lot of ctrl keybindings to alt bindings. those still work with ctrl tho. so no worries.
