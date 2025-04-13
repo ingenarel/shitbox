@@ -58,13 +58,10 @@
 
     environment.systemPackages = with pkgs; [
         arch-install-scripts
-        bash-language-server
         beautysh
         bemoji
-        black
         btop
         clang
-        clang-tools
         fastfetch
         fzf
         gcc
@@ -73,30 +70,24 @@
         inputs.yazi.packages."${system}".default
         keyd
         lsd
-        ltex-ls-plus
-        lua-language-server
         mtpfs
         mutt-wizard
         neomutt
-        nil
         nodejs
         ntfs3g
         p7zip
         pavucontrol
         pyright
         python3
-        python313Packages.debugpy
         qemu
         ripgrep
         rustup
         starship
-        stylua
         unrar
         unzip
         usbutils
         w3m
         wget
-        yaml-language-server
         yt-dlp
         zoxide
         (
@@ -108,7 +99,6 @@
             )
             .overrideAttrs (_: {doCheck = false;})
         )
-        (inputs.alejandra.packages."${system}".default.overrideAttrs (_: {doCheck = false;}))
     ];
 
     programs = {
