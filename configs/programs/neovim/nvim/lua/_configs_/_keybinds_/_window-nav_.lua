@@ -106,7 +106,7 @@ vim.keymap.set("n", "<leader>ws.", function()
 end, { desc = "Width++" })
 
 vim.keymap.set("n", "<leader>ws,", function()
-    vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) + 1)
+    vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) - 1)
     require("which-key").show { keys = "<leader>ws" }
 end, { desc = "Width--" })
 
