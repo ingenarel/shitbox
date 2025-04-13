@@ -279,15 +279,21 @@ CK_SetKeymap_n("<leader>db", "<CMD>DapToggleBreakpoint<CR>", "Breakpoint toggle"
 CK_SetKeymap_n("<leader>d<CR><CR>", "<CMD>DapContinue<CR>", "DapContinue")
 vim.keymap.set("n", "<leader>dl", function()
     require("dap").step_over()
-    require("which-key").show { keys = "<leader>d", loop = true }
+    vim.defer_fen(function()
+        require("which-key").show { keys = "<leader>d" }
+    end, 150)
 end, { desc = "DapStepOver" })
 vim.keymap.set("n", "<leader>dj", function()
     require("dap").step_into()
-    require("which-key").show { keys = "<leader>d", loop = true }
+    vim.defer_fn(function()
+        require("which-key").show { keys = "<leader>d" }
+    end, 150)
 end, { desc = "DapStepInto" })
 vim.keymap.set("n", "<leader>dh", function()
     require("dap").step_out()
-    require("which-key").show { keys = "<leader>d", loop = true }
+    vim.defer_fen(function()
+        require("which-key").show { keys = "<leader>d" }
+    end, 150)
 end, { desc = "DapStepOut" })
 -- kms("<Leader>dr", function() require("dap").repl.open() end)
 -- kms("<Leader>dl", function() require("dap").run_last() end)
