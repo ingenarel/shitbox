@@ -10,19 +10,9 @@ vim.keymap.set("n", "<leader>cd", function()
     vim.cmd("cd %:h | pwd ")
 end, { desc = "Changes directory and shows the current dir", silent = true, noremap = true })
 
-vim.keymap.set( -- updater {{{1
-    "n",
-    "<F5>",
-    function()
-        vim.cmd([[
-                MasonUpdate
-                Mason
-                Lazy clean
-                Lazy update
-            ]])
-    end,
-    { desc = "tries to update everything", silent = true, noremap = true }
-) -- }}}1
+vim.keymap.set("n", "<F5>", function()
+    vim.cmd(" MasonUpdate | Mason | Lazy clean | Lazy update ")
+end, { desc = "tries to update everything", silent = true, noremap = true })
 
 vim.keymap.set( -- runner {{{1
     "n",
