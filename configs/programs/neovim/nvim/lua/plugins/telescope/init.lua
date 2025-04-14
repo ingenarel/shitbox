@@ -19,7 +19,7 @@ return {
                 preview = {
                     treesitter = true,
                 },
-                file_ignore_patterns = require("_plugins_.telescope.ignored-file-list"),
+                file_ignore_patterns = require("plugins.telescope.ignored-file-list"),
             },
             pickers = {
                 live_grep = {
@@ -78,6 +78,6 @@ return {
         }
         require("telescope").load_extension("undo")
         require("telescope").load_extension("fzf")
-        require("_plugins_.telescope.keybinds")
+        require("plugins.telescope.keybinds")
     end,
 }

@@ -24,20 +24,20 @@ require("lazy").setup {
     spec = {
         {
             { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
-            require("_plugins_._dashboard-setup_"),
-            require("_plugins_._colorizer-setup_"),
-            require("_plugins_._color-picker-setup_"),
-            require("_plugins_._lualine-setup_"),
-            require("_plugins_._autopairs-setup_"),
-            require("_plugins_.telescope"),
-            require("_plugins_._ibl-setup_"),
+            require("plugins._dashboard-setup_"),
+            require("plugins._colorizer-setup_"),
+            require("plugins._color-picker-setup_"),
+            require("plugins._lualine-setup_"),
+            require("plugins._autopairs-setup_"),
+            require("plugins.telescope"),
+            require("plugins._ibl-setup_"),
             { "lewis6991/gitsigns.nvim", config = true },
-            require("_plugins_._metapack-setup_"),
-            require("_plugins_._lspconfig-setup_"),
-            require("_plugins_._dap-setup_"),
-            require("_plugins_._treesitter-setup_"), -- config that has my lsp, dap and autocompletion config
+            require("plugins._metapack-setup_"),
+            require("plugins._lspconfig-setup_"),
+            require("plugins._dap-setup_"),
+            require("plugins._treesitter-setup_"), -- config that has my lsp, dap and autocompletion config
             { "voldikss/vim-floaterm" }, -- floaterm, the floating terminal emulator in neovim
-            require("_plugins_._focus-setup_"),
+            require("plugins._focus-setup_"),
             { "https://gitlab.com/yorickpeterse/nvim-window.git" }, -- to quickly switch split buffers.
             -- TODO: fork this repo and make the code a bit better.{{{
             -- don't know lua that much, but lsp pointed out that it's using deprecated functions, and there's a function that's unused.
@@ -52,7 +52,7 @@ require("lazy").setup {
             { "folke/persistence.nvim", event = "BufReadPre", opts = {} },
             { "imsnif/kdl.vim", ft = "kdl" },
             { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
-            require("_plugins_._conform-setup_"),
+            require("plugins._conform-setup_"),
             {
                 "christoomey/vim-tmux-navigator",
                 cmd = {
