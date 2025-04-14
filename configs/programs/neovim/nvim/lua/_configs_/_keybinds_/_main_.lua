@@ -155,6 +155,7 @@ vim.keymap.set("n", "<F2>", function()
         require("ibl").update { enabled = false }
         -- TODO: fix this; this is probably fucking crashing clangd
         -- vim.diagnostic.config{virtual_text=false}
+        vim.fn.system { "tmux", "set", "-g", "status", "off" }
     elseif CV_IsFocusModeOn == true then
         CV_IsFocusModeOn = false
         vol.foldcolumn = "auto"
@@ -167,6 +168,7 @@ vim.keymap.set("n", "<F2>", function()
         vol.laststatus = 3
         require("ibl").update { enabled = true }
         -- vim.diagnostic.config{virtual_text=true}
+        vim.fn.system { "tmux", "set", "-g", "status", "on" }
     end
 end) -- }}}1
 
