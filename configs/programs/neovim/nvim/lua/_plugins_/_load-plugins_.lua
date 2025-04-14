@@ -23,6 +23,7 @@ require("lazy").setup {
     lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
     spec = {
         {
+            { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
             require("_plugins_._dashboard-setup_"),
             require("_plugins_._colorizer-setup_"),
             require("_plugins_._color-picker-setup_"),
@@ -41,7 +42,6 @@ require("lazy").setup {
             -- TODO: fork this repo and make the code a bit better.{{{
             -- don't know lua that much, but lsp pointed out that it's using deprecated functions, and there's a function that's unused.
             -- it's a single file. not that big too. shouldn't be that hard to make it a bit better ig.}}}
-            { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
             { "ingenarel/nvim-pairMan" }, -- my plugin for pair stuff
             {
                 "smoka7/hop.nvim",
