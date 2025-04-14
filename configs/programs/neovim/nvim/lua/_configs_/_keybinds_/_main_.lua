@@ -176,9 +176,6 @@ CK_SetKeymap_n(
     "<CMD>FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>",
     "Yazi"
 )
-vim.keymap.set("n", "<leader>gf", function()
-    require("telescope.builtin").git_files()
-end, { desc = "find files+gitfiles" })
 -- File managing }}}1
 
 -- terminal {{{1

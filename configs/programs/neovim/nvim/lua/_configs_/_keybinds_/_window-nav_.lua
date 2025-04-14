@@ -55,12 +55,7 @@ local yazi =
     "<C-w>w<CMD>FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>"
 -- x direction
 CK_SetKeymap_n("<leader>wxx", "<C-w>v<C-w>w", "⫸ ")
-CK_SetKeymap_n("<leader>wxf", "<C-w>v<C-w>w<CMD>Telescope find_files<CR>", "⫸ files")
 CK_SetKeymap_n("<leader>wxF", "<C-w>v" .. yazi, "⫸ yazi")
-CK_SetKeymap_n("<leader>wxo", "<C-w>v<C-w>w<CMD>Telescope oldfiles<CR>", "⫸ oldfiles")
-CK_SetKeymap_n("<leader>wxG", "<C-w>v<C-w>w<CMD>Telescope git_files<CR>", "⫸ gitfiles")
-CK_SetKeymap_n("<leader>wxg", "<C-w>v<C-w>w<CMD>Telescope live_grep<CR>", "⫸ grep")
-CK_SetKeymap_n("<leader>wxs", "<C-w>v<C-w>w<CMD>Telescope grep_string<CR>", "⫸ search current string")
 CK_SetKeymap_n("<leader>wx]", "<C-w>v<C-w>w<C-]>", "⫸ opens up the tagfile/definition")
 CK_SetKeymap_n("<leader>wx<leader>", "<C-w>v<C-w>wgf", "⫸ opens up the file")
 -- vim.keymap.set("n", "<leader>wxh", function () CK_ChangeWindowAndShowHelp(false, 'v') end, {desc="⫸ help"})
@@ -73,12 +68,7 @@ end, { desc = "⫸ help grep" })
 -- x direction
 -- y direction
 CK_SetKeymap_n("<leader>wyy", "<C-w>s<C-w>w", "ↆ ")
-CK_SetKeymap_n("<leader>wyf", "<C-w>s<C-w>w<CMD>Telescope find_files<CR>", "ↆ files")
 CK_SetKeymap_n("<leader>wyF", "<C-w>s" .. yazi, "ↆ yazi")
-CK_SetKeymap_n("<leader>wyo", "<C-w>s<C-w>w<CMD>Telescope oldfiles<CR>", "ↆ oldfiles")
-CK_SetKeymap_n("<leader>wyG", "<C-w>s<C-w>w<CMD>Telescope git_files<CR>", "ↆ gitfiles")
-CK_SetKeymap_n("<leader>wyg", "<C-w>s<C-w>w<CMD>Telescope live_grep<CR>", "ↆ grep")
-CK_SetKeymap_n("<leader>wys", "<C-w>s<C-w>w<CMD>Telescope grep_string<CR>", "ↆ search current string")
 CK_SetKeymap_n("<leader>wy]", "<C-w>s<C-w>w<C-]>", "ↆ opens up the tagfile/definition")
 CK_SetKeymap_n("<leader>wy<leader>", "<C-w>s<C-w>wgf", "⫸ opens up the file")
 vim.keymap.set("n", "<leader>wyh", function()
