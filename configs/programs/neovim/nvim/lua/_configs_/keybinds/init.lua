@@ -14,7 +14,9 @@ vim.keymap.set("n", "<F5>", function()
     vim.cmd(" MasonUpdate | Mason | Lazy clean | Lazy update ")
 end, { desc = "tries to update everything", silent = true, noremap = true })
 
-require("_configs_.keybinds.runner")
+vim.keymap.set("n", "<leader>r", function()
+    require("simple-runner")[1]()
+end, { desc = "Run file", silent = true, noremap = true })
 
 -- focus mode (hides most stuff) {{{1
 CV_IsFocusModeOn = false
