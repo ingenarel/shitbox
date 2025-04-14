@@ -35,7 +35,7 @@ require("lazy").setup {
             require("plugins._metapack-setup_"),
             require("plugins._lspconfig-setup_"),
             require("plugins.dap"),
-            require("plugins._treesitter-setup_"), -- config that has my lsp, dap and autocompletion config
+            require("plugins.treesitter"), -- config that has my lsp, dap and autocompletion config
             { "voldikss/vim-floaterm" }, -- floaterm, the floating terminal emulator in neovim
             require("plugins._focus-setup_"),
             { "https://gitlab.com/yorickpeterse/nvim-window.git" }, -- to quickly switch split buffers.
