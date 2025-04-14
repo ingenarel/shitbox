@@ -83,7 +83,7 @@ require("lazy").setup {
                     vim.cmd.colorscheme("cyberpunk-neon")
                 end,
             },
-            { "ingenarel/simple-runner.nvim" },
+            { dir = "~/coding/git/simple-runner.nvim" },
         },
     },
 }
