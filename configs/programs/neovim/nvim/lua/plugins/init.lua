@@ -17,6 +17,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local simple_runner = { "ingenarel/simple-runner.nvim" }
+
+if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/simple-runner.nvim")) ~= nil then
+    simple_runner.dir = "~/coding/git/simple-runner.nvim"
+end
+
 require("lazy").setup {
     -- TODO: download the profiler plugin somehow (https://github.com/folke/snacks.nvim/blob/main/docs/profiler.md)
     -- TODO: download neovim tmux navigator (https://github.com/alexghergh/nvim-tmux-navigation) or create my own where the stupid c-l c-h isn't predefined
@@ -83,7 +89,7 @@ require("lazy").setup {
                     vim.cmd.colorscheme("cyberpunk-neon")
                 end,
             },
-            { dir = "~/coding/git/simple-runner.nvim" },
+            simple_runner,
         },
     },
 }
