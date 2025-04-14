@@ -170,7 +170,7 @@ vim.keymap.set("n", "<F2>", function()
         -- vim.diagnostic.config{virtual_text=true}
         vim.fn.system { "tmux", "set", "-g", "status", "on" }
     end
-end, { silent = true, noremap = true }) -- }}}1
+end, { silent = true, noremap = true, desc = "Toggle Focus Mode" }) -- }}}1
 
 -- File managing {{{1
 CK_SetKeymap_n(
