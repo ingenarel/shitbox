@@ -34,7 +34,7 @@ require("lazy").setup {
             { "lewis6991/gitsigns.nvim", config = true },
             require("plugins._metapack-setup_"),
             require("plugins._lspconfig-setup_"),
-            require("plugins._dap-setup_"),
+            require("plugins.dap"),
             require("plugins._treesitter-setup_"), -- config that has my lsp, dap and autocompletion config
             { "voldikss/vim-floaterm" }, -- floaterm, the floating terminal emulator in neovim
             require("plugins._focus-setup_"),

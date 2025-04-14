@@ -219,34 +219,6 @@ end, { desc = "Execute command and keeps the terminal open" })
 vim.keymap.set("t", "<M-esc>", "<C-\\><C-n>")
 -- terminal }}}1
 
--- dap {{{1
-vim.keymap.set("n", "<leader>dd", function()
-    require("dapui").toggle()
-end, { desc = "Dap ui toggle" })
-CK_SetKeymap_n("<leader>db", "<CMD>DapToggleBreakpoint<CR>", "Breakpoint toggle")
-CK_SetKeymap_n("<leader>d<CR><CR>", "<CMD>DapContinue<CR>", "DapContinue")
-vim.keymap.set("n", "<leader>dl", function()
-    require("dap").step_over()
-    vim.defer_fen(function()
-        require("which-key").show { keys = "<leader>d" }
-    end, 150)
-end, { desc = "DapStepOver" })
-vim.keymap.set("n", "<leader>dj", function()
-    require("dap").step_into()
-    vim.defer_fn(function()
-        require("which-key").show { keys = "<leader>d" }
-    end, 150)
-end, { desc = "DapStepInto" })
-vim.keymap.set("n", "<leader>dh", function()
-    require("dap").step_out()
-    vim.defer_fen(function()
-        require("which-key").show { keys = "<leader>d" }
-    end, 150)
-end, { desc = "DapStepOut" })
--- kms("<Leader>dr", function() require("dap").repl.open() end)
--- kms("<Leader>dl", function() require("dap").run_last() end)
--- dap }}}1
-
 vim.keymap.set("n", "grn", function()
     vim.lsp.buf.rename()
 end, { silent = true, noremap = true })
