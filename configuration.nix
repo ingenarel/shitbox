@@ -57,14 +57,12 @@
     };
 
     environment.systemPackages = with pkgs; [
-        arch-install-scripts
         beautysh
         bemoji
         btop
         clang
         fastfetch
         fzf
-        gcc
         gnumake
         gource
         inputs.yazi.packages."${system}".default
