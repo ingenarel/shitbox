@@ -274,7 +274,6 @@ wk.add {
     { "<leader>phi", proxy = "<leader>pih" },
 }
 
-CK_SetKeymap_n("<leader>D", "<CMD>Dashboard<CR>", "Dashboard")
 CK_SetKeymap_n("<leader>l", "<CMD>set wrap!<CR>", "Toggles line wrap")
 CK_SetKeymap_n("<leader><m-t>", "<CMD>InspectTree<CR>", "Inspect Treesitter tree")
 vim.keymap.set("n", "<Up>", ":<Up>", { desc = "Previous command", silent = true, noremap = true })
