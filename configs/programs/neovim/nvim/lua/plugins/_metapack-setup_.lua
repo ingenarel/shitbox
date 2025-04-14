@@ -1,7 +1,7 @@
-return {
-    -- "ingenarel/metapack.nvim",
-    -- branch = "dev",
-    dir = "~/coding/git/metapack.nvim",
+local m = {
+    "ingenarel/metapack.nvim",
+    branch = "dev",
+
     dependencies = {
         {
             "williamboman/mason.nvim",
@@ -38,3 +38,8 @@ return {
         }
     end,
 }
+if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/metapack.nvim")) ~= nil then
+    m.dir = "~/coding/git/metapack.nvim"
+end
+
+return m
