@@ -45,4 +45,4 @@ end -- }}}
 
 require("plugins")
 require("_configs_._load-configs_")
-require("_configs_._keybinds_._main_")
+require("_configs_._keybinds_")
