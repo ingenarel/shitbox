@@ -139,7 +139,7 @@ vim.keymap.set( -- runner {{{1
 
 -- focus mode (hides most stuff) {{{1
 CV_IsFocusModeOn = false
-vim.keymap.set("n", "<F6>", function()
+vim.keymap.set("n", "<F2>", function()
     local vol = vim.opt_local
 
     if CV_IsFocusModeOn == false then
