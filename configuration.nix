@@ -77,7 +77,8 @@
         pyright
         qemu
         ripgrep
-        rustup
+        rustc
+        cargo
         starship
         unrar
         unzip
