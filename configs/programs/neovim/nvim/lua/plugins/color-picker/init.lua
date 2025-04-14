@@ -43,5 +43,6 @@ return {
                 },
             },
         }
+        require("plugins.color-picker.keybinds")
     end,
 }

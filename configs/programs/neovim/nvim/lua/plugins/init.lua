@@ -26,7 +26,7 @@ require("lazy").setup {
             { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
             require("plugins.dashboard"),
             require("plugins._colorizer-setup_"),
-            require("plugins._color-picker-setup_"),
+            require("plugins.color-picker"),
             require("plugins._lualine-setup_"),
             require("plugins._autopairs-setup_"),
             require("plugins.telescope"),
