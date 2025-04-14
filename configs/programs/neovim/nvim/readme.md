@@ -36,7 +36,7 @@ you know the basic stuff and the configuring, you can probably figure it out.
     - space is used as the leader key
     - i usually map my right alt key to <ESC>, and caps lock to ctrl. on windows, i use powertoys, on linux i used keyd.
     - mapped a lot of ctrl keybindings to alt bindings. those still work with ctrl tho. so no worries.
-    - you can find all the keybindings and remaps that i made in `lua/_configs_/_keybinds_`
+    - you can find all the keybindings and remaps that i made in `lua/_configs_/keybinds`
 - `textwidth` is set to 120, that means after 120 chars, you start writing from a newline, if you still couldn't
   complete a line after 120 chars, then either you have a skill issue, or you need to reset it to 0. you can also do a
   temporary fix by just doing J at the line to join the two lines.
