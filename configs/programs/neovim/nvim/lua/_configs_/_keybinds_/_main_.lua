@@ -4,7 +4,7 @@ local wk = require("which-key")
 -- map right alt to <ESC>. on windows, i use powertoys.
 -- NOTE: need to use these mappings more often.
 local function alt_keymap(keymap, action)
-    vim.keymap.set({ "n", "v", "o", "i", "c", "t" }, keymap, action)
+    vim.keymap.set({ "n", "v", "o", "i", "c", "t" }, keymap, action, { silent = true, noremap = true })
 end
 
 -- <M-h> is mapped to coq_settings.keymap.jump_to_mark
@@ -18,25 +18,25 @@ alt_keymap("<M-p>", "<C-p>")
 alt_keymap("<M-q>", "<C-q>")
 alt_keymap("<M-r>", "<C-r>")
 alt_keymap("<M-u>", "<C-u>")
-vim.keymap.set("i", "<M-w>", "<C-w>")
+vim.keymap.set("i", "<M-w>", "<C-w>", { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-/>", function()
     vim.cmd("HopAnywhereAC")
-end)
+end, { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-?>", function()
     vim.cmd("HopAnywhereBC")
-end)
+end, { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-f>", function()
     vim.cmd("HopChar1AC")
-end)
+end, { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-F>", function()
     vim.cmd("HopChar1BC")
-end)
+end, { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-j>", function()
     vim.cmd("HopLineAC")
-end)
+end, { silent = true, noremap = true })
 vim.keymap.set({ "n", "v", "o" }, "<M-k>", function()
     vim.cmd("HopLineBC")
-end)
+end, { silent = true, noremap = true })
 -- alt mappings }}}
 
 vim.keymap.set( -- saves and sources the file {{{
@@ -48,7 +48,7 @@ vim.keymap.set( -- saves and sources the file {{{
                 source%
             ]])
     end,
-    { desc = "Saves and sources the file" }
+    { desc = "Saves and sources the file", silent = true, noremap = true }
 ) -- }}}
 
 vim.keymap.set( -- Changes directory and shows the current dir {{{1
@@ -60,7 +60,7 @@ vim.keymap.set( -- Changes directory and shows the current dir {{{1
                 pwd
             ]])
     end,
-    { desc = "Changes directory and shows the current dir" }
+    { desc = "Changes directory and shows the current dir", silent = true, noremap = true }
 ) -- }}}1
 
 vim.keymap.set( -- updater {{{1
@@ -74,7 +74,7 @@ vim.keymap.set( -- updater {{{1
                 Lazy update
             ]])
     end,
-    { desc = "tries to update everything" }
+    { desc = "tries to update everything", silent = true, noremap = true }
 ) -- }}}1
 
 vim.keymap.set( -- runner {{{1
@@ -134,7 +134,7 @@ vim.keymap.set( -- runner {{{1
             vim.notify("Filetype hasn't been implemented yet", "WARN")
         end
     end,
-    { desc = "Try to run current file" }
+    { desc = "Try to run current file", silent = true, noremap = true }
 ) -- }}}1
 
 -- focus mode (hides most stuff) {{{1
@@ -170,7 +170,7 @@ vim.keymap.set("n", "<F2>", function()
         -- vim.diagnostic.config{virtual_text=true}
         vim.fn.system { "tmux", "set", "-g", "status", "on" }
     end
-end) -- }}}1
+end, { silent = true, noremap = true }) -- }}}1
 
 -- File managing {{{1
 CK_SetKeymap_n(
@@ -212,11 +212,11 @@ function CK_FloatermExecuteCommand(autoclosevalue)
 end
 vim.keymap.set("n", "<leader><leader>e", function()
     CK_FloatermExecuteCommand(1)
-end, { desc = "Execute command and tries to close the terminal" })
+end, { desc = "Execute command and tries to close the terminal", silent = true, noremap = true })
 vim.keymap.set("n", "<leader><leader>E", function()
     CK_FloatermExecuteCommand(0)
-end, { desc = "Execute command and keeps the terminal open" })
-vim.keymap.set("t", "<M-esc>", "<C-\\><C-n>")
+end, { desc = "Execute command and keeps the terminal open", silent = true, noremap = true })
+vim.keymap.set("t", "<M-esc>", "<C-\\><C-n>", { silent = true, noremap = true })
 -- terminal }}}1
 
 vim.keymap.set("n", "grn", function()
