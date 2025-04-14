@@ -2,17 +2,9 @@ local wk = require("which-key")
 
 require("_configs_.keybinds.alt")
 
-vim.keymap.set( -- saves and sources the file {{{
-    "n",
-    "<leader>R",
-    function()
-        vim.cmd([[
-                w
-                source%
-            ]])
-    end,
-    { desc = "Saves and sources the file", silent = true, noremap = true }
-) -- }}}
+vim.keymap.set("n", "<leader>R", function()
+    vim.cmd("w | source %")
+end, { desc = "Saves and sources the file", silent = true, noremap = true })
 
 vim.keymap.set( -- Changes directory and shows the current dir {{{1
     "n",
