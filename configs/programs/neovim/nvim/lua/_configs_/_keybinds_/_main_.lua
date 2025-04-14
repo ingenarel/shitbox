@@ -153,8 +153,8 @@ vim.keymap.set("n", "<F6>", function()
         vol.cursorline = false
         vol.laststatus = 0
         require("ibl").update { enabled = false }
+        -- TODO: fix this; this is probably fucking crashing clangd
         -- vim.diagnostic.config{virtual_text=false}
-        -- this is probably fucking crashing clangd
     elseif CV_IsFocusModeOn == true then
         CV_IsFocusModeOn = false
         vol.foldcolumn = "auto"
