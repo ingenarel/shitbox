@@ -17,7 +17,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local simple_runner = { "ingenarel/simple-runner.nvim" }
+local simple_runner = { "ingenarel/simple-runner.nvim", opts = { heightPercentage = 70, widthPercentage = 80 } }
 
 if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/simple-runner.nvim")) ~= nil then
     simple_runner.dir = "~/coding/git/simple-runner.nvim"

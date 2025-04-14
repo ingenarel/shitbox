@@ -15,7 +15,7 @@ vim.keymap.set("n", "<F5>", function()
 end, { desc = "tries to update everything", silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>r", function()
-    require("simple-runner")[1]()
+    require("simple-runner").run()
 end, { desc = "Run file", silent = true, noremap = true })
 
 -- focus mode (hides most stuff) {{{1
