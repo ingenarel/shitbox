@@ -170,40 +170,7 @@ vim.keymap.set("n", "<F6>", function()
     end
 end) -- }}}1
 
--- Telescope {{{1
-vim.keymap.set("n", "<leader>o", function()
-    require("telescope.builtin").oldfiles()
-end, { desc = "Oldfiles" })
-vim.keymap.set("n", "<leader>tg", function()
-    require("telescope.builtin").live_grep()
-end, { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>tb", function()
-    require("telescope.builtin").buffers()
-end, { desc = "Buffer list" })
-vim.keymap.set("n", "<leader>tt", function()
-    require("telescope.builtin").treesitter()
-end, { desc = "Treesitter Telescope" })
-vim.keymap.set("n", "<leader>T", function()
-    require("telescope.builtin").builtin()
-end, { desc = "Telescope" })
-vim.keymap.set("n", "<leader>u", function()
-    require("telescope").extensions.undo.undo()
-end, { desc = "Undo Tree" })
-vim.keymap.set("n", "<leader>ts", function()
-    require("telescope.builtin").grep_string()
-end, { desc = "Search for a string" })
-vim.keymap.set("n", "<leader>q", function()
-    require("telescope.builtin").quickfix()
-end, { desc = "Quickfix" })
-vim.keymap.set("n", "<leader>td", function()
-    require("telescope.builtin").diagnostics()
-end, { desc = "Diagnostics" })
--- Telescope }}}1
-
 -- File managing {{{1
-vim.keymap.set("n", "<leader>f", function()
-    require("telescope.builtin").find_files()
-end, { desc = "find files" })
 CK_SetKeymap_n(
     "<leader>F",
     "<CMD>FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>",

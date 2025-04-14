@@ -19,29 +19,7 @@ return {
                 preview = {
                     treesitter = true,
                 },
-                file_ignore_patterns = {
-                    "%.exe",
-                    "%.bin",
-                    "%.lnk",
-                    "%.png",
-                    "%.jpg",
-                    "%.jpeg",
-                    "%.webp",
-                    "%.svg",
-                    "%.mp4",
-                    "%.webm",
-                    "%.mkv",
-                    "%.mp3",
-                    "%.ogg",
-                    "%.flac",
-                    "%.wav",
-                    "%.opus",
-                    "%.ttf",
-                    "%.otf",
-                    "%.kdbx",
-                    "%.pdf",
-                    "%.epub",
-                },
+                file_ignore_patterns = require("_plugins_.telescope.ignored-file-list"),
             },
             pickers = {
                 live_grep = {
@@ -100,5 +78,6 @@ return {
         }
         require("telescope").load_extension("undo")
         require("telescope").load_extension("fzf")
+        require("_plugins_.telescope.keybinds")
     end,
 }
