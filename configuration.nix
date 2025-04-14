@@ -74,7 +74,6 @@
         nodejs
         ntfs3g
         p7zip
-        pavucontrol
         pyright
         qemu
         ripgrep

@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [
         inputs.zen-browser.packages."${system}".twilight-official
         keepassxc
+        pavucontrol
         qbittorrent
         vimiv-qt
         vlc
