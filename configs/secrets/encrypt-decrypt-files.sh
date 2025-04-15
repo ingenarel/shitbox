@@ -12,9 +12,16 @@ encryptFile() {
         echo "password file not found"
         return 1
     fi
+
+    if [[ ! -e "$1" ]]; then
+        echo "ENCRYPTED FILE NOT FOUND!"
+        return 1;
+    fi
+
     if [[ -e "$2" ]]; then
         rm "$2"
     fi
+
     gpg --symmetric \
         --batch \
         --cipher-algo AES256 \
