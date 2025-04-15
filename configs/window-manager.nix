@@ -1,14 +1,13 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
+        (flameshot.override {enableWlrSupport = true;})
         fuzzel
-        grim
         libnotify
         swaynotificationcenter
         sweet
         swww
         wl-clipboard
         wtype
-        slurp
     ];
     imports = [./programs/hyprland/init.nix ./programs/waybar/init.nix];
 
