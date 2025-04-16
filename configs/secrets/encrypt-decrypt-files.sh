@@ -49,7 +49,8 @@ decryptFile() {
     if [[ -e "$1" ]]; then
         rm "$1"
     fi
-    gpg --passphrase-file "$3"\ "$2"
+
+    gpg --batch --yes --passphrase-file "$3" --output "$1" --decrypt "$2"
 }
 
 if [[ "$2" == "encrypt" ]]; then
