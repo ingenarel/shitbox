@@ -58,11 +58,11 @@ if [[ "$2" == "encrypt" ]]; then
     encryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
 elif [[ "$2" == "decrypt" ]]; then
-    encryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
+    decryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
     cp -f "$sshDecryptedFile" "$HOME/.ssh/git"
     chmod 600 "$HOME/.ssh/git"
-    encryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
-    encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
+    decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
+    decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
 else
     echo "should i encrypt or decrypt?"
     exit 1
