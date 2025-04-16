@@ -14,7 +14,7 @@ encryptFile() {
     fi
 
     if [[ ! -e "$1" ]]; then
-        echo "ENCRYPTED FILE NOT FOUND!"
+        echo "DECRYPTED FILE NOT FOUND!"
         return 1;
     fi
 
