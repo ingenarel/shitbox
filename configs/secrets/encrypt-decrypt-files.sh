@@ -63,6 +63,8 @@ elif [[ "$2" == "decrypt" ]]; then
     chmod 600 "$HOME/.ssh/git"
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "\$HOME/.config/nixos-config/configs/secrets/encrypt-decrypt-files.sh PASSWORD_FILE_LOCATION (encrypt|decrypt)"
 else
     echo "should i encrypt or decrypt?"
     exit 1
