@@ -40,6 +40,12 @@ decryptFile() {
         echo "password file not found"
         return 1
     fi
+
+    if [[ ! -e "$2" ]]; then
+        echo "ENCRYPTED FILE NOT FOUND!"
+        return 1;
+    fi
+
     if [[ -e "$1" ]]; then
         rm "$1"
     fi
