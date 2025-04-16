@@ -61,6 +61,7 @@
         beautysh
         bemoji
         btop
+        cargo
         clang
         fastfetch
         fzf
@@ -79,7 +80,6 @@
         qemu
         ripgrep
         rustc
-        cargo
         starship
         unrar
         unzip
