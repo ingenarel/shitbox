@@ -73,6 +73,7 @@
         mtpfs
         mutt-wizard
         neomutt
+        nix-search-cli
         nodejs
         ntfs3g
         p7zip
