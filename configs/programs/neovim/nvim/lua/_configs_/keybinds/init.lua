@@ -57,13 +57,6 @@ CK_SetKeymap_n(
 )
 -- File managing }}}1
 
--- terminal {{{1
-CK_SetKeymap_n(
-    "<leader><leader>t",
-    "<CMD>FloatermNew --width=1.0 --height=0.9 --title=TERMINAL --titleposition=center<CR>",
-    "Terminal"
-)
-
 ---### executes a command with floaterm.
 ---@param autoclosevalue 0|1 see |floaterm_autoclose|
 ---this can also be used to use another shell such as bash, zsh, cmd, powershell, etc

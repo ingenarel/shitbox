@@ -1,9 +1,9 @@
 local m = {
     "ingenarel/smart-floatterm.nvim",
-    opts = {
-        heightPercentage = 70,
-        widthPercentage = 80,
-    },
+    config = function()
+        require("smart-floatterm").setup { heightPercentage = 70, widthPercentage = 80 }
+        require("plugins.smart-floatterm.keybinds")
+    end,
 }
 
 if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/smart-floatterm.nvim")) ~= nil then
