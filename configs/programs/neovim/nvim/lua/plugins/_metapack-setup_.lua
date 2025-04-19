@@ -7,6 +7,7 @@ local m = {
             "williamboman/mason.nvim",
             config = true,
         },
+        require("plugins.luix"),
     },
     config = function()
         require("metapack").setup {
