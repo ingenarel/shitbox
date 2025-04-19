@@ -32,7 +32,7 @@ require("lazy").setup {
             require("plugins.telescope"),
             require("plugins._ibl-setup_"),
             { "lewis6991/gitsigns.nvim", config = true },
-            require("plugins._metapack-setup_"),
+            require("plugins.metapack"),
             require("plugins.lsp"),
             require("plugins.dap"),
             require("plugins.treesitter"), -- config that has my lsp, dap and autocompletion config
