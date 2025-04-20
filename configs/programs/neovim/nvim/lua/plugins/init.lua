@@ -80,6 +80,7 @@ require("lazy").setup {
             { "nvzone/showkeys", cmd = "ShowkeysToggle", opts = { timeout = 2, maxkeys = 9, position = "top-right" } },
             require("plugins.cyberpunk-neon"),
             require("plugins.simple-runner"),
+            require("plugins.focus-mode"),
         },
     },
 }
