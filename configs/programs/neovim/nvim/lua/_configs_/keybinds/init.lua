@@ -14,41 +14,6 @@ vim.keymap.set("n", "<F5>", function()
     vim.cmd(" MasonUpdate | Mason | Lazy clean | Lazy update ")
 end, { desc = "tries to update everything", silent = true, noremap = true })
 
--- focus mode (hides most stuff) {{{1
-CV_IsFocusModeOn = false
-vim.keymap.set("n", "<F2>", function()
-    local vol = vim.opt_local
-
-    if CV_IsFocusModeOn == false then
-        CV_IsFocusModeOn = true
-        vol.foldcolumn = "0"
-        vol.colorcolumn = ""
-        vol.number = false
-        vol.relativenumber = false
-        vol.signcolumn = "no"
-        vol.cursorcolumn = false
-        vol.cursorline = false
-        vol.laststatus = 0
-        require("ibl").update { enabled = false }
-        -- TODO: fix this; this is probably fucking crashing clangd
-        -- vim.diagnostic.config{virtual_text=false}
-        vim.fn.system { "tmux", "set", "-g", "status", "off" }
-    elseif CV_IsFocusModeOn == true then
-        CV_IsFocusModeOn = false
-        vol.foldcolumn = "auto"
-        vol.colorcolumn = "+0,-20,-40"
-        vol.number = true
-        vol.relativenumber = true
-        vol.signcolumn = "auto"
-        vol.cursorcolumn = true
-        vol.cursorline = true
-        vol.laststatus = 3
-        require("ibl").update { enabled = true }
-        -- vim.diagnostic.config{virtual_text=true}
-        vim.fn.system { "tmux", "set", "-g", "status", "on" }
-    end
-end, { silent = true, noremap = true, desc = "Toggle Focus Mode" }) -- }}}1
-
 -- File managing {{{1
 CK_SetKeymap_n(
     "<leader>F",
