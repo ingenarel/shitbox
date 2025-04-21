@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+    inputs,
+    pkgs,
+    ...
+}: {
     home-manager.users.ingenarel = {
         imports = [
             inputs.nixcord.homeManagerModules.nixcord
@@ -53,4 +57,5 @@
             };
         };
     };
+    environment.systemPackages = with pkgs; [legcord];
 }
