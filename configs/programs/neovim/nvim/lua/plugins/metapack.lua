@@ -11,6 +11,8 @@ local m = {
     },
     config = function()
         require("metapack").setup {
+            nixOutputFile = "~/.config/nixos-config/configs/programs/neovim/metapack_test.nix",
+            nixFlakeDir = "~/.config/nixos-config",
             ensure_installed = {
                 --lsp
                 "pyright",
