@@ -77,7 +77,6 @@
         nodejs
         ntfs3g
         p7zip
-        pyright
         qemu
         ripgrep
         rustc
