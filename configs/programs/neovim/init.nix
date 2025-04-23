@@ -10,7 +10,6 @@
         vimAlias = true;
         viAlias = true;
     };
-    # imports = [./metapack.nix];
-    imports = [./metapack_test.nix];
+    imports = [./metapack.nix];
     home-manager.users.ingenarel.home.file.".config/nvim".source = ./nvim;
 }
