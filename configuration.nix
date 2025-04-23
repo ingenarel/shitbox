@@ -86,6 +86,7 @@
         usbutils
         w3m
         wget
+        ydotool
         yt-dlp
         zoxide
         (
