@@ -4,15 +4,18 @@
 
 { pkgs, inputs, ... }: {
     environment.systemPackages = with pkgs; [
-        pyright
-        ltex-ls-plus
-        yaml-language-server
-        black
-        stylua
         alejandra
-        nil
-        clang-tools
-        lua-language-server
         bash-language-server
+        black
+        clang-tools
+        ltex-ls-plus
+        lua-language-server
+        nil
+        pyright
+        stylua
+        yaml-language-server
+        (pkgs.python313.withPackages (python313Packages: [
+            python313Packages.debugpy
+        ]))
     ];
 }
