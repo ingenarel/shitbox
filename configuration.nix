@@ -75,7 +75,6 @@
         nodejs
         ntfs3g
         p7zip
-        qemu
         ripgrep
         rustc
         starship
