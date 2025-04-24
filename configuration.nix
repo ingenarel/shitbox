@@ -43,7 +43,7 @@
 
     users.users.ingenarel = {
         isNormalUser = true;
-        extraGroups = ["wheel"];
+        extraGroups = ["wheel" "ydotool"];
     };
 
     nix = {
@@ -86,7 +86,6 @@
         usbutils
         w3m
         wget
-        ydotool
         yt-dlp
         zoxide
         (
@@ -115,6 +114,7 @@
             enable = true;
             pinentryPackage = pkgs.pinentry-curses;
         };
+        ydotool.enable = true;
     };
 
     services = {
