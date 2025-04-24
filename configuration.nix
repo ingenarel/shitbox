@@ -39,8 +39,6 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    virtualisation.waydroid.enable = true;
-
     users.users.ingenarel = {
         isNormalUser = true;
         extraGroups = ["wheel" "ydotool"];
