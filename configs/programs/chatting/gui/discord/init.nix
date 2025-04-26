@@ -57,5 +57,4 @@
             };
         };
     };
-    environment.systemPackages = with pkgs; [legcord];
 }
