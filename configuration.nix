@@ -65,6 +65,7 @@
         fzf
         gnumake
         gource
+        graphviz
         inputs.yazi.packages."${system}".default
         keyd
         lsd
