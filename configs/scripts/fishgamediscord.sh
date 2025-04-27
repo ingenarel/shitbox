@@ -86,24 +86,6 @@ while true; do
         sleep 0.3;
         hyprctl dispatch sendshortcut ', return, class:(vesktop)';
         sleep 0.3;
-        hyprctl dispatch sendshortcut ', F, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', i, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', s, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', h, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', 5, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', m, class:(vesktop)';
-        sleep 0.3;
-        hyprctl dispatch sendshortcut ', return, class:(vesktop)';
-
-        sleep 1;
-        hyprctl dispatch sendshortcut ', slash, class:(vesktop)';
-        sleep 0.3;
-        hyprctl dispatch sendshortcut ', b, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', u, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', y, class:(vesktop)';
-        sleep 0.3;
-        hyprctl dispatch sendshortcut ', return, class:(vesktop)';
-        sleep 0.3;
         hyprctl dispatch sendshortcut ', T, class:(vesktop)';
         hyprctl dispatch sendshortcut ', r, class:(vesktop)';
         hyprctl dispatch sendshortcut ', e, class:(vesktop)';
@@ -112,8 +94,7 @@ while true; do
         hyprctl dispatch sendshortcut ', u, class:(vesktop)';
         hyprctl dispatch sendshortcut ', r, class:(vesktop)';
         hyprctl dispatch sendshortcut ', e, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', 2, class:(vesktop)';
-        hyprctl dispatch sendshortcut ', 0, class:(vesktop)';
+        hyprctl dispatch sendshortcut ', 5, class:(vesktop)';
         hyprctl dispatch sendshortcut ', m, class:(vesktop)';
         sleep 0.3;
         hyprctl dispatch sendshortcut ', return, class:(vesktop)';
