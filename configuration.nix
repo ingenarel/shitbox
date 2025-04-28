@@ -77,6 +77,7 @@
         nodejs
         ntfs3g
         p7zip
+        resvg
         ripgrep
         rustc
         starship
