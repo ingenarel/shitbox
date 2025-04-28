@@ -66,6 +66,7 @@
         gnumake
         gource
         graphviz
+        imagemagick
         inputs.yazi.packages."${system}".default
         keyd
         lsd
