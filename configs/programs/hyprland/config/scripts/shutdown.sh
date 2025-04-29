@@ -28,7 +28,7 @@ chosen=$(echo -en "$( for item in "${!menusAndCommands[@]}"; do echo -n "$item" 
         tofi\
             --height 20%\
             --width 15%\
-            --font /home/ingenarel/.local/share/fonts/HackNerdFont-Regular.ttf\
+            --font "$HOME/.local/share/fonts/HackNerdFont-Regular.ttf"\
             --font-size 15\
             --background \#110015e6\
             --text-color \#EE70FFff\
