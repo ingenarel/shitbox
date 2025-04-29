@@ -1,6 +1,6 @@
 {...}: {
     imports = [
         ./waydroid.nix
-        ./qemu.nix
+        ./qemu/init.nix
     ];
 }
