@@ -1,6 +1,7 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
         (flameshot.override {enableWlrSupport = true;})
+        inputs.seto.packages.${pkgs.system}.default
         fuzzel
         libnotify
         swaynotificationcenter

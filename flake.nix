@@ -24,6 +24,10 @@
             url = "github:kaylorben/nixcord";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        seto = {
+            url = "github:unixpariah/seto";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {
