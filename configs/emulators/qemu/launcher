@@ -246,7 +246,7 @@ if [[ ! -d "$storageDir/images" ]]; then
     mkdir --parents "$storageDir/images"
 fi
 if [[ ! -d "$storageDir/storage" ]]; then
-    mkdir --parents "$storageDir/images"
+    mkdir --parents "$storageDir/storage"
 fi
 
 while true; do
