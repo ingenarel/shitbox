@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
-imagesDir="$scriptDir/images"
+# scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+storageDir="$HOME/.local/share/qemu-launcher"
 
 #@formatter:off
-tmuxPaneOrTerminal(){
+tmuxPaneOrTerminal(){ # {{{
     if hyprctl activewindow | grep --quiet tmux ; then
         tmux new-window "$2";
     else
@@ -14,14 +14,14 @@ tmuxPaneOrTerminal(){
             $1 -e "$2";
         fi
     fi
-}
+} # }}}
 
 maxRam="$(( $(grep --extended-regexp "MemTotal" /proc/meminfo | sed --expression='s/[^0-9]//g') / (1024 * 1024) ))"
 logialCores="$(grep -i --extended-regexp -c '^processor' /proc/cpuinfo)"
 ramSize="$(( maxRam / 2 ))G"
 cpuCores="$(( logialCores / 2 ))"
 
-changeQemuRam(){
+changeQemuRam(){ # {{{
     echo "$(
         echo -en "$(
             for (( i = 1; i <= maxRam; i++)) do
@@ -44,9 +44,9 @@ changeQemuRam(){
         |
         grep -oE '^[0-9]'
     )G"
-}
+} # }}}
 
-changeQemuCpu(){
+changeQemuCpu(){ # {{{
     echo -en "$(
         for (( i = 1; i <= logialCores; i++)) do
             echo -n $i "core\n"
@@ -67,14 +67,14 @@ changeQemuCpu(){
         --border-radius 15\
     |
     grep -oE '^[0-9]'
-}
+} # }}}
 
-declare -A settings=(
+declare -A settings=( # {{{
     [" Memory"]="ramSize=\"\$(changeQemuRam)\""
     [" Cpu"]="cpuCores=\"\$(changeQemuCpu)\""
-)
+) # }}}
 
-changeQemuSettings(){
+changeQemuSettings(){ # {{{
     chosen="$(echo -en "$(
         for item in "${!settings[@]}"; do
             echo -n "$item" "\n";
@@ -99,15 +99,46 @@ changeQemuSettings(){
     if [[ "$chosen" != "" ]]; then
         eval "${settings["$chosen"]}"
     fi
-}
+} # }}}
 
-setupAlpine(){
-    if [[ ! -f "$scriptDir/images/alpine*" ]] ; then
+launchAlpineImage(){ # {{{
+    if [[ ! -f "$storageDir/images/alpine-virt-latest.iso" ]] ; then
         echo "alpine not found"
-    fi
-}
+        wget\
+            --directory-prefix="$storageDir/storage"\
+            "$(
+                curl https://alpinelinux.org/downloads/\
+                |
+                grep -E 'alpine-virt\S+-x86_64.iso"'\
+                |
+                sed -E 's/.+href="//; s/".+//; s/\&#x2F;/\//g'
+            )"
 
-declare -A menusAndCommands=(
+        fileName=$(ls -t "$storageDir/storage" | head -n1)
+        ln -sf "$storageDir/storage/$fileName" "$storageDir/images/alpine-virt-latest.iso"
+    fi
+
+    if [[ ! -f "$storageDir/images/alpine-virt-latest-drive.img" ]]; then
+        echo "latest drive not found"
+        qemu-img create -f qcow2 "$storageDir/storage/alpine-virt-latest-drive.img" 15G
+        ln -sf "$storageDir/storage/alpine-virt-latest-drive.img" "$storageDir/images/alpine-virt-latest-drive.img"
+    fi
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -cdrom "$storageDir/images/alpine-virt-latest.iso"\
+        -drive file="$storageDir/images/alpine-virt-latest-drive.img"\
+        -boot order=d\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -full-screen\
+        -vga virtio\
+        -display sdl,gl=on
+
+} # }}}
+
+declare -A menusAndCommands=( # {{{
     [" Arch linux installer; Terminal"]="\
         tmuxPaneOrTerminal foot \"
             qemu-system-x86_64\
@@ -180,24 +211,13 @@ declare -A menusAndCommands=(
             -vga virtio\
             -display sdl,gl=on\
         "
-    [" Alpine installer; GUI"]="\
-        qemu-system-x86_64\
-            -enable-kvm\
-            -cdrom $scriptDir/images/alpine-virt-3.21.3-x86_64.iso\
-            -boot order=d\
-            -m \"\$ramSize\"\
-            -cpu host\
-            -smp \"\$cpuCores\"\
-            -full-screen\
-            -vga virtio\
-            -display sdl,gl=on\
-        "
+    [" Alpine installer; GUI"]="launchAlpineImage"
     [" Settings"]="\
         changeQemuSettings
     "
-)
+) # }}}
 
-startQemu(){
+startQemu(){ # {{{
     chosen="$(
         echo -en "$(
             for item in "${!menusAndCommands[@]}"; do
@@ -221,12 +241,13 @@ startQemu(){
         |
         sed 's/.$//'
     )"
-}
+} # }}}
 
-setupAlpine
-
-if [[ ! -d "$imagesDir" ]]; then
-    mkdir "$imagesDir";
+if [[ ! -d "$storageDir/images" ]]; then
+    mkdir --parents "$storageDir/images"
+fi
+if [[ ! -d "$storageDir/storage" ]]; then
+    mkdir --parents "$storageDir/images"
 fi
 
 while true; do
