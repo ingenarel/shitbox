@@ -70,6 +70,7 @@
         inputs.yazi.packages."${system}".default
         keyd
         lsd
+        luajit
         mtpfs
         mutt-wizard
         neomutt
