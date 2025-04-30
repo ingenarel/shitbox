@@ -1,3 +1,3 @@
 {...}: {
-    imports = [./tmux/init.nix];
+    imports = [./tmux/init.nix ./zellij/init.nix];
 }
