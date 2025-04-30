@@ -167,6 +167,22 @@ launchAlpineInstaller(){ # {{{
 
 } # }}}
 
+launchAlpine(){
+    if [[ ! -f "$storageDir/images/alpine-virt-latest-drive.img" ]] ; then
+        launchAlpineInstaller
+        exit 0;
+    fi
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -drive file="$storageDir/images/alpine-virt-latest-drive.img"\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -vga virtio\
+        -display gtk,gl=on
+}
+
 declare -A menusAndCommands=( # {{{
     [" Arch linux installer; Terminal"]="\
         tmuxPaneOrTerminal foot \"
@@ -241,6 +257,7 @@ declare -A menusAndCommands=( # {{{
             -display sdl,gl=on\
         "
     [" Alpine installer; GUI"]="launchAlpineInstaller"
+    [" Alpine; GUI"]="launchAlpine"
     [" Settings"]="\
         changeQemuSettings
     "
