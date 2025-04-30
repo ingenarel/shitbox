@@ -1,0 +1,3 @@
+{...}: {
+    imports = [./tmux/init.nix];
+}

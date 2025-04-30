@@ -16,7 +16,7 @@
         ./configs/programs/neovim/init.nix
         ./configs/programs/zsh/init.nix
         ./configs/programs/kitty/init.nix
-        ./configs/programs/tmux/init.nix
+        ./configs/programs/terminal-emulators/init.nix
         ./configs/secrets/init.nix
     ];
 
