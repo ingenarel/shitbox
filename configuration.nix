@@ -15,7 +15,6 @@
         ./configs/programs/git/init.nix
         ./configs/programs/neovim/init.nix
         ./configs/programs/zsh/init.nix
-        ./configs/programs/clangd/init.nix
         ./configs/programs/kitty/init.nix
         ./configs/programs/tmux/init.nix
         ./configs/secrets/init.nix
