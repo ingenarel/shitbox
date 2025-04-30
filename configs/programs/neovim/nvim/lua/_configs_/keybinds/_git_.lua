@@ -1,8 +1,3 @@
-CK_SetKeymap_n(
-    "<leader>gg",
-    "<CMD>FloatermNew --width=0.97 --height=0.97 --title=LAZYGIT --titleposition=center lazygit<CR>",
-    "Lazygit"
-)
 CK_SetKeymap_n("<leader>ga", ":!git add %", "Add current file to git")
 CK_SetKeymap_n("<leader>gA", "<CMD>!git add -A<CR>", "Add all files to git")
 CK_SetKeymap_n("<leader>gr", "<CMD>!git reset %<CR>", "Git reset")
