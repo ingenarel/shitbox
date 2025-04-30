@@ -1,7 +1,13 @@
-{pkgs, ...}: {
+{
+    inputs,
+    pkgs,
+    ...
+}: {
     environment.systemPackages = with pkgs; [
-        (flameshot.override {enableWlrSupport = true;})
+        # (flameshot.override {enableWlrSupport = true;})
         inputs.seto.packages.${pkgs.system}.default
+        grim
+        slurp
         fuzzel
         libnotify
         swaynotificationcenter
