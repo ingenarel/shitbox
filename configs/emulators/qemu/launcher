@@ -132,9 +132,8 @@ launchAlpineImage(){ # {{{
         -m "$ramSize"\
         -cpu host\
         -smp "$cpuCores"\
-        -full-screen\
         -vga virtio\
-        -display sdl,gl=on
+        -display gtk,gl=on
 
 } # }}}
 
