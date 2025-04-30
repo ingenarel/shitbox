@@ -1,0 +1,244 @@
+#!/usr/bin/env bash
+
+scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+imagesDir="$scriptDir/images"
+
+#@formatter:off
+tmuxPaneOrTerminal(){
+    if hyprctl activewindow | grep --quiet tmux ; then
+        tmux new-window "$2";
+    else
+        if [[ "$3" ]]; then
+            $1 -c "$3" -e "$2";
+        else
+            $1 -e "$2";
+        fi
+    fi
+}
+
+maxRam="$(( $(grep --extended-regexp "MemTotal" /proc/meminfo | sed --expression='s/[^0-9]//g') / (1024 * 1024) ))"
+logialCores="$(grep -i --extended-regexp -c '^processor' /proc/cpuinfo)"
+ramSize="$(( maxRam / 2 ))G"
+cpuCores="$(( logialCores / 2 ))"
+
+changeQemuRam(){
+    echo "$(
+        echo -en "$(
+            for (( i = 1; i <= maxRam; i++)) do
+                echo -n $i "Gibibytes of RAM\n"
+            done
+        )"\
+        |
+        fuzzel\
+            --dmenu\
+            --lines 7\
+            --width 30\
+            --tabs 4\
+            --background \#110015e6\
+            --text-color \#EE70FFff\
+            --font 'Hack Nerd Font:size=15'\
+            --border-color \#ff00ffff\
+            --selection-color \#420080ff\
+            --border-width 2\
+            --border-radius 15\
+        |
+        grep -oE '^[0-9]'
+    )G"
+}
+
+changeQemuCpu(){
+    echo -en "$(
+        for (( i = 1; i <= logialCores; i++)) do
+            echo -n $i "core\n"
+        done
+    )"\
+    |
+    fuzzel\
+        --dmenu\
+        --lines 7\
+        --width 30\
+        --tabs 4\
+        --background \#110015e6\
+        --text-color \#EE70FFff\
+        --font 'Hack Nerd Font:size=15'\
+        --border-color \#ff00ffff\
+        --selection-color \#420080ff\
+        --border-width 2\
+        --border-radius 15\
+    |
+    grep -oE '^[0-9]'
+}
+
+declare -A settings=(
+    [" Memory"]="ramSize=\"\$(changeQemuRam)\""
+    [" Cpu"]="cpuCores=\"\$(changeQemuCpu)\""
+)
+
+changeQemuSettings(){
+    chosen="$(echo -en "$(
+        for item in "${!settings[@]}"; do
+            echo -n "$item" "\n";
+        done
+    )"\
+        |
+    fuzzel\
+        --dmenu\
+        --lines 2\
+        --width 15\
+        --tabs 4\
+        --background \#110015e6\
+        --text-color \#EE70FFff\
+        --font 'Hack Nerd Font:size=15'\
+        --border-color \#ff00ffff\
+        --selection-color \#420080ff\
+        --border-width 2\
+        --border-radius 15\
+    |
+    sed 's/.$//'
+    )"
+    if [[ "$chosen" != "" ]]; then
+        eval "${settings["$chosen"]}"
+    fi
+}
+
+setupAlpine(){
+    if [[ ! -f "$scriptDir/images/alpine*" ]] ; then
+        echo "alpine not found"
+    fi
+}
+
+declare -A menusAndCommands=(
+    [" Arch linux installer; Terminal"]="\
+        tmuxPaneOrTerminal foot \"
+            qemu-system-x86_64\
+                -enable-kvm\
+                -cdrom /mnt/D/qemu/archlinux-2025.02.01-x86_64.iso\
+                -drive file=/mnt/D/qemu/archLinuxImage\
+                -boot order=d\
+                -m \"\$ramSize\"\
+                -cpu host\
+                -smp \"\$cpuCores\"\
+                -nographic\
+        \"\
+    "
+    [" Arch linux installer; Gui"]="\
+        qemu-system-x86_64\
+            -enable-kvm\
+            -cdrom /mnt/D/qemu/archlinux-2025.02.01-x86_64.iso\
+            -drive file=/mnt/D/qemu/archLinuxImage\
+            -boot order=d\
+            -m \"\$ramSize\"\
+            -cpu host\
+            -smp \"\$cpuCores\"\
+            -full-screen\
+            -vga virtio\
+            -display sdl,gl=on\
+    "
+    [" Arch linux; Terminal"]="\
+        tmuxPaneOrTerminal foot \"
+            qemu-system-x86_64\
+                -enable-kvm\
+                -drive file=/mnt/D/qemu/archLinuxImage\
+                -m \"\$ramSize\"\
+                -cpu host\
+                -smp \"\$cpuCores\"\
+                -nographic\
+        \"\
+    "
+    [" Arch linux; Gui"]="\
+        qemu-system-x86_64\
+            -enable-kvm\
+            -drive file=/mnt/D/qemu/archLinuxImage\
+            -m \"\$ramSize\"\
+            -cpu host\
+            -smp \"\$cpuCores\"\
+            -full-screen\
+            -vga virtio\
+            -display sdl,gl=on\
+    "
+    ["󱄅 NixOS installer; GUI"]="\
+        qemu-system-x86_64\
+            -enable-kvm\
+            -cdrom /mnt/D/qemu/nixos-minimal-24.11.714127.f5a32fa27df9-x86_64-linux.iso\
+            -drive file=/mnt/D/qemu/nixOS_image\
+            -boot order=d\
+            -m \"\$ramSize\"\
+            -cpu host\
+            -smp \"\$cpuCores\"\
+            -full-screen\
+            -vga virtio\
+            -display sdl,gl=on\
+        "
+    ["󱄅 NixOS; GUI"]="\
+        qemu-system-x86_64\
+            -enable-kvm\
+            -drive file=/mnt/D/qemu/nixOS_image\
+            -m \"\$ramSize\"\
+            -cpu host\
+            -smp \"\$cpuCores\"\
+            -full-screen\
+            -vga virtio\
+            -display sdl,gl=on\
+        "
+    [" Alpine installer; GUI"]="\
+        qemu-system-x86_64\
+            -enable-kvm\
+            -cdrom $scriptDir/images/alpine-virt-3.21.3-x86_64.iso\
+            -boot order=d\
+            -m \"\$ramSize\"\
+            -cpu host\
+            -smp \"\$cpuCores\"\
+            -full-screen\
+            -vga virtio\
+            -display sdl,gl=on\
+        "
+    [" Settings"]="\
+        changeQemuSettings
+    "
+)
+
+startQemu(){
+    chosen="$(
+        echo -en "$(
+            for item in "${!menusAndCommands[@]}"; do
+                echo -n "$item" "\n";
+            done
+        )"\
+        |
+        fuzzel\
+            --dmenu\
+            --lines 10\
+            --width 35\
+            --tabs 4\
+            --background \#110015e6\
+            --text-color \#EE70FFff\
+            --font 'Hack Nerd Font:size=15'\
+            --border-color \#ff00ffff\
+            --selection-color \#420080ff\
+            --border-width 2\
+            --border-radius 15\
+            --prompt "RAM: $ramSize CORES: $cpuCores => "\
+        |
+        sed 's/.$//'
+    )"
+}
+
+setupAlpine
+
+if [[ ! -d "$imagesDir" ]]; then
+    mkdir "$imagesDir";
+fi
+
+while true; do
+    startQemu
+    if [[ -n "$chosen" ]]; then
+        if [[ "$chosen" == " Settings" ]]; then
+            changeQemuSettings
+        else
+            eval "${menusAndCommands["$chosen"]}"
+            exit 0
+        fi
+    else
+        exit 0
+    fi
+done
