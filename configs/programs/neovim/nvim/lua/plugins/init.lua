@@ -55,6 +55,7 @@ require("lazy").setup {
             require("plugins._conform-setup_"),
             {
                 "dynamotn/Navigator.nvim",
+                config = true,
                 cmd = {
                     "NavigatorLeft",
                     "NavigatorDown",
