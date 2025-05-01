@@ -4,7 +4,7 @@ keybinds clear-defaults=true {
 
         bind "Alt Shift h" {
             MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus;
+                name "move_focus";
                 payload "left";
 
                 // Plugin Configuration
