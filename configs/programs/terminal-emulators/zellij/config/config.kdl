@@ -8,7 +8,7 @@ keybinds clear-defaults=true {
                 payload "left";
 
                 // Plugin Configuration
-                move_mod "Alt Shift"; // Optional, should be added on every command if you want to use it
+                move_mod "Alt"; // Optional, should be added on every command if you want to use it
             };
         }
 
@@ -17,7 +17,7 @@ keybinds clear-defaults=true {
                 name "move_focus";
                 payload "down";
 
-                move_mod "Alt Shift";
+                move_mod "Alt";
             };
         }
 
@@ -26,7 +26,7 @@ keybinds clear-defaults=true {
                 name "move_focus";
                 payload "up";
 
-                move_mod "Alt Shift";
+                move_mod "Alt";
             };
         }
 
@@ -35,7 +35,7 @@ keybinds clear-defaults=true {
                 name "move_focus";
                 payload "right";
 
-                move_mod "Alt Shift";
+                move_mod "Alt";
             };
         }
 
