@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
     -- TODO: download the profiler plugin somehow (https://github.com/folke/snacks.nvim/blob/main/docs/profiler.md)
-    -- TODO: download neovim tmux navigator (https://github.com/alexghergh/nvim-tmux-navigation) or create my own where the stupid c-l c-h isn't predefined
     lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
     spec = {
         {
@@ -55,20 +54,19 @@ require("lazy").setup {
             { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
             require("plugins._conform-setup_"),
             {
-                "christoomey/vim-tmux-navigator",
+                "dynamotn/Navigator.nvim",
                 cmd = {
-                    "TmuxNavigateLeft",
-                    "TmuxNavigateDown",
-                    "TmuxNavigateUp",
-                    "TmuxNavigateRight",
-                    "TmuxNavigatePrevious",
-                    "TmuxNavigatorProcessList",
+                    "NavigatorLeft",
+                    "NavigatorDown",
+                    "NavigatorUp",
+                    "NavigatorRight",
+                    "NavigatePrevious",
                 },
                 keys = {
-                    { "<M-H>", "<cmd>TmuxNavigateLeft<cr>" },
-                    { "<M-J>", "<cmd>TmuxNavigateDown<cr>" },
-                    { "<M-K>", "<cmd>TmuxNavigateUp<cr>" },
-                    { "<M-L>", "<cmd>TmuxNavigateRight<cr>" },
+                    { "<M-H>", "<cmd>NavigatorLeft<cr>" },
+                    { "<M-J>", "<cmd>NavigatorDown<cr>" },
+                    { "<M-K>", "<cmd>NavigatorUp<cr>" },
+                    { "<M-L>", "<cmd>NavigatorRight<cr>" },
                 },
             },
             {
