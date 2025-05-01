@@ -3,39 +3,39 @@ keybinds clear-defaults=true {
         bind "Alt Space" { SwitchToMode "normal"; }
 
         bind "Alt Shift h" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/dynamotn/zellij-nvim-navigator/releases/download/v0.3.0/zellij-nvim-navigator.wasm" {
                 name "move_focus";
                 payload "left";
 
                 // Plugin Configuration
-                move_mod "Alt"; // Optional, should be added on every command if you want to use it
+                move_mod "Alt Shift"; // Optional, should be added on every command if you want to use it
             };
         }
 
         bind "Alt Shift j" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/dynamotn/zellij-nvim-navigator/releases/download/v0.3.0/zellij-nvim-navigator.wasm" {
                 name "move_focus";
                 payload "down";
 
-                move_mod "Alt";
+                move_mod "Alt Shift";
             };
         }
 
         bind "Alt Shift k" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/dynamotn/zellij-nvim-navigator/releases/download/v0.3.0/zellij-nvim-navigator.wasm" {
                 name "move_focus";
                 payload "up";
 
-                move_mod "Alt";
+                move_mod "Alt Shift";
             };
         }
 
         bind "Alt Shift l" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+            MessagePlugin "https://github.com/dynamotn/zellij-nvim-navigator/releases/download/v0.3.0/zellij-nvim-navigator.wasm" {
                 name "move_focus";
                 payload "right";
 
-                move_mod "Alt";
+                move_mod "Alt Shift";
             };
         }
 
