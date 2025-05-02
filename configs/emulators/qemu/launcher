@@ -101,7 +101,7 @@ changeQemuSettings(){ # {{{
     fi
 } # }}}
 
-installAlpineIso(){
+installAlpineIso(){ # {{{
     if [[ ! -f "$storageDir/images/alpine-virt-latest.iso" ]] ; then
         echo "alpine not found"
         wget\
@@ -117,9 +117,9 @@ installAlpineIso(){
         fileName=$(ls -t "$storageDir/storage" | head -n1)
         ln -sf "$storageDir/storage/$fileName" "$storageDir/images/alpine-virt-latest.iso"
     fi
-}
+} # }}}
 
-createQemuImage(){
+createQemuImage(){ # {{{
     if [[ ! -f "$1" ]]; then
         echo "latest drive not found"
         qemu-img create -f qcow2 "$2" "$(
@@ -148,7 +148,7 @@ createQemuImage(){
         ln -sf "$2" "$1"
     fi
 
-}
+} # }}}
 
 launchAlpineInstaller(){ # {{{
     installAlpineIso
@@ -167,7 +167,7 @@ launchAlpineInstaller(){ # {{{
 
 } # }}}
 
-launchAlpine(){
+launchAlpine(){ # {{{
     if [[ ! -f "$storageDir/images/alpine-virt-latest-drive.img" ]] ; then
         launchAlpineInstaller
         exit 0;
@@ -181,7 +181,7 @@ launchAlpine(){
         -smp "$cpuCores"\
         -vga virtio\
         -display gtk,gl=on
-}
+} # }}}
 
 declare -A menusAndCommands=( # {{{
     [" Arch linux installer; Terminal"]="\
@@ -289,14 +289,14 @@ startQemu(){ # {{{
     )"
 } # }}}
 
-if [[ ! -d "$storageDir/images" ]]; then
+if [[ ! -d "$storageDir/images" ]]; then # {{{
     mkdir --parents "$storageDir/images"
 fi
 if [[ ! -d "$storageDir/storage" ]]; then
     mkdir --parents "$storageDir/storage"
-fi
+fi # }}}
 
-while true; do
+while true; do # {{{
     startQemu
     if [[ -n "$chosen" ]]; then
         if [[ "$chosen" == " Settings" ]]; then
@@ -308,4 +308,4 @@ while true; do
     else
         exit 0
     fi
-done
+done # }}}
