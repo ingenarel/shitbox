@@ -36,7 +36,7 @@ require("lazy").setup {
             require("plugins.dap"),
             require("plugins.treesitter"), -- config that has my lsp, dap and autocompletion config
             { "voldikss/vim-floaterm" }, -- floaterm, the floating terminal emulator in neovim
-            require("plugins.smart-floatterm"),
+            require("plugins.smart-term"),
             require("plugins._focus-setup_"),
             { "https://gitlab.com/yorickpeterse/nvim-window.git" }, -- to quickly switch split buffers.
             -- TODO: fork this repo and make the code a bit better.{{{

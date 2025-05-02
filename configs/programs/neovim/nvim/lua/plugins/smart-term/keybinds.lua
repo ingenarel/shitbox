@@ -2,14 +2,14 @@ require("which-key").add {
     {
         "<leader><leader>t",
         function()
-            require("smart-floatterm").open { widthPercentage = 90 }
+            require("smart-term").openFloaTerm { widthPercentage = 90 }
         end,
         desc = "Terminal",
     },
     {
         "<leader>gg",
         function()
-            require("smart-floatterm").openNeovimTerm { widthPercentage = 90, heightPercentage = 90, command = "lazygit" }
+            require("smart-term").openNeovimFloaTerm { widthPercentage = 90, heightPercentage = 90, command = "lazygit" }
         end,
         desc = "Lazygit",
     },
