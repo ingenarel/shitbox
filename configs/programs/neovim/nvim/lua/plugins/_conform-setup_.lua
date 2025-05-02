@@ -19,6 +19,7 @@ return {
             pattern = "*",
             callback = function(args)
                 require("conform").format { bufnr = args.buf }
+                pcall(vim.cmd, "%s/\\(\\S\\)\\(" .. vim.opt.commentstring._value .. " ...\\)/\\1 \\2/g")
             end,
         })
     end,
