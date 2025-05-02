@@ -70,6 +70,7 @@
         keyd
         lsd
         luajit
+        luajitPackages.ldoc
         mtpfs
         mutt-wizard
         neomutt
