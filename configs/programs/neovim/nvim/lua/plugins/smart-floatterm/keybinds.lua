@@ -9,7 +9,7 @@ require("which-key").add {
     {
         "<leader>gg",
         function()
-            require("smart-floatterm").open { widthPercentage = 90, heightPercentage = 90, command = "lazygit" }
+            require("smart-floatterm").openNeovimTerm { widthPercentage = 90, heightPercentage = 90, command = "lazygit" }
         end,
         desc = "Lazygit",
     },
