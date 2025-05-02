@@ -1,6 +1,6 @@
 {...}: {
     imports = [
-        ./element.nix
+        ./cinny.nix
         ./discord/init.nix
     ];
 }
