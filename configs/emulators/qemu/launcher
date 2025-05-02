@@ -101,24 +101,6 @@ changeQemuSettings(){ # {{{
     fi
 } # }}}
 
-installAlpineIso(){ # {{{
-    if [[ ! -f "$storageDir/images/alpine-virt-latest.iso" ]] ; then
-        echo "alpine not found"
-        wget\
-            --directory-prefix="$storageDir/storage"\
-            "$(
-                curl https://alpinelinux.org/downloads/\
-                |
-                grep -E 'alpine-virt\S+-x86_64.iso"'\
-                |
-                sed -E 's/.+href="//; s/".+//; s/\&#x2F;/\//g'
-            )"
-
-        fileName=$(ls -t "$storageDir/storage" | head -n1)
-        ln -sf "$storageDir/storage/$fileName" "$storageDir/images/alpine-virt-latest.iso"
-    fi
-} # }}}
-
 createQemuImage(){ # {{{
     if [[ ! -f "$1" ]]; then
         echo "latest drive not found"
@@ -148,6 +130,24 @@ createQemuImage(){ # {{{
         ln -sf "$2" "$1"
     fi
 
+} # }}}
+
+installAlpineIso(){ # {{{
+    if [[ ! -f "$storageDir/images/alpine-virt-latest.iso" ]] ; then
+        echo "alpine not found"
+        wget\
+            --directory-prefix="$storageDir/storage"\
+            "$(
+                curl https://alpinelinux.org/downloads/\
+                |
+                grep -E 'alpine-virt\S+-x86_64.iso"'\
+                |
+                sed -E 's/.+href="//; s/".+//; s/\&#x2F;/\//g'
+            )"
+
+        fileName=$(ls -t "$storageDir/storage" | head -n1)
+        ln -sf "$storageDir/storage/$fileName" "$storageDir/images/alpine-virt-latest.iso"
+    fi
 } # }}}
 
 launchAlpineInstaller(){ # {{{
