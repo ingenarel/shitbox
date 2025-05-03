@@ -237,6 +237,60 @@ launchGentoo(){ # {{{
 
 } # }}}
 
+installNixIso(){ # {{{
+    # https://channels.nixos.org/nixos-24.11/latest-nixos-minimal-x86_64-linux.iso
+    if [[ ! -f "$storageDir/images/nix-latest.iso" ]] ; then
+        echo "nix not found"
+        wget\
+            --no-use-server-timestamps\
+            --directory-prefix="$storageDir/storage"\
+            "$(
+                curl https://nixos.org/download/\
+                |
+                grep -oE 'https://\S+latest-nixos-minimal-x86_64-linux\.iso'\
+                |
+                head -n1
+            )"
+
+        fileName=$(ls -t "$storageDir/storage" | head -n1)
+        ln -sf "$storageDir/storage/$fileName" "$storageDir/images/nix-latest.iso"
+    fi
+} # }}}
+
+launchNixInstaller(){ # {{{
+    installNixIso
+    createQemuImage "$storageDir/images/nix-latest-drive.img" "$storageDir/storage/nix-latest-drive.img"
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -cdrom "$storageDir/images/nix-latest.iso"\
+        -drive file="$storageDir/images/nix-latest-drive.img"\
+        -boot order=d\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -vga virtio\
+        -display gtk,gl=on
+
+} # }}}
+
+launchNix(){ # {{{
+    if [[ ! -f "$storageDir/images/nix-latest-drive.img" ]] ; then
+        launchNixInstaller
+        exit 0;
+    fi
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -drive file="$storageDir/images/nix-latest-drive.img"\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -vga virtio\
+        -display gtk,gl=on
+
+} # }}}
+
 declare -A menusAndCommands=( # {{{
     [" Arch linux installer; Terminal"]="\
         tmuxPaneOrTerminal foot \"
@@ -286,30 +340,8 @@ declare -A menusAndCommands=( # {{{
             -vga virtio\
             -display sdl,gl=on\
     "
-    ["󱄅 NixOS installer; GUI"]="\
-        qemu-system-x86_64\
-            -enable-kvm\
-            -cdrom /mnt/D/qemu/nixos-minimal-24.11.714127.f5a32fa27df9-x86_64-linux.iso\
-            -drive file=/mnt/D/qemu/nixOS_image\
-            -boot order=d\
-            -m \"\$ramSize\"\
-            -cpu host\
-            -smp \"\$cpuCores\"\
-            -full-screen\
-            -vga virtio\
-            -display sdl,gl=on\
-        "
-    ["󱄅 NixOS; GUI"]="\
-        qemu-system-x86_64\
-            -enable-kvm\
-            -drive file=/mnt/D/qemu/nixOS_image\
-            -m \"\$ramSize\"\
-            -cpu host\
-            -smp \"\$cpuCores\"\
-            -full-screen\
-            -vga virtio\
-            -display sdl,gl=on\
-        "
+    ["󱄅 NixOS installer; GUI"]="launchNixInstaller"
+    ["󱄅 NixOS; GUI"]="launchNix"
     [" Alpine installer; GUI"]="launchAlpineInstaller"
     [" Alpine; GUI"]="launchAlpine"
     [" Gentoo installer; GUI"]="launchGentooInstaller"
