@@ -314,9 +314,7 @@ declare -A menusAndCommands=( # {{{
     [" Alpine; GUI"]="launchAlpine"
     [" Gentoo installer; GUI"]="launchGentooInstaller"
     [" Gentoo; GUI"]="launchGentoo"
-    [" Settings"]="\
-        changeQemuSettings
-    "
+    [" Settings"]="changeQemuSettings "
 ) # }}}
 
 startQemu(){ # {{{
