@@ -238,7 +238,6 @@ launchGentoo(){ # {{{
 } # }}}
 
 installNixIso(){ # {{{
-    # https://channels.nixos.org/nixos-24.11/latest-nixos-minimal-x86_64-linux.iso
     if [[ ! -f "$storageDir/images/nix-latest.iso" ]] ; then
         echo "nix not found"
         wget\
