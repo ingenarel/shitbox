@@ -290,55 +290,66 @@ launchNix(){ # {{{
 
 } # }}}
 
+installArchIso(){ # {{{
+    # https://geo.mirror.pkgbuild.com/iso/2025.05.01/archlinux-2025.05.01-x86_64.iso
+    if [[ ! -f "$storageDir/images/arch-latest.iso" ]] ; then
+        echo "arch not found"
+        downloadLink="$(curl https://archlinux.org/download/ | grep -oE 'https://geo\.mirror\.pkgbuild\.com/iso/\S+/')"
+        wget\
+            --no-use-server-timestamps\
+            --directory-prefix="$storageDir/storage"\
+            "${downloadLink}$(
+                curl "$downloadLink"\
+                    |
+                grep -oE 'archlinux-[0-9]+.+x86_64.iso'\
+                |
+                head -n1\
+                |
+                sed -E 's/".+//'
+            )"
+
+        fileName=$(ls -t "$storageDir/storage" | head -n1)
+        ln -sf "$storageDir/storage/$fileName" "$storageDir/images/arch-latest.iso"
+    fi
+} # }}}
+
+launchArchInstaller(){ # {{{
+    installArchIso
+    createQemuImage "$storageDir/images/arch-latest-drive.img" "$storageDir/storage/arch-latest-drive.img"
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -cdrom "$storageDir/images/arch-latest.iso"\
+        -drive file="$storageDir/images/arch-latest-drive.img"\
+        -boot order=d\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -vga virtio\
+        -display gtk,gl=on
+
+} # }}}
+
+launchArch(){ # {{{
+    if [[ ! -f "$storageDir/images/arch-latest-drive.img" ]] ; then
+        launchArchInstaller
+        exit 0;
+    fi
+
+    qemu-system-x86_64\
+        -enable-kvm\
+        -drive file="$storageDir/images/arch-latest-drive.img"\
+        -m "$ramSize"\
+        -cpu host\
+        -smp "$cpuCores"\
+        -vga virtio\
+        -display gtk,gl=on
+
+} # }}}
+
 declare -A menusAndCommands=( # {{{
-    [" Arch linux installer; Terminal"]="\
-        tmuxPaneOrTerminal foot \"
-            qemu-system-x86_64\
-                -enable-kvm\
-                -cdrom /mnt/D/qemu/archlinux-2025.02.01-x86_64.iso\
-                -drive file=/mnt/D/qemu/archLinuxImage\
-                -boot order=d\
-                -m \"\$ramSize\"\
-                -cpu host\
-                -smp \"\$cpuCores\"\
-                -nographic\
-        \"\
-    "
-    [" Arch linux installer; Gui"]="\
-        qemu-system-x86_64\
-            -enable-kvm\
-            -cdrom /mnt/D/qemu/archlinux-2025.02.01-x86_64.iso\
-            -drive file=/mnt/D/qemu/archLinuxImage\
-            -boot order=d\
-            -m \"\$ramSize\"\
-            -cpu host\
-            -smp \"\$cpuCores\"\
-            -full-screen\
-            -vga virtio\
-            -display sdl,gl=on\
-    "
-    [" Arch linux; Terminal"]="\
-        tmuxPaneOrTerminal foot \"
-            qemu-system-x86_64\
-                -enable-kvm\
-                -drive file=/mnt/D/qemu/archLinuxImage\
-                -m \"\$ramSize\"\
-                -cpu host\
-                -smp \"\$cpuCores\"\
-                -nographic\
-        \"\
-    "
-    [" Arch linux; Gui"]="\
-        qemu-system-x86_64\
-            -enable-kvm\
-            -drive file=/mnt/D/qemu/archLinuxImage\
-            -m \"\$ramSize\"\
-            -cpu host\
-            -smp \"\$cpuCores\"\
-            -full-screen\
-            -vga virtio\
-            -display sdl,gl=on\
-    "
+    [" Arch linux installer; Gui"]="launchArchInstaller"
+    [" Arch linux; Gui"]="launchArch"
     ["󱄅 NixOS installer; GUI"]="launchNixInstaller"
     ["󱄅 NixOS; GUI"]="launchNix"
     [" Alpine installer; GUI"]="launchAlpineInstaller"
