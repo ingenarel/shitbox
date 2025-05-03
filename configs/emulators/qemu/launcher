@@ -191,7 +191,7 @@ installGentooIso(){ # {{{
             --no-use-server-timestamps\
             --directory-prefix="$storageDir/storage"\
             "$(
-                curl curl https://www.gentoo.org/downloads/\
+                curl https://www.gentoo.org/downloads/\
                 |
                 grep -oE 'https://\S+install-amd64-minimal\S+.iso'\
                 |
