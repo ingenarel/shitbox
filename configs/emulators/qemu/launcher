@@ -136,6 +136,7 @@ installAlpineIso(){ # {{{
     if [[ ! -f "$storageDir/images/alpine-virt-latest.iso" ]] ; then
         echo "alpine not found"
         wget\
+            --no-use-server-timestamps\
             --directory-prefix="$storageDir/storage"\
             "$(
                 curl https://alpinelinux.org/downloads/\
