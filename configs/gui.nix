@@ -9,7 +9,7 @@
         ./window-manager.nix
         ./programs/kitty/init.nix
         ./programs/chatting/gui/init.nix
-        ./emulators/init.nix
+        ./programs/emulators/init.nix
     ];
 
     environment.systemPackages = with pkgs; [
