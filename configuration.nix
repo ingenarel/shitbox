@@ -18,6 +18,7 @@
         ./configs/programs/kitty/init.nix
         ./configs/programs/terminal-emulators/init.nix
         ./configs/secrets/init.nix
+        ./configs/programs/yazi/init.nix
     ];
 
     boot.loader.grub = {
@@ -66,7 +67,6 @@
         gource
         graphviz
         imagemagick
-        inputs.yazi.packages."${system}".default
         keyd
         lsd
         luajit
