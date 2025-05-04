@@ -14,5 +14,6 @@
         ".config/yazi/plugins/exifaudio.yazi".source = ./config/plugins/exifaudio.yazi;
         ".config/yazi/plugins/relative-motions.yazi".source = ./config/plugins/relative-motions.yazi;
         ".config/yazi/plugins/starship.yazi".source = ./config/plugins/starship.yazi;
+        "./config/yazi/plugins/plugins/git.yazi".source = ./config/plugins/git.yazi;
     };
 }
