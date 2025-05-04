@@ -35,7 +35,7 @@ elif grep -qEi "nixos" /etc/os-release ; then
         "Updated flakes; trying to commit..."
     update_stuff "git -C $HOME/.config/nixos-config add flake.nix flake.lock && git -C $HOME/.config/nixos-config commit -m '(auto): update'"\
         "Commited and pushed stuff; rebuilding nix"
-    update_stuff "sudo nixos-rebuild switch --flake $HOME/.config/nixos-config#NixOSBaby"\
+    update_stuff "sudo nixos-rebuild switch --flake $HOME/.config/nixos-config?submodules=1#NixOSBaby"\
         "Rebuilded nix; updating yazi plugins..."
 
 fi
