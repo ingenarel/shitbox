@@ -1,8 +1,4 @@
-{
-    inputs,
-    pkgs,
-    ...
-}: {
+{inputs, ...}: {
     home-manager.users.ingenarel = {
         imports = [
             inputs.nixcord.homeModules.nixcord
