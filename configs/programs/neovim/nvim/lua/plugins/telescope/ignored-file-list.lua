@@ -20,4 +20,7 @@ return {
     "%.kdbx",
     "%.pdf",
     "%.epub",
+    "%.aup3",
+    "%.xcf",
+    "%.dat",
 }
