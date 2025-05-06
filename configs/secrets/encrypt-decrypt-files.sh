@@ -31,7 +31,7 @@ encryptFile() {
         --s2k-digest-algo SHA512 \
         --s2k-cipher-algo AES256 \
         --s2k-count 65011712 \
-        --passphrase-file "$3"\
+        --passphrase "$3"\
         "$1"
 }
 
