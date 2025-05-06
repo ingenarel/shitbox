@@ -50,7 +50,7 @@ decryptFile() {
         rm "$1"
     fi
 
-    gpg --batch --yes --passphrase-file "$3" --output "$1" --decrypt "$2"
+    gpg --batch --yes --passphrase "$3" --output "$1" --decrypt "$2"
 }
 
 if [[ "$2" == "encrypt" ]]; then
@@ -64,7 +64,7 @@ elif [[ "$2" == "decrypt" ]]; then
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
 elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "\$HOME/.config/nixos-config/configs/secrets/encrypt-decrypt-files.sh PASSWORD_FILE_LOCATION (encrypt|decrypt)"
+    echo "\$HOME/.config/nixos-config/configs/secrets/encrypt-decrypt-files.sh PASSWORD (encrypt|decrypt)"
 else
     echo "should i encrypt or decrypt?"
     exit 1
