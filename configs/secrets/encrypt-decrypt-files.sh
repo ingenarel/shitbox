@@ -8,11 +8,6 @@ kdbxBackupDecryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/Pa
 kdbxBackupEncryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/PasswordsBackup.kdbx.gpg"
 
 encryptFile() {
-    if [[ ! -e "$3" ]]; then
-        echo "password file not found"
-        return 1
-    fi
-
     if [[ ! -e "$1" ]]; then
         echo "DECRYPTED FILE NOT FOUND!"
         return 1;
@@ -36,11 +31,6 @@ encryptFile() {
 }
 
 decryptFile() {
-    if [[ ! -e "$3" ]]; then
-        echo "password file not found"
-        return 1
-    fi
-
     if [[ ! -e "$2" ]]; then
         echo "ENCRYPTED FILE NOT FOUND!"
         return 1;
