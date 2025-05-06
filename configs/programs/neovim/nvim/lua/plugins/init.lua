@@ -80,6 +80,11 @@ require("lazy").setup {
             require("plugins.cyberpunk-neon"),
             require("plugins.simple-runner"),
             require("plugins.focus-mode"),
+            {
+                "vyfor/cord.nvim",
+                build = ":Cord update",
+                opts = true,
+            },
         },
     },
 }
