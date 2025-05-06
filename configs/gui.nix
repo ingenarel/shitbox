@@ -7,7 +7,7 @@
         ./editing/init.nix
         ./gaming.nix
         ./window-manager.nix
-        ./programs/terminal/emulators/kitty/init.nix
+        ./programs/terminal/emulators/init.nix
         ./programs/chatting/gui/init.nix
         ./programs/emulators/init.nix
     ];
