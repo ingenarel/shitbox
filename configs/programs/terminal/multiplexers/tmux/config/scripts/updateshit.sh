@@ -40,7 +40,7 @@ elif grep -qEi "nixos" /etc/os-release ; then
 
 fi
 
-update_stuff "ya pack --upgrade"\
+update_stuff "$HOME/.config/nixos-config/configs/programs/yazi/config/updatePlugins.sh"\
     "Updated yazi plugins; updating zsh plugins..."
 update_stuff "zsh -c 'source $HOME/.local/share/zinit/zinit.git/zinit.zsh && zinit update --all'"\
     "Updated zsh plugins; updating cargo packages..."
