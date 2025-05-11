@@ -60,6 +60,7 @@
         btop
         cargo
         clang
+        cmatrix
         fastfetch
         fzf
         gnumake
@@ -77,6 +78,7 @@
         nodejs
         ntfs3g
         p7zip
+        pipes-rs
         resvg
         ripgrep
         rustc
