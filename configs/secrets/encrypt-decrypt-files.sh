@@ -49,6 +49,9 @@ if [[ "$2" == "encrypt" ]]; then
     encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
 elif [[ "$2" == "decrypt" ]]; then
     decryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
+    if [[ ! -d "$HOME/.ssh" ]]; then
+        mkdir "$HOME/.ssh"
+    fi
     cp -f "$sshDecryptedFile" "$HOME/.ssh/git"
     chmod 600 "$HOME/.ssh/git"
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
