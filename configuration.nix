@@ -119,6 +119,8 @@
         ydotool.enable = true;
     };
 
+    security.sudo.package = pkgs.sudo.override {withInsults = true;};
+
     services = {
         keyd = {
             enable = true;
