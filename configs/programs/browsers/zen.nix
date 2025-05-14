@@ -23,7 +23,7 @@
                     settings = [
                         {
                             name = "archwiki";
-                            url = "wiki.archlinux.org";
+                            url = "https://wiki.archlinux.org";
                         }
                     ];
                 };
