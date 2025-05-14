@@ -18,7 +18,7 @@
                 DisableFirefoxStudies = true;
                 DisablePocket = true;
                 DontCheckDefaultBrowser = true;
-                NoDefaultBookmarks = true;
+                NoDefaultBookmarks = false;
                 OfferToSaveLogins = false;
             };
             profiles.default = {
