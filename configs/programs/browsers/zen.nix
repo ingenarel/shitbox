@@ -16,13 +16,13 @@
                 DontCheckDefaultBrowser = true;
                 NoDefaultBookmarks = true;
                 OfferToSaveLogins = false;
-                Bookmarks = [
-                    {
-                        Title = "archwiki";
-                        URL = "wiki.archlinux.org";
-                    }
-                ];
             };
+            bookmarks = [
+                {
+                    Title = "archwiki";
+                    URL = "wiki.archlinux.org";
+                }
+            ];
         };
     };
 }
