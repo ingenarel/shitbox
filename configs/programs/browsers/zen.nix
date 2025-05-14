@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+    inputs,
+    pkgs,
+    ...
+}: {
     home-manager.users.ingenarel = {
         imports = [
             inputs.zen-browser.homeModules.twilight-official
@@ -59,6 +63,12 @@
                         }
                     ];
                 };
+                extensions = with inputs.firefox-addons.packages."${pkgs.system}"; [
+                    keepassxc-browser
+                    vimium
+                    proton-vpn
+                    ublock-origin
+                ];
             };
         };
     };
