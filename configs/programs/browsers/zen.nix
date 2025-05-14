@@ -22,8 +22,8 @@
                     force = true;
                     settings = [
                         {
-                            Title = "archwiki";
-                            URL = "wiki.archlinux.org";
+                            title = "archwiki";
+                            url = "wiki.archlinux.org";
                         }
                     ];
                 };
