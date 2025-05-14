@@ -54,10 +54,6 @@
                             url = "https://home-manager-options.extranix.com";
                         }
                         {
-                            name = "home manager options";
-                            url = "https://home-manager-options.extranix.com";
-                        }
-                        {
                             name = "nixos search";
                             url = "https://search.nixos.org/packages";
                         }
