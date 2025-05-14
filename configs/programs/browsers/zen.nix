@@ -25,6 +25,26 @@
                             name = "archwiki";
                             url = "https://wiki.archlinux.org";
                         }
+                        {
+                            name = "gentoowiki";
+                            url = "https://wiki.gentoo.org";
+                        }
+                        {
+                            name = "nixwiki";
+                            url = "https://wiki.nixos.org";
+                        }
+                        {
+                            name = "github";
+                            url = "https://github.com";
+                        }
+                        {
+                            name = "gitlab";
+                            url = "https://gitlab.com";
+                        }
+                        {
+                            name = "youtube";
+                            url = "https://www.youtube.com";
+                        }
                     ];
                 };
             };
