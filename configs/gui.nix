@@ -10,10 +10,10 @@
         ./programs/terminal/emulators/init.nix
         ./programs/chatting/gui/init.nix
         ./programs/emulators/init.nix
+        ./programs/browsers/zen.nix
     ];
 
     environment.systemPackages = with pkgs; [
-        inputs.zen-browser.packages."${system}".twilight-official
         keepassxc
         pavucontrol
         qbittorrent
