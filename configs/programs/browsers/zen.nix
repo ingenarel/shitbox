@@ -63,12 +63,15 @@
                         }
                     ];
                 };
-                extensions = with inputs.firefox-addons.packages."${pkgs.system}"; [
-                    keepassxc-browser
-                    vimium
-                    proton-vpn
-                    ublock-origin
-                ];
+                extensions = {
+                    force = true;
+                    packages = with inputs.firefox-addons.packages."${pkgs.system}"; [
+                        keepassxc-browser
+                        vimium
+                        proton-vpn
+                        ublock-origin
+                    ];
+                };
             };
         };
     };
