@@ -22,7 +22,7 @@
                     force = true;
                     settings = [
                         {
-                            title = "archwiki";
+                            name = "archwiki";
                             url = "wiki.archlinux.org";
                         }
                     ];
