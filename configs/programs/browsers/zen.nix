@@ -68,6 +68,9 @@
                         ublock-origin
                     ];
                 };
+                settings = {
+                    "extensions.autoDisableScopes" = 0;
+                };
             };
         };
     };
