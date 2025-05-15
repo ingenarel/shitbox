@@ -70,6 +70,7 @@
                 };
                 settings = {
                     "extensions.autoDisableScopes" = 0;
+                    "zen.welcome-screen.seen" = true;
                 };
                 search = {
                     force = true;
