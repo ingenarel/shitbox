@@ -27,6 +27,7 @@
                         "https://github.com"
                         "https://gitlab.com"
                         "https://www.youtube.com"
+                        "https://www.instagram.com"
                     ];
                 };
             };
@@ -65,6 +66,10 @@
                         {
                             name = "nixos search";
                             url = "https://search.nixos.org/packages";
+                        }
+                        {
+                            name = "instagram";
+                            url = "https://www.instagram.com/direct";
                         }
                     ];
                 };
