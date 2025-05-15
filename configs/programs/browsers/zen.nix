@@ -71,6 +71,10 @@
                 settings = {
                     "extensions.autoDisableScopes" = 0;
                 };
+                search = {
+                    force = true;
+                    default = "ddg";
+                };
             };
         };
     };
