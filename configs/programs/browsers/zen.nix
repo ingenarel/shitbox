@@ -81,6 +81,8 @@
                     "extensions.autoDisableScopes" = 0;
                     "zen.welcome-screen.seen" = true;
                     "privacy.sanitize.sanitizeOnShutdown" = true;
+                    "zen.view.compact.hide-toolbar" = true;
+                    "browser.compactmode.show" = true;
                 };
                 search = {
                     force = true;
