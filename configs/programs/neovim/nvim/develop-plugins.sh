@@ -17,6 +17,9 @@ addGitlabURL "$HOME/coding/git/metapack.nvim/.git/config"
 git clone git@github.com:ingenarel/luix.nvim "$HOME/coding/git/luix.nvim"
 addGitlabURL "$HOME/coding/git/luix.nvim/.git/config"
 
+git clone git@github.com:ingenarel/luse.nvim "$HOME/coding/git/luse.nvim"
+addGitlabURL "$HOME/coding/git/luse.nvim/.git/config"
+
 git clone git@github.com:ingenarel/smart-term.nvim "$HOME/coding/git/smart-term.nvim"
 addGitlabURL  "$HOME/coding/git/smart-term.nvim/.git/config"
 
