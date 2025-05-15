@@ -19,10 +19,12 @@ local m = {
                 "pyright",
                 "clangd",
                 "lua-language-server",
-                "bash-language-server",
+                { "bash-language-server", os = "gentoo", mason = true },
+                { "bash-language-server", default = true },
                 "termux-language-server",
                 "ltex-ls-plus",
-                "yaml-language-server",
+                { "yaml-language-server", os = "gentoo", mason = true },
+                { "yaml-language-server", default = true },
                 "rust-analyzer",
                 --lsp
                 --dap
