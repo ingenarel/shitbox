@@ -20,6 +20,15 @@
                 DontCheckDefaultBrowser = true;
                 NoDefaultBookmarks = false;
                 OfferToSaveLogins = false;
+                Cookies = {
+                    Allow = [
+                        "https://archlinux.org"
+                        "https://gentoo.org"
+                        "https://github.com"
+                        "https://gitlab.com"
+                        "https://www.youtube.com"
+                    ];
+                };
             };
             profiles.default = {
                 bookmarks = {
