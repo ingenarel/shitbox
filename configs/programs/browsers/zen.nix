@@ -71,6 +71,7 @@
                 settings = {
                     "extensions.autoDisableScopes" = 0;
                     "zen.welcome-screen.seen" = true;
+                    "privacy.sanitize.sanitizeOnShutdown" = true;
                 };
                 search = {
                     force = true;
