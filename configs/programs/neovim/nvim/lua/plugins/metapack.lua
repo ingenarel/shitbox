@@ -17,7 +17,8 @@ local m = {
             ensure_installed = {
                 --lsp
                 "pyright",
-                "clangd",
+                { "clangd", os = "gentoo", mason = true },
+                { "clangd", default = true },
                 "lua-language-server",
                 { "bash-language-server", os = "gentoo", mason = true },
                 { "bash-language-server", default = true },
