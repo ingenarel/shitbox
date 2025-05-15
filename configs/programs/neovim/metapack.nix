@@ -8,10 +8,12 @@
         bash-language-server
         black
         clang-tools
+        clang-tools
         ltex-ls-plus
         lua-language-server
         nil
         pyright
+        rust-analyzer
         stylua
         yaml-language-server
         (pkgs.python313.withPackages (python313Packages: [
