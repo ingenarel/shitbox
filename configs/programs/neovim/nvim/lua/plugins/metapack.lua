@@ -8,6 +8,7 @@ local m = {
             config = true,
         },
         require("plugins.luix"),
+        require("plugins.luse"),
     },
     config = function()
         require("metapack").setup {
