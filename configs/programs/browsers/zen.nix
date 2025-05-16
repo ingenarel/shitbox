@@ -28,6 +28,7 @@
                         "https://gitlab.com"
                         "https://www.youtube.com"
                         "https://www.instagram.com"
+                        "https://chatgpt.com"
                     ];
                 };
             };
@@ -70,6 +71,10 @@
                         {
                             name = "instagram";
                             url = "https://www.instagram.com/direct";
+                        }
+                        {
+                            name = "chatgpt";
+                            url = "https://chatgpt.com";
                         }
                     ];
                 };
