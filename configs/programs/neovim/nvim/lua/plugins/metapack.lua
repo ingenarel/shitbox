@@ -16,13 +16,13 @@ local m = {
             nixFlakeDir = os.getenv("HOME") .. "/.config/nixos-config",
             ensure_installed = {
                 --lsp
-                "pyright",
+                { gentoo = { "pyright" }, default = "pyright" },
                 { gentoo = { "clangd", mason = true }, default = "clangd" },
                 "lua-language-server",
-                { gentoo = { "bash-language-server", mason = true }, default = "bash-language-server" },
+                { gentoo = { "bash-language-server" }, default = "bash-language-server" },
                 "termux-language-server",
                 "ltex-ls-plus",
-                { gentoo = { "yaml-language-server", mason = true }, default = "yaml-language-server" },
+                { gentoo = { "yaml-language-server" }, default = "yaml-language-server" },
                 "rust-analyzer",
                 --lsp
                 --dap
@@ -35,7 +35,7 @@ local m = {
                 "stylua",
                 "clang-format",
                 "beautysh",
-                "nil",
+                { gentoo = { "nil" }, default = "nil" },
                 "alejandra",
                 --formatter
             },
