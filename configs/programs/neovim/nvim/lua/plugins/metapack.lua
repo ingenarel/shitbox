@@ -17,15 +17,12 @@ local m = {
             ensure_installed = {
                 --lsp
                 "pyright",
-                { "clangd", os = "gentoo", mason = true },
-                { "clangd", default = true },
+                { gentoo = { "clangd", mason = true }, default = "clangd" },
                 "lua-language-server",
-                { "bash-language-server", os = "gentoo", mason = true },
-                { "bash-language-server", default = true },
+                { gentoo = { "bash-language-server", mason = true }, default = "bash-language-server" },
                 "termux-language-server",
                 "ltex-ls-plus",
-                { "yaml-language-server", os = "gentoo", mason = true },
-                { "yaml-language-server", default = true },
+                { gentoo = { "yaml-language-server", mason = true }, default = "yaml-language-server" },
                 "rust-analyzer",
                 --lsp
                 --dap
