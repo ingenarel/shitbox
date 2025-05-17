@@ -13,3 +13,6 @@
 [submodule "configs/programs/dwl/source"]
 	path = configs/programs/dwl/source
 	url = https://github.com/ingenarel/dwl.git
+[submodule "configs/programs/emulators/qemu/qemu-launcher"]
+	path = configs/programs/emulators/qemu/qemu-launcher
+	url = https://github.com/ingenarel/qemu-launcher
