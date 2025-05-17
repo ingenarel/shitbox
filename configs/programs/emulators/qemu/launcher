@@ -215,7 +215,7 @@ installGentooIso(){ # {{{
 launchGentooInstaller(){ # {{{
     installGentooIso
     createQemuImage "$storageDir/images/gentoo-latest-drive.img" "$storageDir/storage/gentoo-latest-drive.img"
-    launchQemu "$storageDir/images/gentoo-latest-drive" "$storageDir/images/gentoo-latest.iso"
+    launchQemu "$storageDir/images/gentoo-latest-drive.img" "$storageDir/images/gentoo-latest.iso"
 } # }}}
 
 launchGentoo(){ # {{{
@@ -223,7 +223,7 @@ launchGentoo(){ # {{{
         launchGentooInstaller
         exit 0;
     fi
-    launchQemu "$storageDir/images/gentoo-latest-drive"
+    launchQemu "$storageDir/images/gentoo-latest-drive.img"
 } # }}}
 
 installNixIso(){ # {{{
