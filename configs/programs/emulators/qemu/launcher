@@ -69,6 +69,34 @@ changeQemuCpu(){ # {{{
     grep -oE '^[0-9]+'
 } # }}}
 
+launchQemu(){ #{{{
+    if [[ $2 == "" ]]; then
+        qemu-system-x86_64\
+            -enable-kvm\
+            -drive file="$1"\
+            -m "$ramSize"\
+            -cpu host\
+            -smp "$cpuCores"\
+            -vga virtio\
+            -display gtk,gl=on\
+            -net nic\
+            -net user,hostfwd=tcp::10022-:22
+    else
+        qemu-system-x86_64\
+            -enable-kvm\
+            -cdrom "$2"\
+            -drive file="$1"\
+            -boot order=d\
+            -m "$ramSize"\
+            -cpu host\
+            -smp "$cpuCores"\
+            -vga virtio\
+            -display gtk,gl=on\
+            -net nic\
+            -net user,hostfwd=tcp::10022-:22
+    fi
+} #}}}
+
 declare -A settings=( # {{{
     [" Memory"]="ramSize=\"\$(changeQemuRam)\""
     [" Cpu"]="cpuCores=\"\$(changeQemuCpu)\""
@@ -154,18 +182,7 @@ installAlpineIso(){ # {{{
 launchAlpineInstaller(){ # {{{
     installAlpineIso
     createQemuImage "$storageDir/images/alpine-virt-latest-drive.img" "$storageDir/storage/alpine-virt-latest-drive.img"
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -cdrom "$storageDir/images/alpine-virt-latest.iso"\
-        -drive file="$storageDir/images/alpine-virt-latest-drive.img"\
-        -boot order=d\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/alpine-virt-latest-drive.img" "$storageDir/images/alpine-virt-latest.iso"
 } # }}}
 
 launchAlpine(){ # {{{
@@ -173,15 +190,7 @@ launchAlpine(){ # {{{
         launchAlpineInstaller
         exit 0;
     fi
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -drive file="$storageDir/images/alpine-virt-latest-drive.img"\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
+    launchQemu "$storageDir/images/alpine-virt-latest-drive.img"
 } # }}}
 
 installGentooIso(){ # {{{
@@ -206,18 +215,7 @@ installGentooIso(){ # {{{
 launchGentooInstaller(){ # {{{
     installGentooIso
     createQemuImage "$storageDir/images/gentoo-latest-drive.img" "$storageDir/storage/gentoo-latest-drive.img"
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -cdrom "$storageDir/images/gentoo-latest.iso"\
-        -drive file="$storageDir/images/gentoo-latest-drive.img"\
-        -boot order=d\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/gentoo-latest-drive" "$storageDir/images/gentoo-latest.iso"
 } # }}}
 
 launchGentoo(){ # {{{
@@ -225,16 +223,7 @@ launchGentoo(){ # {{{
         launchGentooInstaller
         exit 0;
     fi
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -drive file="$storageDir/images/gentoo-latest-drive.img"\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/gentoo-latest-drive"
 } # }}}
 
 installNixIso(){ # {{{
@@ -259,18 +248,7 @@ installNixIso(){ # {{{
 launchNixInstaller(){ # {{{
     installNixIso
     createQemuImage "$storageDir/images/nix-latest-drive.img" "$storageDir/storage/nix-latest-drive.img"
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -cdrom "$storageDir/images/nix-latest.iso"\
-        -drive file="$storageDir/images/nix-latest-drive.img"\
-        -boot order=d\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/nix-latest-drive.img" "$storageDir/images/nix-latest.iso"
 } # }}}
 
 launchNix(){ # {{{
@@ -278,16 +256,7 @@ launchNix(){ # {{{
         launchNixInstaller
         exit 0;
     fi
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -drive file="$storageDir/images/nix-latest-drive.img"\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/nix-latest-drive.img"
 } # }}}
 
 installArchIso(){ # {{{
@@ -316,18 +285,7 @@ installArchIso(){ # {{{
 launchArchInstaller(){ # {{{
     installArchIso
     createQemuImage "$storageDir/images/arch-latest-drive.img" "$storageDir/storage/arch-latest-drive.img"
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -cdrom "$storageDir/images/arch-latest.iso"\
-        -drive file="$storageDir/images/arch-latest-drive.img"\
-        -boot order=d\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/arch-latest-drive.img" "$storageDir/images/arch-latest.iso"
 } # }}}
 
 launchArch(){ # {{{
@@ -335,16 +293,7 @@ launchArch(){ # {{{
         launchArchInstaller
         exit 0;
     fi
-
-    qemu-system-x86_64\
-        -enable-kvm\
-        -drive file="$storageDir/images/arch-latest-drive.img"\
-        -m "$ramSize"\
-        -cpu host\
-        -smp "$cpuCores"\
-        -vga virtio\
-        -display gtk,gl=on
-
+    launchQemu "$storageDir/images/arch-latest-drive.img"
 } # }}}
 
 declare -A menusAndCommands=( # {{{
