@@ -10,3 +10,6 @@
 [submodule "configs/programs/yazi/config/plugins/relative-motions.yazi"]
 	path = configs/programs/yazi/config/plugins/relative-motions.yazi
 	url = https://github.com/dedukun/relative-motions.yazi.git
+[submodule "configs/programs/dwl/source"]
+	path = configs/programs/dwl/source
+	url = https://github.com/ingenarel/dwl.git
