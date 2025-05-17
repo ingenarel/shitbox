@@ -45,12 +45,6 @@ function CK_FloatermExecuteCommand(autoclosevalue)
             .. command
     )
 end
-vim.keymap.set("n", "<leader><leader>e", function()
-    CK_FloatermExecuteCommand(1)
-end, { desc = "Execute command and tries to close the terminal", silent = true, noremap = true })
-vim.keymap.set("n", "<leader><leader>E", function()
-    CK_FloatermExecuteCommand(0)
-end, { desc = "Execute command and keeps the terminal open", silent = true, noremap = true })
 vim.keymap.set("t", "<M-esc>", "<C-\\><C-n>", { silent = true, noremap = true })
 -- terminal }}}1
 
