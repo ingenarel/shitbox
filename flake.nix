@@ -32,6 +32,10 @@
             url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        qemu-launcher = {
+            url = "github:ingenarel/qemu-launcher";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {
