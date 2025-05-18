@@ -1,7 +1,7 @@
 return {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons", "ingenarel/randomtips-nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons", require("plugins.randomtips") },
     config = function()
         require("dashboard").setup {
             theme = "doom",
