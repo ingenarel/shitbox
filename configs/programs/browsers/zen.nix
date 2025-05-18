@@ -93,6 +93,8 @@
                     "privacy.sanitize.sanitizeOnShutdown" = true;
                     "zen.view.compact.hide-toolbar" = true;
                     "browser.compactmode.show" = true;
+                    "browser.tabs.allow_transparent_browser" = true;
+                    "zen.widget.linux.transparency" = true;
                 };
                 search = {
                     force = true;
