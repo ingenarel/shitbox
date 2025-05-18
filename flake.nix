@@ -28,6 +28,7 @@
             url = "github:unixpariah/seto";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        # nix flake show "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"
         firefox-addons = {
             url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
             inputs.nixpkgs.follows = "nixpkgs";
