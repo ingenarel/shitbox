@@ -54,7 +54,7 @@ elif [[ "$2" == "decrypt" ]]; then
     fi
     cp -f "$sshDecryptedFile" "$HOME/.ssh/git"
     chmod 600 "$HOME/.ssh/git"
-    if ! grep -qEi "gentoo" /etc/os-release ; then
+    if ! grep -qEi "nix" /etc/os-release ; then
         cp "${sshDecryptedFile}.pub" "$HOME/.ssh/git.pub"
         cp "$HOME/.config/nixos-config/configs/secrets/ssh/config" "$HOME/.ssh/config"
     fi
