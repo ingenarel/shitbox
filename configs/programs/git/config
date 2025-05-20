@@ -2,14 +2,10 @@
 [user]
 	email = ingenarelitems@gmail.com
 	name = ingenarel
-	signingkey = /home/ingenarel/.ssh/git.pub
-[gpg]
-	format = ssh
-[gpg "ssh"]
-    allowedSignersFile = /home/ingenarel/.config/nixos-config/configs/programs/git/allowedSigners
+	signingkey = 66D11DC0EFAC2F99D0A687F91E81128A3F325C35
+[commit]
+    gpgsign = true
 [core]
 	editor = nvim
-[commit]
-	gpgsign = true
 [tag]
 	gpgSign = true
