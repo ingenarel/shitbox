@@ -5,6 +5,8 @@
 	signingkey = /home/ingenarel/.ssh/git.pub
 [gpg]
 	format = ssh
+[gpg "ssh"]
+    allowedSignersFile = /home/ingenarel/.config/nixos-config/configs/programs/git/allowedSigners
 [core]
 	editor = nvim
 [commit]
