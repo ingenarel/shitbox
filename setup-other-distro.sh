@@ -8,8 +8,8 @@ setupConfigs(){
     ln -sf "$HOME/.config/nixos-config/configs/programs/terminal/multiplexers/tmux/config" "$HOME/.config/tmux"
     ln -sf "$HOME/.config/nixos-config/configs/programs/terminal/multiplexers/tmux/tmux-powerline-config" "$HOME/.config/tmux-powerline"
     ln -sf "$HOME/.config/nixos-config/configs/programs/zsh/config" "$HOME/.config/zsh"
+    ln -sf $HOME/.config/nixos-config/configs/programs/git/config $HOME/.gitconfig
     echo "source $HOME/.config/zsh/init.zsh" > "$HOME/.zshrc"
 }
-
 
 setupConfigs
