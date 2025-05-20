@@ -8,6 +8,8 @@ kdbxDecryptedFile="$scriptDir/passwords/Passwords.kdbx"
 kdbxEncryptedFile="$scriptDir/passwords/Passwords.kdbx.gpg"
 kdbxBackupDecryptedFile="$scriptDir/passwords/PasswordsBackup.kdbx"
 kdbxBackupEncryptedFile="$scriptDir/passwords/PasswordsBackup.kdbx.gpg"
+gpgSignDecryptedFile="$scriptDir/gpg/gitSign"
+gpgSignEncryptedFile="$scriptDir/gpg/gitSign.gpg"
 
 encryptFile() {
     if [[ ! -e "$1" ]]; then
@@ -49,6 +51,7 @@ if [[ "$2" == "encrypt" ]]; then
     encryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
     encryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
+    encryptFile "$gpgSignDecryptedFile" "$gpgSignEncryptedFile" "$1"
 elif [[ "$2" == "decrypt" ]]; then
     decryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
     if [[ ! -d "$HOME/.ssh" ]]; then
@@ -62,6 +65,10 @@ elif [[ "$2" == "decrypt" ]]; then
     fi
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
+    decryptFile "$gpgSignDecryptedFile" "$gpgSignEncryptedFile" "$1"
+    gpg --import "$gpgSignDecryptedFile"
+    gpg --import "${gpgSignDecryptedFile}.pub"
+    gpg --edit-key "ingenarelitems@gmail.com"
 elif [[ -z $1 || $1 == "--help" || $1 == "-h" ]]; then
     echo "$scriptDir/encrypt-decrypt-files.sh PASSWORD (encrypt|decrypt)"
 fi
