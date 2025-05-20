@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-sshDecryptedFile="$HOME/.config/nixos-config/configs/secrets/ssh/git"
-sshEncryptedFile="$HOME/.config/nixos-config/configs/secrets/ssh/git.gpg"
-kdbxDecryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/Passwords.kdbx"
-kdbxEncryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/Passwords.kdbx.gpg"
-kdbxBackupDecryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/PasswordsBackup.kdbx"
-kdbxBackupEncryptedFile="$HOME/.config/nixos-config/configs/secrets/passwords/PasswordsBackup.kdbx.gpg"
+scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+
+sshDecryptedFile="$scriptDir/ssh/git"
+sshEncryptedFile="$scriptDir/ssh/git.gpg"
+kdbxDecryptedFile="$scriptDir/passwords/Passwords.kdbx"
+kdbxEncryptedFile="$scriptDir/passwords/Passwords.kdbx.gpg"
+kdbxBackupDecryptedFile="$scriptDir/passwords/PasswordsBackup.kdbx"
+kdbxBackupEncryptedFile="$scriptDir/passwords/PasswordsBackup.kdbx.gpg"
 
 encryptFile() {
     if [[ ! -e "$1" ]]; then
@@ -56,13 +58,10 @@ elif [[ "$2" == "decrypt" ]]; then
     chmod 600 "$HOME/.ssh/git"
     if ! grep -qEi "nix" /etc/os-release ; then
         cp "${sshDecryptedFile}.pub" "$HOME/.ssh/git.pub"
-        cp "$HOME/.config/nixos-config/configs/secrets/ssh/config" "$HOME/.ssh/config"
+        cp "$scriptDir/ssh/config" "$HOME/.ssh/config"
     fi
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
-elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "\$HOME/.config/nixos-config/configs/secrets/encrypt-decrypt-files.sh PASSWORD (encrypt|decrypt)"
-else
-    echo "should i encrypt or decrypt?"
-    exit 1
+elif [[ -z $1 || $1 == "--help" || $1 == "-h" ]]; then
+    echo "$scriptDir/encrypt-decrypt-files.sh PASSWORD (encrypt|decrypt)"
 fi
