@@ -9,6 +9,7 @@
         black
         clang-tools
         clang-tools
+        jq
         ltex-ls-plus
         lua-language-server
         nil

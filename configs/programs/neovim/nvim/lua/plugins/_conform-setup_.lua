@@ -22,6 +22,7 @@ return {
                 sh = { "beautysh" },
                 ebuild = { "beautysh" },
                 nix = { "alejandra" },
+                json = { "jq" },
             },
         }
 

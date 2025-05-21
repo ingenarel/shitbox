@@ -51,5 +51,6 @@ return {
         }
         require("plugins.lsp.termux-language-server")
         lspconfig.nil_ls.setup {}
+        lspconfig.jsonls.setup {}
     end,
 }

@@ -24,6 +24,7 @@ local m = {
                 "ltex-ls-plus",
                 { gentoo = { "yaml-language-server" }, default = "yaml-language-server" },
                 "rust-analyzer",
+                "json-lsp",
                 --lsp
                 --dap
                 "codelldb",
@@ -37,6 +38,7 @@ local m = {
                 "beautysh",
                 { gentoo = { "nil" }, default = "nil" },
                 "alejandra",
+                "jq",
                 --formatter
             },
         }
