@@ -3,11 +3,14 @@ return {
     config = function()
         local conform = require("conform")
         conform.formatters.beautysh = {
-            prepend_args = function(self, ctx)
+            prepend_args = function()
                 if vim.opt_local.filetype._value == "ebuild" then
                     return { "-t" }
                 end
             end,
+        }
+        conform.formatters.jq = {
+            prepend_args = { "--indent", "4" },
         }
 
         conform.setup {
