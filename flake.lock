@@ -447,26 +447,6 @@
         "type": "github"
       }
     },
-    "qemu-launcher": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1747790072,
-        "narHash": "sha256-LFd9zRGoynz5wyXSeKwhhn71if4cf7HicAxUkN7rzDI=",
-        "owner": "ingenarel",
-        "repo": "qemu-launcher",
-        "rev": "066e58d20e7e202e42d6d0d52bcf97a2a28b93f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ingenarel",
-        "repo": "qemu-launcher",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
@@ -475,7 +455,6 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_2",
-        "qemu-launcher": "qemu-launcher",
         "seto": "seto",
         "yazi": "yazi",
         "zen-browser": "zen-browser"
