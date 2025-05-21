@@ -2,8 +2,7 @@
     "position": "top",
     "spacing": 3,
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/media"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "hyprland/window"
@@ -20,17 +19,24 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}: {icon}",
+        "format": "{name}{icon}{windows}{icon}",
         "format-icons": {
-            "urgent": "",
-            "default": "",
-            "active": ""
+            "default": " ",
+            "active": "┃"
+        },
+        "window-rewrite-default": " ",
+        "window-rewrite": {
+            "class<kitty|foot|wezterm>": " ",
+            "class<vesktop|discord|legcord>": " ",
+            "class<zen|firefox|librewolf>": " ",
+            "class<gimp>": " ",
+            "class<blender>": " ",
+            "class<kdenlive>": " ",
+            "title<.*gitlab.*>": " ",
+            "title<.*youtube.*>": " ",
+            "title<.*github.*>": " ",
+            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": " "
         }
-    },
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "python ~/.config/wofi/shutdown.py",
-        "tooltip": false
     },
     "custom/notifs": {
         "tooltip": false,
@@ -150,16 +156,5 @@
             ]
         },
         "on-click": "hyprctl dispatch exec '[float; size 50% 30%]'pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     }
 }
