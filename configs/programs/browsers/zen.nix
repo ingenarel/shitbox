@@ -85,6 +85,7 @@
                         vimium
                         proton-vpn
                         ublock-origin
+                        sponsorblock
                     ];
                 };
                 settings = {
