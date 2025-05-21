@@ -25,3 +25,6 @@ setupConfigs(){
 }
 
 setupConfigs
+
+git submodule init
+git submodule update
