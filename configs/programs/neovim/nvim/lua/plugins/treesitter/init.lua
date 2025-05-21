@@ -34,14 +34,16 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        main = "nvim-treesitter.configs",
-        config = {
-            ensure_installed = require("plugins.treesitter.ensure-installed"),
-            sync_install = false,
-            auto_install = false,
-            highlight = {
-                enable = true,
-            },
-        },
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                ensure_installed = require("plugins.treesitter.ensure-installed"),
+                sync_install = false,
+                auto_install = false,
+                highlight = {
+                    enable = true,
+                },
+            }
+            vim.treesitter.language.register("bash", "ebuild")
+        end,
     },
 }

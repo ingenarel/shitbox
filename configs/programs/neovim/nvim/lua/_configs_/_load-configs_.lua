@@ -54,3 +54,9 @@ vim.opt.fileformats = "unix,dos"
 -- vo.matchpairs = "(:),{:},[:],<:>"
 vim.opt.matchpairs = "(:),{:},[:]"
 vim.opt.guifont = "Hack Nerd Font:h8"
+
+vim.filetype.add {
+    extension = {
+        ebuild = "ebuild",
+    },
+}

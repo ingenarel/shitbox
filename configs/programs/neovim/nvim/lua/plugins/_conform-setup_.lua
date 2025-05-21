@@ -1,7 +1,16 @@
 return {
     "stevearc/conform.nvim",
     config = function()
-        require("conform").setup {
+        local conform = require("conform")
+        conform.formatters.beautysh = {
+            prepend_args = function(self, ctx)
+                if vim.opt_local.filetype._value == "ebuild" then
+                    return { "-t" }
+                end
+            end,
+        }
+
+        conform.setup {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "black" },
@@ -11,6 +20,7 @@ return {
                 ksh = { "beautysh" },
                 zsh = { "beautysh" },
                 sh = { "beautysh" },
+                ebuild = { "beautysh" },
                 nix = { "alejandra" },
             },
         }
