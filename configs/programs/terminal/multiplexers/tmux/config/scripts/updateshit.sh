@@ -31,16 +31,16 @@ elif grep -qEi "arch" /etc/os-release ; then
         "Updated system packages; updating yazi plugins"
 
 elif grep -qEi "nixos" /etc/os-release ; then
-    update_stuff "nix flake update --flake $HOME/.config/nixos-config"\
+    update_stuff "nix flake update --flake $HOME/.config/shitbox"\
         "Updated flakes; trying to commit..."
-    update_stuff "git -C $HOME/.config/nixos-config add flake.nix flake.lock && git -C $HOME/.config/nixos-config commit -m '(auto): update'"\
+    update_stuff "git -C $HOME/.config/shitbox add flake.nix flake.lock && git -C $HOME/.config/shitbox commit -m '(auto): update'"\
         "Commited and pushed stuff; rebuilding nix"
-    update_stuff "sudo nixos-rebuild switch --flake $HOME/.config/nixos-config?submodules=1#NixOSBaby"\
+    update_stuff "sudo nixos-rebuild switch --flake $HOME/.config/shitbox?submodules=1#NixOSBaby"\
         "Rebuilded nix; updating yazi plugins..."
 
 fi
 
-update_stuff "$HOME/.config/nixos-config/configs/programs/yazi/config/updatePlugins.sh"\
+update_stuff "$HOME/.config/shitbox/configs/programs/yazi/config/updatePlugins.sh"\
     "Updated yazi plugins; updating zsh plugins..."
 update_stuff "zsh -c 'source $HOME/.local/share/zinit/zinit.git/zinit.zsh && zinit update --all'"\
     "Updated zsh plugins; updating cargo packages..."
@@ -50,5 +50,5 @@ update_stuff "$HOME/.tmux/plugins/tpm/bin/clean_plugins && $HOME/.tmux/plugins/t
     "Updated tmux plugins; updating neovim plugins..."
 update_stuff "nvim --headless '+Lazy! clean' '+Lazy! update' '+MasonUpdate'"\
     "Updated neovim plugins; updating neovim local plugins"
-update_stuff "$HOME/.config/nixos-config/config/programs/neovim/nvim/develop-plugins.sh"\
+update_stuff "$HOME/.config/shitbox/config/programs/neovim/nvim/develop-plugins.sh"\
     "Updated local plugins"

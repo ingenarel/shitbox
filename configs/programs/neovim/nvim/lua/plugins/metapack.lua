@@ -12,8 +12,8 @@ local m = {
     },
     config = function()
         require("metapack").setup {
-            nixOutputFile = os.getenv("HOME") .. "/.config/nixos-config/configs/programs/neovim/metapack.nix",
-            nixFlakeDir = os.getenv("HOME") .. "/.config/nixos-config",
+            nixOutputFile = os.getenv("HOME") .. "/.config/shitbox/configs/programs/neovim/metapack.nix",
+            nixFlakeDir = os.getenv("HOME") .. "/.config/shitbox",
             ensure_installed = {
                 --lsp
                 { gentoo = { "pyright" }, default = "pyright" },
