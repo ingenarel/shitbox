@@ -35,6 +35,7 @@
             "title<.*gitlab.*>": " ",
             "title<.*youtube.*>": " ",
             "title<.*github.*>": " ",
+            "title<.*instagram.*>": " ",
             "title<.*keepassxc.*>": "🔑",
             "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️"
         }
