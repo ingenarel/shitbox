@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
 systemctl enable --now NetworkManager
 
@@ -14,3 +15,4 @@ passwd ingenarel
 [[ -z $2 || $2 == "mbr" ]] &&\
     grub-install --target=i386-pc "/dev/$1" &&\
     grub-mkconfig -o /boot/grub/grub.cfg
+"$scriptDir/../configs/setup.sh"
