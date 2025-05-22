@@ -15,4 +15,8 @@ passwd ingenarel
 [[ -z $2 || $2 == "mbr" ]] &&\
     grub-install --target=i386-pc "/dev/$1" &&\
     grub-mkconfig -o /boot/grub/grub.cfg
-"$scriptDir/../configs/setup.sh"
+
+shitboxDir="/home/ingenarel/.config/shitbox"
+[[ -d $shitboxDir ]] && mkdir --parents "$shitboxDir"
+git clone https://github.com/ingenarel/shitbox "$shitboxDir"
+"$shitboxDir/configs/setup.sh"
