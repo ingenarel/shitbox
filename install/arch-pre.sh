@@ -22,4 +22,4 @@ pacstrap -K /mnt\
     sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 cp "$scriptDir/arch-post.sh" "/mnt/tmp"
-arch-chroot /mnt "/usr/bin/bash" "-c" "/tmp/arch-post.sh $1 mbr"
+arch-chroot /mnt "/tmp/arch-post.sh" "$1" "mbr"
