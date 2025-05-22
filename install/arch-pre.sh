@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
-
 mbr(){
     mkfs.ext4 "/dev/$1"
 }
@@ -21,5 +19,10 @@ pacstrap -K /mnt\
     man-db\
     sudo
 genfstab -U /mnt >> /mnt/etc/fstab
-cp "$scriptDir/arch-post.sh" "/mnt/tmp"
-arch-chroot /mnt "/tmp/arch-post.sh" "$1" "mbr"
+shitboxDir="/home/ingenarel/.config/shitbox"
+arch-chroot /mnt "/usr/bin/bash"\
+    "-c"\
+    "[[ -d $shitboxDir ]] || mkdir --parents $shitboxDir;\
+    git clone https://github.com/ingenarel/shitbox $shitboxDir;\
+    $shitboxDir/install/arch-post.sh\
+    "
