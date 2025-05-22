@@ -24,7 +24,7 @@ local m = {
                 "ltex-ls-plus",
                 { gentoo = { "yaml-language-server" }, default = "yaml-language-server" },
                 "rust-analyzer",
-                "json-lsp",
+                { gentoo = { "json-lsp" }, default = "json-lsp" },
                 --lsp
                 --dap
                 "codelldb",
