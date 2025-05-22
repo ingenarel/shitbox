@@ -28,14 +28,15 @@
         "window-rewrite": {
             "class<kitty|foot|wezterm>": " ",
             "class<vesktop|discord|legcord>": " ",
-            "class<zen|firefox|librewolf>": " ",
+            "class<zen|firefox|librewolf>": "🌐",
             "class<gimp>": " ",
             "class<blender>": " ",
             "class<kdenlive>": " ",
             "title<.*gitlab.*>": " ",
             "title<.*youtube.*>": " ",
             "title<.*github.*>": " ",
-            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": " "
+            "title<.*keepassxc.*>": "🔑",
+            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️"
         }
     },
     "custom/notifs": {
