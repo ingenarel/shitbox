@@ -10,7 +10,7 @@ locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "Generated locales"
 
-echo "ArchLinuxBaby" > /etc/hostname && "Generated hostname"
+echo "ArchLinuxBaby" > /etc/hostname && echo "Generated hostname"
 
 setRootPassword(){
     echo "enter the password for root"
