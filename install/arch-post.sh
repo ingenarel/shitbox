@@ -15,4 +15,5 @@ passwd ingenarel
     grub-mkconfig -o /boot/grub/grub.cfg
 
 shitboxDir="/home/ingenarel/.config/shitbox"
+git clone https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
