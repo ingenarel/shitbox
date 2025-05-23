@@ -28,5 +28,5 @@ setupConfigs(){
 
 setupConfigs
 
-git submodule init
-git submodule update
+git -C "$scriptDir/.." submodule init
+git -C "$scriptDir/.." submodule update
