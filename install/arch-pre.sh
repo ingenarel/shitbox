@@ -29,13 +29,28 @@ archPostPath="/tmp/arch-post.sh"
 arch-chroot /mnt "/usr/bin/bash"\
     "-c"\
     "\
-    echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user';\
+    echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user'
 
     echo 'Installing post-install script' &&\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath &&\
-    echo 'Installed post-chroot script';\
+    echo 'Installed post-chroot script'
 
-    echo 'Making script an executable' && chmod u+x $archPostPath && echo 'Made script an executable';\
+    echo 'Making script an executable' && chmod u+x $archPostPath && echo 'Made script an executable'
 
-    echo 'Executing post-install script' && $archPostPath $1 mbr && echo 'Executed post-install script';\
-    "
+    setRootPassword(){
+        echo 'enter the password for root'
+        passwd || setRootPassword
+    }
+    setRootPassword
+
+    setUserPassword(){
+        echo 'enter the password for ingenarel'
+        passwd ingenarel || setUserPassword
+    }
+
+    setUserPassword
+
+    echo '%wheel ALL=(ALL:ALL) ALL' >> /etc/sudoers && echo 'set up Wheel group'
+
+    echo 'Executing post-install script' && sudo -u ingenarel $archPostPath $1 mbr && echo 'Executed post-install script'
+"
