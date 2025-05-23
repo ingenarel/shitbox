@@ -17,3 +17,4 @@ passwd ingenarel
 shitboxDir="/home/ingenarel/.config/shitbox"
 git clone https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
+fastfetch
