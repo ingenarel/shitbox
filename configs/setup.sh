@@ -3,7 +3,7 @@ scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
 safelink(){
     [[ -d "$(realpath --canonicalize-missing "$2/..")" ]] || mkdir --parents "$2"
-    [[ -d "$2" ]] || ln -sf "$1" "$2"
+    [[ -d "$2" ]] || ln -sf "$1" "$2" && echo "linked $1 to $2"
 }
 
 setupConfigs(){
