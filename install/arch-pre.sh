@@ -6,18 +6,19 @@ mbr(){
 
 [[ -z $3 || $3 == "mbr" ]] && mbr "$2"
 mount "/dev/$2" /mnt
-pacstrap -K /mnt\
+
+pacstrapCommand="pacstrap -K /mnt\
     base\
     linux\
-    linux-firmware\
     grub\
     networkmanager\
-    intel-ucode\
-    linux-firmware\
     git\
     base-devel\
     man-db\
-    sudo
+    sudo"
+
+dmidecode -s system-manufacturer | grep -qEi 'qemu' || pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
+
 genfstab -U /mnt >> /mnt/etc/fstab
 archPostPath="/tmp/arch-post.sh"
 arch-chroot /mnt "/usr/bin/bash"\
