@@ -21,7 +21,7 @@ pacstrapCommand="pacstrap -K /mnt\
 dmidecode -s system-manufacturer | grep -qEi 'qemu' || pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
 echo "Running pacstrap" && eval "$pacstrapCommand" && echo "ran pacstrap"
 
-echo "Creating Swap" && mkswap --size 4G --file /swapFile && echo "Created swap"
+echo "Creating Swap" && mkswap --size 4G --file /mnt/swapFile && echo "Created swap"
 
 echo "Generating fstab" && genfstab -U /mnt >> /mnt/etc/fstab && echo "/swapfile none swap defaults" >> /mnt/etc/fstab && echo "Generated fstab"
 
