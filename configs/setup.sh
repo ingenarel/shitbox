@@ -7,6 +7,7 @@ safelink(){
 }
 
 setupConfigs(){
+    [[ $HOME == "/root" ]] && HOME="/home/ingenarel"
     safelink "$scriptDir/programs/neovim/nvim"                                          "$HOME/.config/nvim"
     safelink "$scriptDir/programs/lazygit/config"                                       "$HOME/.config/lazygit"
     safelink "$scriptDir/programs/terminal/multiplexers/tmux/config"                    "$HOME/.config/tmux"
