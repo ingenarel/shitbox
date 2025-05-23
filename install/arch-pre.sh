@@ -18,6 +18,7 @@ pacstrapCommand="pacstrap -K /mnt\
     sudo"
 
 dmidecode -s system-manufacturer | grep -qEi 'qemu' || pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
+eval "$pacstrapCommand"
 
 genfstab -U /mnt >> /mnt/etc/fstab
 archPostPath="/tmp/arch-post.sh"
