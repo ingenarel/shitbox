@@ -23,7 +23,11 @@ shitboxDir="/home/ingenarel/.config/shitbox"
 git clone https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
-echo "installing paru-git"
-git clone https://aur.archlinux.org/paru-git.git /tmp/paru
+aurHelper="paru-git"
+
+[[ $(( $(grep --extended-regexp 'MemTotal' /proc/meminfo | sed --expression='s/[^0-9]//g') / (1000 * 1000) )) -lt 8 ]] && aurHelper="paru-bin"
+
+echo "installing $aurHelper"
+git clone https://aur.archlinux.org/$aurHelper.git /tmp/paru
 cd /tmp/paru && makepkg -si
-echo "installed paru-git"
+echo "installed $aurHelper"
