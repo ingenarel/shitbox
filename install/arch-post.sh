@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+sync
+sleep 1
+
 echo "Enabling NetworkManager" && sudo systemctl enable NetworkManager && echo "Enabled NetworkManager"
 
 echo "Setting timezone to Asia/Dhaka" && sudo timedatectl set-timezone Asia/Dhaka && echo "Set timezone to Asia/Dhaka"
