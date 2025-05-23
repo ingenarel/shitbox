@@ -19,10 +19,11 @@ pacstrap -K /mnt\
     man-db\
     sudo
 genfstab -U /mnt >> /mnt/etc/fstab
-shitboxDir="/home/ingenarel/.config/shitbox"
+archPostPath="/tmp/arch-post.sh"
 arch-chroot /mnt "/usr/bin/bash"\
     "-c"\
-    "[[ -d $shitboxDir ]] || mkdir --parents $shitboxDir;\
-    git clone https://github.com/ingenarel/shitbox $shitboxDir;\
-    $shitboxDir/install/arch-post.sh\
+    "useradd --groups wheel --create-home ingenarel
+    [[ -d $archPostPath ]] || mkdir --parents $archPostPath;\
+    curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath;\
+    $archPostPath/install/arch-post.sh $1 mbr\
     "
