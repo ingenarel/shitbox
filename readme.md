@@ -32,3 +32,8 @@ Because i fucking can! I previously thought about using lua but bash is on like 
 # Why not ansible or guix or this and that?
 
 My fucking wish
+
+# Quick install:
+
+### Arch:
+pacman -Sy && pacman -S git && git clone https://github.com/ingenarel/shitbox.git && cd shitbox && setup.sh sda sda1 mbr
