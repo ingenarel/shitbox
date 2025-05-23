@@ -36,5 +36,3 @@ echo "installing paru-git"
 git clone https://aur.archlinux.org/paru-git.git /tmp/paru
 cd /tmp/paru && makepkg -si
 echo "installed paru-git"
-
-fastfetch
