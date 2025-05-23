@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-    imports = [./mpd.nix];
     environment.systemPackages = with pkgs; [
         mediainfo
         mpc
@@ -8,4 +7,8 @@
         cava
         ncmpcpp
     ];
+    home-manager.users.ingenarel.services.mpd = {
+        enable = true;
+        musicDirectory = "/home/ingenarel/Music";
+    };
 }
