@@ -38,5 +38,5 @@ arch-chroot /mnt "/usr/bin/bash"\
 
     echo 'Making script an executable' && chmod u+x $archPostPath && echo 'Made script an executable';\
 
-    echo 'Executing post-install script' $archPostPath $1 mbr && echo 'Executed post-install script';\
+    echo 'Executing post-install script' && $archPostPath $1 mbr && echo 'Executed post-install script';\
     "
