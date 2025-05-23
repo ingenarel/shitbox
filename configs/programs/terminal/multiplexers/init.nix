@@ -1,3 +1,6 @@
-{...}: {
-    imports = [./tmux/init.nix ./zellij/init.nix];
+{pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+        tmux
+        zellij
+    ];
 }

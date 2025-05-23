@@ -12,7 +12,5 @@
     };
     imports = [
         ./metapack.nix
-        ./lsp-configs/clangd/init.nix
     ];
-    home-manager.users.ingenarel.home.file.".config/nvim".source = ./nvim;
 }

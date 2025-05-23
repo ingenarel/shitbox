@@ -1,3 +1,5 @@
-{...}: {
-    imports = [./kitty/init.nix];
+{pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+        kitty
+    ];
 }

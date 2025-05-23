@@ -3,7 +3,6 @@
         git
         github-cli
         glab
+        lazygit
     ];
-    imports = [../lazygit/init.nix];
-    home-manager.users.ingenarel.home.file.".gitconfig".source = ./config;
 }

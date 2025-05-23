@@ -15,8 +15,9 @@
         swww
         wl-clipboard
         wtype
+        waybar
     ];
-    imports = [./programs/hyprland/init.nix ./programs/waybar/init.nix];
+    imports = [./programs/hyprland/init.nix];
 
     services.greetd = {
         enable = true;

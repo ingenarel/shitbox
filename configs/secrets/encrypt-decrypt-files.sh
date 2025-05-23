@@ -59,10 +59,8 @@ elif [[ "$2" == "decrypt" ]]; then
     fi
     cp -f "$sshDecryptedFile" "$HOME/.ssh/git"
     chmod 600 "$HOME/.ssh/git"
-    if ! grep -qEi "nix" /etc/os-release ; then
-        cp "${sshDecryptedFile}.pub" "$HOME/.ssh/git.pub"
-        cp "$scriptDir/ssh/config" "$HOME/.ssh/config"
-    fi
+    cp "${sshDecryptedFile}.pub" "$HOME/.ssh/git.pub"
+    cp "$scriptDir/ssh/config" "$HOME/.ssh/config"
     decryptFile "$kdbxDecryptedFile" "$kdbxEncryptedFile" "$1"
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
     decryptFile "$gpgSignDecryptedFile" "$gpgSignEncryptedFile" "$1"

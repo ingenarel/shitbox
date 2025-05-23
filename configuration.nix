@@ -16,8 +16,6 @@
         ./configs/programs/neovim/init.nix
         ./configs/programs/zsh/init.nix
         ./configs/programs/terminal/multiplexers/init.nix
-        ./configs/secrets/init.nix
-        ./configs/programs/yazi/init.nix
     ];
 
     boot.loader.grub = {
@@ -99,6 +97,7 @@
             )
             .overrideAttrs (_: {doCheck = false;})
         )
+        inputs.yazi.packages."${system}".default
     ];
 
     programs = {
