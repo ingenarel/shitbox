@@ -22,7 +22,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 archPostPath="/tmp/arch-post.sh"
 arch-chroot /mnt "/usr/bin/bash"\
     "-c"\
-    "useradd --groups wheel --create-home ingenarel
+    "useradd --groups wheel --create-home ingenarel;\
     [[ -d $archPostPath ]] || mkdir --parents $archPostPath;\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath;\
     $archPostPath/install/arch-post.sh $1 mbr\
