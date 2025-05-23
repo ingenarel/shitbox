@@ -26,5 +26,6 @@ arch-chroot /mnt "/usr/bin/bash"\
     "-c"\
     "useradd --groups wheel --create-home ingenarel;\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath;\
+    chmod u+x $archPostPath;\
     $archPostPath $1 mbr;\
     "
