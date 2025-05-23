@@ -35,7 +35,7 @@ arch-chroot /mnt "/usr/bin/bash"\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath &&\
     echo 'Installed post-chroot script'
 
-    echo 'Making script an executable' && chmod u+x $archPostPath && echo 'Made script an executable'
+    chown ingenarel $archPostPath && chmod +x $archPostPath && echo 'set up script permissions'
 
     setRootPassword(){
         echo 'enter the password for root'
