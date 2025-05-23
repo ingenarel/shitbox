@@ -13,7 +13,7 @@ sudo locale-gen
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "Generated locales"
 
-echo "ArchLinuxBaby" | sudo /etc/hostname && echo "Generated hostname"
+echo "ArchLinuxBaby" | sudo tee /etc/hostname && echo "Generated hostname"
 
 [[ -z $2 || $2 == "mbr" ]] &&\
     echo "Installing grub" && sudo grub-install --target=i386-pc "/dev/$1" && echo "Installed grub" &&\
