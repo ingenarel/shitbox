@@ -31,7 +31,12 @@ arch-chroot /mnt "/usr/bin/bash"\
     "-c"\
     "\
     echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user';\
-    echo 'Installing post-install script' && curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath echo 'Installed post-chroot script';\
+
+    echo 'Installing post-install script' &&\
+    curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath &&\
+    echo 'Installed post-chroot script';\
+
     echo 'Making script an executable' && chmod u+x $archPostPath && echo 'Made script an executable';\
+
     echo 'Executing post-install script' $archPostPath $1 mbr && echo 'Executed post-install script';\
     "
