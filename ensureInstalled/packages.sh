@@ -9,4 +9,6 @@ packages=(
     tmux
     yazi
     zsh
+    greetd
+    tuigreet
 )
