@@ -52,4 +52,7 @@ done
 [[ -n $packagesToInstall ]] && eval "paru -S $packagesToInstall"
 [[ -n $extracommands ]] && eval "$extracommands"
 
+myshell="zsh"
+command -v "$myshell" && chsh -s "$(which $myshell)"
+
 # echo "${packagesToInstall[@]}"
