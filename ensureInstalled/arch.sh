@@ -2,18 +2,13 @@
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
 source "$scriptDir/packages.sh"
+source "$scriptDir/../utils/safelink.sh"
 
 ram="$((
         $(
             grep --extended-regexp 'MemTotal' /proc/meminfo | sed --expression='s/[^0-9]//g'
         ) / (1000 * 1000)
 ))"
-
-safelink(){
-    parentPath="$(realpath --canonicalize-missing "$2/..")"
-    [[ -d "$parentPath" ]] || ([[ "$3" != 1 ]] && mkdir --parents "$parentPath" || sudo mkdir --parents "$parentPath")
-    [[ -d "$2" ]] || ([[ "$3" != 1 ]] && ln -sf "$1" "$2" || sudo ln -sf "$1" "$2" && echo "linked $1 to $2")
-}
 
 packagesToInstall=""
 
