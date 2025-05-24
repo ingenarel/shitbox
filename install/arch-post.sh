@@ -7,7 +7,7 @@ echo "Enabling NetworkManager" && sudo systemctl enable NetworkManager && echo "
 
 echo "Setting timezone to Asia/Dhaka" && sudo ln -sf /usr/share/zoneinfo/Asia/Dhaka /etc/localtime && echo "Set timezone to Asia/Dhaka"
 
-dmidecode -s system-manufacturer | grep -qEi 'qemu' && sudo systemctl enable sshd && echo "Enabled sshd"
+sudo dmidecode -s system-manufacturer | grep -qEi 'qemu' && sudo systemctl enable sshd && echo "Enabled sshd"
 
 echo "generating locales"
 sudo sed -iE 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
