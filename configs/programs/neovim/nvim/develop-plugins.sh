@@ -4,7 +4,7 @@
 
 changeURL(){
     if ! grep -qE 'url = git@gitlab.com:ingenarel' "$1"; then
-        sed -i -E 's/url = https://github.com/ingenarel\/(.+)/url = git@github.com:ingenarel\1\n\turl = git@gitlab.com:ingenarel\/\1/' "$1"
+        sed -i -E 's/url = https:\/\/github.com\/ingenarel(.+)/url = git@github.com:ingenarel\1\n\turl = git@gitlab.com:ingenarel\1/' "$1"
     fi
 }
 
