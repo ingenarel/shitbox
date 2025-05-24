@@ -3,11 +3,9 @@
 sync
 sleep 1
 
-echo "Enabling NetworkManager" && systemctl enable NetworkManager && echo "Enabled NetworkManager"
+echo "Enabling NetworkManager" && sudo systemctl enable NetworkManager && echo "Enabled NetworkManager"
 
-dmidecode -s system-manufacturer | grep -qEi 'qemu' && systemctl enable sshd
-
-echo "Setting timezone to Asia/Dhaka" && timedatectl set-timezone "Asia/Dhaka" && echo "Set timezone to Asia/Dhaka"
+echo "Setting timezone to Asia/Dhaka" && sudo timedatectl set-timezone Asia/Dhaka && echo "Set timezone to Asia/Dhaka"
 
 echo "generating locales"
 sudo sed -iE 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
