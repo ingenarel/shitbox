@@ -5,6 +5,8 @@ sleep 1
 
 echo "Enabling NetworkManager" && systemctl enable NetworkManager && echo "Enabled NetworkManager"
 
+dmidecode -s system-manufacturer | grep -qEi 'qemu' && systemctl enable sshd
+
 echo "Setting timezone to Asia/Dhaka" && timedatectl set-timezone "Asia/Dhaka" && echo "Set timezone to Asia/Dhaka"
 
 echo "generating locales"
@@ -31,4 +33,5 @@ echo "installing $aurHelper"
 git clone https://aur.archlinux.org/$aurHelper.git /tmp/paru
 cd /tmp/paru && makepkg -si
 echo "installed $aurHelper"
+"$shitboxDir/ensureInstalled/arch.sh"
 "$shitboxDir/configs/programs/neovim/nvim/develop-plugins.sh"
