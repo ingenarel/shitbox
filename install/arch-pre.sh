@@ -23,7 +23,7 @@ echo "Running pacstrap" && eval "$pacstrapCommand" && echo "ran pacstrap"
 
 echo "Creating Swap" && mkswap --size 4G --file /mnt/swapFile && echo "Created swap"
 
-echo "Generating fstab" && genfstab -U /mnt >> /mnt/etc/fstab && echo "/swapfile none swap defaults" >> /mnt/etc/fstab && echo "Generated fstab"
+echo "Generating fstab" && genfstab -U /mnt >> /mnt/etc/fstab && echo "/swapFile none swap defaults" >> /mnt/etc/fstab && echo "Generated fstab"
 
 archPostPath="/tmp/arch-post.sh"
 arch-chroot /mnt "/usr/bin/bash"\
