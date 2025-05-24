@@ -30,6 +30,6 @@ for package in "${packages[@]}"; do
     fi
 done
 
-eval "paru -S $packagesToInstall"
+[[ -n $packagesToInstall ]] && eval "paru -S $packagesToInstall"
 
 # echo "${packagesToInstall[@]}"
