@@ -45,7 +45,7 @@ for package in "${packages[@]}"; do
     fi
 done
 
-[[ -n $packagesToInstall ]] && eval "paru -S $packagesToInstall"
+[[ -n $packagesToInstall ]] && eval "paru --skipreview --noconfirm --mflags --quiet -S $packagesToInstall"
 [[ -n $extracommands ]] && eval "$extracommands"
 
 myshell="zsh"
