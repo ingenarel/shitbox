@@ -1,6 +1,6 @@
 # What is Shitbox?
 
-It's a <distro independent>? setup for my system(s)
+It's a \<distro independent\>? setup for my system(s)
 
 # Why Shitbox?
 
