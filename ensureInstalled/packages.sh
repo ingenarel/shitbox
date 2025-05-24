@@ -11,4 +11,6 @@ packages=(
     zsh
     greetd
     tuigreet
+    zoxide
+    starship
 )
