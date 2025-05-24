@@ -33,7 +33,7 @@ for package in "${packages[@]}"; do
                 ;;
             greetd)
                 packagesToInstall="$packagesToInstall $package"
-                extracommands="$extracommands systemctl enable greetd; "
+                extracommands="$extracommands sudo systemctl enable greetd; "
                 ;;
             tuigreet)
                 packagesToInstall="$packagesToInstall greetd-tuigreet-bin"
