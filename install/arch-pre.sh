@@ -16,6 +16,7 @@ pacstrapCommand="pacstrap -K /mnt\
     git\
     base-devel\
     man-db\
+    openssh\
     sudo"
 
 dmidecode -s system-manufacturer | grep -qEi 'qemu' || pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
