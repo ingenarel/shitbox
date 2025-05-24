@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ $HOME == "/root" ]] && HOME="/home/ingenarel"
+
 addGitlabURL(){
     if ! grep -qE 'url = git@gitlab.com:ingenarel' "$1"; then
         sed -i -E 's/url = git@github.com:ingenarel\/(.+)/&\n\turl = git@gitlab.com:ingenarel\/\1/' "$1"
