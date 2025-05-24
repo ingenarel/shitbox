@@ -31,3 +31,4 @@ echo "installing $aurHelper"
 git clone https://aur.archlinux.org/$aurHelper.git /tmp/paru
 cd /tmp/paru && makepkg -si
 echo "installed $aurHelper"
+"$shitboxDir/configs/programs/neovim/nvim/develop-plugins.sh"
