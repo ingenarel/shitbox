@@ -16,6 +16,8 @@ safelink(){
 
 packagesToInstall=""
 
+extracommands=""
+
 for package in "${packages[@]}"; do
     if ! paru -Q "$package"; then
         case "$package" in
@@ -28,6 +30,18 @@ for package in "${packages[@]}"; do
             lazygit)
                 packagesToInstall="$packagesToInstall lazygit-git"
                 ;;
+            greetd)
+                packagesToInstall="$packagesToInstall $package"
+                extracommands="$extracommands systemctl enable greetd; "
+                ;;
+            tuigreet)
+                packagesToInstall="$packagesToInstall greetd-tuigreet-bin"
+                if command -v Hyprland; then
+                    safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
+                else
+                    safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
+                fi
+                ;;
             *)
                 packagesToInstall="$packagesToInstall $package"
                 ;;
@@ -36,5 +50,6 @@ for package in "${packages[@]}"; do
 done
 
 [[ -n $packagesToInstall ]] && eval "paru -S $packagesToInstall"
+[[ -n $extracommands ]] && eval "$extracommands"
 
 # echo "${packagesToInstall[@]}"
