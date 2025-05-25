@@ -10,7 +10,7 @@ echo "Setting timezone to Asia/Dhaka" && sudo ln -sf /usr/share/zoneinfo/Asia/Dh
 sudo dmidecode -s system-manufacturer | grep -qEi 'qemu' && sudo systemctl enable sshd && echo "Enabled sshd"
 
 echo "generating locales"
-sudo sed -iE 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sudo sed -iE 's/#\s*en_US.UTF-8\s*UTF-8/en_US.UTF-8 UTF-8/I' /etc/locale.gen
 sudo locale-gen
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "Generated locales"
