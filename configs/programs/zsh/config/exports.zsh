@@ -1,4 +1,4 @@
-export CC=clang
+command -v clang > /dev/null 2>&1 && export CC=clang || (command -v gcc > /dev/null 2>&1 && export CC=gcc)
 if [ "$CC" = "clang" ]; then
     export CFLAGS="-Wall -Wextra -Wshadow -Wconversion -Wformat=2 -Winline -Wundef\
         -Wpointer-arith -Wpedantic -Wstrict-aliasing -Wcast-align -march=native\
