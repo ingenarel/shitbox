@@ -36,3 +36,4 @@ echo "installed $aurHelper"
 "$shitboxDir/ensureInstalled/arch.sh"
 "$shitboxDir/configs/programs/neovim/nvim/develop-plugins.sh"
 command -v zsh && zsh -c "source ~/.zshrc"
+command -v nvim && nvim --headless
