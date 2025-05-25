@@ -28,7 +28,12 @@ sync
 tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 
 rm /mnt/gentoo/stage3-*.tar.xz
-dmidecode -s system-manufacturer | grep -qEi 'qemu' && cp "$scriptDir/../configs/programs/portage/tui-vm-make.conf" "/etc/portage/make.conf"
+dmidecode -s system-manufacturer | grep -qEi 'qemu' &&
+(
+    cp "$scriptDir/../configs/programs/portage/tui-vm-make.conf" "/mnt/gentoo/etc/portage/make.conf" &&
+    cp "$scriptDir/../configs/programs/portage/package.use" "/mnt/gentoo/etc/portage/package.use"
+)
+
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
 emergeCommand="emerge\
