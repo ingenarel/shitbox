@@ -19,7 +19,14 @@ wget --directory-prefix=/mnt/gentoo \
         head -n1
 )"
 
+sync
+
+sleep 1
+
+sync
+
 tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+
 rm /mnt/gentoo/stage3-*.tar.xz
 dmidecode -s system-manufacturer | grep -qEi 'qemu' && cp "$scriptDir/../configs/programs/portage/tui-vm-make.conf" "/etc/portage/make.conf"
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
