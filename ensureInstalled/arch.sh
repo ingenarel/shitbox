@@ -15,37 +15,32 @@ packagesToInstall=""
 extracommands=""
 
 for package in "${packages[@]}"; do
-    if ! paru -Q "$package"; then
-        case "$package" in
-            neovim)
-                packagesToInstall="$packagesToInstall neovim-git"
-                ;;
-            yazi)
-                [[ $ram -lt 8 ]] && packagesToInstall="$packagesToInstall yazi-nightly-bin" || packagesToInstall="$packagesToInstall yazi-git"
-                ;;
-            lazygit)
-                packagesToInstall="$packagesToInstall lazygit-git"
-                ;;
-            greetd)
-                packagesToInstall="$packagesToInstall $package"
-                extracommands="$extracommands sudo systemctl enable greetd; "
-                ;;
-            tuigreet)
-                packagesToInstall="$packagesToInstall greetd-tuigreet-bin"
-                if command -v Hyprland; then
+    case "$package" in
+        neovim)
+            package="neovim-git"
+            ;;
+        yazi)
+            [[ $ram -lt 8 ]] && package="yazi-nightly-bin" || package="yazi-git"
+            ;;
+        lazygit)
+            package="lazygit-git"
+            ;;
+        greetd)
+            paru -Q "$package" || extracommands="$extracommands sudo systemctl enable greetd; "
+            ;;
+        tuigreet)
+            package=greetd-tuigreet-bin
+            paru -Q "$package" || (
+                (command -v Hyprland &&
                     safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
-                else
-                    safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
-                fi
-                ;;
-            *)
-                packagesToInstall="$packagesToInstall $package"
-                ;;
-        esac
-    fi
+                ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
+            )
+            ;;
+    esac
+    packagesToInstall="$packagesToInstall $package"
 done
 
-[[ -n $packagesToInstall ]] && eval "paru -S $packagesToInstall"
+[[ -n $packagesToInstall ]] && eval "paru -S --needed $packagesToInstall"
 [[ -n $extracommands ]] && eval "$extracommands"
 
 myshell="$(which zsh)"
