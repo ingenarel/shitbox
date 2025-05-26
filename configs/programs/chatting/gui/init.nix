@@ -1,6 +1,6 @@
-{...}: {
-    imports = [
-        ./cinny.nix
-        ./discord/init.nix
+{pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+        cinny-desktop
+        vesktop
     ];
 }
