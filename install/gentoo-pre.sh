@@ -79,7 +79,7 @@ arch-chroot /mnt/gentoo "/usr/bin/bash"\
 
     $emergeCommand
 
-    echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user'
+    echo 'Creating user' && useradd --groups wheel,portage --create-home ingenarel && echo 'Created user'
 
     setRootPassword(){
         echo 'enter the password for root'
