@@ -1,0 +1,233 @@
+{
+    "autoUpdate": false,
+    "autoUpdateNotification": false,
+    "disableMinSize": true,
+    "enableReactDevtools": false,
+    "enabledThemes": [],
+    "frameless": true,
+    "notifyAboutUpdates": false,
+    "plugins": {
+        "AnonymiseFileNames": {
+            "anonymiseByDefault": false,
+            "consistent": "image",
+            "enabled": true,
+            "method": 0,
+            "randomisedLength": 7
+        },
+        "BetterFolders": {
+            "closeAllFolders": true,
+            "closeAllHomeButton": true,
+            "closeOthers": true,
+            "enabled": true,
+            "forceOpen": true,
+            "keepIcons": false,
+            "showFolderIcon": 0,
+            "sidebar": true,
+            "sidebarAnim": false
+        },
+        "CallTimer": {
+            "enabled": true,
+            "format": "stopwatch"
+        },
+        "ChatInputButtonAPI": {
+            "enabled": true
+        },
+        "ClearURLs": {
+            "enabled": true
+        },
+        "CommandsAPI": {
+            "enabled": true
+        },
+        "CrashHandler": {
+            "attemptToNavigateToHome": false,
+            "attemptToPreventCrashes": true,
+            "enabled": true
+        },
+        "FakeNitro": {
+            "disableEmbedPermissionCheck": false,
+            "emojiSize": 48,
+            "enableEmojiBypass": true,
+            "enableStickerBypass": true,
+            "enableStreamQualityBypass": true,
+            "enabled": true,
+            "hyperLinkText": "{{NAME}}",
+            "stickerSize": 160,
+            "transformCompoundSentence": false,
+            "transformEmojis": true,
+            "transformStickers": true,
+            "useHyperLinks": true
+        },
+        "ImageLink": {
+            "enabled": true
+        },
+        "ImageZoom": {
+            "enabled": true,
+            "invertScroll": true,
+            "nearestNeighbour": false,
+            "saveZoomValues": true,
+            "size": 100.0,
+            "square": false,
+            "zoom": 2.0,
+            "zoomSpeed": 0.5
+        },
+        "MemberCount": {
+            "enabled": true,
+            "memberList": true,
+            "toolTip": true
+        },
+        "MemberListDecoratorsAPI": {
+            "enabled": true
+        },
+        "MessageAccessoriesAPI": {
+            "enabled": true
+        },
+        "MessageDecorationsAPI": {
+            "enabled": true
+        },
+        "MessageEventsAPI": {
+            "enabled": true
+        },
+        "MessageLatency": {
+            "detectDiscordKotlin": true,
+            "enabled": true,
+            "latency": 2,
+            "showMillis": false
+        },
+        "MessageLinkEmbeds": {
+            "automodEmbeds": 0,
+            "enabled": true,
+            "idList": "",
+            "listMode": 1,
+            "messageBackgroundColor": false
+        },
+        "MessageLogger": {
+            "collapseDeleted": false,
+            "deleteStyle": "text",
+            "enabled": true,
+            "ignoreBots": false,
+            "ignoreChannels": "",
+            "ignoreGuilds": "",
+            "ignoreSelf": false,
+            "ignoreUsers": "",
+            "inlineEdits": true,
+            "logDeletes": true,
+            "logEdits": true
+        },
+        "MessagePopoverAPI": {
+            "enabled": true
+        },
+        "MessageUpdaterAPI": {
+            "enabled": true
+        },
+        "MoreUserTags": {
+            "dontShowBotTag": false,
+            "dontShowForBots": false,
+            "enabled": true,
+            "tagSettings": {
+                "ADMINISTRATOR": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Admin"
+                },
+                "CHAT_MODERATOR": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Chat Mod"
+                },
+                "MODERATOR": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Mod"
+                },
+                "MODERATOR_STAFF": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Staff"
+                },
+                "OWNER": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Owner"
+                },
+                "VOICE_MODERATOR": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "VC Mod"
+                },
+                "WEBHOOK": {
+                    "showInChat": true,
+                    "showInNotChat": true,
+                    "text": "Webhook"
+                }
+            }
+        },
+        "NoBlockedMessages": {
+            "enabled": true,
+            "ignoreBlockedMessages": false
+        },
+        "NoTrack": {
+            "disableAnalytics": true,
+            "enabled": true
+        },
+        "NoTypingAnimation": {
+            "enabled": true
+        },
+        "NoUnblockToJump": {
+            "enabled": true
+        },
+        "RelationshipNotifier": {
+            "enabled": true,
+            "friendRequestCancels": true,
+            "friends": true,
+            "groups": true,
+            "notices": false,
+            "offlineRemovals": true,
+            "servers": true
+        },
+        "ServerListAPI": {
+            "enabled": true
+        },
+        "Settings": {
+            "enabled": true,
+            "settingsLocation": "aboveNitro"
+        },
+        "SupportHelper": {
+            "enabled": true
+        },
+        "TypingTweaks": {
+            "alternativeFormatting": true,
+            "enabled": true,
+            "showAvatars": true,
+            "showRoleColors": true
+        },
+        "Unindent": {
+            "enabled": true
+        },
+        "UserSettingsAPI": {
+            "enabled": true
+        },
+        "VoiceDownload": {
+            "enabled": true
+        },
+        "VoiceMessages": {
+            "echoCancellation": true,
+            "enabled": true,
+            "noiseSuppression": true
+        },
+        "WebContextMenus": {
+            "enabled": true
+        },
+        "WebScreenShareFixes": {
+            "enabled": true
+        },
+        "WhoReacted": {
+            "enabled": true
+        },
+        "iLoveSpam": {
+            "enabled": true
+        }
+    },
+    "themeLinks": [],
+    "transparent": true,
+    "useQuickCSS": true
+}
