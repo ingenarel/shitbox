@@ -21,10 +21,10 @@ for package in "${packages[@]}"; do
             ;;
         greetd)
             package="gui-libs/greetd"
-            paru -Q "$package" || extracommands="$extracommands sudo systemctl enable greetd; "
+            equery --quiet list "$package" || extracommands="$extracommands sudo systemctl enable greetd; "
             ;;
         tuigreet)
-            paru -Q "$package" || (
+            equery --quiet list "$package" || (
                 (command -v Hyprland &&
                     safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
                 ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
