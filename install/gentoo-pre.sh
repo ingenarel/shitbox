@@ -72,7 +72,7 @@ arch-chroot /mnt/gentoo "/usr/bin/bash"\
     echo 'generating locales' &&
     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen &&
     locale-gen &&
-    echo 'LANG=en_US.UTF-8' | sudo tee /etc/locale.conf &&
+    echo 'LANG=en_US.UTF-8' > /etc/locale.conf &&
     echo 'Generated locales'
 
     env-update && source /etc/profile
