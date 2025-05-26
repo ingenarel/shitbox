@@ -16,6 +16,9 @@ extracommands=""
 
 for package in "${packages[@]}"; do
     case "$package" in
+        git)
+            package="dev-vcs/git"
+            ;;
         greetd)
             package="gui-libs/greetd"
             paru -Q "$package" || extracommands="$extracommands sudo systemctl enable greetd; "
