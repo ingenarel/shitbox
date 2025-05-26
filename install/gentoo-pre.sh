@@ -39,7 +39,7 @@ cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 emergeCommand="emerge\
     grub\
     networkmanager\
-    git\
+    dev-vcs/git\
     installkernel\
     dracut\
     man-db\
