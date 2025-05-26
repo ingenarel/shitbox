@@ -54,6 +54,7 @@ for package in "${packages[@]}"; do
             ;;
         zen)
             package="zen-twilight-bin"
+            # figure out how to auto setup stuff
             ;;
         hack-nerd)
             package="ttf-hack-nerd"
