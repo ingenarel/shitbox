@@ -1,0 +1,96 @@
+{
+    "policies": {
+        "Extensions": {
+            "Install": [
+                "https://addons.mozilla.org/firefox/downloads/file/4492375/ublock_origin-1.64.0.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4458679/vimium_ff-2.2.1.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi"
+            ]
+        },
+        "ExtensionUpdate": true,
+        "Bookmarks": [
+            {
+                "Title": "archwiki",
+                "URL": "https://wiki.archlinux.org"
+            },
+            {
+                "Title": "gentoowiki",
+                "URL": "https://wiki.gentoo.org"
+            },
+            {
+                "Title": "nixwiki",
+                "URL": "https://wiki.nixos.org"
+            },
+            {
+                "Title": "github",
+                "URL": "https://github.com"
+            },
+            {
+                "Title": "gitlab",
+                "URL": "https://gitlab.com"
+            },
+            {
+                "Title": "youtube",
+                "URL": "https://www.youtube.com"
+            },
+            {
+                "Title": "home manager options",
+                "URL": "https://home-manager-options.extranix.com"
+            },
+            {
+                "Title": "nixos search",
+                "URL": "https://search.nixos.org/packages"
+            },
+            {
+                "Title": "instagram",
+                "URL": "https://www.instagram.com/direct"
+            },
+            {
+                "Title": "chatgpt",
+                "URL": "https://chatgpt.com"
+            },
+            {
+                "Title": "policies",
+                "URL": "https://mozilla.github.io/policy-templates"
+            }
+        ],
+        "Cookies": {
+            "Allow": [
+                "https://archlinux.org",
+                "https://gentoo.org",
+                "https://nixos.org",
+                "https://github.com",
+                "https://gitlab.com",
+                "https://www.youtube.com",
+                "https://www.instagram.com",
+                "https://chatgpt.com"
+            ],
+            "Locked": true,
+            "Behavior": "reject-tracker-and-partition-foreign",
+            "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
+        }
+    },
+    "AppAutoUpdate": false,
+    "BackgroundAppUpdate": false,
+    "AutofillAddressEnabled": false,
+    "AutofillCreditCardEnabled": false,
+    "DisableAppUpdate": true,
+    "DisableTelemetry": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DontCheckDefaultBrowser": true,
+    "NoDefaultBookmarks": false,
+    "OfferToSaveLogins": false,
+    "DisableFirefoxAccounts": true,
+    "DisableFormHistory": true,
+    "EnableTrackingProtection": {
+        "Value": true,
+        "Locked": true,
+        "Cryptomining": true,
+        "Fingerprinting": true,
+        "EmailTracking": true
+    }
+}

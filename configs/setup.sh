@@ -33,6 +33,10 @@ setupConfigs(){
     safelink "$scriptDir/programs/yazi/config/plugins/starship.yazi"                    "$HOME/.config/yazi/plugins/starship.yazi"
     safelink "$scriptDir/programs/yazi/config/plugins/plugins/git.yazi"                 "$HOME/.config/yazi/plugins/git.yazi"
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
+
+    safelink "$scriptDir/programs/browsers/firefox/policies.json"                       "/etc/zen/policies/policies.json" 1
+    safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
+    safelink "$scriptDir/programs/browsers/firefox/profiles.ini"                        "$HOME/.zen/profiles.ini"
 }
 
 setupConfigs
