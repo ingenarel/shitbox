@@ -10,7 +10,6 @@
         ./programs/terminal/emulators/init.nix
         ./programs/chatting/gui/init.nix
         ./programs/emulators/init.nix
-        ./programs/browsers/zen.nix
     ];
 
     environment.systemPackages = with pkgs; [
@@ -20,6 +19,7 @@
         vimiv-qt
         vlc
         zathura
+        inputs.zen-browser.packages."${system}".twilight
     ];
 
     fonts.packages = with pkgs; [
