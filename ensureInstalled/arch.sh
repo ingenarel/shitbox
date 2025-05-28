@@ -68,4 +68,6 @@ done
 myshell="$(which zsh)"
 command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
+systemctl daemon-reload
+
 # echo "${packagesToInstall[@]}"
