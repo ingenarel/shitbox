@@ -37,7 +37,7 @@ for package in "${packages[@]}"; do
             ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
             ;;
         sweet-gtk)
-            package="sweet-gtk-theme"
+            package="sweet-gtk-theme-dark"
             ;;
         hyprland)
             # figure out a way to autoinstall plugins if not installed
