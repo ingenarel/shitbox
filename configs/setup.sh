@@ -40,6 +40,8 @@ setupConfigs(){
 
     safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
 
+    safelink "$scriptDir/programs/keyd/default.conf"                                    "/etc/keyd/default.conf" 1
+
     if grep -qEi "arch" /etc/os-release ; then
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
     fi
