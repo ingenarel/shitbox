@@ -44,7 +44,6 @@ for package in "${packages[@]}"; do
             ;;
         vesktop)
             package="vesktop-git"
-            # figure out a way to autoconfigure stuff
             ;;
         cinny)
             package="cinny-desktop-bin"
@@ -54,7 +53,6 @@ for package in "${packages[@]}"; do
             ;;
         zen)
             package="zen-twilight-bin"
-            # figure out how to auto setup stuff
             ;;
         hack-nerd)
             package="ttf-hack-nerd"
