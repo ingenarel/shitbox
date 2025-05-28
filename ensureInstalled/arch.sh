@@ -66,6 +66,9 @@ for package in "${packages[@]}"; do
         "vimiv-qt")
             continue
             ;;
+        "nicotine")
+            package="nicotine+"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
