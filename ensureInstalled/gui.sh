@@ -14,6 +14,7 @@ packages+=(
     wtype
     waybar
     pipewire-pulse
+    keyd
 )
 
 packages+=(
