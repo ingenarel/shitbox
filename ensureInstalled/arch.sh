@@ -75,9 +75,6 @@ command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
 [[ "${#systemctlReloads[@]}" -gt 0 ]] && (for service in "${systemctlReloads[@]}"; do 
     [[ "$(systemctl is-enabled $service)" == "enabled" ]] || systemctl enable "$service"
-done)
-
-
-systemctl daemon-reload
+done && systemctl daemon-reload)
 
 # echo "${packagesToInstall[@]}"
