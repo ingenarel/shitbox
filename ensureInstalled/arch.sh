@@ -14,6 +14,8 @@ packagesToInstall=""
 
 extracommands=""
 
+systemctlReloads=()
+
 for package in "${packages[@]}"; do
     case "$package" in
         neovim)
@@ -26,7 +28,7 @@ for package in "${packages[@]}"; do
             package="lazygit-git"
             ;;
         greetd)
-            paru -Q "$package" || extracommands="$extracommands sudo systemctl enable greetd; "
+            systemctlReloads+=(greetd)
             ;;
         tuigreet)
             package="greetd-tuigreet-bin"
@@ -58,6 +60,9 @@ for package in "${packages[@]}"; do
         noto-fonts)
             package="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra"
             ;;
+        keyd)
+            systemctlReloads+=(keyd)
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
@@ -67,6 +72,11 @@ done
 
 myshell="$(which zsh)"
 command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
+
+[[ "${#systemctlReloads[@]}" -gt 0 ]] && (for service in "${systemctlReloads[@]}"; do 
+    [[ "$(systemctl is-enabled $service)" == "enabled" ]] || systemctl enable "$service"
+done)
+
 
 systemctl daemon-reload
 
