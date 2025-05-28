@@ -27,11 +27,11 @@ packages+=(
     gimp
 )
 
-packages+=(
-    lutris
-    wine
-    winetricks
-)
+# packages+=(
+#     lutris
+#     wine
+#     winetricks
+# )
 
 packages+=(
     vesktop
