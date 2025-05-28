@@ -61,3 +61,12 @@ packages+=(
     hack-nerd
     noto-fonts
 )
+
+packages+=(
+    mediainfo
+    mpc
+    rmpc
+    nicotine
+    cava
+    ncmpcpp
+)
