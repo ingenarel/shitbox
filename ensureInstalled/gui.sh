@@ -13,6 +13,7 @@ packages+=(
     wl-clipboard
     wtype
     waybar
+    pipewire-pulse
 )
 
 packages+=(
