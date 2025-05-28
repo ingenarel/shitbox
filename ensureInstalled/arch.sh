@@ -63,6 +63,9 @@ for package in "${packages[@]}"; do
         keyd)
             systemctlReloads+=(keyd)
             ;;
+        vimiv-qt)
+            continue
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
