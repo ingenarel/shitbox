@@ -36,7 +36,6 @@ local m = {
                 "stylua",
                 "clang-format",
                 "beautysh",
-                { gentoo = { "nil" }, default = "nil" },
                 "alejandra",
                 "jq",
                 --formatter
