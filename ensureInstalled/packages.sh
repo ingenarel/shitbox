@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-guiScriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")/gui.sh"
+nonvmshit="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")/gui.sh"
 
 packages=(
     fastfetch
@@ -18,4 +18,4 @@ packages=(
     github-cli
     glab
 )
-(dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$guiScriptDir"
+(dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
