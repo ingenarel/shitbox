@@ -37,3 +37,6 @@ My fucking wish
 
 ### Arch:
 pacman -Sy && pacman -S git && git clone https://github.com/ingenarel/shitbox.git && cd shitbox && ./setup.sh sda sda1 mbr
+
+### Gentoo:
+git clone https://github.com/ingenarel/shitbox.git && cd shitbox && ./setup.sh sda sda1 mbr
