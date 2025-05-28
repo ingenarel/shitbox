@@ -37,6 +37,8 @@ setupConfigs(){
     safelink "$scriptDir/programs/browsers/firefox/policies.json"                       "/etc/zen/policies/policies.json" 1
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
     safelink "$scriptDir/programs/browsers/firefox/profiles.ini"                        "$HOME/.zen/profiles.ini"
+
+    safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
 }
 
 setupConfigs
