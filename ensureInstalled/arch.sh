@@ -30,11 +30,9 @@ for package in "${packages[@]}"; do
             ;;
         tuigreet)
             package="greetd-tuigreet-bin"
-            paru -Q "$package" || (
-                (command -v Hyprland &&
-                    safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
-                ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
-            )
+            (command -v Hyprland &&
+                safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
+            ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
             ;;
         sweet-gtk)
             package="sweet-gtk-theme"
