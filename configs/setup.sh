@@ -39,6 +39,10 @@ setupConfigs(){
     safelink "$scriptDir/programs/browsers/firefox/profiles.ini"                        "$HOME/.zen/profiles.ini"
 
     safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
+
+    if grep -qEi "arch" /etc/os-release ; then
+        safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
+    fi
 }
 
 setupConfigs
