@@ -18,52 +18,52 @@ systemctlReloads=()
 
 for package in "${packages[@]}"; do
     case "$package" in
-        neovim)
+        "neovim")
             package="neovim-git"
             ;;
-        yazi)
+        "yazi")
             [[ $ram -lt 8 ]] && package="yazi-nightly-bin" || package="yazi-git"
             ;;
-        lazygit)
+        "lazygit")
             package="lazygit-git"
             ;;
-        greetd)
+        "greetd")
             systemctlReloads+=(greetd)
             ;;
-        tuigreet)
+        "tuigreet")
             package="greetd-tuigreet-bin"
             (command -v Hyprland &&
                 safelink "$scriptDir/../configs/programs/greetd/config-hyprland.toml" "/etc/greetd/config.toml" 1
             ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
             ;;
-        sweet-gtk)
+        "sweet-gtk")
             package="sweet-gtk-theme-dark"
             ;;
-        hyprland)
+        "hyprland")
             # figure out a way to autoinstall plugins if not installed
             ;;
-        vesktop)
+        "vesktop")
             package="vesktop-git"
             ;;
-        cinny)
+        "cinny")
             package="cinny-desktop-bin"
             ;;
-        qemu)
+        "qemu")
             package="qemu-desktop"
             ;;
-        zen)
+        "zen")
             package="zen-twilight-bin"
             ;;
-        hack-nerd)
+        "hack-nerd")
             package="ttf-hack-nerd"
             ;;
-        noto-fonts)
+        "noto-fonts")
             package="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra"
             ;;
-        keyd)
+        "keyd")
             systemctlReloads+=(keyd)
             ;;
-        vimiv-qt)
+        "vimiv-qt")
             continue
             ;;
     esac
