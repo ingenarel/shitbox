@@ -71,26 +71,26 @@
             "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
             "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
+        },
+        "AppAutoUpdate": false,
+        "BackgroundAppUpdate": false,
+        "AutofillAddressEnabled": false,
+        "AutofillCreditCardEnabled": false,
+        "DisableAppUpdate": true,
+        "DisableTelemetry": true,
+        "DisableFirefoxStudies": true,
+        "DisablePocket": true,
+        "DontCheckDefaultBrowser": true,
+        "NoDefaultBookmarks": false,
+        "OfferToSaveLogins": false,
+        "DisableFirefoxAccounts": true,
+        "DisableFormHistory": true,
+        "EnableTrackingProtection": {
+            "Value": true,
+            "Locked": true,
+            "Cryptomining": true,
+            "Fingerprinting": true,
+            "EmailTracking": true
         }
-    },
-    "AppAutoUpdate": false,
-    "BackgroundAppUpdate": false,
-    "AutofillAddressEnabled": false,
-    "AutofillCreditCardEnabled": false,
-    "DisableAppUpdate": true,
-    "DisableTelemetry": true,
-    "DisableFirefoxStudies": true,
-    "DisablePocket": true,
-    "DontCheckDefaultBrowser": true,
-    "NoDefaultBookmarks": false,
-    "OfferToSaveLogins": false,
-    "DisableFirefoxAccounts": true,
-    "DisableFormHistory": true,
-    "EnableTrackingProtection": {
-        "Value": true,
-        "Locked": true,
-        "Cryptomining": true,
-        "Fingerprinting": true,
-        "EmailTracking": true
     }
 }
