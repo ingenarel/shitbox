@@ -59,7 +59,7 @@ for package in "${packages[@]}"; do
             package="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra"
             ;;
     esac
-    packagesToInstall="$packagesToInstall $package"
+    paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
 
 [[ -n $packagesToInstall ]] && eval "paru -S --needed $packagesToInstall"
