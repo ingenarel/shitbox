@@ -1,0 +1,62 @@
+{
+    "engines": [
+        {
+            "_isAppProvided": true,
+            "_metaData": {},
+            "id": "ddg"
+        },
+        {
+            "_definedAliases": [
+                "@np"
+            ],
+            "_iconMapObj": {
+                "16": "file:///nix/store/snb0vqln94dx84scknrnsj79pfcl099s-nixos-icons-0-unstable-2024-04-10/share/icons/hicolor/scalable/apps/nix-snowflake.svg"
+            },
+            "_isAppProvided": false,
+            "_loadPath": "[home-manager]/programs.zen-browser.profiles.default.search.engines.nix-packages",
+            "_metaData": {},
+            "_name": "Nix Packages",
+            "_urls": [
+                {
+                    "params": [
+                        {
+                            "name": "type",
+                            "value": "packages"
+                        },
+                        {
+                            "name": "query",
+                            "value": "{searchTerms}"
+                        }
+                    ],
+                    "template": "https://search.nixos.org/packages"
+                }
+            ],
+            "id": "nix-packages"
+        },
+        {
+            "_definedAliases": [
+                "@nw"
+            ],
+            "_iconMapObj": {
+                "16": "https://wiki.nixos.org/favicon.ico"
+            },
+            "_isAppProvided": false,
+            "_loadPath": "[home-manager]/programs.zen-browser.profiles.default.search.engines.nixos-wiki",
+            "_metaData": {},
+            "_name": "NixOS Wiki",
+            "_urls": [
+                {
+                    "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}"
+                }
+            ],
+            "id": "nixos-wiki"
+        }
+    ],
+    "metaData": {
+        "defaultEngineId": "ddg",
+        "defaultEngineIdHash": "B3BLzcZ2K+GdEPYIpfbGrNL4aJYvsLQYpm0219pFZfc=",
+        "useSavedOrder": false
+    },
+    "version": 12
+}
+
