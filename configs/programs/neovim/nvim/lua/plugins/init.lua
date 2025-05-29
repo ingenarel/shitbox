@@ -30,7 +30,7 @@ require("lazy").setup {
             require("plugins._autopairs-setup_"),
             require("plugins.telescope"),
             require("plugins._ibl-setup_"),
-            { "lewis6991/gitsigns.nvim", config = true },
+            require("plugins.gitsigns"),
             require("plugins.metapack"),
             require("plugins.lsp"),
             require("plugins.dap"),
