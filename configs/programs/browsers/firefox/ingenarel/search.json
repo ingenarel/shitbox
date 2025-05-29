@@ -18,7 +18,7 @@
             }
         },
         {
-            "id": "f0d2841b-0f90-49ed-942c-d7eb671f1a70",
+            "id": "nixwiki",
             "_name": "nixwiki",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -31,12 +31,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -45,7 +39,7 @@
             "_definedAliases": []
         },
         {
-            "id": "71225c60-3ed3-4ba4-a755-7e5fcfb23ab6",
+            "id": "NixPackages",
             "_name": "NixPackages",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -58,12 +52,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -72,7 +60,7 @@
             "_definedAliases": []
         },
         {
-            "id": "60d728a3-3d0e-4bef-aa9f-5a4230f7505a",
+            "id": "NixOptions",
             "_name": "NixOptions",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -85,12 +73,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://search.nixos.org/options?channel=unstable&type=packages&query={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://search.nixos.org/options?channel=unstable&type=packages&query={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -99,7 +81,7 @@
             "_definedAliases": []
         },
         {
-            "id": "23bf63c4-3ee6-4947-8669-76eaf5bed85a",
+            "id": "GentooWiki",
             "_name": "GentooWiki",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -112,12 +94,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://wiki.gentoo.org/index.php?&search={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://wiki.gentoo.org/index.php?&search={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -126,7 +102,7 @@
             "_definedAliases": []
         },
         {
-            "id": "39acd0de-07b8-4291-9b74-b34dce18925c",
+            "id": "GentooPackages",
             "_name": "GentooPackages",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -139,12 +115,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://packages.gentoo.org/packages/search?q={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://packages.gentoo.org/packages/search?q={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -153,7 +123,7 @@
             "_definedAliases": []
         },
         {
-            "id": "6a5eba1c-e803-472b-b322-e1edc9f9fd48",
+            "id": "zugaina",
             "_name": "zugaina",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -166,12 +136,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://gpo.zugaina.org/Search?search={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://gpo.zugaina.org/Search?search={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -180,7 +144,7 @@
             "_definedAliases": []
         },
         {
-            "id": "c9444121-3921-413c-bb2b-fcec6c912f84",
+            "id": "ArchWiki",
             "_name": "ArchWiki",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -193,12 +157,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://wiki.archlinux.org/index.php?search={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://wiki.archlinux.org/index.php?search={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -207,7 +165,7 @@
             "_definedAliases": []
         },
         {
-            "id": "496c1b94-9b21-4d51-a971-35e6f170c900",
+            "id": "ArchPackages",
             "_name": "ArchPackages",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -220,12 +178,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://archlinux.org/packages/?&q={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://archlinux.org/packages/?&q={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -234,7 +186,7 @@
             "_definedAliases": []
         },
         {
-            "id": "981b10a8-2a57-4df2-82c7-6c12f64b1f21",
+            "id": "AURpackages",
             "_name": "AUR packages",
             "_loadPath": "[user]",
             "_iconMapObj": null,
@@ -247,12 +199,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://aur.archlinux.org/packages?K={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://aur.archlinux.org/packages?K={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -261,7 +207,7 @@
             "_definedAliases": []
         },
         {
-            "id": "9b42c870-7eec-4888-a9b9-98652d02269b",
+            "id": "github",
             "_name": "github",
             "_loadPath": "[user]",
             "_metaData": {
@@ -273,12 +219,6 @@
                     "params": [],
                     "rels": [],
                     "template": "https://github.com/search?q={searchTerms}"
-                },
-                {
-                    "params": [],
-                    "rels": [],
-                    "template": "https://github.com/search?q={searchTerms}",
-                    "type": "application/x-suggestions+json"
                 }
             ],
             "_orderHint": null,
@@ -292,4 +232,3 @@
         "useSavedOrder": true
     }
 }
-
