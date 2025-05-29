@@ -4,18 +4,12 @@
         {
             "id": "ddg",
             "_name": "DuckDuckGo",
-            "_isAppProvided": true,
-            "_metaData": {
-                "order": 1
-            }
+            "_isAppProvided": true
         },
         {
             "id": "wikipedia",
             "_name": "Wikipedia (en)",
-            "_isAppProvided": true,
-            "_metaData": {
-                "order": 2
-            }
+            "_isAppProvided": true
         },
         {
             "id": "nixwiki",
@@ -23,8 +17,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@nw",
-                "order": 3
+                "alias": "@nw"
             },
             "_urls": [
                 {
@@ -44,8 +37,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@np",
-                "order": 4
+                "alias": "@np"
             },
             "_urls": [
                 {
@@ -65,8 +57,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@no",
-                "order": 5
+                "alias": "@no"
             },
             "_urls": [
                 {
@@ -86,8 +77,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@gw",
-                "order": 6
+                "alias": "@gw"
             },
             "_urls": [
                 {
@@ -107,8 +97,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@gp",
-                "order": 7
+                "alias": "@gp"
             },
             "_urls": [
                 {
@@ -128,8 +117,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@gap",
-                "order": 8
+                "alias": "@gap"
             },
             "_urls": [
                 {
@@ -149,8 +137,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@aw",
-                "order": 9
+                "alias": "@aw"
             },
             "_urls": [
                 {
@@ -170,8 +157,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@ap",
-                "order": 10
+                "alias": "@ap"
             },
             "_urls": [
                 {
@@ -191,8 +177,7 @@
             "_loadPath": "[user]",
             "_iconMapObj": null,
             "_metaData": {
-                "alias": "@au",
-                "order": 11
+                "alias": "@au"
             },
             "_urls": [
                 {
@@ -211,8 +196,7 @@
             "_name": "github",
             "_loadPath": "[user]",
             "_metaData": {
-                "alias": "@gh",
-                "order": 13
+                "alias": "@gh"
             },
             "_urls": [
                 {
