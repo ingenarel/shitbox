@@ -16,3 +16,6 @@
 [submodule "configs/programs/emulators/qemu/qemu-launcher"]
 	path = configs/programs/emulators/qemu/qemu-launcher
 	url = https://github.com/ingenarel/qemu-launcher
+[submodule "configs/programs/browsers/firefox/arkenfox"]
+	path = configs/programs/browsers/firefox/arkenfox
+	url = https://github.com/arkenfox/user.js.git
