@@ -2,12 +2,16 @@ return {
     "lewis6991/gitsigns.nvim",
     config = function()
         local gs = require("gitsigns")
-        require("which-key").add {
+        local wk = require("which-key")
+        wk.add {
             --TODO: setup get_actions() with telescope
             {
                 "gsn",
                 function()
                     gs.nav_hunk("next", { target = "all" })
+                    vim.defer_fn(function()
+                        wk.show { keys = "gs" }
+                    end, 15)
                 end,
                 desc = "Next Git Hunk",
             },
@@ -15,6 +19,9 @@ return {
                 "gsp",
                 function()
                     gs.nav_hunk("prev", { target = "all" })
+                    vim.defer_fn(function()
+                        wk.show { keys = "gs" }
+                    end, 15)
                 end,
                 desc = "Next Git Hunk",
             },
