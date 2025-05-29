@@ -20,14 +20,14 @@ user_pref("browser.shopping.experience2023.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.startup.page", 0);
 user_pref("browser.tabs.crashReporting.sendReport", false);
-user_pref("browser.urlbar.addons.featureGate", false); // [FF115+]
-user_pref("browser.urlbar.fakespot.featureGate", false); // [FF130+] [DEFAULT: false]
-user_pref("browser.urlbar.mdn.featureGate", false); // [FF117+] [HIDDEN PREF]
-user_pref("browser.urlbar.pocket.featureGate", false); // [FF116+] [DEFAULT: false]
+user_pref("browser.urlbar.addons.featureGate", false); 
+user_pref("browser.urlbar.fakespot.featureGate", false); 
+user_pref("browser.urlbar.mdn.featureGate", false); 
+user_pref("browser.urlbar.pocket.featureGate", false); 
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.urlbar.trending.featureGate", false);
-user_pref("browser.urlbar.weather.featureGate", false); // [FF108+] [DEFAULT: false]
-user_pref("browser.urlbar.yelp.featureGate", false); // [FF124+]
+user_pref("browser.urlbar.weather.featureGate", false); 
+user_pref("browser.urlbar.yelp.featureGate", false); 
 user_pref("captivedetect.canonicalURL", "");
 user_pref("extensions.autoDisableScopes", 0);
 user_pref("extensions.getAddons.showPane", false);
@@ -50,11 +50,11 @@ user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 user_pref("network.proxy.socks_remote_dns", true);
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
-user_pref("security.OCSP.enabled", 1); // [DEFAULT: 1]
+user_pref("security.OCSP.enabled", 1); 
 user_pref("security.OCSP.require", true);
 user_pref("security.cert_pinning.enforcement_level", 2);
 user_pref("security.pki.crlite_mode", 2);
-user_pref("security.remote_settings.crlite_filters.enabled", true); // [DEFAULT: true FF137+]
+user_pref("security.remote_settings.crlite_filters.enabled", true); 
 user_pref("security.ssl.require_safe_negotiation", true);
 user_pref("security.tls.enable_0rtt_data", false);
 user_pref("signon.autofillForms", false);
