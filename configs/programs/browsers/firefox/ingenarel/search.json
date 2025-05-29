@@ -9,11 +9,7 @@
             "_definedAliases": [
                 "@np"
             ],
-            "_iconMapObj": {
-                "16": "file:///nix/store/snb0vqln94dx84scknrnsj79pfcl099s-nixos-icons-0-unstable-2024-04-10/share/icons/hicolor/scalable/apps/nix-snowflake.svg"
-            },
             "_isAppProvided": false,
-            "_loadPath": "[home-manager]/programs.zen-browser.profiles.default.search.engines.nix-packages",
             "_metaData": {},
             "_name": "Nix Packages",
             "_urls": [
@@ -26,6 +22,10 @@
                         {
                             "name": "query",
                             "value": "{searchTerms}"
+                        },
+                        {
+                            "name": "channel",
+                            "value": "unstable"
                         }
                     ],
                     "template": "https://search.nixos.org/packages"
@@ -41,7 +41,6 @@
                 "16": "https://wiki.nixos.org/favicon.ico"
             },
             "_isAppProvided": false,
-            "_loadPath": "[home-manager]/programs.zen-browser.profiles.default.search.engines.nixos-wiki",
             "_metaData": {},
             "_name": "NixOS Wiki",
             "_urls": [
@@ -59,4 +58,3 @@
     },
     "version": 12
 }
-
