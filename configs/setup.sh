@@ -11,7 +11,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/terminal/multiplexers/tmux/tmux-powerline-config"     "$HOME/.config/tmux-powerline"
     safelink "$scriptDir/programs/zsh/config"                                           "$HOME/.config/zsh"
     safelink "$scriptDir/programs/git/config"                                           "$HOME/.gitconfig"
-    safelink "$scriptDir/programs/music/cava/config"                                    "$HOME/.config/cava"
+    safelink "$scriptDir/programs/music/cava/config"                                    "$HOME/.config/cava/config"
     safelink "$scriptDir/programs/music/ncmpcpp/config"                                 "$HOME/.config/ncmpcpp"
     safelink "$scriptDir/programs/neovim/lsp-configs/clangd"                            "$HOME/.config/clangd"
     safelink "$scriptDir/programs/terminal/emulators/foot/config"                       "$HOME/.config/foot"
