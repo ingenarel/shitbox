@@ -72,11 +72,6 @@
         "defaultEngineId": "ddg",
         "defaultEngineIdHash": "B3BLzcZ2K+GdEPYIpfbGrNL4aJYvsLQYpm0219pFZfc=",
         "useSavedOrder": true,
-        "locale": "en-US",
-        "region": "BD",
-        "channel": "twilight",
-        "experiment": "",
-        "distroID": "",
-        "appDefaultEngineId": "google"
+        "locale": "en-US"
     }
 }
