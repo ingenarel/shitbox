@@ -37,6 +37,8 @@ setupConfigs(){
     safelink "$scriptDir/programs/browsers/firefox/policies.json"                       "/etc/zen/policies/policies.json" 1
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
     safelink "$scriptDir/programs/browsers/firefox/profiles.ini"                        "$HOME/.zen/profiles.ini"
+    mozlz4 -z "$scriptDir/programs/browsers/firefox/ingenarel/search.json"              "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"
+    safelink "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"        "$HOME/.zen/ingenarel/search.json.mozlz4"
 
     safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
 

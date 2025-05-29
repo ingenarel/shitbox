@@ -1,60 +1,82 @@
 {
+    "version": 12,
     "engines": [
         {
+            "id": "ddg",
+            "_name": "DuckDuckGo",
             "_isAppProvided": true,
-            "_metaData": {},
-            "id": "ddg"
+            "_metaData": {
+                "order": 2
+            }
         },
         {
-            "_definedAliases": [
-                "@np"
-            ],
-            "_isAppProvided": false,
-            "_metaData": {},
-            "_name": "Nix Packages",
-            "_urls": [
-                {
-                    "params": [
-                        {
-                            "name": "type",
-                            "value": "packages"
-                        },
-                        {
-                            "name": "query",
-                            "value": "{searchTerms}"
-                        },
-                        {
-                            "name": "channel",
-                            "value": "unstable"
-                        }
-                    ],
-                    "template": "https://search.nixos.org/packages"
-                }
-            ],
-            "id": "nix-packages"
+            "id": "wikipedia",
+            "_name": "Wikipedia (en)",
+            "_isAppProvided": true,
+            "_metaData": {
+                "order": 3
+            }
         },
         {
-            "_definedAliases": [
-                "@nw"
-            ],
-            "_iconMapObj": {
-                "16": "https://wiki.nixos.org/favicon.ico"
+            "id": "f0d2841b-0f90-49ed-942c-d7eb671f1a70",
+            "_name": "nixwiki",
+            "_loadPath": "[user]",
+            "_metaData": {
+                "alias": "@nw",
+                "order": 4
             },
-            "_isAppProvided": false,
-            "_metaData": {},
-            "_name": "NixOS Wiki",
             "_urls": [
                 {
+                    "params": [],
+                    "rels": [],
                     "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}"
+                },
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}",
+                    "type": "application/x-suggestions+json"
                 }
             ],
-            "id": "nixos-wiki"
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_definedAliases": []
+        },
+        {
+            "id": "71225c60-3ed3-4ba4-a755-7e5fcfb23ab6",
+            "_name": "NixPackages",
+            "_loadPath": "[user]",
+            "_metaData": {
+                "alias": "@np",
+                "order": 5
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}"
+                },
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}",
+                    "type": "application/x-suggestions+json"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_definedAliases": []
         }
     ],
     "metaData": {
         "defaultEngineId": "ddg",
         "defaultEngineIdHash": "B3BLzcZ2K+GdEPYIpfbGrNL4aJYvsLQYpm0219pFZfc=",
-        "useSavedOrder": false
-    },
-    "version": 12
+        "useSavedOrder": true,
+        "locale": "en-US",
+        "region": "BD",
+        "channel": "twilight",
+        "experiment": "",
+        "distroID": "",
+        "appDefaultEngineId": "google"
+    }
 }
