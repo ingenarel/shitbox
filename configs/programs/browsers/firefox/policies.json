@@ -13,6 +13,10 @@
         "ExtensionUpdate": true,
         "Bookmarks": [
             {
+                "Title": "shitbox",
+                "URL": "https://github.com/ingenarel/shitbox"
+            },
+            {
                 "Title": "gitlab",
                 "URL": "https://gitlab.com"
             },
