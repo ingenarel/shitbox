@@ -13,14 +13,6 @@
         "ExtensionUpdate": true,
         "Bookmarks": [
             {
-                "Title": "archwiki",
-                "URL": "https://wiki.archlinux.org"
-            },
-            {
-                "Title": "gentoowiki",
-                "URL": "https://wiki.gentoo.org"
-            },
-            {
                 "Title": "github",
                 "URL": "https://github.com"
             },
