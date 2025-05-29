@@ -46,6 +46,7 @@ packages+=(
 
 packages+=(
     zen
+    mozlz4
 )
 
 packages+=(

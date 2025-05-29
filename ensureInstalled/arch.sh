@@ -77,6 +77,9 @@ for package in "${packages[@]}"; do
         "nicotine")
             package="nicotine+"
             ;;
+        "mozlz4")
+            package="mozlz4-bin"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
