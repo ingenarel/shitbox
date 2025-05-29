@@ -13,10 +13,6 @@
         "ExtensionUpdate": true,
         "Bookmarks": [
             {
-                "Title": "github",
-                "URL": "https://github.com"
-            },
-            {
                 "Title": "gitlab",
                 "URL": "https://gitlab.com"
             },

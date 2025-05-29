@@ -237,9 +237,10 @@
             "id": "981b10a8-2a57-4df2-82c7-6c12f64b1f21",
             "_name": "AUR packages",
             "_loadPath": "[user]",
+            "_iconMapObj": null,
             "_metaData": {
                 "alias": "@au",
-                "order": 12
+                "order": 11
             },
             "_urls": [
                 {
@@ -256,14 +257,39 @@
             ],
             "_orderHint": null,
             "_telemetryId": null,
+            "_filePath": null,
+            "_definedAliases": []
+        },
+        {
+            "id": "9b42c870-7eec-4888-a9b9-98652d02269b",
+            "_name": "github",
+            "_loadPath": "[user]",
+            "_metaData": {
+                "alias": "@gh",
+                "order": 13
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://github.com/search?q={searchTerms}"
+                },
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://github.com/search?q={searchTerms}",
+                    "type": "application/x-suggestions+json"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
             "_definedAliases": []
         }
     ],
     "metaData": {
         "defaultEngineId": "ddg",
         "defaultEngineIdHash": "B3BLzcZ2K+GdEPYIpfbGrNL4aJYvsLQYpm0219pFZfc=",
-        "useSavedOrder": true,
-        "locale": "en-US"
+        "useSavedOrder": true
     }
 }
 
