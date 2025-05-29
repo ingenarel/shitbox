@@ -37,7 +37,15 @@ for package in "${packages[@]}"; do
             ) || safelink "$scriptDir/../configs/programs/greetd/config-tmux.toml" "/etc/greetd/config.toml" 1
             ;;
         "sweet-gtk")
-            package="sweet-gtk-theme-dark"
+            parentPath="$HOME/.themes"
+            themePath="$parentPath/Sweet-Dark"
+            [[ -d "$parentPath" ]] || mkdir --parents "$parentPath"
+            [[ -d "$themePath" ]] || (
+                wget --directory-prefix="$parentPath" "https://github.com/EliverLara/Sweet/releases/download/v6.0/Sweet-Dark.tar.xz" &&
+                tar -xvf "$parentPath/Sweet-Dark.tar.xz" -C "$parentPath" &&
+                rm "$parentPath/Sweet-Dark.tar.xz"
+            )
+            continue
             ;;
         "hyprland")
             # figure out a way to autoinstall plugins if not installed
