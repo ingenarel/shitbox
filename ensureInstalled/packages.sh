@@ -18,5 +18,6 @@ packages=(
     github-cli
     glab
     wget
+    btop
 )
 (dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
