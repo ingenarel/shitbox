@@ -21,10 +21,6 @@
                 "URL": "https://wiki.gentoo.org"
             },
             {
-                "Title": "nixwiki",
-                "URL": "https://wiki.nixos.org"
-            },
-            {
                 "Title": "github",
                 "URL": "https://github.com"
             },
@@ -39,10 +35,6 @@
             {
                 "Title": "home manager options",
                 "URL": "https://home-manager-options.extranix.com"
-            },
-            {
-                "Title": "nixos search",
-                "URL": "https://search.nixos.org/packages"
             },
             {
                 "Title": "instagram",
