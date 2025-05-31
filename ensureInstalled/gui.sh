@@ -71,5 +71,6 @@ packages+=(
     nicotine
     cava
     ncmpcpp
-    tailscale
 )
+
+packages+=(tailscale)
