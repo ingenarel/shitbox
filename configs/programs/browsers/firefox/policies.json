@@ -7,7 +7,8 @@
                 "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi"
+                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4499691/zen_internet-2.2.4.xpi"
             ]
         },
         "ExtensionUpdate": true,
