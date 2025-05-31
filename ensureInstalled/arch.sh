@@ -91,7 +91,7 @@ myshell="$(which zsh)"
 command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
 [[ "${#systemctlReloads[@]}" -gt 0 ]] && (for service in "${systemctlReloads[@]}"; do 
-    [[ "$(systemctl is-enabled $service)" == "enabled" ]] || systemctl enable "$service"
+    [[ "$(systemctl is-enabled $service)" == "enabled" ]] || (systemctl enable "$service" && systemctl start "$service")
 done && systemctl daemon-reload)
 
 # echo "${packagesToInstall[@]}"
