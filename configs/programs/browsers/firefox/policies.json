@@ -52,7 +52,8 @@
                 "https://www.youtube.com",
                 "https://www.instagram.com",
                 "https://chatgpt.com",
-                "https://www.pornhub.com"
+                "https://www.pornhub.com",
+                "https://www.sheepit-renderfarm.com"
             ],
             "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
