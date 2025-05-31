@@ -80,6 +80,9 @@ for package in "${packages[@]}"; do
         "mozlz4")
             package="mozlz4-bin"
             ;;
+        "mpd")
+            systemctlReloads+=(mpd)
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
