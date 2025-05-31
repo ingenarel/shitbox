@@ -1,5 +1,6 @@
 
 
+
 user_pref("app.normandy.api_url", "");
 user_pref("app.normandy.enabled", false);
 user_pref("app.shield.optoutstudies.enabled", false);
@@ -8,6 +9,7 @@ user_pref("browser.cache.disk.enable", false);
 user_pref("browser.compactmode.show", true);
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.display.use_system_colors", false); // [DEFAULT: false NON-WINDOWS]
+user_pref("browser.download.useDownloadDir", false);
 user_pref("browser.formfill.enable", false);
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
