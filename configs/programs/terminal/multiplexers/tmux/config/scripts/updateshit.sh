@@ -27,8 +27,10 @@ if grep -qEi "gentoo" /etc/os-release ; then
         "Updated live ebuilds; updating yazi plugins..."
 
 elif grep -qEi "arch" /etc/os-release ; then
-    update_stuff "paru"\
-        "Updated system packages; updating yazi plugins"
+    update_stuff "sudo pacman -Syyu"\
+        "Updating system packages; updating aur packages now"
+    update_stuff "paru --gendb && paru -Sua"\
+        "Updating aur; updating yazi"
 
 elif grep -qEi "nixos" /etc/os-release ; then
     update_stuff "nix flake update --flake $HOME/.config/shitbox"\
