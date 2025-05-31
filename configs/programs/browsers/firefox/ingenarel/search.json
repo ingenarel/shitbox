@@ -208,6 +208,24 @@
             "_orderHint": null,
             "_telemetryId": null,
             "_definedAliases": []
+        },
+        {
+            "id": "FirefoxAddons",
+            "_name": "FirefoxAddons",
+            "_loadPath": "[user]",
+            "_metaData": {
+                "alias": "@fa"
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://addons.mozilla.org/en-US/firefox/search/?q={searchTerms}"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_definedAliases": []
         }
     ],
     "metaData": {
