@@ -20,5 +20,7 @@ packages=(
     wget
     btop
     7zip
+    unzip
+    zip
 )
 (dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
