@@ -64,6 +64,7 @@ packages+=(
 )
 
 packages+=(
+    mpd
     mediainfo
     mpc
     rmpc
