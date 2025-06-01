@@ -16,6 +16,7 @@ extracommands=""
 
 systemServices=()
 userServices=()
+groups=(wheel)
 
 for package in "${packages[@]}"; do
     case "$package" in
@@ -103,6 +104,10 @@ done)
 
 [[ "${#userServices[@]}" -gt 0 ]] && (for service in "${userServices[@]}"; do 
     [[ "$(systemctl --user is-enabled $service)" == "enabled" ]] || (systemctl --user enable "$service" && systemctl --user start "$service")
+done)
+
+[[ "${#groups[@]}" -gt 0 ]] && (for group in "${groups[@]}"; do
+    echo "$(groups)" | grep -qEi "$group" || (sudo usermod -aG "$group" $USER)
 done)
 
 # echo "${packagesToInstall[@]}"
