@@ -87,6 +87,7 @@ for package in "${packages[@]}"; do
             ;;
         "ydotool")
             userServices+=(ydotool)
+            groups+=(input)
             ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
