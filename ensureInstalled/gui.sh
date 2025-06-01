@@ -11,7 +11,7 @@ packages+=(
     sweet-gtk
     swww
     wl-clipboard
-    wtype
+    ydotool
     waybar
     pipewire-pulse
     keyd
@@ -73,4 +73,7 @@ packages+=(
     ncmpcpp
 )
 
-packages+=(tailscale)
+packages+=(
+    tailscale
+    ntfs-3g
+)
