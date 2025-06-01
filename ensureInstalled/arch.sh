@@ -95,6 +95,6 @@ command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
 [[ "${#systemServices[@]}" -gt 0 ]] && (for service in "${systemServices[@]}"; do 
     [[ "$(systemctl is-enabled $service)" == "enabled" ]] || (systemctl enable "$service" && systemctl start "$service")
-done && systemctl daemon-reload)
+done)
 
 # echo "${packagesToInstall[@]}"
