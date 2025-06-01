@@ -15,6 +15,7 @@ packagesToInstall=""
 extracommands=""
 
 systemServices=()
+userServices=()
 
 for package in "${packages[@]}"; do
     case "$package" in
@@ -83,6 +84,9 @@ for package in "${packages[@]}"; do
         "mpd")
             systemServices+=(mpd)
             ;;
+        "ydotool")
+            userServices+=(ydotool)
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
@@ -95,6 +99,10 @@ command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
 [[ "${#systemServices[@]}" -gt 0 ]] && (for service in "${systemServices[@]}"; do 
     [[ "$(systemctl is-enabled $service)" == "enabled" ]] || (systemctl enable "$service" && systemctl start "$service")
+done)
+
+[[ "${#userServices[@]}" -gt 0 ]] && (for service in "${userServices[@]}"; do 
+    [[ "$(systemctl --user is-enabled $service)" == "enabled" ]] || (systemctl --user enable "$service" && systemctl --user start "$service")
 done)
 
 # echo "${packagesToInstall[@]}"
