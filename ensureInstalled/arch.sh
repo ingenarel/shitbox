@@ -14,7 +14,7 @@ packagesToInstall=""
 
 extracommands=""
 
-systemctlReloads=()
+systemServices=()
 
 for package in "${packages[@]}"; do
     case "$package" in
@@ -28,7 +28,7 @@ for package in "${packages[@]}"; do
             package="lazygit-git"
             ;;
         "greetd")
-            systemctlReloads+=(greetd)
+            systemServices+=(greetd)
             ;;
         "tuigreet")
             package="greetd-tuigreet-bin"
@@ -69,7 +69,7 @@ for package in "${packages[@]}"; do
             package="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra"
             ;;
         "keyd")
-            systemctlReloads+=(keyd)
+            systemServices+=(keyd)
             ;;
         "vimiv-qt")
             continue
@@ -81,7 +81,7 @@ for package in "${packages[@]}"; do
             package="mozlz4-bin"
             ;;
         "mpd")
-            systemctlReloads+=(mpd)
+            systemServices+=(mpd)
             ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
@@ -93,7 +93,7 @@ done
 myshell="$(which zsh)"
 command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
 
-[[ "${#systemctlReloads[@]}" -gt 0 ]] && (for service in "${systemctlReloads[@]}"; do 
+[[ "${#systemServices[@]}" -gt 0 ]] && (for service in "${systemServices[@]}"; do 
     [[ "$(systemctl is-enabled $service)" == "enabled" ]] || (systemctl enable "$service" && systemctl start "$service")
 done && systemctl daemon-reload)
 
