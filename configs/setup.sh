@@ -53,7 +53,7 @@ setupConfigs(){
         cat "$scriptDir/programs/browsers/firefox/zen.js"
     } | sort > "$scriptDir/programs/browsers/firefox/ingenarel/user.js"
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
-
+    safelink "$scriptDir/programs/browsers/firefox/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
     safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
 
