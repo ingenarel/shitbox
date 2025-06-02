@@ -44,5 +44,5 @@ function IGNORE_FILETYPES_ALL_FOR_CONFIG()
 end -- }}}
 
 require("plugins")
-require("_configs_._load-configs_")
-require("_configs_.keybinds")
+require("configs._load-configs_")
+require("configs.keybinds")

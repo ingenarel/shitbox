@@ -1,6 +1,6 @@
 local wk = require("which-key")
 
-require("_configs_.keybinds.alt")
+require("configs.keybinds.alt")
 
 vim.keymap.set("n", "<leader>R", function()
     vim.cmd("w | source %")
@@ -81,5 +81,5 @@ CK_SetKeymap_n("<leader>l", "<CMD>set wrap!<CR>", "Toggles line wrap")
 CK_SetKeymap_n("<leader><m-t>", "<CMD>InspectTree<CR>", "Inspect Treesitter tree")
 vim.keymap.set("n", "<Up>", ":<Up>", { desc = "Previous command", silent = true, noremap = true })
 
-require("_configs_.keybinds._git_")
-require("_configs_.keybinds._window-nav_")
+require("configs.keybinds._git_")
+require("configs.keybinds._window-nav_")
