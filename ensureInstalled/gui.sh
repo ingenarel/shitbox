@@ -2,6 +2,7 @@
 
 packages+=(
     hyprland
+    xdg-desktop-portal-hyprland
     waybar
     grim
     slurp
