@@ -19,3 +19,33 @@
 [submodule "configs/programs/browsers/firefox/arkenfox"]
 	path = configs/programs/browsers/firefox/arkenfox
     url = https://github.com/ingenarel/arkenfox-fork.git
+[submodule "configs/programs/neovim/myPlugins/cyberpunk-neon.nvim"]
+	path = configs/programs/neovim/myPlugins/cyberpunk-neon.nvim
+	url = https://github.com/ingenarel/cyberpunk-neon.nvim
+[submodule "configs/programs/neovim/myPlugins/focus-mode.nvim"]
+	path = configs/programs/neovim/myPlugins/focus-mode.nvim
+	url = https://github.com/ingenarel/focus-mode.nvim
+[submodule "configs/programs/neovim/myPlugins/luix.nvim"]
+	path = configs/programs/neovim/myPlugins/luix.nvim
+	url = https://github.com/ingenarel/luix.nvim
+[submodule "configs/programs/neovim/myPlugins/luse.nvim"]
+	path = configs/programs/neovim/myPlugins/luse.nvim
+	url = https://github.com/ingenarel/luse.nvim
+[submodule "configs/programs/neovim/myPlugins/metapack.nvim"]
+	path = configs/programs/neovim/myPlugins/metapack.nvim
+	url = https://github.com/ingenarel/metapack.nvim
+[submodule "configs/programs/neovim/myPlugins/nvim-pairMan"]
+	path = configs/programs/neovim/myPlugins/nvim-pairMan
+	url = https://github.com/ingenarel/nvim-pairMan
+[submodule "configs/programs/neovim/myPlugins/randomtips-nvim"]
+	path = configs/programs/neovim/myPlugins/randomtips-nvim
+	url = https://github.com/ingenarel/randomtips-nvim
+[submodule "configs/programs/neovim/myPlugins/simple-runner.nvim"]
+	path = configs/programs/neovim/myPlugins/simple-runner.nvim
+	url = https://github.com/ingenarel/simple-runner.nvim
+[submodule "configs/programs/neovim/myPlugins/smart-term.nvim"]
+	path = configs/programs/neovim/myPlugins/smart-term.nvim
+	url = https://github.com/ingenarel/smart-term.nvim
+[submodule "configs/programs/neovim/myPlugins/zoxide.nvim"]
+	path = configs/programs/neovim/myPlugins/zoxide.nvim
+	url = https://github.com/ingenarel/zoxide.nvim
