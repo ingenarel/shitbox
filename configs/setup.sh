@@ -39,12 +39,12 @@ setupConfigs(){
     mozlz4 -z "$scriptDir/programs/browsers/firefox/ingenarel/search.json"              "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"        "$HOME/.zen/ingenarel/search.json.mozlz4"
 
-    (
+    {
         grep -E\
             '^user_pref\("[^_][^u][^s][^e][^r][^.][^j][^s][^.][^p][^a][^r][^r][^o][^t]'\
             "$scriptDir/programs/browsers/firefox/arkenfox/user.js"
         cat "$scriptDir/programs/browsers/firefox/zen.js"
-    ) | sort > "$scriptDir/programs/browsers/firefox/ingenarel/user.js"
+    } | sort > "$scriptDir/programs/browsers/firefox/ingenarel/user.js"
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
 
 
