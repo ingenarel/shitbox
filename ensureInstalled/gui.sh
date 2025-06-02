@@ -4,8 +4,6 @@ packages+=(
     hyprland
     xdg-desktop-portal-hyprland
     waybar
-    grim
-    slurp
     fuzzel
     libnotify
     swaync
@@ -16,6 +14,12 @@ packages+=(
     waybar
     pipewire-pulse
     keyd
+)
+
+packages+=(
+    grim
+    slurp
+    satty
 )
 
 packages+=(
