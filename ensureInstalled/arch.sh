@@ -83,7 +83,7 @@ for package in "${packages[@]}"; do
             package="mozlz4-bin"
             ;;
         "mpd")
-            systemServices+=(mpd)
+            userServices+=(mpd)
             ;;
         "ydotool")
             userServices+=(ydotool)
