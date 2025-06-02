@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>R", function()
     vim.cmd("w | source %")
 end, { desc = "Saves and sources the file", silent = true, noremap = true })
 
-vim.keymap.set("n", "<leader>cd", function()
+vim.keymap.set("n", "<leader>cdd", function()
     vim.cmd("cd %:h | pwd ")
 end, { desc = "Changes directory and shows the current dir", silent = true, noremap = true })
 
