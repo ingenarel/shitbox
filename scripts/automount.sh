@@ -9,14 +9,12 @@ ifmounted() {
 }
 
 main(){
-    # local x="$(sudo blkid)"
     local userUID="$(id -u $USER)"
 
-    for partition in $(sudo blkid | awk -F ':' '{print $1}'); do
+    for partition in $(blkid | awk -F ':' '{print $1}'); do
         ifmounted "$partition"\
             ||
-        sudo\
-            mount\
+        mount\
             --mkdir\
             --onlyonce "$partition"\
             /mnt/$(echo "$partition" | awk -F '/' '{print $3}')\

@@ -3,6 +3,13 @@ scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
 source "$scriptDir/../utils/safelink.sh"
 
+setSudoConfigs(){
+    automountLine="$USER ALL=(ALL) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
+    automountRegex="$USER ALL=\(ALL\) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
+    automountConfig="/etc/sudoers.d/automount"
+    sudo grep -qEi "$automountRegex" "$automountConfig" || echo "$automountLine" | sudo tee "$automountConfig"
+}
+
 setupConfigs(){
     [[ $HOME == "/root" ]] && HOME="/home/ingenarel"
     safelink "$scriptDir/programs/neovim/nvim"                                          "$HOME/.config/nvim"
@@ -58,6 +65,7 @@ setupConfigs(){
 }
 
 setupConfigs
+setSudoConfigs
 
 git -C "$scriptDir/.." submodule init
 git -C "$scriptDir/.." submodule update
