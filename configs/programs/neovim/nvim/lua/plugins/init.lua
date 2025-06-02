@@ -85,6 +85,7 @@ require("lazy").setup {
                 build = ":Cord update",
                 opts = true,
             },
+            require("plugins.zoxide"),
         },
     },
 }
