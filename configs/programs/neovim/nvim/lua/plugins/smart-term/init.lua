@@ -6,8 +6,8 @@ local m = {
     end,
 }
 
-if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/smart-term.nvim")) ~= nil then
-    m.dir = "~/coding/git/smart-term.nvim"
+if vim.uv.fs_stat(vim.fs.normalize("~/.config/shitbox/configs/programs/neovim/myPlugins/smart-term.nvim")) ~= nil then
+    m.dir = "~/.config/shitbox/configs/programs/neovim/myPlugins/smart-term.nvim"
 end
 
 return m

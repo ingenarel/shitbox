@@ -13,8 +13,8 @@ local m = {
     end,
 }
 
-if vim.uv.fs_stat(vim.fs.normalize("~/coding/git/focus-mode.nvim")) ~= nil then
-    m.dir = "~/coding/git/focus-mode.nvim"
+if vim.uv.fs_stat(vim.fs.normalize("~/.config/shitbox/configs/programs/neovim/myPlugins/focus-mode.nvim")) ~= nil then
+    m.dir = "~/.config/shitbox/configs/programs/neovim/myPlugins/focus-mode.nvim"
 end
 
 return m
