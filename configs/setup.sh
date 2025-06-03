@@ -69,3 +69,9 @@ setSudoConfigs
 
 git -C "$scriptDir/.." submodule init
 git -C "$scriptDir/.." submodule update
+
+"$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
+
+git -C "$scriptDir/.." submodule foreach "$scriptDir/../utils/gitPost.sh $scriptDir/.."
+
+git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
