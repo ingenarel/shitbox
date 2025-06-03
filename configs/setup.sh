@@ -64,6 +64,8 @@ setupConfigs(){
     fi
 
     safelink "$scriptDir/programs/greetd/config.toml" "/etc/greetd/config.toml" 1
+    [[ ! -d "/etc/greetd/sessions" ]] && sudo mkdir --parents /etc/greetd/sessions
+    sudo cp $scriptDir/programs/greetd/sessions/*.desktop  "/etc/greetd/sessions"
 }
 
 setupConfigs
