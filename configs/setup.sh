@@ -72,6 +72,7 @@ git -C "$scriptDir/.." submodule update
 
 "$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
 
-git -C "$scriptDir/.." submodule foreach "$scriptDir/../utils/gitPost.sh $scriptDir/.."
+git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
+
 
 git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
