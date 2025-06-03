@@ -89,7 +89,8 @@ for package in "${packages[@]}"; do
             ;;
         "reflector")
             systemServices+=(reflector)
-            safelink "$scriptDir/../configs/programs/reflector/reflector.conf" "/etc/xdg/reflector/reflector.conf" 1
+            [[ ! -d /etc/xdg/reflector ]] && sudo mkdir --parents /etc/xdg/reflector
+            sudo cp -r "$scriptDir/../configs/programs/reflector/reflector.conf" "/etc/xdg/reflector/reflector.conf"
             ;;
         # "superfile")
         #     package="superfile-git"
