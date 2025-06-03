@@ -87,9 +87,9 @@ for package in "${packages[@]}"; do
             userServices+=(ydotool)
             groups+=(input)
             ;;
-        "superfile")
-            package="superfile-git"
-            ;;
+        # "superfile")
+        #     package="superfile-git"
+        #     ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
