@@ -62,6 +62,8 @@ setupConfigs(){
     if grep -qEi "arch" /etc/os-release ; then
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
     fi
+
+    safelink "$scriptDir/programs/greetd/config.toml" "/etc/greetd/config.toml" 1
 }
 
 setupConfigs

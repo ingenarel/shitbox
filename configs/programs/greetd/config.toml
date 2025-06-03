@@ -1,0 +1,6 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --sessions /home/ingenarel/.config/shitbox/configs/programs/greetd/sessions"
+user = "greeter"

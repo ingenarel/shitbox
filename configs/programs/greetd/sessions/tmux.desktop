@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Tmux
+Comment=Tmux is a terminal multiplexer
+Exec=tmux
+Type=Application
+DesktopNames=Tmux
+Keywords=TTY;
