@@ -10,6 +10,7 @@ packages=(
     ripgrep
     tmux
     yazi
+    superfile
     zsh
     greetd
     tuigreet
