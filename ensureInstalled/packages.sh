@@ -26,3 +26,5 @@ packages=(
     lsd
 )
 (dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
+
+grep -qEi 'arch' /etc/os-release && packages+=(reflector)

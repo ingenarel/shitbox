@@ -87,6 +87,10 @@ for package in "${packages[@]}"; do
             userServices+=(ydotool)
             groups+=(input)
             ;;
+        "reflector")
+            systemServices+=(reflector)
+            safelink "$scriptDir/../configs/programs/reflector/reflector.conf" "/etc/xdg/reflector/reflector.conf" 1
+            ;;
         # "superfile")
         #     package="superfile-git"
         #     ;;
