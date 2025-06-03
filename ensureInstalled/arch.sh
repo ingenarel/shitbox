@@ -24,7 +24,8 @@ for package in "${packages[@]}"; do
             package="neovim-git"
             ;;
         "yazi")
-            [[ $ram -lt 8 ]] && package="yazi-nightly-bin" || package="yazi-git"
+            # [[ $ram -lt 8 ]] && package="yazi-nightly-bin" || package="yazi-git"
+            package="yazi-nightly-bin"
             ;;
         "lazygit")
             package="lazygit-git"
