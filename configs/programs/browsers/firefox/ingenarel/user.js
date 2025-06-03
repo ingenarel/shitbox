@@ -1,6 +1,7 @@
 
 
 
+
 user_pref("app.normandy.api_url", "");
 user_pref("app.normandy.enabled", false);
 user_pref("app.shield.optoutstudies.enabled", false);
@@ -48,6 +49,8 @@ user_pref("browser.xul.error_pages.expert_bad_cert", true);
 user_pref("captivedetect.canonicalURL", "");
 user_pref("dom.disable_window_move_resize", true);
 user_pref("extensions.webextensions.restrictedDomains", "");
+user_pref("full-screen-api.transition-duration.enter", "0 0");
+user_pref("full-screen-api.transition-duration.leave", "0 0");
 user_pref("network.auth.subresource-http-auth-allow", 1);
 user_pref("network.captive-portal-service.enabled", false); // [FF52+]
 user_pref("network.cookie.cookieBehavior.optInPartitioning", true); // [ETP FF132+]
@@ -78,9 +81,13 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.sanitize.timeSpan", 0);
 user_pref("privacy.window.maxInnerHeight", 900);
 user_pref("privacy.window.maxInnerWidth", 1600);
+user_pref("sidebar.animation.duration-ms", 0);
+user_pref("sidebar.animation.enabled", false);
 user_pref("signon.autofillForms", false);
 user_pref("signon.formlessCapture.enabled", false);
+user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("toolkit.winRegisterApplicationRestart", false);
+user_pref("ui.prefersReducedMotion", 1);
 user_pref("widget.non-native-theme.use-theme-accent", false); // [DEFAULT: false WINDOWS]
 user_pref("zen.view.compact.hide-toolbar", true);
 user_pref("zen.welcome-screen.seen", true);

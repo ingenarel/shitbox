@@ -1,3 +1,13 @@
+:root {
+  --animation-duration: 0s !important;
+  --transition-duration: 0s !important;
+}
+
+* {
+  animation: none !important;
+  transition: none !important;
+}
+
 body {
   background-color: rgba(17, 0, 21, 0.5) !important;
 }
