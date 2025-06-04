@@ -104,4 +104,5 @@ packages+=(
     wine
     lutris
     winetricks
+    protonup-rs-bin
 )
