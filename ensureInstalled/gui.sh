@@ -99,3 +99,9 @@ packages+=(
     libxcb-wm
     xwayland
 )
+
+packages+=(
+    wine
+    lutris
+    winetricks
+)
