@@ -34,12 +34,6 @@ packages+=(
     gimp
 )
 
-# packages+=(
-#     lutris
-#     wine
-#     winetricks
-# )
-
 packages+=(
     vesktop
     cinny
@@ -103,6 +97,5 @@ packages+=(
 packages+=(
     wine
     lutris
-    winetricks
     protonup-rs-bin
 )
