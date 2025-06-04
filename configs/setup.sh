@@ -4,8 +4,8 @@ scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 source "$scriptDir/../utils/safelink.sh"
 
 setSudoConfigs(){
-    automountLine="$USER ALL=(ALL) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
-    automountRegex="$USER ALL=\(ALL\) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
+    automountLine="%wheel ALL=(ALL) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
+    automountRegex="%wheel ALL=\(ALL\) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
     automountConfig="/etc/sudoers.d/automount"
     sudo grep -qEi "$automountRegex" "$automountConfig" || echo "$automountLine" | sudo tee "$automountConfig"
 }

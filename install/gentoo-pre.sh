@@ -94,7 +94,7 @@ arch-chroot /mnt/gentoo "/usr/bin/bash"\
 
     setUserPassword
 
-    echo '%wheel ALL=(ALL:ALL) ALL' >> /etc/sudoers && echo 'set up Wheel group'
+    sed -E 's/@includedir \/etc\/sudoers\.d/%wheel ALL=(ALL:ALL) ALL\n&/' /etc/sudoers && echo 'set up Wheel group'
 
     echo 'Installing post-install script' &&
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/gentoo-post.sh > $gentooPostPath &&
