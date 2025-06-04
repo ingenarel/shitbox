@@ -1,4 +1,4 @@
-exec swww-daemon & swaync & $waybar & sudo $HOME/.config/shitbox/scripts/automount.sh
+exec swww-daemon & swaync & waybar & sudo $HOME/.config/shitbox/scripts/automount.sh
 
 set $mainMod Mod4
 set $left h
@@ -27,10 +27,10 @@ set $terminal kitty
 # Moving around:
 
     # Move your focus around
-    bindsym $mainMod+$h focus left
-    bindsym $mainMod+$j focus down
-    bindsym $mainMod+$k focus up
-    bindsym $mainMod+$l focus right
+    bindsym $mainMod+h focus left
+    bindsym $mainMod+j focus down
+    bindsym $mainMod+k focus up
+    bindsym $mainMod+l focus right
 
     # # Move the focused window with the same, but add Shift
     # bindsym $mainMod+Shift+$left move left
@@ -123,8 +123,8 @@ set $terminal kitty
 # Utilities:
 #
 
-bindsym $mainMod, equal, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
-bindsym $mainMod, minus, exec,  wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+bindsym $mainMod+equal exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+bindsym $mainMod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 # bindsym Print exec grim
 
 #
