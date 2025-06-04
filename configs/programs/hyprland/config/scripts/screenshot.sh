@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 
-res="$(
-    for shit in /sys/class/drm/card*-*/; do
-        [[ -f "$shit/status" && "$(< "$shit/status")" == "connected" ]] && { head -n1 "$shit/modes" && break; }
-    done
-)"
-
-echo "$res"
-
-grim -g "0,0 $res" -t ppm -\
+grim -t ppm -\
     |
 satty\
     --fullscreen\
