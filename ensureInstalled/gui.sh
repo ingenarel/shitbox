@@ -87,3 +87,15 @@ packages+=(
     ffmpeg
     yt-dlp
 )
+
+packages+=(
+    libinput
+    wayland
+    wlroots
+    xkbcommon
+    wayland-protocols
+    pkgconfig
+    libxcb
+    libxcb-wm
+    xwayland
+)

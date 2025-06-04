@@ -95,6 +95,18 @@ for package in "${packages[@]}"; do
         # "superfile")
         #     package="superfile-git"
         #     ;;
+        "xkbcommon")
+            package="libxkbcommon"
+            ;;
+        "pkgconfig")
+            package="pkgconf"
+            ;;
+        "libxcb-wm")
+            package="xcb-util-wm"
+            ;;
+        "xwayland")
+            package="xorg-xwayland"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
