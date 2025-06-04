@@ -82,3 +82,8 @@ packages+=(
     tailscale
     ntfs-3g
 )
+
+packages+=(
+    ffmpeg
+    yt-dlp
+)
