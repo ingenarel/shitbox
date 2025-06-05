@@ -79,17 +79,6 @@ git -C "$scriptDir/.." submodule update
 
 git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
 
-
 git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
 
-
 ! ls -d "$HOME/.local/share/lutris/runners/wine/GE-Wine"* && protonup-rs
-
-[[ ! -d "$HOME/.local/share/wineprefixes/skyrim" ]]\
-    &&
-$HOME/.local/share/lutris/runtime/winetricks/winetricks\
-    arch=64\
-    prefix=skyrim\
-    -q faudio vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2022\
-    &&
-wget --directory-prefix=/tmp https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.410/dotnet-sdk-8.0.410-win-x64.exe
