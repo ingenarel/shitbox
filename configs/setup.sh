@@ -83,5 +83,5 @@ git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
 
 [[ -n "$WAYLAND_DISPLAY" ]] && {
     [[ -d "$HOME/.local/share/lutris/runners/proton/ge-proton" ]] || protonup-rs
-    "$scriptDir/games/skyrim.sh"
+    "$scriptDir/games/skyrim/init.sh"
 }
