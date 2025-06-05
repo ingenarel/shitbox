@@ -81,8 +81,7 @@ git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$topleve
 
 git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
 
-! ls -d "$HOME/.local/share/lutris/runners/wine/GE-Wine"* && protonup-rs
-
 [[ -n "$WAYLAND_DISPLAY" ]] && {
+    ! ls -d "$HOME/.local/share/lutris/runners/wine/GE-Wine"* && protonup-rs
     "$scriptDir/games/skyrim.sh"
 }
