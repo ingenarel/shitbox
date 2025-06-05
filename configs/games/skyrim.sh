@@ -31,6 +31,6 @@ $HOME/.local/share/lutris/runtime/winetricks/winetricks\
 grep\
     -qEi\
     '\[Software\\\\Wow6432Node\\\\Bethesda Softworks\\\\Skyrim Special Edition\]'\
-    "$WINEPREFIX/system.reg"
-||
+    "$WINEPREFIX/system.reg"\
+    ||
 setupRegEdits
