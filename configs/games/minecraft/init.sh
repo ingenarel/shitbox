@@ -47,3 +47,16 @@ ls "$HOME/Downloads/prismlauncher-cracked/PrismLauncher-Linux-Qt6-Portable-"*\
 [[ -d "$HOME/.local/share/applications" ]] || mkdir --parents "$HOME/.local/share/applications"
 
 safelink "$scriptDir/org.prismlauncher.PrismLauncher.desktop" "$HOME/.local/share/applications/org.prismlauncher.PrismLauncher.desktop"
+
+[[ -d "$HOME/Downloads/prismlauncher-cracked/myPlugins" ]] || mkdir --parents "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+
+ls "$HOME/Downloads/prismlauncher-cracked/myPlugins/minihud-fabric-"*\
+    ||
+wget\
+    --no-use-server-timestamps\
+    --directory-prefix="$HOME/Downloads/prismlauncher-cracked/myPlugins"\
+    "$(
+        curl https://api.github.com/repos/sakura-ryoko/minihud/releases/latest\
+                |
+        grep -oE "https://github.com/sakura-ryoko/minihud/releases/download/\S+\.jar"
+)"
