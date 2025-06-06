@@ -1,6 +1,8 @@
 :root {
   --animation-duration: 0s !important;
   --transition-duration: 0s !important;
+  min-width: 1rem !important;
+  min-height: 1rem !important;
 }
 
 * {
