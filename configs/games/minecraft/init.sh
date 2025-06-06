@@ -30,10 +30,10 @@ ls "$HOME/Downloads/prismlauncher-cracked/PrismLauncher-Linux-Qt6-Portable-"*\
     wget\
         --no-use-server-timestamps\
         --directory-prefix="$HOME/Downloads/prismlauncher-cracked/"\
-        "https://github.com/$(
-    curl https://github.com/Diegiwg/PrismLauncher-Cracked/releases\
-            |
-    grep -oE "/Diegiwg/PrismLauncher-Cracked/releases/download/[0-9.]+/PrismLauncher-Linux-Qt6-Portable-[0-9.]+\.tar\.gz"
+        "$(
+    curl https://api.github.com/repos/Diegiwg/PrismLauncher-Cracked/releases/latest\
+        |
+    grep -oE "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/[0-9.]+/PrismLauncher-Linux-Qt6-Portable-[0-9.]+\.tar\.gz"
     )"
 
     sleep 1
