@@ -35,7 +35,9 @@ return {
                 require("conform").format { bufnr = args.buf }
                 pcall(function()
                     if vim.opt_local.commentstring._value ~= "" then
-                        vim.cmd("%s/\\(\\S\\)\\(" .. vim.opt.commentstring._value .. " ...\\)/\\1 \\2/g")
+                        vim.cmd(
+                            "%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g"
+                        )
                     end
                 end)
             end,
