@@ -99,3 +99,4 @@ packages+=(
     lutris
     protonup-rs-bin
 )
+

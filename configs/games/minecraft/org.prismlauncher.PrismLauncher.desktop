@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Prism Launcher
+Comment=Discover, manage, and play Minecraft instances
+Type=Application
+Terminal=false
+Exec=/home/ingenarel/Downloads/prismlauncher-cracked/PrismLauncher
+StartupNotify=true
+Icon=/home/ingenarel/Downloads/prismlauncher-cracked/share/icons/hicolor/scalable/apps/org.prismlauncher.PrismLauncher.svg
+Categories=Game;ActionGame;AdventureGame;Simulation;PackageManager;
+Keywords=game;minecraft;mc;
+StartupWMClass=PrismLauncher
+MimeType=application/zip;application/x-modrinth-modpack+zip;x-scheme-handler/curseforge;x-scheme-handler/prismlauncher;
