@@ -1,3 +1,4 @@
+local term = require("smart-term")
 return {
     {
         desc = "Find Files",
@@ -72,7 +73,13 @@ return {
     },
     {
         desc = "Lazygit",
-        action = "FloatermNew --width=1.0 --height=1.0 --title=LAZYGIT --titleposition=center lazygit",
+        action = function()
+            term.openFloaTerm {
+                widthPercentage = 90,
+                heightPercentage = 90,
+                command = "lazygit",
+            }
+        end,
         key = "G",
         key_format = " %s",
     },
