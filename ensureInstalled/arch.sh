@@ -108,6 +108,7 @@ for package in "${packages[@]}"; do
             package="xorg-xwayland"
             ;;
         "mpd-discord-rpc")
+            package="mpd-discord-rpc-git"
             userServices="mpd-discord-rpc"
             ;;
     esac
