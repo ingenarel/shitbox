@@ -10,7 +10,11 @@ require("which-key").add {
     {
         "<leader>gg",
         function()
-            term.openNeovimFloaTerm { widthPercentage = 90, heightPercentage = 90, command = "lazygit" }
+            term.openNeovimFloaTerm {
+                widthPercentage = 90,
+                heightPercentage = 90,
+                command = "lazygit",
+            }
         end,
         desc = "Lazygit",
     },
