@@ -54,7 +54,8 @@
                 "https://chatgpt.com",
                 "https://www.pornhub.com",
                 "https://www.sheepit-renderfarm.com",
-                "https://x.com"
+                "https://x.com",
+                "https://itch.io"
             ],
             "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
