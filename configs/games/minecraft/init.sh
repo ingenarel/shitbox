@@ -55,21 +55,6 @@ setupPrism(){ # {{{
     [[ -d "$HOME/Downloads/prismlauncher-cracked/myPlugins" ]] || mkdir --parents "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 } # }}}
 
-downloadMinihud(){ # {{{
-    ls "$HOME/Downloads/prismlauncher-cracked/myPlugins/minihud-fabric-"*\
-        ||
-    wget\
-        --no-use-server-timestamps\
-        --directory-prefix="$HOME/Downloads/prismlauncher-cracked/myPlugins"\
-        "$(
-        curl https://api.github.com/repos/sakura-ryoko/minihud/releases/latest\
-                |
-        grep -oE "https://github.com/sakura-ryoko/minihud/releases/download/\S+\.jar"
-    )"
-} # }}}
-
 installDeps
 installPrism
 setupPrism
-downloadMinihud
-
