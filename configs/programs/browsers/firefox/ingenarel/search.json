@@ -226,6 +226,24 @@
             "_orderHint": null,
             "_telemetryId": null,
             "_definedAliases": []
+        },
+        {
+            "id": "ModrinthMods",
+            "_name": "ModrinthMods",
+            "_loadPath": "[user]",
+            "_metaData": {
+                "alias": "@mm"
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://modrinth.com/mods?q={searchTerms}"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_definedAliases": []
         }
     ],
     "metaData": {
