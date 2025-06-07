@@ -70,6 +70,7 @@ packages+=(
     nicotine
     cava
     ncmpcpp
+    mpd-discord-rpc
 )
 
 packages+=(

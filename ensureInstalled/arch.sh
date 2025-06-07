@@ -107,6 +107,9 @@ for package in "${packages[@]}"; do
         "xwayland")
             package="xorg-xwayland"
             ;;
+        "mpd-discord-rpc")
+            userServices="mpd-discord-rpc"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
