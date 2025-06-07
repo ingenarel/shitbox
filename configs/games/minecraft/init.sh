@@ -58,3 +58,18 @@ setupPrism(){ # {{{
 installDeps
 installPrism
 setupPrism
+
+# mods to automate installation somehow
+# Continuity (https://modrinth.com/mod/1IjD5062)
+# Dynamic FPS (https://modrinth.com/mod/LQ3K71Q1)
+# Fabric API (https://modrinth.com/mod/P7dR8mSH)
+# FerriteCore (https://modrinth.com/mod/uXXizFIs)
+# Litematica (https://modrinth.com/mod/bEpr0Arc)
+# Lithium (https://modrinth.com/mod/gvQqBUqZ)
+# MaLiLib (https://modrinth.com/mod/GcWjdA9I)
+# MiniHUD (https://modrinth.com/mod/UMxybHE8)
+# Mod Menu (https://modrinth.com/mod/mOgUt4GM)
+# Placeholder API (https://modrinth.com/mod/eXts2L7r)
+# Sodium (https://modrinth.com/mod/AANobbMI)
+# Sodium Extra (https://modrinth.com/mod/PtjYWJkn)
+# Tweakeroo (https://modrinth.com/mod/t5wuYk45)
