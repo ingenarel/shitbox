@@ -55,21 +55,55 @@ setupPrism(){ # {{{
     [[ -d "$HOME/Downloads/prismlauncher-cracked/myPlugins" ]] || mkdir --parents "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 } # }}}
 
+installModrinthMod(){ # {{{
+
+    local downloadData="$(curl -G "https://api.modrinth.com/v2/project/$1/version")"
+
+    local downloadURL="$(
+        echo "$downloadData"\
+            |
+        grep -oE "https://cdn.modrinth.com/data/[a-zA-Z0-9]+/versions/[^\"]*$3[^\"]*"\
+            |
+        head -n1
+    )"
+
+    # echo "downloadURL = $downloadURL"
+
+    local filename="$(echo "$downloadData" | grep -oE "\"filename\":\"[^\"]*$3[^\"]*" | head -n1 | grep -oE "[^\"]+$")"
+    # echo "filename = $filename"
+
+    ls "$2/$filename"\
+        ||
+    {
+        wget --directory-prefix="$2" "$downloadURL"
+
+        deps="$(
+            curl -G https://api.modrinth.com/v2/project/$1/dependencies\
+                |
+            sed -nE 's/.*"slug":"([^"]+)".*/\1/p'
+        )"
+
+        [[ -n "$deps" ]] && {
+            for dep in $deps; do
+                installModrinthMod "$dep" "$2" "$3"
+            done
+        }
+    }
+
+} # }}}
+
 installDeps
 installPrism
 setupPrism
 
-# mods to automate installation somehow
-# Continuity (https://modrinth.com/mod/1IjD5062)
-# Dynamic FPS (https://modrinth.com/mod/LQ3K71Q1)
-# Fabric API (https://modrinth.com/mod/P7dR8mSH)
-# FerriteCore (https://modrinth.com/mod/uXXizFIs)
-# Litematica (https://modrinth.com/mod/bEpr0Arc)
-# Lithium (https://modrinth.com/mod/gvQqBUqZ)
-# MaLiLib (https://modrinth.com/mod/GcWjdA9I)
-# MiniHUD (https://modrinth.com/mod/UMxybHE8)
-# Mod Menu (https://modrinth.com/mod/mOgUt4GM)
-# Placeholder API (https://modrinth.com/mod/eXts2L7r)
-# Sodium (https://modrinth.com/mod/AANobbMI)
-# Sodium Extra (https://modrinth.com/mod/PtjYWJkn)
-# Tweakeroo (https://modrinth.com/mod/t5wuYk45)
+installModrinthMod minihud          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod continuity       "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod dynamic-fps      "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod fabric-api       "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod ferrite-core     "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod litematica       "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod lithium          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod modmenu          "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod placeholder-api  "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod sodium-extra     "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod tweakeroo        "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
