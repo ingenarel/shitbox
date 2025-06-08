@@ -55,7 +55,8 @@
                 "https://www.pornhub.com",
                 "https://www.sheepit-renderfarm.com",
                 "https://x.com",
-                "https://itch.io"
+                "https://itch.io",
+                "https://aternos.org"
             ],
             "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
