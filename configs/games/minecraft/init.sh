@@ -92,6 +92,27 @@ installModrinthMod(){ # {{{
 
 } # }}}
 
+installGithubMod(){ # {{{
+
+    local downloadURL="$(
+        curl -G "https://api.github.com/repos/$1/releases/latest"\
+            |
+        grep -oE "https://github\.com/$1/releases/download/[^\"]*$3[^\"]*"
+    )"
+
+    echo "downloadURL = $downloadURL"
+
+    local filename="$(echo "$downloadURL" | grep -oE "[^/]+$")"
+    echo "filename = $filename"
+
+    ls "$2/$filename"\
+        ||
+    {
+        wget --directory-prefix="$2" "$downloadURL"
+    }
+
+} # }}}
+
 installDeps
 installPrism
 setupPrism
@@ -107,3 +128,5 @@ installModrinthMod modmenu          "$HOME/Downloads/prismlauncher-cracked/myPlu
 installModrinthMod placeholder-api  "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod sodium-extra     "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod tweakeroo        "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+
+installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
