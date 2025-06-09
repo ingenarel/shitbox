@@ -1,5 +1,5 @@
 {
-    "autoUpdate": false,
+    "autoUpdate": true,
     "autoUpdateNotification": false,
     "disableMinSize": true,
     "enableReactDevtools": false,
@@ -680,6 +680,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1748651829413
+        "settingsSyncVersion": 1749492832643
     }
 }
