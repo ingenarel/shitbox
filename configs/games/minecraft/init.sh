@@ -117,16 +117,17 @@ installDeps
 installPrism
 setupPrism
 
-installModrinthMod minihud          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod continuity       "$HOME/Downloads/prismlauncher-cracked/myPlugins"
-installModrinthMod dynamic-fps      "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod fabric-api       "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod ferrite-core     "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod litematica       "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod lithium          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod modmenu          "$HOME/Downloads/prismlauncher-cracked/myPlugins"
-installModrinthMod placeholder-api  "$HOME/Downloads/prismlauncher-cracked/myPlugins"
-installModrinthMod sodium-extra     "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod tweakeroo        "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod minihud                              "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod continuity                           "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod dynamic-fps                          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod fabric-api                           "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod ferrite-core                         "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod litematica                           "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod lithium                              "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod modmenu                              "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod placeholder-api                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod sodium-extra                         "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod tweakeroo                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod phases-discord-rich-presence         "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
