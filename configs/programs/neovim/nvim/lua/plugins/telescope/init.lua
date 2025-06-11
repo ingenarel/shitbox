@@ -13,7 +13,7 @@ return {
             defaults = {
                 scroll_strategy = "limit",
                 layout_strategy = "flex",
-                winblend = 15,
+                -- winblend = 15,
                 wrap_results = true,
                 dynamic_preview_title = true,
                 preview = {
