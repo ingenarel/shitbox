@@ -381,7 +381,8 @@
             "enabled": false
         },
         "ImplicitRelationships": {
-            "enabled": false
+            "enabled": true,
+            "sortByAffinity": true
         },
         "InvisibleChat": {
             "enabled": false
@@ -680,6 +681,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1749492832643
+        "settingsSyncVersion": 1750311245261
     }
 }
