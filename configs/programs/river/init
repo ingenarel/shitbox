@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-terminal=foot
-waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/river.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
+scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+
+export terminal=foot
+export waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/river.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
 riverctl spawn $HOME/.config/shitbox/scripts/startup.sh "$waybar"
 
@@ -9,32 +11,7 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 systemctl --user restart xdg-desktop-portal
 
-riverctl map normal\
-    Super Q\
-    spawn "
-        riverctl\
-            rule-add\
-            -title $terminal\
-            fullscreen\
-        &&
-        $terminal\
-        -e \"$HOME/.config/hypr/scripts/autostart-tmux.sh\"\
-        && {
-            sleep 1;
-            riverctl\
-                rule-del\
-                -title $terminal\
-                fullscreen;
-        }
-    "
-riverctl map normal Super+Shift escape close
-riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
-riverctl map normal Alt F4 spawn "$HOME/.config/hypr/scripts/shutdown.sh"
-
-riverctl map normal Super h focus-view left
-riverctl map normal Super j focus-view down
-riverctl map normal Super k focus-view up
-riverctl map normal Super l focus-view right
+"$scriptDir/keybinds.sh"
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 # riverctl map normal Super J focus-view next
@@ -82,26 +59,6 @@ riverctl map normal Super l focus-view right
 # riverctl map normal Super+Alt+Shift K resize vertical -100
 # riverctl map normal Super+Alt+Shift L resize horizontal 100
 
-riverctl map-pointer normal Super BTN_LEFT move-view
-riverctl map-pointer normal Super BTN_RIGHT resize-view
-riverctl map normal Super+Shift V toggle-float
-
-for i in $(seq 1 9)
-do
-    tags=$((1 << ($i - 1)))
-    riverctl map normal Super $i set-focused-tags $tags
-    riverctl map normal Super+Shift $i set-view-tags $tags
-done
-
-all_tags=$(((1 << 32) - 1))
-riverctl map normal Super tab set-focused-tags $all_tags
-
-riverctl map normal Super f11 toggle-fullscreen
-
-riverctl map -repeat normal Super equal spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"
-riverctl map -repeat normal Super minus spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
-riverctl map normal Super Print spawn "$HOME/.config/hypr/scripts/screenshot.sh"
-
 riverctl set-repeat 50 300
 
 riverctl rule-add -app-id 'float*' -title 'foo' float
@@ -127,7 +84,7 @@ wideriver \
     --border-color-focused-monocle "0x586e75"  \
     --border-color-unfocused       "0x850045"  \
     --log-threshold                info        \
-   > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
+    > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
 
 riverctl send-layout-cmd wideriver "--layout left --stack dwindle --count 1 --ratio 0.5"
 riverctl focus-follows-cursor normal
