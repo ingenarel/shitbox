@@ -137,7 +137,7 @@ riverctl set-repeat 50 300
 riverctl rule-add -app-id 'float*' -title 'foo' float
 
 # Make all views with app-id "bar" and any title use client-side decorations
-riverctl rule-add -app-id "bar" csd
+riverctl rule-add -app-id "Pinentry-gtk" float
 
 riverctl rule-add ssd
 riverctl default-layout wideriver
