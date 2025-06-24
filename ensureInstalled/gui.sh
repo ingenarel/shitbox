@@ -23,7 +23,7 @@ packages+=(
 )
 
 packages+=(
-    kitty
+    wezterm
 )
 
 packages+=(

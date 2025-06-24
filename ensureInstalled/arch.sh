@@ -111,6 +111,9 @@ for package in "${packages[@]}"; do
             package="mpd-discord-rpc-git"
             userServices="mpd-discord-rpc"
             ;;
+        "wezterm")
+            package="wezterm-git"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
