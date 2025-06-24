@@ -28,6 +28,7 @@
         "window-rewrite": {
             "class<kitty|foot|wezterm>": " ",
             "class<audacity>": "🎙️",
+            "class<com.obsproject.Studio>": " ",
             "class<vesktop|discord|legcord>": " ",
             "class<zen|firefox|librewolf>": "🌐",
             "class<gimp>": " ",
