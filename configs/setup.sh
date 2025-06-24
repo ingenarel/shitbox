@@ -24,6 +24,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/neovim/lsp-configs/clangd"                            "$HOME/.config/clangd"
     safelink "$scriptDir/programs/terminal/emulators/foot/config"                       "$HOME/.config/foot"
     safelink "$scriptDir/programs/terminal/emulators/kitty/config"                      "$HOME/.config/kitty"
+    safelink "$scriptDir/programs/terminal/emulators/wezterm"                           "$HOME/.config/wezterm"
     safelink "$scriptDir/programs/terminal/multiplexers/zellij/config"                  "$HOME/.config/zellij"
     safelink "$scriptDir/programs/music/mpd"                                            "$HOME/.config/mpd"
 
