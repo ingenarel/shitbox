@@ -5,6 +5,10 @@ waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/riv
 
 riverctl spawn $HOME/.config/shitbox/scripts/startup.sh "$waybar"
 
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
+
 riverctl map normal Super Q spawn "$terminal -e $HOME/.config/hypr/scripts/autostart-tmux.sh"
 riverctl map normal Super+Shift escape close
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
