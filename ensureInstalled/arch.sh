@@ -114,6 +114,9 @@ for package in "${packages[@]}"; do
         "wezterm")
             package="wezterm-git"
             ;;
+        "zathura")
+            package="zathura-pdf-mupdf"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
