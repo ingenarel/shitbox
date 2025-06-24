@@ -38,4 +38,26 @@ config.colors = {
 
 config.window_background_opacity = 0.9
 
+config.enable_tab_bar = false
+
+-- https://github.com/wezterm/wezterm/issues/4625#issuecomment-1948077841
+wezterm.on("toggle-tabbar", function(window, _)
+	local overrides = window:get_config_overrides() or {}
+	if overrides.enable_tab_bar == false then
+		wezterm.log_info("tab bar shown")
+		overrides.enable_tab_bar = true
+	else
+		wezterm.log_info("tab bar hidden")
+		overrides.enable_tab_bar = false
+	end
+	window:set_config_overrides(overrides)
+end)
+
+config.keys = {
+	{
+		key = "F1",
+		action = wezterm.action.EmitEvent("toggle-tabbar"),
+	},
+}
+
 return config
