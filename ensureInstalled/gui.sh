@@ -2,9 +2,16 @@
 
 packages+=(
     hyprland
+    xdg-desktop-portal-hyprland
+)
+
+packages+=(
     river
     wideriver
-    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-wlr
+)
+
+packages+=(
     waybar
     fuzzel
     libnotify
