@@ -23,7 +23,7 @@ packages+=(
 )
 
 packages+=(
-    wezterm
+    foot
 )
 
 packages+=(
