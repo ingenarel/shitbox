@@ -11,4 +11,4 @@ eval "$waybar"\
 sudo $HOME/.config/shitbox/scripts/automount.sh\
     &
 
-export GTK_THEME=Sweet-Dark
+gsettings set org.gnome.desktop.interface gtk-theme Sweet-Dark
