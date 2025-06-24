@@ -82,9 +82,3 @@ git -C "$scriptDir/.." submodule update
 git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
 
 git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
-
-[[ -n "$WAYLAND_DISPLAY" ]] && {
-    [[ -d "$HOME/.local/share/lutris/runners/proton/ge-proton" ]] || protonup-rs
-    "$scriptDir/games/skyrim/init.sh"
-    "$scriptDir/games/minecraft/init.sh"
-}
