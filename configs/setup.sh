@@ -73,6 +73,7 @@ setupConfigs(){
 
 setupConfigs
 setSudoConfigs
+"$scriptDir/mimes.sh"
 
 git -C "$scriptDir/.." submodule init
 git -C "$scriptDir/.." submodule update
