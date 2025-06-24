@@ -9,6 +9,7 @@ packages+=(
     river
     wideriver
     xdg-desktop-portal-wlr
+    lswt
 )
 
 packages+=(
