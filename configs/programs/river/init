@@ -5,26 +5,9 @@ waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/riv
 
 riverctl spawn $HOME/.config/shitbox/scripts/startup.sh "$waybar"
 
-# This is the example configuration file for river.
-#
-# If you wish to edit this, you will probably want to copy it to
-# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
-#
-# See the river(1), riverctl(1), and rivertile(1) man pages for complete
-# documentation.
-
-# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
-
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super Q spawn "$terminal -e $HOME/.config/hypr/scripts/autostart-tmux.sh"
-
-# Super+Q to close the focused view
 riverctl map normal Super+Shift escape close
-
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
-
-# # Super+Shift+E to exit river
-# riverctl map normal Super+Shift E exit
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 # riverctl map normal Super J focus-view next
