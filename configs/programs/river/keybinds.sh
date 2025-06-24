@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
-riverctl map normal\
-    Super Q\
-    spawn "
-        riverctl\
-            rule-add\
-            -title $terminal\
-            fullscreen\
-        &&
-        $terminal\
-        -e \"$HOME/.config/hypr/scripts/autostart-tmux.sh\"\
-        & {
-            sleep 0.1
-            riverctl\
-                rule-del\
-                -title $terminal\
-                fullscreen;
-        }
-"
+mapWithRule(){
+    eval "
+        riverctl map $1\
+            spawn \"
+                riverctl\
+                    rule-add $2\
+                &&
+                $3\
+                & {
+                    sleep 0.1
+                    riverctl\
+                        rule-del $2;
+                }
+        \"
+    "
+}
+
+mapWithRule "normal Super Q" "-title $terminal fullscreen" "$terminal -e '$HOME/.config/hypr/scripts/autostart-tmux.sh'"
+
 riverctl map normal Super+Shift escape close
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
 riverctl map normal Alt F4 spawn "$HOME/.config/hypr/scripts/shutdown.sh"
