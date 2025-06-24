@@ -10,8 +10,8 @@ riverctl map normal\
         &&
         $terminal\
         -e \"$HOME/.config/hypr/scripts/autostart-tmux.sh\"\
-        && {
-            sleep 1;
+        & {
+            sleep 0.1
             riverctl\
                 rule-del\
                 -title $terminal\
