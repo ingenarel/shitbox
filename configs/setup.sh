@@ -30,9 +30,6 @@ setupConfigs(){
 
     echo "source $HOME/.config/zsh/init.zsh" >                                          "$HOME/.zshrc"
 
-    safelink "$scriptDir/programs/waybar/config.json"                                   "$HOME/.config/waybar/config.jsonc"
-    safelink "$scriptDir/programs/waybar/style.css"                                     "$HOME/.config/waybar/style.css"
-
     safelink "$scriptDir/programs/yazi/config/alias"                                    "$HOME/.config/yazi/alias"
     safelink "$scriptDir/programs/yazi/config/init.lua"                                 "$HOME/.config/yazi/init.lua"
     safelink "$scriptDir/programs/yazi/config/keymap.toml"                              "$HOME/.config/yazi/keymap.toml"
