@@ -186,3 +186,5 @@ wideriver \
    > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
 
 riverctl send-layout-cmd wideriver "--layout left --stack dwindle --count 1 --ratio 0.5"
+
+riverctl focus-follows-cursor normal
