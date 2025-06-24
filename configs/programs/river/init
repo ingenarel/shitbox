@@ -2,7 +2,7 @@
 
 terminal=foot
 
-$HOME/.config/shitbox/scripts/startup.sh
+riverctl spawn $HOME/.config/shitbox/scripts/startup.sh
 
 # This is the example configuration file for river.
 #
