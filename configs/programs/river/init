@@ -14,6 +14,11 @@ riverctl map normal Super+Shift escape close
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
 riverctl map normal Alt F4 spawn "$HOME/.config/hypr/scripts/shutdown.sh"
 
+riverctl map normal Super h focus-view left
+riverctl map normal Super j focus-view down
+riverctl map normal Super k focus-view up
+riverctl map normal Super l focus-view right
+
 # Super+J and Super+K to focus the next/previous view in the layout stack
 # riverctl map normal Super J focus-view next
 # riverctl map normal Super K focus-view previous
