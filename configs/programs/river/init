@@ -1,8 +1,9 @@
 #!/bin/sh
 
 terminal=foot
+waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/river.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
-riverctl spawn $HOME/.config/shitbox/scripts/startup.sh
+riverctl spawn $HOME/.config/shitbox/scripts/startup.sh "$waybar"
 
 # This is the example configuration file for river.
 #
