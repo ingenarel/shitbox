@@ -2,6 +2,8 @@
 
 packages+=(
     hyprland
+    river
+    wideriver
     xdg-desktop-portal-hyprland
     waybar
     fuzzel
