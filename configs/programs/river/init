@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 terminal=foot
 waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/river.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
