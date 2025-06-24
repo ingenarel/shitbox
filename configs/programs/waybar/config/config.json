@@ -27,6 +27,7 @@
         "window-rewrite-default": " ",
         "window-rewrite": {
             "class<kitty|foot|wezterm>": " ",
+            "class<audacity>": "🎙️",
             "class<vesktop|discord|legcord>": " ",
             "class<zen|firefox|librewolf>": "🌐",
             "class<gimp>": " ",
