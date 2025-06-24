@@ -8,6 +8,7 @@ riverctl spawn $HOME/.config/shitbox/scripts/startup.sh "$waybar"
 riverctl map normal Super Q spawn "$terminal -e $HOME/.config/hypr/scripts/autostart-tmux.sh"
 riverctl map normal Super+Shift escape close
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
+riverctl map normal Alt F4 spawn "$HOME/.config/hypr/scripts/shutdown.sh"
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 # riverctl map normal Super J focus-view next
