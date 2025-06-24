@@ -81,6 +81,9 @@ riverctl map normal Super tab set-focused-tags $all_tags
 
 riverctl map normal Super f11 toggle-fullscreen
 
+riverctl map normal Super equal spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"
+riverctl map normal Super minus spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+
 # Super+{Up,Right,Down,Left} to change layout orientation
 # riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
 # riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
@@ -103,11 +106,6 @@ for mode in normal locked
 do
     # Eject the optical drive (well if you still have one that is)
     riverctl map $mode None XF86Eject spawn 'eject -T'
-
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
