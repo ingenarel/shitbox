@@ -100,6 +100,7 @@ riverctl map normal Super f11 toggle-fullscreen
 
 riverctl map -repeat normal Super equal spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"
 riverctl map -repeat normal Super minus spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+riverctl map normal Super Print spawn "$HOME/.config/hypr/scripts/screenshot.sh"
 
 riverctl set-repeat 50 300
 
