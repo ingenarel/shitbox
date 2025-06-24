@@ -60,4 +60,6 @@ config.keys = {
 	},
 }
 
+config.scrollback_lines = 0
+
 return config
