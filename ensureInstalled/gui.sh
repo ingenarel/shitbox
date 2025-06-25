@@ -13,6 +13,11 @@ packages+=(
 )
 
 packages+=(
+    sway
+    autotiling
+)
+
+packages+=(
     waybar
     fuzzel
     libnotify
