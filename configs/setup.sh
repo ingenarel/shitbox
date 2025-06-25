@@ -54,9 +54,9 @@ setupConfigs(){
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
     safelink "$scriptDir/programs/browsers/firefox/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
-    safelink "$scriptDir/programs/hyprland/config"                                      "$HOME/.config/hypr"
-    safelink "$scriptDir/programs/sway"                                                 "$HOME/.config/sway"
-    safelink "$scriptDir/programs/river"                                                "$HOME/.config/river"
+    safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
+    safelink "$scriptDir/programs/WM/sway"                                              "$HOME/.config/sway"
+    safelink "$scriptDir/programs/WM/river"                                             "$HOME/.config/river"
 
     safelink "$scriptDir/programs/keyd/default.conf"                                    "/etc/keyd/default.conf" 1
 

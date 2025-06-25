@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=dwl
 Comment=dwm for Wayland
-Exec=/home/ingenarel/.config/shitbox/configs/programs/dwl/source/dwl
+Exec=/home/ingenarel/.config/shitbox/configs/programs/WM/dwl/source/dwl
 Type=Application
