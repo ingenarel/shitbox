@@ -5,7 +5,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $terminal kitty
+set $terminal foot
 
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
