@@ -20,8 +20,6 @@ set $terminal foot
     # Start your launcher
     bindsym $mainMod+r exec $HOME/.config/shitbox/scripts/menu.sh $terminal
 
-    floating_modifier $mainMod normal
-
     # bindsym $mainMod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
@@ -128,7 +126,6 @@ set $terminal foot
 
 bindsym $mainMod+equal exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 bindsym $mainMod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
-# bindsym Print exec grim
 
 default_border pixel 2
 default_floating_border pixel 2
