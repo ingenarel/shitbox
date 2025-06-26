@@ -57,7 +57,9 @@
                 "https://x.com",
                 "https://itch.io",
                 "https://aternos.org",
-                "https://drive.google.com"
+                "https://drive.google.com",
+                "https://mail.google.com",
+                "https://archive.org"
             ],
             "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
