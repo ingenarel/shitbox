@@ -116,7 +116,6 @@ clock,
 #clock {
     padding-left: 7px;
     padding-right: 7px;
-    border-radius: 9;
     background-color: #000000;
 }
 
@@ -174,11 +173,9 @@ label:focus {
 #cpu {
     background-color: #00ff00;
     color: #000000;
-    border-radius: 9;
 }
 
 #memory {
-    border-radius: 9;
     background-color: #ff0000;
 }
 
@@ -199,7 +196,6 @@ label:focus {
 }
 
 #pulseaudio {
-    border-radius: 9;
     background-color: #ff00e6;
     color: #000000;
 }
@@ -214,14 +210,12 @@ label:focus {
     color: #000000;
 }
 #custom-notifs {
-    border-radius: 9;
     padding-left: 7px;
     padding-right: 3px;
     background-color: #c400ff;
     color: #000000;
 }
 #custom-power {
-    border-radius: 50%;
     padding-left: 8px;
     padding-right: 10px;
     background-color: #ff005d;
@@ -254,7 +248,6 @@ label:focus {
 }
 
 #tray {
-    border-radius: 9;
     background-color: #2980b9;
 }
 
