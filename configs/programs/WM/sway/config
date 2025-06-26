@@ -1,6 +1,7 @@
 set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/sway.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
 exec autotiling
+exec $HOME/.config/sway/scripts/hot-reload.sh
 exec $HOME/.config/shitbox/scripts/startup.sh $waybar
 
 set $mainMod Mod4
