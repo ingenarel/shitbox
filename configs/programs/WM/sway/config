@@ -1,4 +1,6 @@
-exec swww-daemon & swaync & waybar & sudo $HOME/.config/shitbox/scripts/automount.sh
+set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/sway.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
+
+exec $HOME/.config/shitbox/scripts/startup.sh $waybar
 
 set $mainMod Mod4
 set $left h
