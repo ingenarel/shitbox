@@ -25,10 +25,7 @@ set $terminal foot
 
     bindsym $mainMod+Print exec $HOME/.config/hypr/scripts/screenshot.sh
 
-    # Exit sway (logs you out of your Wayland session)
-    # bindsym $mainMod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
+    bindsym Mod1+F4 exec $HOME/.config/hypr/scripts/shutdown.sh
 
     # Move your focus around
     bindsym $mainMod+h focus left
