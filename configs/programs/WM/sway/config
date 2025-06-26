@@ -46,9 +46,6 @@ set $terminal foot
     # bindsym $mainMod+Shift+$up move up
     # bindsym $mainMod+Shift+$right move right
 #
-# Workspaces:
-#
-    # Switch to workspace
     bindsym $mainMod+1 workspace number 1
     bindsym $mainMod+2 workspace number 2
     bindsym $mainMod+3 workspace number 3
@@ -59,17 +56,16 @@ set $terminal foot
     bindsym $mainMod+8 workspace number 8
     bindsym $mainMod+9 workspace number 9
     bindsym $mainMod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mainMod+Shift+1 move container to workspace number 1
-    bindsym $mainMod+Shift+2 move container to workspace number 2
-    bindsym $mainMod+Shift+3 move container to workspace number 3
-    bindsym $mainMod+Shift+4 move container to workspace number 4
-    bindsym $mainMod+Shift+5 move container to workspace number 5
-    bindsym $mainMod+Shift+6 move container to workspace number 6
-    bindsym $mainMod+Shift+7 move container to workspace number 7
-    bindsym $mainMod+Shift+8 move container to workspace number 8
-    bindsym $mainMod+Shift+9 move container to workspace number 9
-    bindsym $mainMod+Shift+0 move container to workspace number 10
+    bindsym $mainMod+Shift+1 move container to workspace number 1 ; workspace number 1
+    bindsym $mainMod+Shift+2 move container to workspace number 2 ; workspace number 2
+    bindsym $mainMod+Shift+3 move container to workspace number 3 ; workspace number 3
+    bindsym $mainMod+Shift+4 move container to workspace number 4 ; workspace number 4
+    bindsym $mainMod+Shift+5 move container to workspace number 5 ; workspace number 5
+    bindsym $mainMod+Shift+6 move container to workspace number 6 ; workspace number 6
+    bindsym $mainMod+Shift+7 move container to workspace number 7 ; workspace number 7
+    bindsym $mainMod+Shift+8 move container to workspace number 8 ; workspace number 8
+    bindsym $mainMod+Shift+9 move container to workspace number 9 ; workspace number 9
+    bindsym $mainMod+Shift+0 move container to workspace number 10; workspace number 10
 
 # Layout stuff:
 #
