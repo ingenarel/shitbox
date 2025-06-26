@@ -27,6 +27,8 @@ set $terminal foot
 
     bindsym Mod1+F4 exec $HOME/.config/hypr/scripts/shutdown.sh
 
+    bindsym $mainMod+V exec $HOME/.config/shitbox/scripts/globalPaste.sh
+
     bindsym $mainMod+h focus left
     bindsym $mainMod+j focus down
     bindsym $mainMod+k focus up
