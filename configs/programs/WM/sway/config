@@ -127,6 +127,9 @@ bindsym $mainMod+equal exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 bindsym $mainMod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 # bindsym Print exec grim
 
+default_border pixel 2
+default_floating_border pixel 2
+
 #
 # Status Bar:
 #
