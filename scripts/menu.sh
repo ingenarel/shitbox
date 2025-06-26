@@ -9,7 +9,7 @@ fuzzel\
     --selection-color=420080ff\
     --selection-text-color=ff00ffff\
     --border-color=ff00cfff\
-    --border-radius=10\
+    --border-radius=0\
     --font='Hack Nerd Font:size=13'\
     --dpi-aware=yes\
     --width 60
