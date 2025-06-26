@@ -27,11 +27,18 @@ set $terminal foot
 
     bindsym Mod1+F4 exec $HOME/.config/hypr/scripts/shutdown.sh
 
-    # Move your focus around
     bindsym $mainMod+h focus left
     bindsym $mainMod+j focus down
     bindsym $mainMod+k focus up
     bindsym $mainMod+l focus right
+
+    bindsym $mainMod+t mode "taskbar"
+
+    mode "taskbar" {
+        bindsym t exec "pgrep waybar > /dev/null && pkill waybar || eval \"$waybar\""; mode "default"
+        bindsym r exec "pkill waybar; eval \"$waybar\""; mode "default"
+        bindsym Escape mode "default"
+    }
 
     # # Move the focused window with the same, but add Shift
     # bindsym $mainMod+Shift+$left move left
