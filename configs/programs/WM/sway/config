@@ -1,6 +1,6 @@
 set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/sway.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
-exec_always pkill autotiling; autotiling
+exec autotiling
 exec $HOME/.config/shitbox/scripts/startup.sh $waybar
 
 set $mainMod Mod4
