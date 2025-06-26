@@ -9,11 +9,12 @@
     ],
     "modules-right": [
         "pulseaudio",
+        "custom/seperatorCPU",
         "cpu",
         "memory",
         "clock",
-        "tray",
-        "custom/notifs"
+        "custom/notifs",
+        "tray"
     ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -39,9 +40,18 @@
             "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️"
         }
     },
+    "custom/seperatorBlack": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/seperatorCPU": {
+        "format": "",
+        "tooltip": false,
+        "escape": false
+    },
     "custom/notifs": {
         "tooltip": false,
-        "format": "{} {icon}",
+        "format": "<span background='#000000' foreground='#c400ff' size='13000' rise='-3000'></span> {} {icon}",
         "format-icons": {
             "notification": "<span foreground='red'><sup></sup></span>",
             "none": " ",
@@ -98,7 +108,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M:%S %p}",
+        "format": "<span background='#ff0000' foreground='#000000' size='13000' rise='-3000'></span> {:%I:%M:%S %p}",
         "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -125,13 +135,13 @@
         "interval": 1
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "<span background='#ff00e6' foreground='#00ff00' size='13000' rise='-3000'></span> {usage}% ",
         "interval": 2,
         "tooltip": true,
         "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'"
     },
     "memory": {
-        "format": "{}% ",
+        "format": "<span background='#00ff00' foreground='#ff0000' size='13000' rise='-3000'></span> {}% ",
         "tooltip": true,
         "interval": 2,
         "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'"
