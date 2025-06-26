@@ -25,6 +25,7 @@ packages=(
     zip
     lsd
     inotify-tools
+    perl
 )
 (dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
 
