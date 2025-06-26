@@ -1,6 +1,6 @@
 {
     "position": "top",
-    "spacing": 3,
+    "spacing": 0,
     "modules-left": [
         "sway/workspaces"
     ],
