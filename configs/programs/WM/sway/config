@@ -132,6 +132,9 @@ bindsym $mainMod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 
 default_border pixel 2
 default_floating_border pixel 2
+client.focused #ff00ff #ff00ff #000000
+client.unfocused #850045 #850045 #ffffff
+client.focused_inactive #850045 #850045 #ffffff
 
 #
 # Status Bar:
