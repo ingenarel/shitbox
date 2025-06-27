@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
-packages+=(
-    hyprland
-    xdg-desktop-portal-hyprland
-)
-
-packages+=(
-    river
-    wideriver
-    xdg-desktop-portal-wlr
-    lswt
-)
+# packages+=(
+#     hyprland
+#     xdg-desktop-portal-hyprland
+# )
+#
+# packages+=(
+#     river
+#     wideriver
+#     xdg-desktop-portal-wlr
+#     lswt
+# )
 
 packages+=(
     sway
     autotiling
+    xdg-desktop-portal-wlr
 )
 
 packages+=(
