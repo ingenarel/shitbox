@@ -16,6 +16,7 @@ packages+=(
     sway
     autotiling
     xdg-desktop-portal-wlr
+    sov
 )
 
 packages+=(
