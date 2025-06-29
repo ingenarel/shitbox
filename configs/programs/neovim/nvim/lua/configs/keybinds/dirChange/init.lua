@@ -50,13 +50,17 @@ vim.keymap.set("n", "<leader>cdnr", function()
     vim.cmd("cd ~/.config/shitbox/configs/programs/neovim/myPlugins/simple-runner.nvim | pwd ")
 end, { desc = "Changes directory to simple-runner.nvim", silent = true, noremap = true })
 
-vim.keymap.set("n", "<leader>cdh", function()
-    vim.cmd("cd ~/.config/shitbox/configs/programs/hyprland/config | pwd ")
+vim.keymap.set("n", "<leader>cdwh", function()
+    vim.cmd("cd ~/.config/shitbox/configs/programs/WM/hyprland/config | pwd ")
 end, { desc = "Changes directory to hyprland config", silent = true, noremap = true })
 
-vim.keymap.set("n", "<leader>cdh", function()
-    vim.cmd("cd ~/.config/shitbox/configs/programs/hyprland/config | pwd ")
-end, { desc = "Changes directory to hyprland config", silent = true, noremap = true })
+vim.keymap.set("n", "<leader>cdws", function()
+    vim.cmd("cd ~/.config/shitbox/configs/programs/WM/sway | pwd ")
+end, { desc = "Changes directory to sway config", silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>cdwr", function()
+    vim.cmd("cd ~/.config/shitbox/configs/programs/WM/river | pwd ")
+end, { desc = "Changes directory to river config", silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>cdz", function()
     vim.cmd("cd ~/.config/shitbox/configs/programs/zsh/config | pwd ")
