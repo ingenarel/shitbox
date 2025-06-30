@@ -52,7 +52,7 @@ require("lazy").setup {
             { "folke/persistence.nvim", event = "BufReadPre", opts = {} },
             { "imsnif/kdl.vim", ft = "kdl" },
             { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
-            require("plugins._conform-setup_"),
+            require("plugins.conform"),
             {
                 "dynamotn/Navigator.nvim",
                 config = true,
