@@ -86,6 +86,7 @@ require("lazy").setup {
                 opts = true,
             },
             require("plugins.zoxide"),
+            require("plugins.noice"),
         },
     },
 }
