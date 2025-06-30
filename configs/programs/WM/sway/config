@@ -14,6 +14,9 @@ set $terminal foot
 
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
+    floating_modifier $mainMod
+    tiling_drag enable
+
     bindsym $mainMod+q exec $terminal -e $HOME/.config/hypr/scripts/autostart-tmux.sh
 
     # Kill focused window
