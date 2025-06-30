@@ -17,11 +17,11 @@ mapWithRule(){
     "
 }
 
-mapWithRule "normal Super Q" "-title $terminal fullscreen" "$terminal -e '$HOME/.config/hypr/scripts/autostart-tmux.sh'"
+mapWithRule "normal Super Q" "-title $terminal fullscreen" "$terminal -e '$HOME/.config/shitbox/scripts/autostart-tmux.sh'"
 
 riverctl map normal Super+Shift escape close
 riverctl map normal Super R spawn "$HOME/.config/shitbox/scripts/menu.sh $terminal"
-riverctl map normal Alt F4 spawn "$HOME/.config/hypr/scripts/shutdown.sh"
+riverctl map normal Alt F4 spawn "$HOME/.config/shitbox/scripts/shutdown.sh"
 
 riverctl map normal Super h focus-view left
 riverctl map normal Super j focus-view down
@@ -45,4 +45,4 @@ riverctl map normal Super f11 toggle-fullscreen
 
 riverctl map -repeat normal Super equal spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"
 riverctl map -repeat normal Super minus spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
-riverctl map normal Super Print spawn "$HOME/.config/hypr/scripts/screenshot.sh"
+riverctl map normal Super Print spawn "$HOME/.config/shitbox/scripts/screenshot.sh"
