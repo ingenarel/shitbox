@@ -7,5 +7,5 @@ return {
             lsp_doc_border = true,
         },
     },
-    dependencies = { "MunifTanjim/nui.nvim", { "rcarriga/nvim-notify", opts = {} } },
+    dependencies = { "MunifTanjim/nui.nvim", { "rcarriga/nvim-notify", opts = { background_colour = "#000000" } } },
 }
