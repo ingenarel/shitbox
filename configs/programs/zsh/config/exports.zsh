@@ -14,3 +14,4 @@ fi
 export EDITOR="/usr/bin/env nvim"
 export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up"
 export GPG_TTY=$(tty)
+export MANPAGER='nvim +Man!'
