@@ -1,3 +1,17 @@
+local function createAutocmd()
+    return vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*",
+        callback = function(args)
+            require("conform").format { bufnr = args.buf }
+            pcall(function()
+                if vim.opt_local.commentstring._value ~= "" then
+                    vim.cmd("%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g")
+                end
+            end)
+        end,
+    })
+end
+
 return {
     "stevearc/conform.nvim",
     config = function()
@@ -28,19 +42,12 @@ return {
                 json = { "jq" },
             },
         }
-
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*",
-            callback = function(args)
-                require("conform").format { bufnr = args.buf }
-                pcall(function()
-                    if vim.opt_local.commentstring._value ~= "" then
-                        vim.cmd(
-                            "%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g"
-                        )
-                    end
-                end)
-            end,
-        })
+        local autocmdID = createAutocmd()
+        vim.api.nvim_create_user_command("ConformEnable", function()
+            autocmdID = createAutocmd()
+        end, {})
+        vim.api.nvim_create_user_command("ConformDisable", function()
+            vim.api.nvim_del_autocmd(autocmdID)
+        end, {})
     end,
 }
