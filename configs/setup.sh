@@ -27,6 +27,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/terminal/emulators/wezterm"                           "$HOME/.config/wezterm"
     safelink "$scriptDir/programs/terminal/multiplexers/zellij/config"                  "$HOME/.config/zellij"
     safelink "$scriptDir/programs/music/mpd"                                            "$HOME/.config/mpd"
+    safelink "$scriptDir/programs/fuzzel.ini"                                           "$HOME/.config/fuzzel/fuzzel.ini"
 
     echo "source $HOME/.config/zsh/init.zsh" >                                          "$HOME/.zshrc"
 
