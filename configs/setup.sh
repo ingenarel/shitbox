@@ -21,6 +21,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/git/config"                                           "$HOME/.gitconfig"
     safelink "$scriptDir/programs/music/cava/config"                                    "$HOME/.config/cava/config"
     safelink "$scriptDir/programs/music/ncmpcpp/config"                                 "$HOME/.config/ncmpcpp"
+    safelink "$scriptDir/programs/music/rmpc.ron"                                       "$HOME/.config/rmpc/config.ron"
     safelink "$scriptDir/programs/neovim/lsp-configs/clangd"                            "$HOME/.config/clangd"
     safelink "$scriptDir/programs/terminal/emulators/foot/config"                       "$HOME/.config/foot"
     safelink "$scriptDir/programs/terminal/emulators/kitty/config"                      "$HOME/.config/kitty"
@@ -40,20 +41,12 @@ setupConfigs(){
     safelink "$scriptDir/programs/yazi/config/plugins/starship.yazi"                    "$HOME/.config/yazi/plugins/starship.yazi"
     safelink "$scriptDir/programs/yazi/config/plugins/plugins/git.yazi"                 "$HOME/.config/yazi/plugins/git.yazi"
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
+    safelink  "$scriptDir/policies.json"                        "/etc/zen/policies/policies.json" 1
 
-    safelink "$scriptDir/programs/browsers/firefox/policies.json"                       "/etc/zen/policies/policies.json" 1
-    safelink "$scriptDir/programs/browsers/firefox/profiles.ini"                        "$HOME/.zen/profiles.ini"
-    mozlz4 -z "$scriptDir/programs/browsers/firefox/ingenarel/search.json"              "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"
-    safelink "$scriptDir/programs/browsers/firefox/ingenarel/search.json.mozlz4"        "$HOME/.zen/ingenarel/search.json.mozlz4"
-
-    {
-        grep -E\
-            '^user_pref\("[^_][^u][^s][^e][^r][^.][^j][^s][^.][^p][^a][^r][^r][^o][^t]'\
-            "$scriptDir/programs/browsers/firefox/arkenfox/user.js"
-        cat "$scriptDir/programs/browsers/firefox/zen.js"
-    } | sort > "$scriptDir/programs/browsers/firefox/ingenarel/user.js"
-    safelink "$scriptDir/programs/browsers/firefox/ingenarel/user.js"                   "$HOME/.zen/ingenarel/user.js"
-    safelink "$scriptDir/programs/browsers/firefox/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
+    safelink  "$scriptDir/profiles.ini"                         "$HOME/.zen/profiles.ini"
+    mozlz4 -z "$scriptDir/ingenarel/search.json"                "$HOME/.zen/ingenarel/search.json.mozlz4"
+    cat "$scriptDir/arkenfox/user.js" "$scriptDir/zen.js" >     "$HOME/.zen/ingenarel/user.js"
+    safelink "$scriptDir/ingenarel/chrome/userChrome.css"       "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
     safelink "$scriptDir/programs/WM/sway"                                              "$HOME/.config/sway"
