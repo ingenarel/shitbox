@@ -81,7 +81,7 @@ return {
     {
         desc = "Lazygit",
         action = function()
-            term.openFloaTerm {
+            term.openNeovimFloaTerm {
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "lazygit",
