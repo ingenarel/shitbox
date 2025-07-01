@@ -80,6 +80,7 @@ return {
     "python",
     "query",
     "regex",
+    "ron",
     "sql",
     "ssh_config",
     "sway",
