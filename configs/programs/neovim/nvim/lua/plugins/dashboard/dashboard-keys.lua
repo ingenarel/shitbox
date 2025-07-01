@@ -19,7 +19,7 @@ return {
             term.openFloaTerm {
                 widthPercentage = 90,
                 heightPercentage = 90,
-                command = "lazygit",
+                command = "yazi",
             }
         end,
 
