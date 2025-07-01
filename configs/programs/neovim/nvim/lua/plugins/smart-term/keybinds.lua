@@ -18,4 +18,15 @@ require("which-key").add {
         end,
         desc = "Lazygit",
     },
+    {
+        "<leader>F",
+        function()
+            term.openFloaTerm {
+                widthPercentage = 95,
+                heightPercentage = 100,
+                command = "yazi",
+            }
+        end,
+        desc = "Yazi",
+    },
 }

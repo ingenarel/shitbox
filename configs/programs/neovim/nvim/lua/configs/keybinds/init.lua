@@ -8,14 +8,6 @@ end, { desc = "Saves and sources the file", silent = true, noremap = true })
 
 require("configs.keybinds.dirChange")
 
--- File managing {{{
-CK_SetKeymap_n(
-    "<leader>F",
-    "<CMD>FloatermNew --width=0.95 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi<CR>",
-    "Yazi"
-)
--- File managing }}}
-
 vim.keymap.set("t", "<M-esc>", "<C-\\><C-n>", { silent = true, noremap = true })
 
 vim.keymap.set("n", "grn", function()

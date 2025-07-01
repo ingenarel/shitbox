@@ -15,7 +15,14 @@ return {
     },
     {
         desc = "Yazi",
-        action = "FloatermNew --width=1.0 --height=1.0 --title=YAZI --titleposition=center --opener=edit yazi",
+        action = function()
+            term.openFloaTerm {
+                widthPercentage = 90,
+                heightPercentage = 90,
+                command = "lazygit",
+            }
+        end,
+
         key = "y",
         key_format = " %s",
     },

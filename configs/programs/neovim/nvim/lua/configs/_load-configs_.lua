@@ -40,10 +40,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-if vim.opt.shell._value == "cmd.exe" then
-    vim.g.floaterm_shell = "%SystemRoot%\\System32\\cmd.exe /k %userprofile%\\.cmdrc.cmd"
-end
-
 vim.opt.colorcolumn = "+0,-20,-40"
 vim.opt.laststatus = 3
 
