@@ -1,7 +1,7 @@
 local m = {
     "ingenarel/smart-term.nvim",
     config = function()
-        require("smart-term").setup { heightPercentage = 70, widthPercentage = 80 }
+        require("smart-term").setup { heightPercentage = 70, widthPercentage = 80, floatTmuxYoffset = 2 }
         require("plugins.smart-term.keybinds")
     end,
 }
