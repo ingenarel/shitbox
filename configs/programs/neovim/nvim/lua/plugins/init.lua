@@ -76,7 +76,7 @@ require("lazy").setup {
                 cmd = { "Typr", "TyprStats" },
             },
             { "nvzone/showkeys", cmd = "ShowkeysToggle", opts = { timeout = 2, maxkeys = 9, position = "top-right" } },
-            require("plugins.cyberpunk-neon"),
+            require("plugins.cyberpunk-neon"), -- ingenarel/cyberpunk-neon.nvim
             require("plugins.simple-runner"),
             require("plugins.focus-mode"),
             {
