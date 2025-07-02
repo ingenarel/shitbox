@@ -3,7 +3,12 @@ require("which-key").add {
     {
         "<leader>cdd",
         function()
-            vim.cmd("cd %:h | pwd ")
+            local dir = "%:h"
+            local gitRoot = vim.system({ "git", "rev-parse", "--show-toplevel" }):wait().stdout
+            if gitRoot ~= "" then
+                dir = gitRoot
+            end
+            vim.cmd("cd " .. dir .. " | pwd ")
         end,
         desc = "Current file's dir",
     },
