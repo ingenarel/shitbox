@@ -17,19 +17,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local cyberpunk = {
-    "ingenarel/cyberpunk-neon.nvim",
-    config = function()
-        vim.cmd.colorscheme("cyberpunk-neon")
-    end,
-}
-
-if
-    vim.uv.fs_stat(vim.fs.normalize("~/.config/shitbox/configs/programs/neovim/myPlugins/cyberpunk-neon.nvim")) ~= nil
-then
-    cyberpunk.dir = "~/.config/shitbox/configs/programs/neovim/myPlugins/cyberpunk-neon.nvim"
-end
-
 require("lazy").setup {
     -- TODO: download the profiler plugin somehow (https://github.com/folke/snacks.nvim/blob/main/docs/profiler.md)
     lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
@@ -89,7 +76,7 @@ require("lazy").setup {
                 cmd = { "Typr", "TyprStats" },
             },
             { "nvzone/showkeys", cmd = "ShowkeysToggle", opts = { timeout = 2, maxkeys = 9, position = "top-right" } },
-            cyberpunk,
+            require("plugins.cyberpunk-neon"), -- ingenarel/cyberpunk-neon.nvim
             require("plugins.simple-runner"),
             require("plugins.focus-mode"),
             {
