@@ -12,7 +12,7 @@ vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while perfor
 
 vim.opt.clipboard = "unnamedplus" --uses the system clipboard
 
-vim.opt.scrolloff = 39 -- keep the scroll in the middle.
+vim.opt.scrolloff = 100 -- keep the scroll in the middle.
 
 vim.opt.ignorecase = true -- Set ignorecase option
 
