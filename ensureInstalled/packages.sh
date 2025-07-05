@@ -8,6 +8,7 @@ packages=(
     lazygit
     neovim
     ripgrep
+    fd
     tmux
     yazi
     superfile
