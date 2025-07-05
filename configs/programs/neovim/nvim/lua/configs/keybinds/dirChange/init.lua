@@ -3,8 +3,8 @@ require("which-key").add {
     {
         "<leader>cdd",
         function()
-            local dir = "%:h"
-            local gitRoot = vim.system({ "git", "rev-parse", "--show-toplevel" }):wait().stdout
+            local dir = vim.fn.expand("%:h")
+            local gitRoot = vim.system({ "git", "-C", dir, "rev-parse", "--show-toplevel" }):wait().stdout
             if gitRoot ~= "" then
                 dir = gitRoot
             end
