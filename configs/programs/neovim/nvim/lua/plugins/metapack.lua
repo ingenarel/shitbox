@@ -39,6 +39,9 @@ local m = {
                 "alejandra",
                 "jq",
                 --formatter
+                --linter
+                "shellcheck",
+                --linter
             },
         }
     end,
