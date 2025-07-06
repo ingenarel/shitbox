@@ -47,7 +47,7 @@ emergeCommand="emerge\
     gentoo-kernel-bin\
     eselect-repository\
     gentoolkit\
-    net-misc\curl\
+    net-misc/curl\
     app-admin/sudo"
 
 dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCommand} linux-firmware intel-microcode"
