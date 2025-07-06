@@ -29,10 +29,12 @@ tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /
 
 rm /mnt/gentoo/stage3-*.tar.xz
 dmidecode -s system-manufacturer | grep -qEi 'qemu' &&
-(
+dmidecode -s system-manufacturer | grep -qEi 'qemu' && {
     cp "$scriptDir/../configs/programs/portage/tui-vm-make.conf" "/mnt/gentoo/etc/portage/make.conf" &&
+    maxRam="$(( $(grep --extended-regexp "MemTotal" /proc/meminfo | sed --expression='s/[^0-9]//g') / (1024 * 1024) ))"
+    echo "MAKEOPTS=\"\${MAKEOPTS} -j$(( "$maxRam" / 2 ))\"" >> "/mnt/gentoo/etc/portage/make.conf"
     cp -r "$scriptDir/../configs/programs/portage/package.use" "/mnt/gentoo/etc/portage/package.use"
-)
+}
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
