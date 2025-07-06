@@ -46,7 +46,8 @@ emergeCommand="emerge\
     gentoo-kernel-bin\
     eselect-repository\
     gentoolkit\
-    sudo"
+    net-misc\curl/
+    app-admin/sudo"
 
 dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCommand} linux-firmware intel-microcode"
 echo "Creating Swap" && mkswap --size 4G --file /mnt/gentoo/swapFile && echo "Created swap"
