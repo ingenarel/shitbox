@@ -37,7 +37,7 @@ dmidecode -s system-manufacturer | grep -qEi 'qemu' && {
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
-emergeCommand="emerge\
+emergeCommand="emerge --ask n\
     grub\
     networkmanager\
     dev-vcs/git\
