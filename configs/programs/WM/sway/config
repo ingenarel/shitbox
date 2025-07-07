@@ -11,6 +11,7 @@ set $down j
 set $up k
 set $right l
 set $terminal foot
+set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
 
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
@@ -138,6 +139,26 @@ set $terminal foot
 #
 # Utilities:
 #
+
+# music{{{
+    bindsym $mainMod+backspace mode music_control
+    mode "music_control" {
+        #mpc
+            bindsym space exec mpc toggle; mode default
+            bindsym equal exec mpc volume +1 && swaync-client --hide-latest && $mpcStatus
+            bindsym minus exec mpc volume -1 && swaync-client --hide-latest &&  notify-send "$(mpc volume)"
+            bindsym period exec mpc next && swaync-client --hide-latest && $mpcStatus
+            bindsym comma exec mpc prev && swaync-client --hide-latest && $mpcStatus
+            bindsym r exec mpc repeat && swaync-client --hide-latest && $mpcStatus; mode default
+            bindsym y exec mpc single && swaync-client --hide-latest && $mpcStatus; mode default
+            bindsym z exec mpc random && swaync-client --hide-latest && $mpcStatus; mode default
+            bindsym n exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal ncmpcpp; mode default
+            bindsym c exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal cava $HOME/.config/foot/foot_1.ini; mode default
+            bindsym Escape mode default
+            bindsym Shift+r exec mpc consume && swaync-client --hide-latest && $mpcStatus
+    }
+
+# music}}}
 
 bindsym $mainMod+equal exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
 bindsym $mainMod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
