@@ -52,7 +52,11 @@ arch-chroot /mnt "/usr/bin/bash"\
 
     setUserPassword
 
-    sed -E 's/@includedir \/etc\/sudoers\.d/%wheel ALL=(ALL:ALL) ALL\n&/' /etc/sudoers && echo 'set up Wheel group'
+    sed -iE\
+        's/@includedir \/etc\/sudoers\.d/%wheel ALL=(ALL:ALL) ALL\n&/'\
+        /etc/sudoers\
+    &&
+    echo 'set up Wheel group'
 
     echo 'Executing post-install script' && sudo -u ingenarel $archPostPath $1 mbr && echo 'Executed post-install script'
 "
