@@ -1,1 +1,1 @@
-net-misc/networkmanager -modemmanager -wifi
+net-misc/networkmanager -modemmanager -wifi -wext -ppp
