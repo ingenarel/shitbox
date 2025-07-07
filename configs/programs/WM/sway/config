@@ -149,10 +149,11 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
             bindsym minus exec mpc volume -1 && swaync-client --hide-latest &&  notify-send "$(mpc volume)"
             bindsym period exec mpc next && swaync-client --hide-latest && $mpcStatus
             bindsym comma exec mpc prev && swaync-client --hide-latest && $mpcStatus
-            bindsym r exec mpc repeat && swaync-client --hide-latest && $mpcStatus; mode default
+            bindsym Mod1+r exec mpc repeat && swaync-client --hide-latest && $mpcStatus; mode default
             bindsym y exec mpc single && swaync-client --hide-latest && $mpcStatus; mode default
             bindsym z exec mpc random && swaync-client --hide-latest && $mpcStatus; mode default
             bindsym n exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal ncmpcpp; mode default
+            bindsym r exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal rmpc; mode default
             bindsym c exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal cava $HOME/.config/foot/foot_1.ini; mode default
             bindsym Escape mode default
             bindsym Shift+r exec mpc consume && swaync-client --hide-latest && $mpcStatus
