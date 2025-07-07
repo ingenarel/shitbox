@@ -7,6 +7,7 @@ setSudoConfigs(){
     automountLine="%wheel ALL=(ALL) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
     automountRegex="%wheel ALL=\(ALL\) NOPASSWD: /home/$USER/.config/shitbox/scripts/automount.sh"
     automountConfig="/etc/sudoers.d/automount"
+    [[ -d "/etc/sudoers.d" ]] || sudo mkdir --parents "/etc/sudoers.d"
     sudo grep -qEi "$automountRegex" "$automountConfig" || echo "$automountLine" | sudo tee "$automountConfig"
 }
 
