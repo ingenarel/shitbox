@@ -26,7 +26,7 @@ sudo eselect repository enable gentoo
 
 sudo eselect repository enable guru
 
-emerge --sync
+sudo emerge --sync
 
 "$shitboxDir/ensureInstalled/arch.sh"
 "$shitboxDir/configs/programs/neovim/nvim/develop-plugins.sh"
