@@ -28,7 +28,7 @@ sudo eselect repository enable guru
 
 sudo emerge --sync
 
-"$shitboxDir/ensureInstalled/arch.sh"
+"$shitboxDir/ensureInstalled/gentoo.sh"
 "$shitboxDir/configs/programs/neovim/nvim/develop-plugins.sh"
 # command -v zsh && zsh -c "source ~/.zshrc"
 # command -v nvim && nvim --headless
