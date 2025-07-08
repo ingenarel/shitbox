@@ -1,0 +1,22 @@
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "4506f9d"
+hash = "4761fffb60a12d37096c34a356380cdf"
+
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "9d26460"
+hash = "6c0568cfa966a5d4ac496c926975a613"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "b886025"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "a63550b"
+hash = "c2021386289a0cbb3e152a052f67c177"
+
+[flavor]
+deps = []

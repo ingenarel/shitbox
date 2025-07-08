@@ -38,10 +38,9 @@ setupConfigs(){
     safelink "$scriptDir/programs/yazi/config/init.lua"                                 "$HOME/.config/yazi/init.lua"
     safelink "$scriptDir/programs/yazi/config/keymap.toml"                              "$HOME/.config/yazi/keymap.toml"
     safelink "$scriptDir/programs/yazi/config/yazi.toml"                                "$HOME/.config/yazi/yazi.toml"
-    safelink "$scriptDir/programs/yazi/config/plugins/exifaudio.yazi"                   "$HOME/.config/yazi/plugins/exifaudio.yazi"
-    safelink "$scriptDir/programs/yazi/config/plugins/relative-motions.yazi"            "$HOME/.config/yazi/plugins/relative-motions.yazi"
-    safelink "$scriptDir/programs/yazi/config/plugins/starship.yazi"                    "$HOME/.config/yazi/plugins/starship.yazi"
-    safelink "$scriptDir/programs/yazi/config/plugins/plugins/git.yazi"                 "$HOME/.config/yazi/plugins/git.yazi"
+    safelink "$scriptDir/programs/yazi/config/package.toml"                             "$HOME/.config/yazi/package.toml"
+    ls "$HOME/.config/yazi/plugins/"* > /dev/null || ya pkg install
+
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
 
     safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1

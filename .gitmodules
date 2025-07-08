@@ -1,15 +1,3 @@
-[submodule "configs/programs/yazi/config/plugins/starship.yazi"]
-	path = configs/programs/yazi/config/plugins/starship.yazi
-	url = https://github.com/Rolv-Apneseth/starship.yazi.git
-[submodule "configs/programs/yazi/config/plugins/exifaudio.yazi"]
-	path = configs/programs/yazi/config/plugins/exifaudio.yazi
-	url = https://github.com/Sonico98/exifaudio.yazi.git
-[submodule "configs/programs/yazi/config/plugins/plugins"]
-	path = configs/programs/yazi/config/plugins/plugins
-	url = https://github.com/yazi-rs/plugins.git
-[submodule "configs/programs/yazi/config/plugins/relative-motions.yazi"]
-	path = configs/programs/yazi/config/plugins/relative-motions.yazi
-	url = https://github.com/dedukun/relative-motions.yazi.git
 [submodule "configs/programs/WM/dwl/source"]
 	path = configs/programs/WM/dwl/source
 	url = https://github.com/ingenarel/dwl.git
