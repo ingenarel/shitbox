@@ -4,11 +4,11 @@ scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 source "$scriptDir/packages.sh"
 source "$scriptDir/../utils/safelink.sh"
 
-ram="$((
-        $(
-            grep --extended-regexp 'MemTotal' /proc/meminfo | sed --expression='s/[^0-9]//g'
-        ) / (1000 * 1000)
-))"
+# ram="$((
+#         $(
+#             grep --extended-regexp 'MemTotal' /proc/meminfo | sed --expression='s/[^0-9]//g'
+#         ) / (1000 * 1000)
+# ))"
 
 packagesToInstall=""
 
@@ -109,7 +109,7 @@ for package in "${packages[@]}"; do
             ;;
         "mpd-discord-rpc")
             package="mpd-discord-rpc-git"
-            userServices="mpd-discord-rpc"
+            userServices+=(mpd-discord-rpc)
             ;;
         "wezterm")
             package="wezterm-git"
@@ -125,18 +125,32 @@ done
 [[ -n $extracommands ]] && eval "$extracommands"
 
 myshell="$(which zsh)"
-command -v "$myshell" && ( [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell")
+command -v "$myshell" && {
+    [[ "$myshell" == "$SHELL" ]] || chsh -s "$myshell"
+}
 
-[[ "${#systemServices[@]}" -gt 0 ]] && (for service in "${systemServices[@]}"; do 
-    [[ "$(systemctl is-enabled $service)" == "enabled" ]] || (systemctl enable "$service" && systemctl start "$service")
-done)
+[[ "${#systemServices[@]}" -gt 0 ]] && {
+    for service in "${systemServices[@]}"; do 
+        [[ "$(systemctl is-enabled "$service" )" == "enabled" ]] || {
+            systemctl enable "$service" && systemctl start "$service"
+        }
+    done
+}
 
-[[ "${#userServices[@]}" -gt 0 ]] && (for service in "${userServices[@]}"; do 
-    [[ "$(systemctl --user is-enabled $service)" == "enabled" ]] || (systemctl --user enable "$service" && systemctl --user start "$service")
-done)
+[[ "${#userServices[@]}" -gt 0 ]] && {
+    for service in "${userServices[@]}"; do 
+        [[ "$(systemctl --user is-enabled "$service" )" == "enabled" ]] || {
+            systemctl --user enable "$service" && systemctl --user start "$service"
+        }
+    done
+}
 
-[[ "${#groups[@]}" -gt 0 ]] && (for group in "${groups[@]}"; do
-    echo "$(groups)" | grep -qEi "$group" || (sudo usermod -aG "$group" $USER)
-done)
+[[ "${#groups[@]}" -gt 0 ]] && {
+    for group in "${groups[@]}"; do
+        groups | grep -qEi "$group" || {
+            sudo usermod -aG "$group" "$USER"
+        }
+    done
+}
 
 # echo "${packagesToInstall[@]}"
