@@ -58,9 +58,14 @@ setupConfigs(){
 
     safelink "$scriptDir/programs/keyd/default.conf"                                    "/etc/keyd/default.conf" 1
 
-    if grep -qEi "arch" /etc/os-release ; then
+    grep -qEi "arch" /etc/os-release &&\
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
-    fi
+    grep -qEi "gentoo" /etc/os-release && {
+        safelink "$scriptDir/programs/portage/tui-vm-make.conf"                         "/etc/portage/make.conf" 1
+        safelink "$scriptDir/programs/portage/package.use"                              "/etc/portage/package.use" 1
+        safelink "$scriptDir/programs/portage/package.accept_keywords"                  "/etc/portage/package.accept_keywords" 1
+    }
+
 
     safelink "$scriptDir/programs/greetd/config.toml" "/etc/greetd/config.toml" 1
     [[ ! -d "/etc/greetd/sessions" ]] && sudo mkdir --parents /etc/greetd/sessions

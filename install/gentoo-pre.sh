@@ -33,6 +33,7 @@ dmidecode -s system-manufacturer | grep -qEi 'qemu' && {
     maxRam="$(( $(grep --extended-regexp "MemTotal" /proc/meminfo | sed --expression='s/[^0-9]//g') / (1024 * 1024) ))"
     echo "MAKEOPTS=\"\${MAKEOPTS} -j$(( "$maxRam" / 2 ))\"" >> "/mnt/gentoo/etc/portage/make.conf"
     cp -r "$scriptDir/../configs/programs/portage/package.use" "/mnt/gentoo/etc/portage/package.use"
+    cp -r "$scriptDir/../configs/programs/portage/package.accept_keywords" "/mnt/gentoo/etc/portage/package.accept_keywords"
 }
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
