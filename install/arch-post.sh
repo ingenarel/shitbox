@@ -25,7 +25,7 @@ shitboxDir="/home/ingenarel/.config/shitbox"
 git clone https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
-aurHelper="paru-git"
+aurHelper="paru"
 
 [[ $(( $(grep --extended-regexp 'MemTotal' /proc/meminfo | sed --expression='s/[^0-9]//g') / (1000 * 1000) )) -lt 8 ]] && aurHelper="paru-bin"
 
