@@ -18,8 +18,9 @@ require("which-key").add {
         end,
         desc = "Lazygit",
     },
+    { "<leader>F", group = "Yazi" },
     {
-        "<leader>F",
+        "<leader>Ff",
         function()
             term.openFloaTerm {
                 widthPercentage = 95,
@@ -27,6 +28,17 @@ require("which-key").add {
                 command = "yazi",
             }
         end,
-        desc = "Yazi",
+        desc = "Project Dir",
+    },
+    {
+        "<leader>Fd",
+        function()
+            term.openFloaTerm {
+                widthPercentage = 95,
+                heightPercentage = 100,
+                command = "yazi " .. vim.fn.expand("%:h"),
+            }
+        end,
+        desc = "Current File's Dir",
     },
 }
