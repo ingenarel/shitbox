@@ -123,3 +123,9 @@ packages+=(
     protonup-rs-bin
 )
 
+packages+=(
+    neomutt
+    mutt-wizard
+    elinks
+    imagemagick
+)
