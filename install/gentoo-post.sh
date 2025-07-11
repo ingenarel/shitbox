@@ -5,7 +5,7 @@ sleep 1
 
 sudo emerge --ask n --oneshot genfstab
 
-echo "Generating fstab" && genfstab -U /mnt | sudo tee /etc/fstab && echo "/swapFile none swap defaults" >> /mnt/etc/fstab && echo "Generated fstab"
+echo "Generating fstab" && genfstab -U / | sudo tee /etc/fstab && echo "/swapFile none swap defaults" >> /etc/fstab && echo "Generated fstab"
 
 echo "Enabling NetworkManager" && sudo systemctl enable NetworkManager && echo "Enabled NetworkManager"
 
