@@ -28,6 +28,15 @@ packages=(
     inotify-tools
     perl
 )
+
+grep -qi 'gentoo' /etc/os-release && {
+    packages+=(
+        genlop
+        app-portage/smart-live-rebuild
+        app-portage/eix
+    )
+}
+
 (dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
 
 grep -qEi 'arch' /etc/os-release && packages+=(reflector)
