@@ -18,7 +18,7 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
     floating_modifier $mainMod
     tiling_drag enable
 
-    bindsym $mainMod+q exec $terminal -e $HOME/.config/shitbox/scripts/autostart-tmux.sh & sleep 0.1 && swaymsg fullscreen enable
+    bindsym $mainMod+q exec $terminal -e $HOME/.config/shitbox/scripts/autostart-zellij.sh & sleep 0.1 && swaymsg fullscreen enable
 
     # Kill focused window
     bindsym $mainMod+Shift+Escape kill
