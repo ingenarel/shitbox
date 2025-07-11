@@ -30,6 +30,8 @@ for package in "${packages[@]}"; do
         glab)
             package="dev-util/gitlab-cli"
             ;;
+        btop)
+            package="btop app-crypt/libmd"
     esac
     packagesToInstall="$packagesToInstall $package"
 done
