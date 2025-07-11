@@ -10,6 +10,7 @@ packages=(
     ripgrep
     fd
     tmux
+    zellij
     yazi
     superfile
     zsh
