@@ -52,5 +52,3 @@ update_stuff "$HOME/.tmux/plugins/tpm/bin/clean_plugins && $HOME/.tmux/plugins/t
     "Updated tmux plugins; updating neovim plugins..."
 update_stuff "nvim --headless '+Lazy! clean' '+Lazy! update' '+MasonUpdate'"\
     "Updated neovim plugins; updating neovim local plugins"
-update_stuff "$HOME/.config/shitbox/config/programs/neovim/nvim/develop-plugins.sh"\
-    "Updated local plugins"
