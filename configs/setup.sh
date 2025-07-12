@@ -72,6 +72,7 @@ setupConfigs(){
             }
             [[ -d "$HOME/coding/git/gentoo/guru" ]] || {
                 git clone -b dev --depth 1 git@git.gentoo.org:repo/proj/guru.git "$HOME/coding/git/gentoo/guru"
+                git -C "$HOME/coding/git/gentoo/guru" remote add distfiles git@github.com:ingenarel/guru-depfiles.git
                 git -C "$HOME/coding/git/gentoo/guru" config --local pull.ff only
                 git -C "$HOME/coding/git/gentoo/guru" config --local pull.rebase merges
                 git -C "$HOME/coding/git/gentoo/guru" config --local commit.gpgsign 1
