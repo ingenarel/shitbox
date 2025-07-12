@@ -64,6 +64,20 @@ setupConfigs(){
         safelink "$scriptDir/programs/portage/tui-vm-make.conf"                         "/etc/portage/make.conf" 1
         safelink "$scriptDir/programs/portage/package.use"                              "/etc/portage/package.use" 1
         safelink "$scriptDir/programs/portage/package.accept_keywords"                  "/etc/portage/package.accept_keywords" 1
+        [[ -f "$HOME/.ssh/git" ]] && {
+            [[ -d "$HOME/coding/git/gentoo" ]] || mkdir --parents "$HOME/coding/git/gentoo"
+            [[ -d "$HOME/coding/git/gentoo/gentoo" ]] || {
+                git clone -o upstream -b master --depth 1 https://github.com/gentoo/gentoo.git "$HOME/coding/git/gentoo/gentoo"
+                git -C "$HOME/coding/git/gentoo/gentoo" remote add github git@github.com:ingenarel/gentoo
+            }
+            [[ -d "$HOME/coding/git/gentoo/guru" ]] || {
+                git clone -b dev --depth 1 git@git.gentoo.org:repo/proj/guru.git "$HOME/coding/git/gentoo/guru"
+                git -C "$HOME/coding/git/gentoo/guru" config --local pull.ff only
+                git -C "$HOME/coding/git/gentoo/guru" config --local pull.rebase merges
+                git -C "$HOME/coding/git/gentoo/guru" config --local commit.gpgsign 1
+                git -C "$HOME/coding/git/gentoo/guru" config --local push.gpgsign 1
+            }
+        }
     }
 
 

@@ -35,6 +35,7 @@ grep -qi 'gentoo' /etc/os-release && {
         genlop
         app-portage/smart-live-rebuild
         app-portage/eix
+        dev-util/pkgdev
     )
 }
 
