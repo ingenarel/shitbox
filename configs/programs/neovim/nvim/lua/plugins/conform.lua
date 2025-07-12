@@ -2,7 +2,9 @@ local function createAutocmd()
     return vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*",
         callback = function(args)
-            require("conform").format { bufnr = args.buf }
+            if vim.bo.filetype ~= "ebuild" then
+                require("conform").format { bufnr = args.buf }
+            end
             pcall(function()
                 if vim.opt_local.commentstring._value ~= "" then
                     vim.cmd("%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g")
