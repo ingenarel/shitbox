@@ -94,6 +94,7 @@ previewers = [
 	{ mime = "text/*", run = "code" },
 	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
     { mime = "*.ebuild", run = "code" },
+    { name = "*.xml", run = "code" },
     { mime = "*Manifest", run = "code" },
 	# JSON
 	{ mime = "application/json", run = "json" },
