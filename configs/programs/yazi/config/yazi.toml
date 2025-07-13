@@ -57,6 +57,9 @@ rules = [
 
 	{ mime = "text/*",          use = [ "edit", "reveal" ] },
 	{ mime = "image/*",         use = [ "open", "reveal" ] },
+    { mime = "*.ebuild",        use = [ "edit", "reveal" ] },
+    { name = "*.xml",           use = [ "edit", "reveal" ] },
+    { mime = "*Manifest",       use = [ "edit", "reveal" ] },
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	{ mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
