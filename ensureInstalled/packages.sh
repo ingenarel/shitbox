@@ -28,6 +28,7 @@ packages=(
     lsd
     inotify-tools
     perl
+    diskonaut
 )
 
 grep -qi 'gentoo' /etc/os-release && {
