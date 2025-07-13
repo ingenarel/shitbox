@@ -47,7 +47,7 @@ command -v "$myshell" && {
 [[ "${#systemServices[@]}" -gt 0 ]] && {
     for service in "${systemServices[@]}"; do
         [[ "$(systemctl is-enabled "$service" )" == "enabled" ]] || {
-            systemctl enable "$service" && systemctl start "$service"
+            sudo systemctl enable "$service" && systemctl start "$service"
         }
     done
 }
