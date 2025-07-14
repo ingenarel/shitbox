@@ -39,14 +39,14 @@ packages+=(
     satty
 )
 
-# packages+=(
-#     kitty
-# )
-
 packages+=(
-    foot
-    ueberzugpp
+    kitty
 )
+
+# packages+=(
+#     foot
+#     ueberzugpp
+# )
 
 packages+=(
     audacity

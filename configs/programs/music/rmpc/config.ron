@@ -20,7 +20,7 @@
     browser_song_sort: [Disc, Track, Artist, Title],
     directories_sort: SortFormat(group_by_type: true, reverse: false),
     album_art: (
-        method: UeberzugWayland,
+        method: Auto,
         max_size_px: (width: 1000, height: 1000),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,

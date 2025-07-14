@@ -10,7 +10,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $terminal foot
+set $terminal kitty
 set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
 
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
@@ -154,7 +154,7 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
             bindsym z exec mpc random && swaync-client --hide-latest && $mpcStatus; mode default
             bindsym n exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal ncmpcpp; mode default
             bindsym r exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal rmpc; mode default
-            bindsym c exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal cava $HOME/.config/foot/foot_1.ini; mode default
+            bindsym c exec $HOME/.config/shitbox/scripts/tmuxorterminal.sh $terminal cava $HOME/.config/kitty/kitty_1_pts.conf; mode default
             bindsym Escape mode default
             bindsym Shift+r exec mpc consume && swaync-client --hide-latest && $mpcStatus
     }

@@ -2,7 +2,7 @@
 
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
-export terminal=foot
+export terminal=kitty
 export waybar="waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/river.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
 riverctl spawn "$HOME/.config/shitbox/scripts/startup.sh \"$waybar\""
