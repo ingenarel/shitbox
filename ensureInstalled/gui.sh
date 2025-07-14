@@ -58,7 +58,7 @@ packages+=(
 
 packages+=(
     vesktop
-    cinny
+    element
 )
 
 packages+=(
@@ -72,6 +72,7 @@ packages+=(
 
 packages+=(
     keepassxc
+    gnome-keyring
     pavucontrol
     qbittorrent
     vimiv-qt

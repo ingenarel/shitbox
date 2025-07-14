@@ -120,6 +120,9 @@ for package in "${packages[@]}"; do
         "mutt-wizard")
             package="mutt-wizard-git"
             ;;
+        "element")
+            package="element-desktop"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
