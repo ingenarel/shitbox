@@ -123,6 +123,9 @@ for package in "${packages[@]}"; do
         "element")
             package="element-desktop"
             ;;
+        "iamb")
+            package="iamb-bin"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done

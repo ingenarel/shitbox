@@ -42,6 +42,7 @@ setupConfigs(){
     ls "$HOME/.config/yazi/plugins/"* > /dev/null || ya pkg install
 
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
+    safelink "$scriptDir/programs/chatting/tui/iamb"                                    "$HOME/.config/iamb"
 
     safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
     safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.zen/profiles.ini"

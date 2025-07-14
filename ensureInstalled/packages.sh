@@ -29,6 +29,7 @@ packages=(
     inotify-tools
     perl
     diskonaut
+    iamb
 )
 
 grep -qi 'gentoo' /etc/os-release && {

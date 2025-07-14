@@ -1,0 +1,10 @@
+profiles.ingenarel.user_id = "@ingenarel:matrix.org"
+
+[settings.notifications]
+enabled = true
+
+[settings.image_preview]
+protocol.type = "sixel"
+
+[layout]
+style = "restore"
