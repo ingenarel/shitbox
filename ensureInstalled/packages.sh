@@ -30,6 +30,7 @@ packages=(
     perl
     diskonaut
     iamb
+    weechat
 )
 
 grep -qi 'gentoo' /etc/os-release && {
