@@ -29,7 +29,7 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
     # bindsym $mainMod+Shift+c reload
 
     bindsym $mainMod+Print exec $HOME/.config/shitbox/scripts/screenshot.sh
-    bindsym $mainMod+p exec hyprpicker --autocopy
+    bindsym $mainMod+p exec hyprpicker | tr -d '#' | wl-copy
     bindsym $mainMod+Shift+Print exec grim -t ppm "$HOME/Pictures/$(date +%Y-%m-%d_%H-%m-%s).ppm"
 
     bindsym Mod1+F4 exec $HOME/.config/shitbox/scripts/shutdown.sh
