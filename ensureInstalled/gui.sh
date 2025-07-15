@@ -29,6 +29,7 @@ packages+=(
     wl-clipboard
     ydotool
     waybar
+    hyprpicker
     pipewire-pulse
     keyd
 )
