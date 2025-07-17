@@ -25,6 +25,7 @@
         "window-rewrite-default": " ",
         "window-rewrite": {
             "class<kitty|foot|wezterm>": " ",
+            "title<.*ssh.*>": "<span color='#FFAAFB'>🖧</span>",
             "class<audacity>": "🎙️",
             "class<com.obsproject.Studio>": "🎥",
             "class<vesktop|discord|legcord>": " ",
