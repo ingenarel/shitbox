@@ -28,6 +28,9 @@ renamePanes(){
         git|lazygit)
             name=""
             ;;
+        ncmpcpp|rmpc)
+            name="🎵"
+            ;;
         *)
             name="$_cmd"
             ;;
