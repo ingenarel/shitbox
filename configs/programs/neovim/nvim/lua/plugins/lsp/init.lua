@@ -21,26 +21,32 @@ return {
         }
     end,
     config = function()
-        local lspconfig = require("lspconfig")
         require("plugins.lsp.python")
         require("plugins.lsp.lua")
-        lspconfig.clangd.setup {}
-        lspconfig.bashls.setup {
+        vim.lsp.enable("clangd")
+
+        vim.lsp.enable("bashls")
+        vim.lsp.config("bashls", {
             settings = {
                 bashIde = {
                     globPattern = "*@(.sh|.inc|.bash|.command)",
                 },
             },
-        }
-        lspconfig.ltex_plus.setup {
+        })
+
+        vim.lsp.enable("ltex_plus")
+        vim.lsp.config("ltex_plus", {
             settings = {
                 ltex = {
                     language = "en-GB",
                 },
             },
-        }
-        lspconfig.yamlls.setup {}
-        lspconfig.rust_analyzer.setup {
+        })
+
+        vim.lsp.enable("yamlls")
+
+        vim.lsp.enable("rust_analyzer")
+        vim.lsp.config("rust_analyzer", {
             settings = {
                 ["rust-analyzer"] = {
                     diagnostics = {
@@ -48,9 +54,10 @@ return {
                     },
                 },
             },
-        }
+        })
+
         require("plugins.lsp.termux-language-server")
-        lspconfig.nil_ls.setup {}
-        lspconfig.jsonls.setup {}
+        vim.lsp.enable("nil_ls")
+        vim.lsp.enable("jsonls")
     end,
 }
