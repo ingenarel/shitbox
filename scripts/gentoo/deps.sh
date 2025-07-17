@@ -32,5 +32,12 @@ else
 fi
 
 tar --create --verbose --auto-compress --file "$depfileName" "$COMPRESS_DIR"
-gh release create "$depfileName" --repo "$depfilesRepo"
-gh release upload "$depfileName" "$depfileName" --repo "$depfilesRepo"
+gh\
+    release\
+    create\
+    "$depfileName"\
+    "$depfileName"\
+    --repo "$depfilesRepo"\
+    --latest\
+    --notes "$depfileName"\
+    --title "$depfileName"
