@@ -21,3 +21,8 @@ d(){
     local dirname="$(fd --color=always --type directory | fzf --ansi --preview="$LS_COMMAND {}")"
     [[ -n "$dirname" ]] && cd "$dirname"
 }
+
+c(){
+    [[ -d "$1" ]] || mkdir --parents "$1"
+    cd "$1"
+}
