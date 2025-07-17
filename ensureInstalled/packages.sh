@@ -31,7 +31,9 @@ packages=(
     diskonaut
     iamb
     weechat
+    bat
 )
+# tinyxxd
 
 grep -qi 'gentoo' /etc/os-release && {
     packages+=(
