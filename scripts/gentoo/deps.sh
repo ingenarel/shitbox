@@ -4,6 +4,8 @@
     [[ "$2" == "gentoo" ]] && depfilesRepo=ingenarel/gentoo || exit
 }
 
+export XZ_OPTS="-9e -T0"
+
 package="$(echo "$1" | awk -F '/' '{print $NF}' | sed -nE 's/\/*(.+)\.([^.]+)/\1/p')"
 ebuild "$1" manifest fetch unpack
 sourcePath="/var/tmp/portage/$(realpath "$1" | awk -F '/' '{print $(NF-2)}')/$package/work/$package"
@@ -16,16 +18,19 @@ if [[ "$3" == "go" ]]; then
         echo "go vendor creation failed"
         exit "$error"
     }
-    tar --create --auto-compress --file "$depfileName" go-mod
+    COMPRESS_DIR="go-mod"
 elif [[ "$3" == "rust" ]]; then
     cargo vendor || {
         error="$?"
         echo "cargo vendor creation failed"
         exit "$error"
     }
-    tar --create --auto-compress --file "$depfileName" vendor
+    COMPRESS_DIR="vendor"
 else
     echo "invalid shit"
+    exit
 fi
+
+tar --create --verbose --auto-compress --file "$depfileName" "$COMPRESS_DIR"
 gh release create "$depfileName" --repo "$depfilesRepo"
 gh release upload "$depfileName" "$depfileName" --repo "$depfilesRepo"
