@@ -17,3 +17,16 @@ wget\
     --no-use-server-timestamps\
     --directory-prefix="$CParentPath"\
     "https://www.gnu.org/software/bash/manual/bash.pdf"
+
+RustBookParentPath="$HOME/Documents/books/programming/rust"
+[[ -d "$RustBookParentPath" ]] || mkdir --parents "$RustBookParentPath"
+ls -f "$RustBookParentPath/the_rust_programming_language_dark.pdf"\
+    ||
+wget\
+    --no-use-server-timestamps\
+    --directory-prefix="$RustBookParentPath"\
+    "$(
+        curl https://api.github.com/repos/shirshak55/Rust-Book-In-PDF/releases/latest\
+        |
+        grep -oE "https://github.com/shirshak55/Rust-Book-In-PDF/releases/download/[a-zA-Z0-9.\-]+/the_rust_programming_language_dark.pdf"
+)"
