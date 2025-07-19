@@ -9,6 +9,7 @@ export XZ_OPTS="-9e -T0"
 package="$(echo "$1" | awk -F '/' '{print $NF}' | sed -nE 's/\/*(.+)\.([^.]+)/\1/p')"
 ebuild "$1" manifest fetch unpack
 sourcePath="/var/tmp/portage/$(realpath "$1" | awk -F '/' '{print $(NF-2)}')/$package/work/$package"
+echo "$sourcePath" | grep -qEi '.+(-|_)r[0-9]+' && sourcePath="$(echo "$sourcePath" | sed -nE 's/(.+)(-|_)r[0-9]+/\1/p')"
 cd "$sourcePath" || exit
 
 depfileName="$package-deps.tar.xz"
