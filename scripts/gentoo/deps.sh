@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 
+[[ -z "$DEPS_SCRIPT_GENTOO_REPO" ]] && {
+    echo "Please setup the DEPS_SCRIPT_GENTOO_REPO env"; exit
+}
+
+[[ -z "$DEPS_SCRIPT_GURU_REPO" ]] && {
+    echo "Please setup the DEPS_SCRIPT_GURU_REPO env"; exit
+}
+
+[[ -z "$DEPS_SCRIPT_GITHUB_ENABLE" || "$DEPS_SCRIPT_GITHUB_ENABLE" == true ]] && {
+    command -v gh > /dev/null 2>&1 || {
+        echo "Please install github cli"; exit
+    };
+}
+
 # shellcheck disable=SC2015
-[[ "$2" == "guru"  ]] && depfilesRepo=ingenarel/guru-depfiles || {
-    [[ "$2" == "gentoo" ]] && depfilesRepo=ingenarel/gentoo || exit
+[[ "$2" == "guru"  ]] && depfilesRepo="$DEPS_SCRIPT_GURU_REPO" || {
+    [[ "$2" == "gentoo" ]] && depfilesRepo="$DEPS_SCRIPT_GENTOO_REPO" || exit
 }
 
 export XZ_OPTS="-9e -T0"

@@ -15,3 +15,6 @@ export EDITOR="/usr/bin/env nvim"
 export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up"
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
+
+export DEPS_SCRIPT_GENTOO_REPO="ingenarel/gentoo"
+export DEPS_SCRIPT_GURU_REPO="ingenarel/guru-depfiles"
