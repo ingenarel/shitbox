@@ -24,6 +24,7 @@ d(){
 }
 
 c(){
+    localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
     [[ -d "$1" ]] || mkdir --parents "$1"
     cd "$1"
 }
