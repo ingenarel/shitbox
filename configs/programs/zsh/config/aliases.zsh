@@ -13,6 +13,7 @@ alias git-gc-all='git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc
 alias create-deps="$HOME/.config/shitbox/scripts/gentoo/deps.sh"
 
 f(){
+    localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
     local filename="$(fd --color=always --type file | fzf --ansi --preview='bat --color=always --decorations=never {}')"
     [[ -n "$filename" ]] && nvim "$filename"
 }
@@ -24,7 +25,6 @@ d(){
 }
 
 c(){
-    localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
     [[ -d "$1" ]] || mkdir --parents "$1"
     cd "$1"
 }
