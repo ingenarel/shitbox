@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2015
 [[ "$2" == "guru"  ]] && depfilesRepo=ingenarel/guru-depfiles || {
     [[ "$2" == "gentoo" ]] && depfilesRepo=ingenarel/gentoo || exit
 }
@@ -8,8 +9,16 @@ export XZ_OPTS="-9e -T0"
 
 package="$(echo "$1" | awk -F '/' '{print $NF}' | sed -nE 's/\/*(.+)\.([^.]+)/\1/p')"
 ebuild "$1" manifest fetch unpack
-sourcePath="/var/tmp/portage/$(realpath "$1" | awk -F '/' '{print $(NF-2)}')/$package/work/$package"
-echo "$sourcePath" | grep -qEi '.+(-|_)r[0-9]+' && sourcePath="$(echo "$sourcePath" | sed -nE 's/(.+)(-|_)r[0-9]+/\1/p')"
+
+packageFirst="$(echo "$package" | grep -oE '^[a-zA-Z0-9]+')"
+
+for dir in "/var/tmp/portage/$( realpath "$1"\ | awk -F '/' '{print $(NF-2)}')/$package/work/"*; do
+    [[ "$(echo "$dir" | grep -oE "[^/]+$")" == "$packageFirst"* ]] && {
+        sourcePath="$dir"
+        break
+    }
+done
+
 cd "$sourcePath" || exit
 
 depfileName="$package-deps.tar.xz"
