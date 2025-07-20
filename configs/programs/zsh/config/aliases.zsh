@@ -19,7 +19,7 @@ f(){
 
 d(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
-    local dirname="$(fd --color=always --type directory | fzf --ansi --preview="$LS_COMMAND {}")"
+    local dirname="$(fd --color=always --type directory | fzf --ansi --preview="$LS_COMMAND --tree {}")"
     [[ -n "$dirname" ]] && cd "$dirname"
 }
 
