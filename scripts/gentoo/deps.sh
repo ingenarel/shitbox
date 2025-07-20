@@ -13,7 +13,13 @@ ebuild "$1" manifest fetch unpack
 packageFirst="$(echo "$package" | grep -oE '^[a-zA-Z0-9]+')"
 
 for dir in "/var/tmp/portage/$( realpath "$1"\ | awk -F '/' '{print $(NF-2)}')/$package/work/"*; do
-    [[ "$(echo "$dir" | grep -oE "[^/]+$")" == "$packageFirst"* ]] && {
+    [[
+        "$(echo "$dir" | grep -oE "[^/]+$")" == "$packageFirst"*\
+            &&
+        "$(find "$dir" -maxdepth 0 -type d -empty 2>&1 | wc -l)" -lt 1
+    ]]\
+    &&
+    {
         sourcePath="$dir"
         break
     }
