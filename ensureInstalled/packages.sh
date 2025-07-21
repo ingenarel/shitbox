@@ -32,6 +32,7 @@ packages=(
     iamb
     weechat
     bat
+    tealdeer
 )
 # tinyxxd
 
