@@ -37,3 +37,6 @@
 [submodule "configs/programs/neovim/myPlugins/zoxide.nvim"]
 	path = configs/programs/neovim/myPlugins/zoxide.nvim
 	url = https://github.com/ingenarel/zoxide.nvim
+[submodule "scripts/gentoo-dev-scripts"]
+	path = scripts/gentoo-dev-scripts
+	url = https://github.com/ingenarel/gentoo-dev-scripts
