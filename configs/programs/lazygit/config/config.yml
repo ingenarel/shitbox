@@ -16,6 +16,9 @@ gui:
 git:
   parseEmoji: true
   overrideGpg: true
+  paging:
+    colorArg: always
+    pager: delta --paging=never
 
 os:
   editPreset: "nvim"

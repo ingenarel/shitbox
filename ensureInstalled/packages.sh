@@ -33,6 +33,7 @@ packages=(
     weechat
     tinyxxd
     bat
+    git-delta
     tealdeer
 )
 
