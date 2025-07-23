@@ -31,6 +31,15 @@ renamePanes(){
         ncmpcpp|rmpc)
             name="🎵"
             ;;
+        weechat)
+            name="󰰭"
+            ;;
+        iamb)
+            name="󰯊"
+            ;;
+        discordo)
+            name=""
+            ;;
         *)
             name="$_cmd"
             ;;
