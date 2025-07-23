@@ -11,7 +11,7 @@ elif [ "$CC" = "gcc" ]; then
 else
     export CFLAGS="-Wall -Wextra -march=native -mtune=native -O2"
 fi
-export EDITOR="/usr/bin/env nvim"
+export EDITOR="$(command -v nvim)"
 export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up"
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
