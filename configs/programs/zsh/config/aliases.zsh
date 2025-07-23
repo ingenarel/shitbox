@@ -1,6 +1,5 @@
 LS_COMMAND='lsd --almost-all --color always --group-directories-first --icon always'
 alias btop="sudo btop"
-alias discordo='discordo -token "$(gpg -d ~/.config/wofi/token.gpg)"'
 alias graph="pacgraph --svg -b #000000 -l #013d35 -t #f40cfc -d #ffffff --show-req-by --by-area --explicits --opt-deps -f ~/Images/pacgraph/pacgraph"
 alias musicback="rclone sync /mnt/G/system\ files\(G\)/music drive-alt:music --progress --drive-use-trash=false --delete-excluded"
 alias z="__zoxide_z"
@@ -27,4 +26,9 @@ d(){
 c(){
     [[ -d "$1" ]] || mkdir --parents "$1"
     cd "$1"
+}
+
+discordo-setup(){
+    wl-copy --paste-once "$(keepassxc-cli show --show-protected --attributes token $HOME/.config/shitbox/configs/secrets/passwords/Passwords.kdbx discord)"
+    secret-tool store --label="Discord Token" service discordo username token
 }
