@@ -1,0 +1,105 @@
+mouse = true
+editor = "default"
+status = "default"
+markdown = true
+hide_blocked_users = true
+show_attachment_links = true
+autocomplete_limit = 20
+messages_limit = 100
+
+[timestamps]
+enabled = true
+format = "3:04PM"
+
+[notifications]
+enabled = true
+duration = 0
+
+[notifications.sound]
+enabled = true
+only_on_ping = false
+
+[keys]
+focus_guilds_tree = "Ctrl+G"
+focus_messages_list = "Ctrl+P"
+focus_message_input = "Ctrl+A"
+toggle_guilds_tree = "Ctrl+F"
+quit = "Ctrl+C"
+
+[keys.guilds_tree]
+select_previous = "Rune[k]"
+select_next = "Rune[j]"
+select_first = "Rune[g]"
+select_last = "Rune[G]"
+select_current = "Enter"
+yank_id = "Rune[y]"
+collapse_parent_node = "Rune[-]"
+move_to_parent_node = "Rune[p]"
+
+[keys.messages_list]
+select_previous = "Rune[k]"
+select_next = "Rune[j]"
+select_first = "Rune[g]"
+select_last = "Rune[G]"
+select_reply = "Rune[s]"
+reply = "Rune[r]"
+reply_mention = "Rune[R]"
+cancel = "Esc"
+delete = "Rune[d]"
+open = "Enter"
+yank_content = "Rune[y]"
+yank_url = "Rune[u]"
+yank_id = "Rune[i]"
+
+[keys.message_input]
+send = "Enter"
+cancel = "Esc"
+tab_complete = "Tab"
+open_editor = "Ctrl+E"
+open_file_picker = "Ctrl+f"
+
+[keys.mentions_list]
+up = "Up"
+down = "Down"
+
+# style = { foreground = "", background = "", attributes = "" or [""] }
+[theme.title]
+alignment = "left" # `"left"`, `"center"`, or `"right"`.
+
+normal_style = { attributes = "dim" }
+active_style = { foreground = "green", attributes = "bold" }
+
+[theme.border]
+enabled = true
+padding = [0, 0, 1, 1] # [top, bottom, left, right]
+
+normal_style = { attributes = "dim" }
+active_style = { foreground = "green", attributes = "bold" }
+
+# `"hidden"`, `"plain"`, `"round"`, `"thick"`, or `"double"`.
+normal_set = "round"
+active_set = "round"
+
+[theme.guilds_tree]
+auto_expand_folders = false
+# Give tree-like shape
+graphics = true
+graphics_color = "default"
+
+[theme.messages_list]
+reply_indicator = ">"
+forwarded_indicator = "<"
+
+mention_style = { foreground = "blue" }
+emoji_style = { foreground = "green" }
+url_style = { foreground = "blue" }
+attachment_style = { foreground = "yellow" }
+
+[theme.mentions_list]
+# Note: width and height are capped to the avaliable space
+# Minimum width
+# 0 = make the list as wide as possible
+min_width = 20
+# Maximum height
+# 0 = make the list as tall as needed
+max_height = 0
