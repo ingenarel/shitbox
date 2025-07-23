@@ -17,13 +17,13 @@ duration = 0
 
 [notifications.sound]
 enabled = true
-only_on_ping = false
+only_on_ping = true
 
 [keys]
-focus_guilds_tree = "Ctrl+G"
-focus_messages_list = "Ctrl+P"
-focus_message_input = "Ctrl+A"
-toggle_guilds_tree = "Ctrl+F"
+focus_guilds_tree = "Alt+Rune[g]"
+focus_messages_list = "Alt+Rune[p]"
+focus_message_input = "Alt+Rune[i]"
+toggle_guilds_tree = "Alt+f"
 quit = "Ctrl+C"
 
 [keys.guilds_tree]
@@ -42,8 +42,8 @@ select_next = "Rune[j]"
 select_first = "Rune[g]"
 select_last = "Rune[G]"
 select_reply = "Rune[s]"
-reply = "Rune[r]"
-reply_mention = "Rune[R]"
+reply = "Rune[R]"
+reply_mention = "Rune[r]"
 cancel = "Esc"
 delete = "Rune[d]"
 open = "Enter"
