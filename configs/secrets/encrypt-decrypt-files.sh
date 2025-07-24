@@ -12,6 +12,8 @@ gpgSignDecryptedFile="$scriptDir/gpg/gitSign"
 gpgSignEncryptedFile="$scriptDir/gpg/gitSign.gpg"
 neomuttDecryptedFile="$scriptDir/gpg/neomutt"
 neomuttEncryptedFile="$scriptDir/gpg/neomutt.gpg"
+weeChatDecryptedFile="$scriptDir/keys/ecdsa.pem"
+weeChatEncryptedFile="$scriptDir/keys/ecdsa.pem.gpg"
 
 encryptFile() {
     if [[ ! -e "$1" ]]; then
@@ -55,6 +57,7 @@ if [[ "$2" == "encrypt" ]]; then
     encryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
     encryptFile "$gpgSignDecryptedFile" "$gpgSignEncryptedFile" "$1"
     encryptFile "$neomuttDecryptedFile" "$neomuttEncryptedFile" "$1"
+    encryptFile "$weeChatDecryptedFile" "$weeChatEncryptedFile" "$1"
 elif [[ "$2" == "decrypt" ]]; then
     decryptFile "$sshDecryptedFile" "$sshEncryptedFile" "$1"
     if [[ ! -d "$HOME/.ssh" ]]; then
@@ -68,6 +71,7 @@ elif [[ "$2" == "decrypt" ]]; then
     decryptFile "$kdbxBackupDecryptedFile" "$kdbxBackupEncryptedFile" "$1"
     decryptFile "$gpgSignDecryptedFile" "$gpgSignEncryptedFile" "$1"
     decryptFile "$neomuttDecryptedFile" "$neomuttEncryptedFile" "$1"
+    decryptFile "$weeChatDecryptedFile" "$weeChatEncryptedFile" "$1"
     gpg --import "$gpgSignDecryptedFile"
     gpg --import "${gpgSignDecryptedFile}.pub"
     gpg --edit-key "66D11DC0EFAC2F99D0A687F91E81128A3F325C35"

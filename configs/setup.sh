@@ -43,6 +43,7 @@ setupConfigs(){
 
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
     safelink "$scriptDir/programs/chatting/tui/iamb"                                    "$HOME/.config/iamb"
+    safelink "$scriptDir/programs/chatting/tui/weechat"                                 "$HOME/.config/weechat"
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
 
     safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
