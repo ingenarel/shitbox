@@ -1,0 +1,30 @@
+# vim: filetype=neomuttrc
+# muttrc file for account ingenarelitems@gmail.com
+set real_name = "ingenarelitems"
+set from = "ingenarelitems@gmail.com"
+set sendmail = "msmtp -a ingenarelitems@gmail.com"
+alias me ingenarelitems <ingenarelitems@gmail.com>
+set folder = "imaps://ingenarelitems@gmail.com@imap.gmail.com:993"
+set header_cache = "/home/ingenarel/.cache/mutt-wizard/ingenarelitems_gmail.com/headers"
+set message_cachedir = "/home/ingenarel/.cache/mutt-wizard/ingenarelitems_gmail.com/bodies"
+set mbox_type = Maildir
+set hostname = "gmail.com"
+source /usr/share/mutt-wizard/switch.muttrc
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set trash = "+Trash"
+set record = "+Sent"
+set imap_user = "ingenarelitems@gmail.com"
+set imap_pass = "`pass ingenarelitems@gmail.com`"
+set ssl_starttls = yes
+set ssl_force_tls = yes
+macro index o "<shell-escape>mailsync ingenarelitems@gmail.com<enter>" "sync ingenarelitems@gmail.com"
+mailboxes "=Drafts" "=INBOX" "=Sent" "=[Gmail]/All Mail" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash"
+
+macro index,pager gt "<change-folder>=[Gmail]/Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=[Gmail]/Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=[Gmail]/Trash<enter>" "copy mail to trash"
+
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=[Gmail]/Drafts<enter>" "copy mail to drafts"
