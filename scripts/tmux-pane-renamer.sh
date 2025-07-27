@@ -40,6 +40,9 @@ renamePanes(){
         discordo)
             name=""
             ;;
+        neomutt)
+            name=""
+            ;;
         *)
             name="$_cmd"
             ;;
