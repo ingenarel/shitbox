@@ -2,13 +2,20 @@ vim.opt.termguicolors = true -- enable more colors
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
-    if vim.v.shell_error ~= 0 then
+if not vim.uv.fs_stat(lazypath) then
+    local out = vim.system({
+        "git",
+        "clone",
+        "--depth=1",
+        "--branch=main",
+        "https://github.com/folke/lazy.nvim.git",
+        lazypath,
+    }):wait()
+
+    if out.code ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out.stderr, "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -20,6 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup {
     -- TODO: download the profiler plugin somehow (https://github.com/folke/snacks.nvim/blob/main/docs/profiler.md)
     lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
+    version = nil,
     spec = {
         {
             { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
