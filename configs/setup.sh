@@ -89,7 +89,10 @@ setupConfigs(){
     [[ ! -d "/etc/greetd/sessions" ]] && sudo mkdir --parents /etc/greetd/sessions
     sudo cp $scriptDir/programs/greetd/sessions/*.desktop  "/etc/greetd/sessions"
 
-    safelink "$scriptDir/programs/neomutt/ingenarelitems@gmail.com.muttrc"              "$HOME/.config/mutt/accounts/ingenarelitems@gmail.com.muttrc"
+    find "$HOME/.config/mutt/accounts/" -regextype egrep -regex '.*gmail\.com.*' |  while IFS='' read -r file; do
+        sourceLine="source $scriptDir/programs/neomutt/gmail.muttrc"
+        grep -qE "$sourceLine" "$file" || echo "$sourceLine" >> "$file"
+    done
 
 }
 
