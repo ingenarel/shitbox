@@ -124,7 +124,7 @@ for package in "${packages[@]}"; do
             package="element-desktop"
             ;;
         "iamb")
-            package="iamb-bin"
+            package="iamb-git"
             ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
