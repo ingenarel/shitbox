@@ -108,3 +108,4 @@ git -C "$scriptDir/.." submodule update
 git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
 
 git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
+git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
