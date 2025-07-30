@@ -56,3 +56,5 @@ vim.filetype.add {
         ebuild = "ebuild",
     },
 }
+
+vim.diagnostic.config { virtual_text = { virtual_text_pos = "inline" } }
