@@ -28,4 +28,4 @@ function yy() {
     rm -f -- "$tmp"
 }
 
-source ~/.config/zsh/scripts/autostart-ssh.zsh
+source ~/.config/zsh/scripts/autostart-ssh.sh
