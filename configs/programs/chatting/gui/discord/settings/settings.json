@@ -33,7 +33,7 @@
             "enabled": true
         },
         "ClearURLs": {
-            "enabled": true
+            "enabled": false
         },
         "CommandsAPI": {
             "enabled": true
@@ -162,7 +162,7 @@
             }
         },
         "NoBlockedMessages": {
-            "enabled": true,
+            "enabled": false,
             "ignoreMessages": false,
             "applyToIgnoredUsers": true
         },
@@ -351,13 +351,13 @@
             "enabled": false
         },
         "ForceOwnerCrown": {
-            "enabled": false
+            "enabled": true
         },
         "FriendInvites": {
             "enabled": false
         },
         "FriendsSince": {
-            "enabled": false
+            "enabled": true
         },
         "FullSearchContext": {
             "enabled": false
@@ -381,7 +381,7 @@
             "enabled": false
         },
         "ImplicitRelationships": {
-            "enabled": true,
+            "enabled": false,
             "sortByAffinity": true
         },
         "InvisibleChat": {
@@ -400,7 +400,7 @@
             "enabled": false
         },
         "MentionAvatars": {
-            "enabled": false
+            "enabled": true
         },
         "MessageClickActions": {
             "enabled": false
@@ -556,7 +556,7 @@
             "enabled": false
         },
         "ShowHiddenThings": {
-            "enabled": false
+            "enabled": true
         },
         "ShowMeYourName": {
             "enabled": false
@@ -568,7 +568,7 @@
             "enabled": false
         },
         "SilentTyping": {
-            "enabled": false
+            "enabled": true
         },
         "SortFriendRequests": {
             "enabled": false
@@ -625,7 +625,7 @@
             "enabled": false
         },
         "ValidUser": {
-            "enabled": false
+            "enabled": true
         },
         "VoiceChatDoubleClick": {
             "enabled": false
@@ -643,7 +643,7 @@
             "enabled": false
         },
         "VolumeBooster": {
-            "enabled": false
+            "enabled": true
         },
         "WebKeybinds": {
             "enabled": true
@@ -681,6 +681,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1750311245261
+        "settingsSyncVersion": 1754003614505
     }
 }
