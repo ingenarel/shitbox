@@ -15,7 +15,7 @@ bindkey -v
 source ~/.config/zsh/plugins/init.zsh
 
 path+=("$HOME/.local/pip-bins" "$HOME/.local/share/nvim/mason/bin" "$HOME/.cargo/bin")
-source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/aliases.sh
 source ~/.config/zsh/exports.zsh
 eval "$(zoxide init --no-aliases zsh)"
 eval "$(starship init zsh)"
