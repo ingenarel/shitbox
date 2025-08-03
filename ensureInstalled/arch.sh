@@ -126,6 +126,9 @@ for package in "${packages[@]}"; do
         "iamb")
             package="iamb-git"
             ;;
+        "vlc")
+            package="vlc vlc-plugin-aom vlc-plugin-ffmpeg vlc-plugin-matroska vlc-plugin-svg vlc-plugin-x264 vlc-plugin-x265"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
