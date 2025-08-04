@@ -129,5 +129,7 @@ installModrinthMod placeholder-api                      "$HOME/Downloads/prismla
 installModrinthMod sodium-extra                         "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod tweakeroo                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod phases-discord-rich-presence         "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod iris                                 "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod xaeroplus                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
