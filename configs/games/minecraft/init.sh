@@ -131,7 +131,7 @@ installModrinthMod tweakeroo                            "$HOME/Downloads/prismla
 installModrinthMod phases-discord-rich-presence         "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod iris                                 "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod xaeroplus                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
-installModrinthMod ore-highlighter                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod new-glowing-ores                     "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod redstone-tweaks                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
