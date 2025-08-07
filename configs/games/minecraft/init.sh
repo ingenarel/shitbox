@@ -133,5 +133,6 @@ installModrinthMod iris                                 "$HOME/Downloads/prismla
 installModrinthMod xaeroplus                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod new-glowing-ores                     "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod redstone-tweaks                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+installModrinthMod trade-cycling                        "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
