@@ -47,6 +47,20 @@ grep -qi 'gentoo' /etc/os-release && {
     )
 }
 
-(dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer) | grep -qEi 'qemu' || source "$nonvmshit"
+{ dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {
+    source "$nonvmshit"
+    grep -qiE 'arch' /etc/os-release && {
+        grep -qiE 'vendor_id\s*:\s*\S*intel' /proc/cpuinfo && {
+            packages+=(
+                intel-media-driver
+                vulkan-intel
+            )
+        }
+        packages+=(
+            libva-utils
+            vulkan-tools
+        )
+    }
+}
 
 grep -qEi 'arch' /etc/os-release && packages+=(reflector)
