@@ -35,7 +35,7 @@ installPrism(){ # {{{
             "$(
                 curl https://api.github.com/repos/Diegiwg/PrismLauncher-Cracked/releases/latest\
                 |
-                grep -oE "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/[0-9.]+/PrismLauncher-Linux-Qt6-Portable-[0-9.]+\.tar\.gz"
+                grep -oiE "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/[0-9.]+/PrismLauncher-Linux-Qt6-Portable-[0-9.]+\.tar\.gz"
         )"
 
         sleep 1; sync; sleep 1
@@ -57,19 +57,22 @@ setupPrism(){ # {{{
 
 installModrinthMod(){ # {{{
 
-    local downloadData="$(curl -G "https://api.modrinth.com/v2/project/$1/version")"
+    local downloadData
+    downloadData="$(curl -G "https://api.modrinth.com/v2/project/$1/version")"
 
-    local downloadURL="$(
+    local downloadURL
+    downloadURL="$(
         echo "$downloadData"\
             |
-        grep -oE "https://cdn.modrinth.com/data/[a-zA-Z0-9]+/versions/[^\"]*$3[^\"]*"\
+        grep -oiE "https://cdn.modrinth.com/data/[a-zA-Z0-9]+/versions/[^\"]*$3[^\"]*"\
             |
         head -n1
     )"
 
     # echo "downloadURL = $downloadURL"
 
-    local filename="$(echo "$downloadData" | grep -oE "\"filename\":\"[^\"]*$3[^\"]*" | head -n1 | grep -oE "[^\"]+$")"
+    local filename
+    filename="$(echo "$downloadData" | grep -oiE "\"filename\":\"[^\"]*$3[^\"]*" | head -n1 | grep -oiE "[^\"]+$")"
     # echo "filename = $filename"
 
     ls "$2/$filename"\
@@ -78,7 +81,7 @@ installModrinthMod(){ # {{{
         wget --directory-prefix="$2" "$downloadURL"
 
         deps="$(
-            curl -G https://api.modrinth.com/v2/project/$1/dependencies\
+            curl -G "https://api.modrinth.com/v2/project/$1/dependencies"\
                 |
             sed -nE 's/.*"slug":"([^"]+)".*/\1/p'
         )"
@@ -94,16 +97,18 @@ installModrinthMod(){ # {{{
 
 installGithubMod(){ # {{{
 
-    local downloadURL="$(
+    local downloadURL
+    downloadURL="$(
         curl -G "https://api.github.com/repos/$1/releases/latest"\
             |
-        grep -oE "https://github\.com/$1/releases/download/[^\"]*$3[^\"]*"
+        grep -oiE "https://github\.com/$1/releases/download/[^\"]*$3[^\"]*"
     )"
 
-    echo "downloadURL = $downloadURL"
+    # echo "downloadURL = $downloadURL"
 
-    local filename="$(echo "$downloadURL" | grep -oE "[^/]+$")"
-    echo "filename = $filename"
+    local filename
+    filename="$(echo "$downloadURL" | grep -oiE "[^/]+$")"
+    # echo "filename = $filename"
 
     ls "$2/$filename"\
         ||
@@ -131,8 +136,10 @@ installModrinthMod tweakeroo                            "$HOME/Downloads/prismla
 installModrinthMod phases-discord-rich-presence         "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod iris                                 "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 installModrinthMod xaeroplus                            "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+
 installModrinthMod new-glowing-ores                     "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 installModrinthMod redstone-tweaks                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
-installModrinthMod trade-cycling                        "$HOME/Downloads/prismlauncher-cracked/myPlugins"
+
+installModrinthMod trade-cycling                        "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
