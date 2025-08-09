@@ -141,5 +141,7 @@ installModrinthMod new-glowing-ores                     "$HOME/Downloads/prismla
 installModrinthMod redstone-tweaks                      "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 
 installModrinthMod trade-cycling                        "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod scalablelux                          "$HOME/Downloads/prismlauncher-cracked/myPlugins" fabric
+installModrinthMod faster-random                        "$HOME/Downloads/prismlauncher-cracked/myPlugins"
 
 installGithubMod "cabaletta/baritone" "$HOME/Downloads/prismlauncher-cracked/myPlugins" "standalone-fabric"
