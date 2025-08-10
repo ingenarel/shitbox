@@ -167,6 +167,6 @@
                 ""
             ]
         },
-        "on-click": "hyprctl dispatch exec '[float; size 50% 30%]'pavucontrol"
+        "on-click": "pavucontrol"
     }
 }
