@@ -173,8 +173,12 @@ client.unfocused #850045 #850045 #ffffff
 client.focused_inactive #850045 #850045 #ffffff
 
 for_window [class="Pinentry-gtk"] floating enable
+
 for_window [class="(vesktop|discord|Element|legcord)"] floating enable
 for_window [class="(vesktop|discord|Element|legcord)"] resize set 90 ppt 90 ppt
+
+for_window [app_id="org\.pulseaudio.pavucontrol"] floating enable
+for_window [app_id="org\.pulseaudio.pavucontrol"] resize set 50 ppt 90 ppt
 
 #
 # Status Bar:
