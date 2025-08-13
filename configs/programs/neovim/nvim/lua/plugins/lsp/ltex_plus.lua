@@ -22,7 +22,6 @@ vim.lsp.config("ltex_plus", {
                     "GONNA",
                     "LC_AFTER_PERIOD",
                     "WHOLE_LOT",
-                    "MORFOLOGIK_RULE_EN_GB",
                 },
             },
         },
