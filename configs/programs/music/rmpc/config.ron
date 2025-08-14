@@ -7,7 +7,7 @@
     theme: "cyberpunk-neon",
     cache_dir: None,
     on_song_change: None,
-    volume_step: 5,
+    volume_step: 1,
     max_fps: 30,
     scrolloff: 0,
     wrap_navigation: false,
