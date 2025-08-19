@@ -40,3 +40,6 @@
 [submodule "scripts/gentoo-dev-scripts"]
 	path = scripts/gentoo-dev-scripts
 	url = https://github.com/ingenarel/gentoo-dev-scripts
+[submodule "configs/programs/neovim/myPlugins/flex-stats.nvim"]
+	path = configs/programs/neovim/myPlugins/flex-stats.nvim
+	url = https://github.com/ingenarel/flex-stats.nvim

@@ -87,4 +87,12 @@ return {
         end,
         desc = "simple-runner.nvim",
     },
+
+    {
+        "<leader>cdns",
+        function()
+            vim.cmd("cd ~/.config/shitbox/configs/programs/neovim/myPlugins/flex-stats.nvim | pwd ")
+        end,
+        desc = "flex-stats.nvim",
+    },
 }

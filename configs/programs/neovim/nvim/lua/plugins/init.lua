@@ -94,6 +94,7 @@ require("lazy").setup {
             },
             require("plugins.zoxide"),
             require("plugins.noice"),
+            require("plugins.flex-stats"),
         },
     },
 }
