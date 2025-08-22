@@ -1,26 +1,54 @@
 vim.lsp.enable("lua_ls")
+
 vim.lsp.config("lua_ls", {
-    settings = {
-        Lua = {
+    on_init = function(client)
+        -- if client.workspace_folders then
+        --     local path = client.workspace_folders[1].name
+        --     if
+        --         path ~= vim.fn.stdpath("config")
+        --         and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+        --     then
+        --         return
+        --     end
+        -- end
+
+        local config = {
             runtime = {
                 version = "LuaJIT",
-            },
-            diagnostics = {
-                globals = { "vim" },
+                path = {
+                    "lua/?.lua",
+                    "lua/?/init.lua",
+                },
             },
             workspace = {
-                -- library = table.insert(vim.api.nvim_get_runtime_file("", true), "${3rd}/luv/library")
-                library = {
-                    vim.env.VIMRUNTIME,
-                    "${3rd}/luv/library",
-                    vim.fn.stdpath("data") .. "/lazy",
-                    -- "${3rd}/busted/library",
-                },
                 checkThirdParty = false,
+                telemetry = {
+                    enable = false,
+                },
             },
-            telemetry = {
-                enable = false,
-            },
-        },
+        }
+
+        local cwd = vim.fn.expand("%")
+        if string.find(cwd, "nvim") or string.find(cwd, "neovim") then
+            config = vim.tbl_deep_extend("force", config, {
+                diagnostics = {
+                    globals = { "vim" },
+                },
+                workspace = {
+                    library = {
+                        -- library = table.insert(vim.api.nvim_get_runtime_file("", true), "${3rd}/luv/library")
+                        vim.env.VIMRUNTIME,
+                        "${3rd}/luv/library",
+                        vim.fn.stdpath("data") .. "/lazy",
+                        -- "${3rd}/busted/library",
+                    },
+                },
+            })
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, config)
+    end,
+    settings = {
+        Lua = {},
     },
 })
