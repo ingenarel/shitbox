@@ -46,6 +46,26 @@ vim.lsp.config("lua_ls", {
                     },
                 },
             })
+        --TODO:  figure out how to load weechat libs in lua-language-server
+        elseif string.find(cwd, "weechat") then
+            config = vim.tbl_deep_extend("force", config, {
+                diagnostics = {
+                    globals = { "weechat" },
+                },
+                -- runtime = {
+                --     -- cpath = {
+                --     --     "/lib64/weechat/plugins/lua.so",
+                --     -- },
+                --     -- path = {
+                --     --     "/lib64/weechat/plugins/lua.so",
+                --     -- },
+                -- },
+                workspace = {
+                    library = {
+                        "/lib64/weechat/plugins/lua.so",
+                    },
+                },
+            })
         end
 
         client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, config)
