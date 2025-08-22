@@ -15,10 +15,6 @@ vim.lsp.config("lua_ls", {
         local config = {
             runtime = {
                 version = "LuaJIT",
-                path = {
-                    "lua/?.lua",
-                    "lua/?/init.lua",
-                },
             },
             workspace = {
                 checkThirdParty = false,
@@ -31,6 +27,12 @@ vim.lsp.config("lua_ls", {
         local cwd = vim.fn.expand("%")
         if string.find(cwd, "nvim") or string.find(cwd, "neovim") then
             config = vim.tbl_deep_extend("force", config, {
+                runtime = {
+                    path = {
+                        "lua/?.lua",
+                        "lua/?/init.lua",
+                    },
+                },
                 diagnostics = {
                     globals = { "vim" },
                 },
