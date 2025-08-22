@@ -6,7 +6,7 @@ local function createAutocmd()
                 require("conform").format { bufnr = args.buf }
             end
             pcall(function()
-                if vim.opt_local.commentstring._value ~= "" then
+                if vim.opt_local.commentstring:get() ~= "" then
                     vim.cmd("%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g")
                 end
             end)
