@@ -64,6 +64,13 @@ vim.lsp.config("lua_ls", {
                     },
                 },
             })
+        elseif string.find(cwd, "yazi") then
+            config.runtime.version = "5.3"
+            config.workspace.library = {}
+            local yaziPluginDir = vim.fs.normalize("~/.config/yazi/plugins")
+            for dir in vim.fs.dir(yaziPluginDir) do
+                table.insert(config.workspace.library, vim.fs.joinpath(yaziPluginDir, dir))
+            end
         end
 
         client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, config)
