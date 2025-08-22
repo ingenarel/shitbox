@@ -23,6 +23,7 @@ return {
                 if vim.opt_local.filetype._value == "ebuild" then
                     return { "-t" }
                 end
+                return {}
             end,
         }
         conform.formatters.jq = {
