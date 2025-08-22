@@ -2,15 +2,15 @@ vim.lsp.enable("lua_ls")
 
 vim.lsp.config("lua_ls", {
     on_init = function(client)
-        -- if client.workspace_folders then
-        --     local path = client.workspace_folders[1].name
-        --     if
-        --         path ~= vim.fn.stdpath("config")
-        --         and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
-        --     then
-        --         return
-        --     end
-        -- end
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if
+                path ~= vim.fn.stdpath("config")
+                and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+            then
+                return
+            end
+        end
 
         local config = {
             runtime = {
