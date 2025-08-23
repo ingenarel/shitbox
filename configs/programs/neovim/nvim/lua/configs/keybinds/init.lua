@@ -23,5 +23,5 @@ CK_SetKeymap_n("<leader>l", "<CMD>set wrap!<CR>", "Toggles line wrap")
 CK_SetKeymap_n("<leader><m-t>", "<CMD>InspectTree<CR>", "Inspect Treesitter tree")
 vim.keymap.set("n", "<Up>", ":<Up>", { desc = "Previous command", silent = true, noremap = true })
 
-require("configs.keybinds._git_")
-require("configs.keybinds._window-nav_")
+require("configs.keybinds.git")
+require("configs.keybinds.window-nav")

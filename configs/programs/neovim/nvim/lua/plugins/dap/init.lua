@@ -6,9 +6,7 @@ return {
         {
             "mfussenegger/nvim-dap",
             config = function()
-                require("plugins.dap.configs.python")
-                require("plugins.dap.configs.codelldb")
-                require("plugins.dap.configs.shell")
+                require("plugins.dap.configs")
                 require("plugins.dap.keybinds")
                 require("nvim-dap-virtual-text").setup { highlight_changed_variables = false, all_references = true }
             end,

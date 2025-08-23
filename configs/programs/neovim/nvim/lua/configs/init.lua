@@ -58,3 +58,5 @@ vim.filetype.add {
 }
 
 vim.diagnostic.config { virtual_text = { virtual_text_pos = "inline" } }
+
+require("configs.keybinds")

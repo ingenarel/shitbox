@@ -32,19 +32,19 @@ require("lazy").setup {
         {
             { "folke/which-key.nvim", event = "VeryLazy", config = { preset = "helix", no_overlap = true } }, -- for keybindings help
             require("plugins.dashboard"),
-            require("plugins._colorizer-setup_"),
+            require("plugins.colorizer"),
             require("plugins.color-picker"),
-            require("plugins._lualine-setup_"),
-            require("plugins._autopairs-setup_"),
+            require("plugins.lualine"),
+            require("plugins.autopairs"),
             require("plugins.telescope"),
-            require("plugins._ibl-setup_"),
+            require("plugins.ibl"),
             require("plugins.gitsigns"),
             require("plugins.metapack"),
             require("plugins.lsp"),
             require("plugins.dap"),
             require("plugins.treesitter"), -- config that has my lsp, dap and autocompletion config
             require("plugins.smart-term"),
-            require("plugins._focus-setup_"),
+            require("plugins.focus"),
             { "https://gitlab.com/yorickpeterse/nvim-window.git" }, -- to quickly switch split buffers.
             -- TODO: fork this repo and make the code a bit better.{{{
             -- don't know lua that much, but lsp pointed out that it's using deprecated functions, and there's a function that's unused.
