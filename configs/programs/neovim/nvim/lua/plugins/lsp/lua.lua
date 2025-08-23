@@ -24,7 +24,7 @@ vim.lsp.config("lua_ls", {
             },
         }
 
-        local cwd = vim.fn.expand("%")
+        local cwd = vim.fn.expand("%:p")
         if string.find(cwd, "nvim") or string.find(cwd, "neovim") then
             config = vim.tbl_deep_extend("force", config, {
                 runtime = {
