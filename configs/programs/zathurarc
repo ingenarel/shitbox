@@ -1,5 +1,9 @@
 set selection-clipboard clipboard
 set recolor-adjust-lightness true
+set statusbar-basename true
+set guioptions ''
+
+map <Space> toggle_statusbar
 
 set default-bg "#110015"
 set statusbar-bg "#1d000a"
