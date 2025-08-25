@@ -6,8 +6,21 @@ local function createAutocmd()
                 require("conform").format { bufnr = args.buf }
             end
             pcall(function()
-                if vim.opt_local.commentstring:get() ~= "" then
-                    vim.cmd("%s/\\(\\S\\)\\(" .. string.sub(vim.opt.commentstring._value, 1, -3) .. "...\\)/\\1 \\2/g")
+                if vim.opt.foldmethod:get() == "marker" then
+                    ---@type string
+                    local commentstring = vim.opt_local.commentstring:get()
+                    if commentstring ~= "" then
+                        local foldstring = vim.opt.foldmarker:get()
+                        vim.cmd(
+                            "%s/\\(\\S\\)\\("
+                                .. string.sub(vim.opt.commentstring._value, 1, -3)
+                                .. "\\("
+                                .. foldstring[1]
+                                .. "\\|"
+                                .. foldstring[2]
+                                .. "\\)\\)/\\1 \\2/g"
+                        )
+                    end
                 end
             end)
         end,
