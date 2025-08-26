@@ -25,6 +25,7 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
 
     # Start your launcher
     bindsym $mainMod+r exec $HOME/.config/shitbox/scripts/menu.sh $terminal
+    bindsym $mainMod+g exec $HOME/.config/shitbox/scripts/lutris-manager.sh
 
     # bindsym $mainMod+Shift+c reload
 
