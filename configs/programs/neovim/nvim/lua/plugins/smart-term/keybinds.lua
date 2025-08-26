@@ -3,14 +3,14 @@ require("which-key").add {
     {
         "<leader><leader>t",
         function()
-            term.openFloaTerm { widthPercentage = 90 }
+            require("smart-term").float { widthPercentage = 90 }
         end,
         desc = "Terminal",
     },
     {
         "<leader>gg",
         function()
-            term.openNeovimFloaTerm {
+            require("smart-term.neovim").float {
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "lazygit",
@@ -22,7 +22,7 @@ require("which-key").add {
     {
         "<leader>Ff",
         function()
-            term.openFloaTerm {
+            term.float {
                 widthPercentage = 95,
                 heightPercentage = 100,
                 command = "yazi",
@@ -33,7 +33,7 @@ require("which-key").add {
     {
         "<leader>Fd",
         function()
-            term.openFloaTerm {
+            term.float {
                 widthPercentage = 95,
                 heightPercentage = 100,
                 command = "yazi " .. vim.fn.expand("%:h"),

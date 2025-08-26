@@ -1,4 +1,3 @@
-local term = require("smart-term")
 return {
     {
         desc = "Find Files",
@@ -16,7 +15,7 @@ return {
     {
         desc = "Yazi",
         action = function()
-            term.openFloaTerm {
+            require("smart-term").float {
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "yazi",
@@ -81,7 +80,7 @@ return {
     {
         desc = "Lazygit",
         action = function()
-            term.openNeovimFloaTerm {
+            require("smart-term.neovim").float {
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "lazygit",
