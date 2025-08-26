@@ -1,3 +1,9 @@
+command -v lutris >/dev/null 2>&1 || {
+    echo "lutris not found"
+    exit
+}
 gameName="$(lutris --installed --list-games 2>/dev/null | awk -F '|' '{print $3}' | sed -E 's/^\s+//; s/\s+$//' | fuzzel --dmenu)"
-lutris "$gameName" --output-script "/tmp/$gameName.sh"
-"/tmp/$gameName.sh"
+[[ -n "$gameName" ]] && {
+    lutris "$gameName" --output-script "/tmp/$gameName.sh"
+    "/tmp/$gameName.sh"
+}
