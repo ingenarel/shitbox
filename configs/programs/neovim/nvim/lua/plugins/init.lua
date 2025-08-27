@@ -58,7 +58,7 @@ require("lazy").setup {
             {
                 "m4xshen/hardtime.nvim",
                 dependencies = { "MunifTanjim/nui.nvim" },
-                opts = { disabled_filetypes = { metapack = true } },
+                opts = { disabled_filetypes = { metapack = true, flexstats = true } },
             },
             { "folke/persistence.nvim", event = "BufReadPre", opts = {} },
             { "imsnif/kdl.vim", ft = "kdl" },
