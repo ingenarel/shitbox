@@ -174,7 +174,7 @@
     ),
     cava: (
         bar_color: Gradient({
-            1:    "#ff00ff",
+            0:    "#ff00ff",
             20:   "#0000ff",
             40:   "#00ffff",
             60:   "#00ff00",
