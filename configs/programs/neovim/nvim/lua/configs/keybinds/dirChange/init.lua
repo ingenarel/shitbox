@@ -28,4 +28,11 @@ require("which-key").add {
         end,
         desc = "zsh config",
     },
+    {
+        "<leader>cdm",
+        function()
+            vim.cmd("cd ~/.config/shitbox/configs/programs/music | pwd ")
+        end,
+        desc = "Music config",
+    },
 }
