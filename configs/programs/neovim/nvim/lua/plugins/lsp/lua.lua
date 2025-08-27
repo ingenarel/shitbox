@@ -37,11 +37,17 @@ vim.lsp.config("lua_ls", {
                     globals = { "vim" },
                 },
                 workspace = {
-                    library = vim.tbl_deep_extend(
-                        "force",
-                        vim.api.nvim_get_runtime_file("", true),
-                        { "${3rd}/luv/library" }
-                    ),
+                    -- library = vim.tbl_deep_extend(
+                    --     "force",
+                    --     vim.api.nvim_get_runtime_file("", true),
+                    --     { "${3rd}/luv/library" }
+                    -- ),
+
+                    library = {
+                        "/home/ingenarel/.config/shitbox/configs/programs/neovim/myPlugins",
+                        "/home/ingenarel/.local/share/nvim/lazy",
+                        vim.env.VIMRUNTIME,
+                    },
                 },
             })
         --TODO:  figure out how to load weechat libs in lua-language-server
