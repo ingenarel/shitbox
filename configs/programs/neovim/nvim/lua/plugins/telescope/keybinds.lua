@@ -35,6 +35,48 @@ require("which-key").add {
         desc = "Treesitter Telescope",
     },
     {
+        "<leader>lr",
+        function()
+            require("telescope.builtin").lsp_references()
+        end,
+        desc = "Lsp references",
+    },
+    {
+        "<leader>ls",
+        function()
+            require("telescope.builtin").lsp_document_symbols()
+        end,
+        desc = "Lsp document symbols",
+    },
+    {
+        "<leader>lS",
+        function()
+            require("telescope.builtin").lsp_dynamic_workspace_symbols()
+        end,
+        desc = "Lsp dynamic workspace symbols",
+    },
+    {
+        "<leader><M-s>",
+        function()
+            require("telescope.builtin").lsp_workspace_symbols()
+        end,
+        desc = "Lsp workspace symbols",
+    },
+    {
+        "<leader>lo",
+        function()
+            require("telescope.builtin").lsp_outgoing_calls()
+        end,
+        desc = "Lsp outgoing calls",
+    },
+    {
+        "<leader>li",
+        function()
+            require("telescope.builtin").lsp_incoming_calls()
+        end,
+        desc = "Lsp incoming calls",
+    },
+    {
         "<leader>T",
         function()
             require("telescope.builtin").builtin()
