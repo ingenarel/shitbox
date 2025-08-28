@@ -97,7 +97,8 @@ require("lazy").setup {
                 opts = true,
             },
             require("plugins.zoxide"),
-            require("plugins.noice"),
+            --TODO: find a fix for noice skipping messages that were already shown
+            -- require("plugins.noice"),
             require("plugins.flex-stats"),
         },
     },
