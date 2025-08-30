@@ -27,8 +27,10 @@ choice="$(
         --preview "$scriptDir/preview.sh {}"
 )"
 
-[[ -n "$choice" ]] && {
-    zathura "$choice" & exit
-    } || {
+echo "$choice"
+
+if [[ -n "$choice" ]]; then
+    zathura "$choice" &
+else
     exit
-}
+fi
