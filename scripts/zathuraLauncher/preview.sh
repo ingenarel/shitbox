@@ -3,11 +3,13 @@
 windowSize="$(kitten icat --print-window-size)"
 xPixel=$(echo "$windowSize" | awk -F 'x' '{ print $1 / 2 }')
 yPixel=$(echo "$windowSize" | awk -F 'x' '{ print $2 }')
+xChars=$(( COLUMNS / 2 ))
+yChars=$(( LINES - 3 ))
 
 cacheDir="$HOME/.cache/zathuraLauncher"
 [[ ! -d "$cacheDir" ]] && mkdir --parents "$cacheDir"
 cacheFile="$cacheDir/$(
-    echo "$1" | gpg --print-md SHA512 | tr -d '[:space:]'
+    echo "${1}${xChars}${yChars}" | gpg --print-md SHA512 | tr -d '[:space:]'
 )"
 
 [[ ! -f "$cacheFile" ]] && {
@@ -23,6 +25,6 @@ cacheFile="$cacheDir/$(
 kitten icat\
     --stdin no\
     --align left\
-    --use-window-size "$(( COLUMNS / 2 )),$(( LINES - 3 )),$xPixel,$yPixel"\
+    --use-window-size "$xChars,$yChars,$xPixel,$yPixel"\
     --transfer-mode=file \
     "${cacheFile}.png"
