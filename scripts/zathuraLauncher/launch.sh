@@ -14,6 +14,9 @@ command -v fzf >/dev/null 2>&1 || {
     exit 1
 }
 
+[[ -n $SWAYSOCK ]] && execCommand="swaymsg exec"
+#TODO: add one for hyprland
+
 choice="$(
     rg --type-add 'epub:*.epub'\
         --files\
@@ -27,10 +30,10 @@ choice="$(
         --preview "$scriptDir/preview.sh {}"
 )"
 
-echo "$choice"
+# echo "$choice"
 
 if [[ -n "$choice" ]]; then
-    zathura "$choice" &
+    $execCommand zathura \""$choice\""
 else
     exit
 fi

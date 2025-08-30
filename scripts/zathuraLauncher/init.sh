@@ -1,7 +1,8 @@
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
-#TODO: ACTUALLY FIX THIS BITCH
-if [[ "$TERM" != "linux" ]]; then
+if pgrep tmux; then
+    tmux new-window "$scriptDir/launch.sh"
+elif [[ "$TERM" != "linux" ]]; then
     "$scriptDir/launch.sh"
 else
     export TERM=xterm-kitty
