@@ -15,7 +15,8 @@ return {
     {
         desc = "Yazi",
         action = function()
-            require("smart-term").float {
+            require("smart-term").open {
+                float = true,
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "yazi",
@@ -80,7 +81,9 @@ return {
     {
         desc = "Lazygit",
         action = function()
-            require("smart-term.neovim").float {
+            require("smart-term").open {
+                float = true,
+                choices = { "zellij", "nvim" },
                 widthPercentage = 90,
                 heightPercentage = 90,
                 command = "lazygit",

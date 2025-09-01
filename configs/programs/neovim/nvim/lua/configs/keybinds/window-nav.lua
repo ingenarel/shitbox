@@ -52,7 +52,7 @@ end -- }}}
 
 -- splits{{{
 local yazi =
-    "<C-w>w<CMD>lua require('smart-term').float { widthPercentage = 95, heightPercentage = 100, command = 'yazi', } <CR>"
+    "<C-w>w<CMD>lua require('smart-term').open { float = true, widthPercentage = 95, heightPercentage = 100, command = 'yazi', } <CR>"
 -- x direction
 CK_SetKeymap_n("<leader>wxx", "<C-w>v<C-w>w", "⫸ ")
 CK_SetKeymap_n("<leader>wxF", "<C-w>v" .. yazi, "⫸ yazi")

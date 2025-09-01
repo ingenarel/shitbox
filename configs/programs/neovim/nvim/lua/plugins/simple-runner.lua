@@ -8,7 +8,7 @@ local m = {
         require("which-key").add {
             "<leader>r",
             function()
-                require("simple-runner").run()
+                require("simple-runner").run { choices = { "zellij", "nvim" }, float = true }
             end,
             desc = "Run file",
         }
