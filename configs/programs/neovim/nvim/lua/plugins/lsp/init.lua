@@ -53,5 +53,21 @@ return {
         require("plugins.lsp.termux-language-server")
         vim.lsp.enable("nil_ls")
         vim.lsp.enable("jsonls")
+
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("my.lsp", {}),
+            callback = function(args)
+                local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+                if client:supports_method("textDocument/implementation") then
+                    vim.keymap.set({ "n", "v" }, "<A-]>", function()
+                        if vim.g.loaded_telescope == 1 then
+                            require("telescope.builtin").lsp_implementations()
+                        else
+                            vim.lsp.buf.implementation()
+                        end
+                    end, { buffer = true })
+                end
+            end,
+        })
     end,
 }
