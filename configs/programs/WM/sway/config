@@ -149,8 +149,8 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
     mode "music_control" {
         #mpc
             bindsym space exec mpc toggle; mode default
-            bindsym equal exec mpc volume +1 && swaync-client --hide-latest && $mpcStatus
-            bindsym minus exec mpc volume -1 && swaync-client --hide-latest &&  notify-send "$(mpc volume)"
+            bindsym equal exec mpc volume +1
+            bindsym minus exec mpc volume -1
             bindsym period exec mpc next && swaync-client --hide-latest && $mpcStatus
             bindsym comma exec mpc prev && swaync-client --hide-latest && $mpcStatus
             bindsym Mod1+r exec mpc repeat && swaync-client --hide-latest && $mpcStatus; mode default
