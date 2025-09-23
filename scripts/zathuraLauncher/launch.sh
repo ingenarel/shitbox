@@ -2,6 +2,8 @@
 
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
+[[ -z $FZF_DEFAULT_OPTS ]] && export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up"
+
 [[ -z "$BOOK_PATH" ]] && BOOK_PATH="$HOME/Documents"
 
 command -v rg >/dev/null 2>&1 || {
