@@ -1,6 +1,6 @@
+# vim:set textwidth=0:
 set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/config/sway.json --style $HOME/.config/shitbox/configs/programs/waybar/config/style.css"
 
-exec "rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500"
 exec autotiling
 exec $HOME/.config/sway/scripts/hot-reload.sh
 exec $HOME/.config/shitbox/scripts/startup.sh $waybar
@@ -11,7 +11,9 @@ set $down j
 set $up k
 set $right l
 set $terminal kitty
-set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
+set $mpcStatus "$HOME/.config/shitbox/scripts/mpc-status.sh"
+set $sovStart "$HOME/.config/shitbox/configs/programs/WM/sway/scripts/sov-start.sh"
+set $sovEnd "pkill sov; swaymsg unbindsym Escape"
 
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
@@ -61,27 +63,27 @@ set $mpcStatus $HOME/.config/shitbox/scripts/mpc-status.sh
     # bindsym $mainMod+Shift+$up move up
     # bindsym $mainMod+Shift+$right move right
 #
-    bindsym $mainMod+1 workspace number 1; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+2 workspace number 2; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+3 workspace number 3; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+4 workspace number 4; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+5 workspace number 5; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+6 workspace number 6; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+7 workspace number 7; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+8 workspace number 8; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+9 workspace number 9; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+0 workspace number 10; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+1 move container to workspace number 1 ; workspace number 1; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+2 move container to workspace number 2 ; workspace number 2; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+3 move container to workspace number 3 ; workspace number 3; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+4 move container to workspace number 4 ; workspace number 4; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+5 move container to workspace number 5 ; workspace number 5; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+6 move container to workspace number 6 ; workspace number 6; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+7 move container to workspace number 7 ; workspace number 7; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+8 move container to workspace number 8 ; workspace number 8; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+9 move container to workspace number 9 ; workspace number 9; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Shift+0 move container to workspace number 10; workspace number 10; exec "echo 0 > /tmp/sovpipe"
-    bindsym $mainMod+Tab exec "echo 1 > /tmp/sovpipe"
+    bindsym $mainMod+1 workspace number 1; exec $sovEnd
+    bindsym $mainMod+2 workspace number 2; exec $sovEnd
+    bindsym $mainMod+3 workspace number 3; exec $sovEnd
+    bindsym $mainMod+4 workspace number 4; exec $sovEnd
+    bindsym $mainMod+5 workspace number 5; exec $sovEnd
+    bindsym $mainMod+6 workspace number 6; exec $sovEnd
+    bindsym $mainMod+7 workspace number 7; exec $sovEnd
+    bindsym $mainMod+8 workspace number 8; exec $sovEnd
+    bindsym $mainMod+9 workspace number 9; exec $sovEnd
+    bindsym $mainMod+0 workspace number 10; exec $sovEnd
+    bindsym $mainMod+Shift+1 move container to workspace number 1 ; workspace number 1; exec $sovEnd
+    bindsym $mainMod+Shift+2 move container to workspace number 2 ; workspace number 2; exec $sovEnd
+    bindsym $mainMod+Shift+3 move container to workspace number 3 ; workspace number 3; exec $sovEnd
+    bindsym $mainMod+Shift+4 move container to workspace number 4 ; workspace number 4; exec $sovEnd
+    bindsym $mainMod+Shift+5 move container to workspace number 5 ; workspace number 5; exec $sovEnd
+    bindsym $mainMod+Shift+6 move container to workspace number 6 ; workspace number 6; exec $sovEnd
+    bindsym $mainMod+Shift+7 move container to workspace number 7 ; workspace number 7; exec $sovEnd
+    bindsym $mainMod+Shift+8 move container to workspace number 8 ; workspace number 8; exec $sovEnd
+    bindsym $mainMod+Shift+9 move container to workspace number 9 ; workspace number 9; exec $sovEnd
+    bindsym $mainMod+Shift+0 move container to workspace number 10; workspace number 10; exec $sovEnd
+    bindsym $mainMod+Tab exec $sovStart
 
 # Layout stuff:
 #
