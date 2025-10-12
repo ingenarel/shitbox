@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-command -v fd || {
+command -v fd > /dev/null 2>&1 || {
     echo "fd not found"
     exit 1
 }
@@ -37,22 +37,33 @@ findMO2(){
                         exit 69
                     }
                 done
-                [[ "$?" == 69 ]] && break
+                [[ "$?" == 69 ]] && exit 69
             }
         done
+        [[ "$?" == 69 ]] && {
+            return 0
+            } || {
+            echo "mo2-skyrim not found, exiting the script"
+            exit 2
+        }
     }
+}
+
+doConfigs(){
+    echo "trying to setup the configs.."
+    find "$scriptDir/overwrite" -type f | while IFS='' read -r line; do
+        safelink "$line" "${line//$scriptDir/$mo2Dir}"
+    done
 }
 
 if [[ ! -d "$mo2Dir" ]]; then
     echo "mo2-skyrim dir not found"
-    findMO2
+    findMO2 || exit
 elif [[ ! -f "$mo2Dir/ModOrganizer.exe" ]]; then
     echo "mo2 executable not found"
     "renaming the old mo2 dir"
     mv "$mo2Dir" "${mo2Dir}-old-$(date +%s)"
-    findMO2
+    findMO2 || exit
 fi
 
-find "$scriptDir/overwrite" -type f | while IFS='' read -r line; do
-    safelink "$line" "${line//$scriptDir/$mo2Dir}"
-done
+doConfigs
