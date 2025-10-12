@@ -1,8 +1,51 @@
 #!/usr/bin/env bash
 
-command -v fd > /dev/null 2>&1 || {
-    echo "fd not found"
-    exit 1
+LOOP_BREAK=69
+MO2_SKYRIM_NOT_FOUND=2
+WRONG_CASE=4
+
+command -v rg >/dev/null 2>&1 && {
+    [[ -z "$LIST_FILES" ]] && export LIST_FILES=RIPGREP
+}
+
+command -v fd >/dev/null 2>&1 && {
+    [[ -z "$LIST_FILES" ]] && export LIST_FILES=FD
+    [[ -z "$REGEX_FILE_SEARCH" ]] && export REGEX_FILE_SEARCH=FD
+    } || { command -v find >dev/null 2>&1 && {
+        export LIST_FILES=FIND
+        export REGEX_FILE_SEARCH=FIND
+    }
+}
+
+listFiles(){
+    case "$LIST_FILES" in
+        "RIPGREP")
+            rg --files --color=never "$1"
+            ;;
+        "FD")
+            fd --color=never --type=file . "$1"
+            ;;
+        "FIND")
+            find "$1" -type f
+            ;;
+        *)
+            exit $WRONG_CASE
+            ;;
+    esac
+}
+
+regexFileSearch(){
+    case "$REGEX_FILE_SEARCH" in
+        "FD")
+            fd --color=never --regex "$2" "$1"
+            ;;
+        "FIND")
+            find "$1" -regextype posix-extended -regex "$2"
+            ;;
+        *)
+            exit $WRONG_CASE
+            ;;
+    esac
 }
 
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
@@ -11,7 +54,7 @@ mo2Dir="$HOME/Games/MO2-skyrim"
 
 findMO2(){
     local mo2ExePaths
-    mo2ExePaths="$(fd --regex 'ModOrganizer.exe' "$HOME")"
+    mo2ExePaths="$(regexFileSearch "$HOME" 'ModOrganizer.exe')"
     [[ -z "$mo2ExePaths" ]] && {
         df --local\
             -BG\
@@ -25,7 +68,7 @@ findMO2(){
             |
         while IFS='' read -r mountPath; do
             echo "searching in $mountPath"
-            mo2ExePaths="$(fd --regex 'ModOrganizer.exe' "$mountPath")"
+            mo2ExePaths="$(regexFileSearch "$mountPath" 'ModOrganizer.exe')"
             [[ -n "$mo2ExePaths" ]] && {
                 echo "$mo2ExePaths" | while IFS='' read -r mo2ExePath; do
                     local rootDir
@@ -34,24 +77,24 @@ findMO2(){
                         echo "mo2-skyrim found at $mo2ExePath"
                         echo "symlinking $rootDir dir to $mo2Dir"
                         safelink "$rootDir" "$mo2Dir"
-                        exit 69
+                        exit $LOOP_BREAK
                     }
                 done
-                [[ "$?" == 69 ]] && exit 69
+                [[ "$?" == "$LOOP_BREAK" ]] && exit $LOOP_BREAK
             }
         done
-        [[ "$?" == 69 ]] && {
+        [[ "$?" == "$LOOP_BREAK" ]] && {
             return 0
             } || {
             echo "mo2-skyrim not found, exiting the script"
-            exit 2
+            exit $MO2_SKYRIM_NOT_FOUND
         }
     }
 }
 
 doConfigs(){
     echo "trying to setup the configs.."
-    find "$scriptDir/overwrite" -type f | while IFS='' read -r line; do
+    listFiles "$scriptDir/overwrite" | while IFS='' read -r line; do
         safelink "$line" "${line//$scriptDir/$mo2Dir}"
     done
 }
