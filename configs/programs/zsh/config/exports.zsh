@@ -12,7 +12,7 @@ else
     export CFLAGS="-Wall -Wextra -march=native -mtune=native -O2"
 fi
 export EDITOR="$(command -v nvim)"
-export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up"
+export FZF_DEFAULT_OPTS="--bind=alt-n:down,alt-p:up,ctrl-j:preview-down,ctrl-k:preview-up"
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
 
