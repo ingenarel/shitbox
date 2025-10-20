@@ -51,7 +51,7 @@ for package in "${packages[@]}"; do
             # figure out a way to autoinstall plugins if not installed
             ;;
         "vesktop")
-            package="vesktop-git"
+            package="vesktop-bin"
             ;;
         "cinny")
             package="cinny-desktop-bin"
