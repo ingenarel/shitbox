@@ -32,7 +32,7 @@ packages=(
     iamb
     weechat
     tinyxxd
-    soju
+    # soju
     bat
     git-delta
     tealdeer
