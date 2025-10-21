@@ -49,7 +49,8 @@ require("lazy").setup {
             -- TODO: fork this repo and make the code a bit better.{{{
             -- don't know lua that much, but lsp pointed out that it's using deprecated functions, and there's a function that's unused.
             -- it's a single file. not that big too. shouldn't be that hard to make it a bit better ig.}}}
-            { "ingenarel/nvim-pairMan" }, -- my plugin for pair stuff
+            require("plugins.pairMan"), -- my plugin for pair stuff
+
             {
                 "smoka7/hop.nvim",
                 version = "*",
