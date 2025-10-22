@@ -9,4 +9,17 @@ elif grep -qEi "arch" /etc/os-release ; then
     paru -Qtdq | paru -Rns -
     paru -Sccd
 fi
-sudo rm -rf "$HOME/.cache/"* "$HOME/.cargo" "$HOME/.npm" "$HOME/.local/share/Trash" "$HOME/go" "$HOME/.java" /var/cache/* "$HOME/.local/state/nvim/"*"log"
+sudo rm -rf\
+    "$HOME/.cargo"\
+    "$HOME/.npm"\
+    "$HOME/.local/share/Trash"\
+    "$HOME/go"\
+    "$HOME/.java"\
+    /var/cache/*\
+    "$HOME/.local/state/nvim/"*"log"
+
+find "$HOME/.cache/" -maxdepth 1\
+    |
+sed -E "/(.+(keepassxc|weechat|swww|fuzzel|lutris-manager-names)|${HOME//\//\\/}\\/.cache\\/)$/d"\
+    |
+xargs --delimiter '\n' rm -rf
