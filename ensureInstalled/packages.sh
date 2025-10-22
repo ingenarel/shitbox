@@ -53,14 +53,9 @@ grep -qi 'gentoo' /etc/os-release && {
     grep -qiE 'arch' /etc/os-release && {
         grep -qiE 'vendor_id\s*:\s*\S*intel' /proc/cpuinfo && {
             packages+=(
-                intel-media-driver
                 vulkan-intel
             )
         }
-        packages+=(
-            libva-utils
-            vulkan-tools
-        )
     }
 }
 
