@@ -44,6 +44,7 @@ grep -qi 'gentoo' /etc/os-release && {
         app-portage/smart-live-rebuild
         app-portage/eix
         dev-util/pkgdev
+        app-portage/pycargoebuild
     )
 }
 
