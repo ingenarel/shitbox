@@ -32,6 +32,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/music/mpd"                                            "$HOME/.config/mpd"
     safelink "$scriptDir/programs/fuzzel.ini"                                           "$HOME/.config/fuzzel/fuzzel.ini"
     safelink "$scriptDir/programs/zathurarc"                                            "$HOME/.config/zathura/zathurarc"
+    safelink "$scriptDir/programs/gpg/gpg-agent.conf"                                   "$HOME/.gnupg/gpg-agent.conf"
 
     echo "source $HOME/.config/zsh/init.zsh" >                                          "$HOME/.zshrc"
 
