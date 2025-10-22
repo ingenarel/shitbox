@@ -43,8 +43,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.opt.colorcolumn = "+0,-20,-40"
 vim.opt.laststatus = 3
 
-vim.lsp.log_level = vim.lsp.log_levels.ERROR
-vim.lsp.set_log_level("ERROR")
+vim.lsp.log.set_level("ERROR")
 vim.opt.mouse = ""
 vim.opt.fileformats = "unix,dos"
 -- vo.matchpairs = "(:),{:},[:],<:>"
