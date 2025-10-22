@@ -81,6 +81,7 @@ return {
     "query",
     "regex",
     "ron",
+    "rust",
     "sql",
     "ssh_config",
     "sway",
