@@ -67,8 +67,12 @@ setupConfigs(){
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
     grep -qEi "gentoo" /etc/os-release && {
         safelink "$scriptDir/programs/portage/tui-vm-make.conf"                         "/etc/portage/make.conf" 1
-        safelink "$scriptDir/programs/portage/package.use"                              "/etc/portage/package.use" 1
-        safelink "$scriptDir/programs/portage/package.accept_keywords"                  "/etc/portage/package.accept_keywords" 1
+        find "$scriptDir/programs/portage/package.use" -type f | while IFS='' read -r line; do
+            safelink "$line" "/etc/portage/package.use/$(basename "$line")" 1
+        done
+        find "$scriptDir/programs/portage/package.accept_keywords" -type f | while IFS='' read -r line; do
+            safelink "$line" "/etc/portage/package.accept_keywords/$(basename "$line")" 1
+        done
         [[ -f "$HOME/.ssh/git" ]] && {
             [[ -d "$HOME/coding/git/gentoo" ]] || mkdir --parents "$HOME/coding/git/gentoo"
             [[ -d "$HOME/coding/git/gentoo/gentoo" ]] || {
