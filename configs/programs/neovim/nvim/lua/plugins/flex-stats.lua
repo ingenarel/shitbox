@@ -1,6 +1,6 @@
 local m = {
     "ingenarel/flex-stats.nvim",
-    opts = true,
+    opts = {},
 }
 
 if vim.uv.fs_stat(vim.fs.normalize("~/.config/shitbox/configs/programs/neovim/myPlugins/flex-stats.nvim")) ~= nil then

@@ -95,7 +95,7 @@ require("lazy").setup {
             {
                 "vyfor/cord.nvim",
                 build = ":Cord update",
-                opts = true,
+                opts = {},
             },
             require("plugins.zoxide"),
             --TODO: find a fix for noice skipping messages that were already shown

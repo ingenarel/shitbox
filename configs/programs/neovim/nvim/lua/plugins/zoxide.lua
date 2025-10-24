@@ -1,6 +1,6 @@
 local m = {
     "ingenarel/zoxide.nvim",
-    opts = true,
+    opts = {},
 }
 
 if vim.uv.fs_stat(vim.fs.normalize("~/.config/shitbox/configs/programs/neovim/myPlugins/zoxide.nvim")) ~= nil then
