@@ -51,6 +51,7 @@ packages+=(
 
 packages+=(
     audacity
+    noise-suppression-for-voice
     blender
     kdenlive
     obs-studio
