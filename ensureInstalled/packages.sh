@@ -39,6 +39,7 @@ packages=(
     task
     torsocks
     sherlock
+    rclone
 )
 
 grep -qi 'gentoo' /etc/os-release && {

@@ -100,6 +100,10 @@ setupConfigs(){
         grep -qE "$sourceLine" "$file" || echo "$sourceLine" >> "$file"
     done
 
+    [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]] && {
+        rclone config create drive-main drive
+    }
+
 }
 
 setupConfigs
