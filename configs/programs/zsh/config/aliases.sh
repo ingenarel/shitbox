@@ -32,3 +32,8 @@ discordo-setup(){
     wl-copy --paste-once "$(keepassxc-cli show --show-protected --attributes token $HOME/.config/shitbox/configs/secrets/passwords/Passwords.kdbx discord)"
     secret-tool store --label="Discord Token" service discordo username token
 }
+
+torsocks(){
+    systemctl is-active tor > /dev/null 2>&1 || systemctl start tor > /dev/null 2>&1
+    command torsocks "$@"
+}
