@@ -50,5 +50,5 @@ update_stuff "cargo install-update -a"\
     "Updated cargo packages; updating tmux plugins..."
 update_stuff "$HOME/.tmux/plugins/tpm/bin/clean_plugins && $HOME/.tmux/plugins/tpm/bin/update_plugins all"\
     "Updated tmux plugins; updating neovim plugins..."
-update_stuff "nvim --headless '+Lazy! clean' '+Lazy! update' '+MasonUpdate'"\
+update_stuff "nvim --headless '+Lazy! clean' '+Lazy! update' '+MasonUpdate' '+qa'"\
     "Updated neovim plugins; updating neovim local plugins"
