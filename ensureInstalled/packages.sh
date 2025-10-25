@@ -38,6 +38,7 @@ packages=(
     tealdeer
     task
     torsocks
+    sherlock
 )
 
 grep -qi 'gentoo' /etc/os-release && {

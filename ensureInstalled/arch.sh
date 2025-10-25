@@ -129,6 +129,9 @@ for package in "${packages[@]}"; do
         "vlc")
             package="vlc vlc-plugin-aom vlc-plugin-ffmpeg vlc-plugin-matroska vlc-plugin-svg vlc-plugin-x264 vlc-plugin-x265"
             ;;
+        "sherlock")
+            package="sherlock-git"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
