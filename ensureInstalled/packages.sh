@@ -36,6 +36,8 @@ packages=(
     bat
     git-delta
     tealdeer
+    task
+    torsocks
 )
 
 grep -qi 'gentoo' /etc/os-release && {
