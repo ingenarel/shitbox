@@ -20,6 +20,6 @@ sudo rm -rf\
 
 find "$HOME/.cache/" -maxdepth 1\
     |
-sed -E "/(.+(keepassxc|weechat|swww|fuzzel|lutris-manager-names)|${HOME//\//\\/}\\/.cache\\/)$/d"\
+sed -E "/(.+(keepassxc|weechat|swww|fuzzel|lutris-manager-names|tealdeer)|${HOME//\//\\/}\\/.cache\\/)$/d"\
     |
 xargs --delimiter '\n' rm -rf
