@@ -2,14 +2,14 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     dependencies = {
-        require("plugins.coq_nvim"),
+        -- require("plugins.coq_nvim"),
+        require("plugins.blink-cmp"),
         { "barreiroleo/ltex_extra.nvim", branch = "dev" },
     },
     config = function()
         require("plugins.lsp.python")
         require("plugins.lsp.lua")
         vim.lsp.enable("clangd")
-
         vim.lsp.enable("bashls")
         vim.lsp.config("bashls", {
             settings = {
