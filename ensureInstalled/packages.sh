@@ -40,6 +40,7 @@ packages=(
     torsocks
     sherlock
     rclone
+    rustup
 )
 
 grep -qi 'gentoo' /etc/os-release && {
