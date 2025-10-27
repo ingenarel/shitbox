@@ -37,3 +37,23 @@ torsocks(){
     systemctl is-active tor > /dev/null 2>&1 || systemctl start tor > /dev/null 2>&1
     command torsocks "$@"
 }
+
+python-venv-install(){
+    [[ -z "$1" ]] && {
+        echo "please give a package name"
+        exit 1
+    }
+    local root="$HOME/.local/share/ingenarel-pip"
+    [[ ! -d "$root" ]] &&  mkdir --parents "$root"
+    python3 -m venv "$root/$1"
+    source "$root/$1/bin/activate"
+    python3 -m pip install "$1"
+}
+
+python-venv-update(){
+    local root="$HOME/.local/share/ingenarel-pip"
+    find "$root" -maxdepth 1 -type d | tail -n+2 | while IFS='' read -r dirName; do
+        source "$dirName/bin/activate"
+        python3 -m pip install "$(basename "$dirName")" --upgrade
+    done
+}
