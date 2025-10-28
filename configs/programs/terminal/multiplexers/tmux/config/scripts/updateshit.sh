@@ -6,13 +6,13 @@ update_stuff() {
         timeout --kill-after=4 --signal=TERM 4\
             notify-send "$2" || hyprctl notify 1 10000 "rgb(ff1ea3)" "fontsize:30 $2"
         timeout --kill-after=4 --signal=TERM 4\
-            pw-play "$HOME/.config/tmux/sounds/notif.mp3"
+            pw-play "$HOME/.config/shitbox/sounds/notif.mp3"
     } ||
     {
         timeout --kill-after=4 --signal=TERM\
             notify-send "$2 failed!" "Updating $3..."
         timeout --kill-after=4 --signal=TERM\
-            pw-play "$HOME/.config/tmux/sounds/error.mp3"
+            pw-play "$HOME/.config/shitbox/sounds/error.mp3"
     }
 }
 
