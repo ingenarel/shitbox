@@ -56,6 +56,7 @@ return {
                 ebuild = { "beautysh" },
                 nix = { "alejandra" },
                 json = { "jq" },
+                rust = { "rustfmt" },
             },
         }
         local autocmdID = createAutocmd()
