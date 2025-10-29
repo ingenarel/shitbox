@@ -41,6 +41,7 @@ packages=(
     sherlock
     rclone
     rustup
+    man-pages
 )
 
 grep -qi 'gentoo' /etc/os-release && {
