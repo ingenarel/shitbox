@@ -13,14 +13,14 @@ vim.lsp.config("ltex_plus", {
                 ["en-GB"] = {
                     "bytecode",
                     "helptag",
-                    "lazypath",
-                    "libuv",
+                    "Lazypath",
+                    "Libuv",
                     "nvim",
                     "runtimepath",
                     "vimdocs",
                     "Treesitter",
                     "nvim-treesitter",
-                    "metapack",
+                    "Metapack",
                 },
             },
             disabledRules = {
@@ -33,10 +33,9 @@ vim.lsp.config("ltex_plus", {
         },
         checkFrequency = "save",
     },
-    on_attach = function(client, bufnr)
-        require("ltex_extra").setup {
-            load_langs = { "en-GB" },
-            path = find_root(),
-        }
-    end,
 })
+
+require("ltex_extra").setup {
+    load_langs = { "en-GB" },
+    path = find_root(),
+}
