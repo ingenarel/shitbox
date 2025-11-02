@@ -14,6 +14,8 @@ local m = {
             ["<CR>"] = { "accept", "fallback" },
             ["<M-p>"] = { "select_prev", "fallback_to_mappings" },
             ["<M-n>"] = { "select_next", "fallback_to_mappings" },
+            ["<M-h>"] = { "snippet_backward", "fallback" },
+            ["<M-l>"] = { "snippet_forward", "fallback" },
             ["<M-k>"] = { "scroll_documentation_up", "fallback" },
             ["<M-j>"] = { "scroll_documentation_down", "fallback" },
         },

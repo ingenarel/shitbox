@@ -7,7 +7,6 @@ end
 alt_keymap("<M-]>", "<C-]>")
 alt_keymap("<M-d>", "<C-d>")
 alt_keymap("<M-i>", "<C-i>")
-alt_keymap("<M-l>", "<C-l><CMD>ColorizerReloadAllBuffers<CR>")
 alt_keymap("<M-o>", "<C-o>")
 alt_keymap("<M-q>", "<C-q>")
 alt_keymap("<M-r>", "<C-r>")
