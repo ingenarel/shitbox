@@ -1,12 +1,13 @@
 LS_COMMAND='lsd --almost-all --color always --group-directories-first --icon always'
 alias btop="sudo btop"
 alias graph="pacgraph --svg -b #000000 -l #013d35 -t #f40cfc -d #ffffff --show-req-by --by-area --explicits --opt-deps -f ~/Images/pacgraph/pacgraph"
-alias musicback="rclone sync /mnt/G/system\ files\(G\)/music drive-alt:music --progress --drive-use-trash=false --delete-excluded"
+alias musicback="rclone sync '$(realpath "$HOME/Music/Music")' drive-main:Music --progress --drive-use-trash=false --delete-excluded --copy-links"
 alias z="__zoxide_z"
 alias zf="__zoxide_zi"
 alias ls="$LS_COMMAND"
 alias fastfetch='fastfetch --logo-padding-left $(( ( $(tput cols) - 93) / 2 ))'
 alias git-gc-all='git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc'
+alias yt-music='yt-dlp -x --embed-thumbnail --embed-metadata --audio-quality --audio-quality --audio-format flac --postprocessor-args "ffmpeg:-compression_level 12"'
 # https://stackoverflow.com/questions/1904860/how-to-remove-unreferenced-blobs-from-my-git-repository
 #
 alias crdeps="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/crdeps"

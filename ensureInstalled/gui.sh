@@ -106,6 +106,7 @@ packages+=(
 packages+=(
     ffmpeg
     yt-dlp
+    python-mutagen
 )
 
 packages+=(
