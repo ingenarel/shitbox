@@ -34,7 +34,7 @@ for package in "${packages[@]}"; do
             systemServices+=(greetd)
             ;;
         "tuigreet")
-            package="greetd-tuigreet-bin"
+            package="greetd-tuigreet"
             ;;
         "sweet-gtk")
             parentPath="$HOME/.themes"
