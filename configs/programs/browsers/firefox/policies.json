@@ -2,14 +2,14 @@
     "policies": {
         "Extensions": {
             "Install": [
-                "https://addons.mozilla.org/firefox/downloads/file/4492375/ublock_origin-1.64.0.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4458679/vimium_ff-2.2.1.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4499691/zen_internet-2.2.4.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi"
+                "https://addons.mozilla.org/firefox/downloads/file/4492375",
+                "https://addons.mozilla.org/firefox/downloads/file/4458679",
+                "https://addons.mozilla.org/firefox/downloads/file/4477789",
+                "https://addons.mozilla.org/firefox/downloads/file/4470237",
+                "https://addons.mozilla.org/firefox/downloads/file/4499756",
+                "https://addons.mozilla.org/firefox/downloads/file/4371820",
+                "https://addons.mozilla.org/firefox/downloads/file/4499691",
+                "https://addons.mozilla.org/firefox/downloads/file/4511297"
             ]
         },
         "ExtensionUpdate": true,
