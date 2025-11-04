@@ -69,6 +69,7 @@
             "Behavior": "reject-tracker-and-partition-foreign",
             "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
         },
+        "SanitizeOnShutdown": true,
         "AppAutoUpdate": false,
         "BackgroundAppUpdate": false,
         "AutofillAddressEnabled": false,
