@@ -92,6 +92,26 @@
             "_definedAliases": []
         },
         {
+            "id": "GentooBugzilla",
+            "_name": "GentooBugzilla",
+            "_loadPath": "[user]",
+            "_iconMapObj": null,
+            "_metaData": {
+                "alias": "@gb"
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://bugs.gentoo.org/buglist.cgi?quicksearch={searchTerms}"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_filePath": null,
+            "_definedAliases": []
+        },
+        {
             "id": "GentooPackages",
             "_name": "GentooPackages",
             "_loadPath": "[user]",
