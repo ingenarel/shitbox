@@ -21,9 +21,9 @@ shitboxDir="/home/ingenarel/.config/shitbox"
 git clone https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
-sudo eselect repository disable gentoo
+sudo eselect repository remove -f gentoo
 sudo rm -rf /var/db/repos/gentoo
-sudo eselect repository enable gentoo
+sudo eselect repository add gentoo git https://github.com/gentoo-mirror/gentoo.git
 
 sudo eselect repository enable guru
 
