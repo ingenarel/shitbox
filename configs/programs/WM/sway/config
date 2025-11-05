@@ -4,6 +4,7 @@ set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/confi
 exec autotiling
 exec $HOME/.config/sway/scripts/hot-reload.sh
 exec $HOME/.config/shitbox/scripts/startup.sh $waybar
+exec $HOME/.config/shitbox/scripts/alarm.sh
 
 set $mainMod Mod4
 set $left h
