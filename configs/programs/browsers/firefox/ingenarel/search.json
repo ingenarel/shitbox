@@ -132,6 +132,26 @@
             "_definedAliases": []
         },
         {
+            "id": "GuruPackages",
+            "_name": "GuruPackages",
+            "_loadPath": "[user]",
+            "_iconMapObj": null,
+            "_metaData": {
+                "alias": "@gf"
+            },
+            "_urls": [
+                {
+                    "params": [],
+                    "rels": [],
+                    "template": "https://github.com/search?q=repo%3Agentoo%2Fguru+path%3A{searchTerms}&type=code"
+                }
+            ],
+            "_orderHint": null,
+            "_telemetryId": null,
+            "_filePath": null,
+            "_definedAliases": []
+        },
+        {
             "id": "zugaina",
             "_name": "zugaina",
             "_loadPath": "[user]",
