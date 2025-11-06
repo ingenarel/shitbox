@@ -40,7 +40,7 @@ return {
             end,
         }
         conform.formatters.jq = {
-            prepend_args = { "--indent", "4" },
+            prepend_args = { "--indent", "4", "--sort-keys" },
         }
 
         conform.setup {
