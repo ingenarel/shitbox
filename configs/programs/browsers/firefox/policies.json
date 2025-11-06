@@ -2,7 +2,7 @@
     "policies": {
         "Extensions": {
             "Install": [
-                "https://addons.mozilla.org/firefox/downloads/file/4492375/ublock_origin-1.64.0.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4549492/tridactyl_vim-1.24.4.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
