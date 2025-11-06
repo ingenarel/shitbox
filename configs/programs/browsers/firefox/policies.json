@@ -2,14 +2,14 @@
     "policies": {
         "Extensions": {
             "Install": [
-                "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4549492/tridactyl_vim-1.24.4.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
                 "https://addons.mozilla.org/firefox/downloads/file/4499691/zen_internet-2.2.4.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi"
+                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4549492/tridactyl_vim-1.24.4.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi"
             ]
         },
         "ExtensionUpdate": true,
@@ -45,51 +45,51 @@
         ],
         "Cookies": {
             "Allow": [
+                "https://archive.org",
                 "https://archlinux.org",
+                "https://aternos.org",
+                "https://chatgpt.com",
+                "https://drive.google.com",
                 "https://gentoo.org",
-                "https://nixos.org",
                 "https://github.com",
                 "https://gitlab.com",
                 "https://gitlab.com",
+                "https://itch.io",
+                "https://mail.google.com",
+                "https://nixos.org",
+                "https://typecraft.dev",
+                "https://www.instagram.com",
+                "https://www.nexusmods.com",
+                "https://www.patreon.com",
+                "https://www.sheepit-renderfarm.com",
                 "https://www.twitch.tv",
                 "https://www.youtube.com",
-                "https://www.instagram.com",
-                "https://chatgpt.com",
-                "https://www.nexusmods.com",
-                "https://www.sheepit-renderfarm.com",
-                "https://x.com",
-                "https://itch.io",
-                "https://aternos.org",
-                "https://drive.google.com",
-                "https://mail.google.com",
-                "https://archive.org",
-                "https://typecraft.dev",
-                "https://www.patreon.com"
+                "https://x.com"
             ],
-            "Locked": true,
             "Behavior": "reject-tracker-and-partition-foreign",
-            "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign"
+            "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign",
+            "Locked": true
         },
-        "SanitizeOnShutdown": true,
         "AppAutoUpdate": false,
-        "BackgroundAppUpdate": false,
         "AutofillAddressEnabled": false,
         "AutofillCreditCardEnabled": false,
+        "BackgroundAppUpdate": false,
         "DisableAppUpdate": true,
-        "DisableTelemetry": true,
+        "DisableFirefoxAccounts": true,
         "DisableFirefoxStudies": true,
+        "DisableFormHistory": true,
         "DisablePocket": true,
+        "DisableTelemetry": true,
         "DontCheckDefaultBrowser": true,
         "NoDefaultBookmarks": false,
         "OfferToSaveLogins": false,
-        "DisableFirefoxAccounts": true,
-        "DisableFormHistory": true,
+        "SanitizeOnShutdown": true,
         "EnableTrackingProtection": {
-            "Value": true,
-            "Locked": true,
             "Cryptomining": true,
+            "EmailTracking": true,
             "Fingerprinting": true,
-            "EmailTracking": true
+            "Locked": true,
+            "Value": true
         }
     }
 }
