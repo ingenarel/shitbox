@@ -1,18 +1,9 @@
 {
     "policies": {
-        "Extensions": {
-            "Install": [
-                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4499691/zen_internet-2.2.4.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4549492/tridactyl_vim-1.24.4.xpi",
-                "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi"
-            ]
-        },
-        "ExtensionUpdate": true,
+        "AppAutoUpdate": false,
+        "AutofillAddressEnabled": false,
+        "AutofillCreditCardEnabled": false,
+        "BackgroundAppUpdate": false,
         "Bookmarks": [
             {
                 "Title": "shitbox",
@@ -70,10 +61,6 @@
             "BehaviorPrivateBrowsing": "reject-tracker-and-partition-foreign",
             "Locked": true
         },
-        "AppAutoUpdate": false,
-        "AutofillAddressEnabled": false,
-        "AutofillCreditCardEnabled": false,
-        "BackgroundAppUpdate": false,
         "DisableAppUpdate": true,
         "DisableFirefoxAccounts": true,
         "DisableFirefoxStudies": true,
@@ -81,15 +68,28 @@
         "DisablePocket": true,
         "DisableTelemetry": true,
         "DontCheckDefaultBrowser": true,
-        "NoDefaultBookmarks": false,
-        "OfferToSaveLogins": false,
-        "SanitizeOnShutdown": true,
         "EnableTrackingProtection": {
             "Cryptomining": true,
             "EmailTracking": true,
             "Fingerprinting": true,
             "Locked": true,
             "Value": true
-        }
+        },
+        "ExtensionUpdate": true,
+        "Extensions": {
+            "Install": [
+                "https://addons.mozilla.org/firefox/downloads/file/4371820/return_youtube_dislikes-3.0.0.18.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4470237/proton_vpn_firefox_extension-1.2.7.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4477789/keepassxc_browser-1.9.8.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4499691/zen_internet-2.2.4.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4499756/sponsorblock-5.12.3.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4549492/tridactyl_vim-1.24.4.xpi",
+                "https://addons.mozilla.org/firefox/downloads/file/4592803/adnauseam-3.26.0.xpi"
+            ]
+        },
+        "NoDefaultBookmarks": false,
+        "OfferToSaveLogins": false,
+        "SanitizeOnShutdown": true
     }
 }
