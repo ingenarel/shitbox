@@ -2,9 +2,9 @@
 if tmux list-sessions | grep -q chat; then
     tmux attach -t chat
 else
-    tmux new-session -s 'chat' "neomutt; $SHELL"\
+    tmux new-session -s 'chat' "neomutt"\
         \;\
-        new-window "iamb; $SHELL"\
+        new-window "iamb"\
         \;\
-        new-window "weechat; $SHELL"
+        new-window "weechat"
 fi
