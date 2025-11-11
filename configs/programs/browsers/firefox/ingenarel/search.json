@@ -1,24 +1,26 @@
 {
-    "version": 12,
     "engines": [
         {
-            "id": "ddg",
+            "_isAppProvided": true,
             "_name": "DuckDuckGo",
-            "_isAppProvided": true
+            "id": "ddg"
         },
         {
-            "id": "wikipedia",
+            "_isAppProvided": true,
             "_name": "Wikipedia (en)",
-            "_isAppProvided": true
+            "id": "wikipedia"
         },
         {
-            "id": "nixwiki",
-            "_name": "nixwiki",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@nw"
             },
+            "_name": "nixwiki",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -26,19 +28,19 @@
                     "template": "https://wiki.nixos.org/w/index.php?search={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "nixwiki"
         },
         {
-            "id": "NixPackages",
-            "_name": "NixPackages",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@np"
             },
+            "_name": "NixPackages",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -46,19 +48,19 @@
                     "template": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "NixPackages"
         },
         {
-            "id": "NixOptions",
-            "_name": "NixOptions",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@no"
             },
+            "_name": "NixOptions",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -66,19 +68,19 @@
                     "template": "https://search.nixos.org/options?channel=unstable&type=packages&query={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "NixOptions"
         },
         {
-            "id": "GentooWiki",
-            "_name": "GentooWiki",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gw"
             },
+            "_name": "GentooWiki",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -86,19 +88,19 @@
                     "template": "https://wiki.gentoo.org/index.php?&search={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "GentooWiki"
         },
         {
-            "id": "GentooBugzilla",
-            "_name": "GentooBugzilla",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gb"
             },
+            "_name": "GentooBugzilla",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -106,19 +108,19 @@
                     "template": "https://bugs.gentoo.org/buglist.cgi?quicksearch={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "GentooBugzilla"
         },
         {
-            "id": "GentooPackages",
-            "_name": "GentooPackages",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gp"
             },
+            "_name": "GentooPackages",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -126,19 +128,19 @@
                     "template": "https://packages.gentoo.org/packages/search?q={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "GentooPackages"
         },
         {
-            "id": "GuruPackages",
-            "_name": "GuruPackages",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gf"
             },
+            "_name": "GuruFiles",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -146,19 +148,19 @@
                     "template": "https://github.com/search?q=repo%3Agentoo%2Fguru+path%3A{searchTerms}&type=code"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "GuruFiles"
         },
         {
-            "id": "zugaina",
-            "_name": "zugaina",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gap"
             },
+            "_name": "zugaina",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -166,19 +168,19 @@
                     "template": "https://gpo.zugaina.org/Search?search={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "zugaina"
         },
         {
-            "id": "ArchWiki",
-            "_name": "ArchWiki",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@aw"
             },
+            "_name": "ArchWiki",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -186,19 +188,19 @@
                     "template": "https://wiki.archlinux.org/index.php?search={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "ArchWiki"
         },
         {
-            "id": "ArchPackages",
-            "_name": "ArchPackages",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@ap"
             },
+            "_name": "ArchPackages",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -206,19 +208,19 @@
                     "template": "https://archlinux.org/packages/?&q={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "ArchPackages"
         },
         {
-            "id": "AURpackages",
-            "_name": "AUR packages",
-            "_loadPath": "[user]",
+            "_definedAliases": [],
+            "_filePath": null,
             "_iconMapObj": null,
+            "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@au"
             },
+            "_name": "AUR packages",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -226,18 +228,17 @@
                     "template": "https://aur.archlinux.org/packages?K={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_filePath": null,
-            "_definedAliases": []
+            "id": "AURpackages"
         },
         {
-            "id": "github",
-            "_name": "github",
+            "_definedAliases": [],
             "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@gh"
             },
+            "_name": "github",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -245,17 +246,17 @@
                     "template": "https://github.com/search?q={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_definedAliases": []
+            "id": "github"
         },
         {
-            "id": "FirefoxAddons",
-            "_name": "FirefoxAddons",
+            "_definedAliases": [],
             "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@fa"
             },
+            "_name": "FirefoxAddons",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -263,17 +264,17 @@
                     "template": "https://addons.mozilla.org/en-US/firefox/search/?q={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_definedAliases": []
+            "id": "FirefoxAddons"
         },
         {
-            "id": "ModrinthMods",
-            "_name": "ModrinthMods",
+            "_definedAliases": [],
             "_loadPath": "[user]",
             "_metaData": {
                 "alias": "@mm"
             },
+            "_name": "ModrinthMods",
+            "_orderHint": null,
+            "_telemetryId": null,
             "_urls": [
                 {
                     "params": [],
@@ -281,14 +282,13 @@
                     "template": "https://modrinth.com/mods?q={searchTerms}"
                 }
             ],
-            "_orderHint": null,
-            "_telemetryId": null,
-            "_definedAliases": []
+            "id": "ModrinthMods"
         }
     ],
     "metaData": {
         "defaultEngineId": "ddg",
         "defaultEngineIdHash": "B3BLzcZ2K+GdEPYIpfbGrNL4aJYvsLQYpm0219pFZfc=",
         "useSavedOrder": true
-    }
+    },
+    "version": 12
 }
