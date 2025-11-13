@@ -17,7 +17,7 @@ duration = 0
 
 [notifications.sound]
 enabled = true
-only_on_ping = true
+only_on_ping = false
 
 [keys]
 focus_guilds_tree = "Alt+Rune[g]"
