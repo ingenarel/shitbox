@@ -32,6 +32,14 @@
             {
                 "Title": "policies",
                 "URL": "https://mozilla.github.io/policy-templates"
+            },
+            {
+                "Title": "gentoo devmanual",
+                "URL": "https://devmanual.gentoo.org/"
+            },
+            {
+                "Title": "guru",
+                "URL": "https://github.com/gentoo/guru"
             }
         ],
         "Cookies": {
