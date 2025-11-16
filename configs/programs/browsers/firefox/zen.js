@@ -16,3 +16,5 @@ user_pref("sidebar.animation.enabled", false);
 user_pref("sidebar.animation.duration-ms", 0);
 user_pref("toolkit.cosmeticAnimations.enabled", false);
 user_pref("ui.prefersReducedMotion", 1);
+
+user_pref("geo.enabled", false)
