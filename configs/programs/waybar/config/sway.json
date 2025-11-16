@@ -1,11 +1,86 @@
 {
-    "position": "top",
-    "spacing": 0,
-    "modules-left": [
-        "sway/workspaces"
-    ],
+    "clock": {
+        "actions": {
+            "on-click-backward": "tz_down",
+            "on-click-forward": "tz_up",
+            "on-click-right": "mode",
+            "on-scroll-down": "shift_down",
+            "on-scroll-up": "shift_up"
+        },
+        "calendar": {
+            "format": {
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+            },
+            "mode": "year",
+            "mode-mon-col": 3,
+            "on-click-right": "mode",
+            "on-scroll": 1,
+            "weeks-pos": "right"
+        },
+        "format": "<span background='#ff0000' foreground='#000000' size='13000' rise='-3000'></span> {:%I:%M:%S %p}",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "<span background='#ff00e6' foreground='#00ff00' size='13000' rise='-3000'></span> {usage}% ",
+        "interval": 2,
+        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'",
+        "tooltip": true
+    },
+    "custom/notifs": {
+        "escape": true,
+        "exec": "swaync-client -swb",
+        "exec-if": "which swaync-client",
+        "format": "<span background='#000000' foreground='#c400ff' size='13000' rise='-3000'></span> {} {icon}",
+        "format-icons": {
+            "dnd-inhibited-none": " ",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": " ",
+            "dnd-notification": " <span foreground='red'><sup></sup></span>",
+            "inhibited-none": " ",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "none": " ",
+            "notification": "<span foreground='red'><sup></sup></span>"
+        },
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "return-type": "json",
+        "tooltip": false
+    },
+    "custom/seperatorBlack": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/seperatorCPU": {
+        "escape": false,
+        "format": "",
+        "tooltip": false
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        },
+        "numlock": true
+    },
+    "memory": {
+        "format": "<span background='#00ff00' foreground='#ff0000' size='13000' rise='-3000'></span> {}% ",
+        "interval": 2,
+        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'",
+        "tooltip": true
+    },
     "modules-center": [
         "sway/window"
+    ],
+    "modules-left": [
+        "sway/workspaces"
     ],
     "modules-right": [
         "pulseaudio",
@@ -16,78 +91,14 @@
         "custom/notifs",
         "tray"
     ],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "window-format": "<span color='#e0e0e0'>{name}</span>",
-        "format": "{name} {windows}",
-        "window-rewrite-default": " ",
-        "window-rewrite": {
-            "class<kitty|foot|wezterm>": " ",
-            "title<.*ssh.*>": "<span color='#FFAAFB'>🖧</span>",
-            "class<audacity>": "🎙️",
-            "class<com.obsproject.Studio>": "🎥",
-            "class<vesktop|discord|legcord>": " ",
-            "class<zen|firefox|librewolf>": "🌐",
-            "class<gimp>": " ",
-            "class<blender>": " ",
-            "class<.*kdenlive.*>": "🎬",
-            "title<.*gitlab.*>": " ",
-            "title<.*youtube.*>": " ",
-            "title<.*github.*>": " ",
-            "title<.*instagram.*>": " ",
-            "title<.*keepassxc.*>": "🔑",
-            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️"
-        }
-    },
-    "custom/seperatorBlack": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/seperatorCPU": {
-        "format": "",
-        "tooltip": false,
-        "escape": false
-    },
-    "custom/notifs": {
-        "tooltip": false,
-        "format": "<span background='#000000' foreground='#c400ff' size='13000' rise='-3000'></span> {} {icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": " ",
-            "dnd-notification": " <span foreground='red'><sup></sup></span>",
-            "dnd-none": " ",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": " ",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": " "
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
         "consume-icons": {
             "on": " "
         },
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "interval": 5,
         "random-icons": {
             "off": "<span color=\"#f53c3c\"></span> ",
             "on": " "
@@ -103,70 +114,60 @@
             "playing": ""
         },
         "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "unknown-tag": "N/A"
     },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "format": "<span background='#ff0000' foreground='#000000' size='13000' rise='-3000'></span> {:%I:%M:%S %p}",
-        "tooltip": true,
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        },
-        "interval": 1
-    },
-    "cpu": {
-        "format": "<span background='#ff00e6' foreground='#00ff00' size='13000' rise='-3000'></span> {usage}% ",
-        "interval": 2,
-        "tooltip": true,
-        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'"
-    },
-    "memory": {
-        "format": "<span background='#00ff00' foreground='#ff0000' size='13000' rise='-3000'></span> {}% ",
-        "tooltip": true,
-        "interval": 2,
-        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'"
-    },
+    "position": "top",
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
             "car": "",
             "default": [
                 "",
                 "",
                 ""
-            ]
+            ],
+            "hands-free": "",
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": ""
         },
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "on-click": "pavucontrol"
+    },
+    "spacing": 0,
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-scroll": true,
+        "format": "{name} {windows}",
+        "warp-on-scroll": false,
+        "window-format": "<span color='#e0e0e0'>{name}</span>",
+        "window-rewrite": {
+            "class<.*kdenlive.*>": "🎬",
+            "class<audacity>": "🎙️",
+            "class<blender>": " ",
+            "class<com.obsproject.Studio>": "🎥",
+            "class<gimp>": " ",
+            "class<kitty|foot|wezterm>": " ",
+            "class<org.prismlauncher.PrismLauncher>": "󰍳",
+            "class<vesktop|discord|legcord>": " ",
+            "class<zen|firefox|librewolf>": "🌐",
+            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️",
+            "title<.*github.*>": " ",
+            "title<.*gitlab.*>": " ",
+            "title<.*instagram.*>": " ",
+            "title<.*keepassxc.*>": "🔑",
+            "title<.*ssh.*>": "<span color='#FFAAFB'>🖧</span>",
+            "title<.*youtube.*>": " "
+        },
+        "window-rewrite-default": " "
+    },
+    "tray": {
+        "spacing": 10
     }
 }
