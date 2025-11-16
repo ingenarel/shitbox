@@ -1,9 +1,32 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
-scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
-if grep -qi 'arch' /etc/os-release && [[ -d /run/archiso ]]; then
-    "$scriptDir/install/arch-pre.sh" "$1" "$2" "$3"
-elif grep -qi 'gentoo' /etc/os-release && [[ "$HOSTNAME" == "livecd" ]]; then
-    "$scriptDir/install/gentoo-pre.sh" "$1" "$2" "$3"
+[ -z "$DEVICE_NAME" ] && export DEVICE_NAME="$1"
+[ -z "$PARTITION_NAME" ] && export PARTITION_NAME="$2"
+[ -z "$BOOT_TYPE" ] && export BOOT_TYPE="$3"
+
+showHelp(){
+    echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE"
+    echo "DEVICE_NAME, PARTITION_NAME, BOOT_TYPE can be an env var or passed in"
+}
+
+if [ "$BOOT_TYPE" != "mbr" ]; then
+    echo "only mbr is currently supported at the time"
+    showHelp
+    exit 1
+elif [ -z "$DEVICE_NAME" ]; then
+    echo "DEVICE_NAME empty"
+    showHelp
+    exit 1
+elif [ -z "$PARTITION_NAME" ]; then
+    echo "PARTITION_NAME empty"
+    showHelp
+    exit 1
+fi
+
+if grep -qi 'arch' /etc/os-release && [ -d /run/archiso ]; then
+    "$scriptDir/install/arch-pre.sh"
+elif grep -qi 'gentoo' /etc/os-release && [ "$HOST" = "livecd" ]; then
+    "$scriptDir/install/gentoo-pre.sh" "$DEVICE_NAME" "$PARTITION_NAME" "$BOOT_TYPE"
 fi

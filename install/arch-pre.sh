@@ -1,12 +1,38 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
-mbr(){
-    echo "Formatting /dev/$1 to ext4" && mkfs.ext4 "/dev/$1" && echo "Formatted /dev/$1 to ext4"
+[ -z "$DEVICE_NAME" ] && {
+    echo "DEVICE_NAME empty"
+    exit 1
 }
 
-[[ -z $3 || $3 == "mbr" ]] && mbr "$2"
+[ -z "$PARTITION_NAME" ] && {
+    echo "PARTITION_NAME empty"
+    exit 1
+}
 
-echo "Mounted /dev/$2 to /mnt" && mount "/dev/$2" /mnt && echo "Mounted /dev/$2 to /mnt"
+[ -z "$BOOT_TYPE" ] && {
+    "BOOT_TYPE empty"
+    exit 1
+}
+
+mbr(){
+    echo "Formatting /dev/$PARTITION_NAME to ext4"
+    if mkfs.ext4 "/dev/$PARTITION_NAME"; then
+        echo "Formatted /dev/$PARTITION_NAME to ext4"
+    else
+        exit 1
+    fi
+}
+
+if [ -z "$ROOT_TYPE" ] || [ "$ROOT_TYPE" = "mbr" ]; then
+    mbr || exit 1
+fi
+
+echo "Mounted /dev/$PARTITION_NAME to /mnt"\
+    &&
+mount "/dev/$PARTITION_NAME" /mnt\
+    &&
+echo "Mounted /dev/$PARTITION_NAME to /mnt"
 
 pacstrapCommand="pacstrap -K /mnt\
     base\
@@ -20,17 +46,30 @@ pacstrapCommand="pacstrap -K /mnt\
     dmidecode\
     sudo"
 
-dmidecode -s system-manufacturer | grep -qEi 'qemu' || pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
-echo "Running pacstrap" && eval "$pacstrapCommand" && echo "ran pacstrap"
+dmidecode -s system-manufacturer | grep -qEi 'qemu'\
+    ||
+pacstrapCommand="${pacstrapCommand}\linux-firmware intel-ucode"
 
-echo "Creating Swap" && mkswap --size 4G --file /mnt/swapFile && echo "Created swap"
+echo "Running pacstrap"
+eval "$pacstrapCommand" && echo "ran pacstrap" || exit 1
 
-echo "Generating fstab" && (genfstab -U /mnt && echo "/swapFile none swap defaults") > /mnt/etc/fstab && echo "Generated fstab"
+echo "Creating Swap"
+mkswap --size 4G --file /mnt/swapFile && echo "Created swap" || exit 1
+
+echo "Generating fstab"
+if genfstab -U /mnt >> /mnt/etc/fstab; then
+    echo "/swapFile none swap defaults" >> /mnt/etc/fstab
+    echo "Generated fstab"
+else
+    exit 1
+fi
 
 archPostPath="/tmp/arch-post.sh"
-arch-chroot /mnt "/usr/bin/bash"\
-    "-c"\
-    "\
+
+arch-chroot /mnt\
+    /usr/bin/bash\
+    -c\
+"\
     echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user'
 
     echo 'Installing post-install script' &&\
