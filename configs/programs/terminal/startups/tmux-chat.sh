@@ -1,10 +1,12 @@
 #!/usr/bin/sh
 if tmux list-sessions | grep -q chat; then
-    tmux attach -t chat
+    exec tmux attach -t chat
 else
-    tmux new-session -s 'chat' "neomutt"\
+    exec tmux new-session -s 'chat' "$SHELL" -c "neomutt"\
         \;\
-        new-window "iamb"\
+        new-window "$SHELL" -c "iamb"\
         \;\
-        new-window "weechat"
+        new-window "$SHELL" -c "discordo"\
+        \;\
+        new-window "$SHELL" -c "weechat"
 fi
