@@ -4,9 +4,9 @@ if tmux list-sessions | grep -q chat; then
 else
     exec tmux new-session -s 'chat' "$SHELL" -c "neomutt"\
         \;\
-        new-window "$SHELL" -c "iamb"\
-        \;\
-        new-window "$SHELL" -c "discordo"\
-        \;\
-        new-window "$SHELL" -c "weechat"
+        new-window "$SHELL" -c "weechat"\
+        # \;\
+        # new-window "$SHELL" -c "iamb"\
+        # \;\
+        # new-window "$SHELL" -c "discordo"
 fi
