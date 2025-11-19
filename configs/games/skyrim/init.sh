@@ -29,7 +29,7 @@ $HOME/.local/share/lutris/runtime/winetricks/winetricks\
 [[ ! -d "$WINEPREFIX/drive_c/Program Files/dotnet/metadata/workloads/8.0.400" ]] && installDotnet8
 
 grep\
-    -qEi\
+    -qi\
     '\[Software\\\\Wow6432Node\\\\Bethesda Softworks\\\\Skyrim Special Edition\]'\
     "$WINEPREFIX/system.reg"\
     ||
