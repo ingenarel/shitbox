@@ -35,9 +35,19 @@ discordo-setup(){
     secret-tool store --label="Discord Token" service discordo username token
 }
 
-torsocks(){
-    systemctl is-active tor > /dev/null 2>&1 || systemctl start tor > /dev/null 2>&1
-    command torsocks "$@"
+trscks(){
+    systemctl --quiet is-active tor || systemctl --quiet start tor
+    torsocks "$@"
+    systemctl --quiet is-enabled tor || {
+        rg\
+            --null-data\
+            --quiet\
+            --stop-on-nonmatch\
+            --regexp='LD_PRELOAD=/usr/lib/torsocks/libtorsocks\.so'\
+            /proc/*/environ 2>/dev/null\
+            ||
+        systemctl stop tor
+    }
 }
 
 python-venv-install(){
