@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Vesktop
+Exec=sh -c 'exec "$HOME/.config/shitbox/configs/programs/chatting/gui/discord/start-vesktop.sh" "$@"' _ %U
+Terminal=false
+Type=Application
+Icon=vesktop
+StartupWMClass=vesktop
+GenericName=Internet Messenger
+Categories=Network;
+Keywords=discord;vencord;electron;chat;
+MimeType=x-scheme-handler/discord;
+Comment=Vesktop is a custom Discord desktop app

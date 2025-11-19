@@ -44,6 +44,7 @@ setupConfigs(){
     ls "$HOME/.config/yazi/plugins/"* > /dev/null || ya pkg install
 
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
+    safelink "$scriptDir/programs/chatting/gui/discord/vesktop.desktop"                 "$HOME/.local/share/applications/vesktop.desktop"
     safelink "$scriptDir/programs/chatting/tui/iamb"                                    "$HOME/.config/iamb"
     safelink "$scriptDir/programs/chatting/tui/weechat"                                 "$HOME/.config/weechat"
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
