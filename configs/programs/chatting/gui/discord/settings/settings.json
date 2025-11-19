@@ -4,7 +4,7 @@
     "cloud": {
         "authenticated": false,
         "settingsSync": false,
-        "settingsSyncVersion": 1754003614505,
+        "settingsSyncVersion": 1763464750977,
         "url": "https://api.vencord.dev/"
     },
     "disableMinSize": true,
@@ -264,13 +264,15 @@
         "MemberCount": {
             "enabled": true,
             "memberList": true,
-            "toolTip": true
+            "toolTip": true,
+            "voiceActivity": true
         },
         "MemberListDecoratorsAPI": {
             "enabled": true
         },
         "MentionAvatars": {
-            "enabled": true
+            "enabled": true,
+            "showAtSymbol": true
         },
         "MessageAccessoriesAPI": {
             "enabled": true
@@ -288,7 +290,8 @@
             "detectDiscordKotlin": true,
             "enabled": true,
             "latency": 2,
-            "showMillis": false
+            "showMillis": false,
+            "ignoreSelf": false
         },
         "MessageLinkEmbeds": {
             "automodEmbeds": 0,
@@ -531,7 +534,10 @@
             "enabled": false
         },
         "ShowHiddenThings": {
-            "enabled": true
+            "enabled": true,
+            "showTimeouts": true,
+            "showInvitesPaused": true,
+            "showModView": true
         },
         "ShowMeYourName": {
             "enabled": false
@@ -582,7 +588,7 @@
             "enabled": false
         },
         "Translate": {
-            "enabled": false
+            "enabled": true
         },
         "TypingIndicator": {
             "enabled": false
@@ -675,6 +681,12 @@
         },
         "petpet": {
             "enabled": false
+        },
+        "CopyStickerLinks": {
+            "enabled": false
+        },
+        "ImageFilename": {
+            "enabled": false
         }
     },
     "themeLinks": [],
@@ -684,4 +696,3 @@
     "winCtrlQ": false,
     "winNativeTitleBar": false
 }
-
