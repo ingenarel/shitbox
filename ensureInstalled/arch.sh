@@ -132,6 +132,8 @@ for package in "${packages[@]}"; do
         "sherlock")
             package="sherlock-git"
             ;;
+        "hunspell")
+            package="hunspell hunspell-en_us"
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done

@@ -31,6 +31,7 @@ packages=(
     diskonaut
     iamb
     weechat
+    hunspell
     tinyxxd
     # soju
     bat
