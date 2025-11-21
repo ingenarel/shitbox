@@ -60,6 +60,9 @@ grep -qi 'gentoo' /etc/os-release && {
         grep -qiE 'vendor_id\s*:\s*\S*intel' /proc/cpuinfo && {
             packages+=(
                 vulkan-intel
+                lib32-vulkan-intel
+                vulkan-icd-loader
+                lib32-vulkan-icd-loader
             )
         }
     }
