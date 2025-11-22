@@ -46,7 +46,10 @@ setupConfigs(){
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
     safelink "$scriptDir/programs/chatting/gui/discord/vesktop.desktop"                 "$HOME/.local/share/applications/vesktop.desktop"
     safelink "$scriptDir/programs/chatting/tui/iamb"                                    "$HOME/.config/iamb"
-    safelink "$scriptDir/programs/chatting/tui/weechat"                                 "$HOME/.config/weechat"
+    find "$scriptDir/programs/chatting/tui/weechat/conf" -type f | while IFS='' read -r line; do
+        safelink "$line" "$HOME/.config/weechat/$( basename "$line")"
+    done
+    safelink "$scriptDir/programs/chatting/tui/weechat/config.lua"                      "$HOME/.local/share/weechat/lua/autoload/config.lua"
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
 
     safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
