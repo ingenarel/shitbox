@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 update_stuff() {
-    eval $1 &&
+    eval "$1" &&
     {
         timeout --kill-after=4 --signal=TERM 4\
             notify-send "$2" || hyprctl notify 1 10000 "rgb(ff1ea3)" "fontsize:30 $2"
@@ -50,7 +50,7 @@ update_stuff "cargo install-update -a"\
     "Updated cargo packages; updating rust with rustup..."
 update_stuff "rustup update"\
     "Updated rust with rustup; updating arkenfox..."
-update_stuff "$HOME/.zen/updater.sh"\
+update_stuff "$HOME/.zen/updater.sh -su"\
     "Updated arkenfox; updating tmux plugins..."
 update_stuff "$HOME/.tmux/plugins/tpm/bin/clean_plugins && $HOME/.tmux/plugins/tpm/bin/update_plugins all"\
     "Updated tmux plugins; updating neovim plugins..."
