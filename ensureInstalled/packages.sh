@@ -43,6 +43,7 @@ packages=(
     rclone
     rustup
     man-pages
+    wgetpaste
 )
 
 grep -qi 'gentoo' /etc/os-release && {
