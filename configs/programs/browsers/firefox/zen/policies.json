@@ -40,6 +40,10 @@
             {
                 "Title": "guru",
                 "URL": "https://github.com/gentoo/guru"
+            },
+            {
+                "Title": "weechat scripts",
+                "URL": "https://weechat.org/files/doc/weechat/stable/weechat_scripting.en.html"
             }
         ],
         "Cookies": {

@@ -52,32 +52,30 @@ setupConfigs(){
     safelink "$scriptDir/programs/chatting/tui/weechat/config.lua"                      "$HOME/.local/share/weechat/lua/autoload/config.lua"
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
 
-    safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
-    safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.zen/profiles.ini"
-    sudo rm "$HOME/.zen/ingenarel/search.json.mozlz4" 1>/dev/null 2>&1
-    mozlz4 -z "$scriptDir/programs/browsers/firefox/ingenarel/search.json"              "$HOME/.zen/ingenarel/search.json.mozlz4"
-    chmod u-w "$HOME/.zen/ingenarel/search.json.mozlz4"
-    [[ ! -f "$HOME/.zen/ingenarel/user.js" ]] && {
-        wget\
-            --no-clobber\
-            --directory-prefix="$HOME/.zen/ingenarel"\
-            'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/user.js'
-    }
-    [[ ! -f "$HOME/.zen/ingenarel/updater.sh" ]] && {
-        wget\
-            --no-clobber\
-            --directory-prefix="$HOME/.zen/ingenarel"\
-            'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/updater.sh'
-        chmod u+x "$HOME/.zen/ingenarel/updater.sh"
-    }
-    "$HOME/.zen/ingenarel/updater.sh" -su
-    safelink "$scriptDir/programs/browsers/firefox/zen.js" "$HOME/.zen/ingenarel/user-overrides.js"
-    # cat\
-        #     "$scriptDir/programs/browsers/firefox/arkenfox/user.js"\
-        #     "$scriptDir/programs/browsers/firefox/zen.js"\
-        #     > "$HOME/.zen/ingenarel/user.js"
-    safelink "$scriptDir/programs/browsers/firefox/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
+    command -v zen-twilight && {
+        safelink  "$scriptDir/programs/browsers/firefox/zen/policies.json"                      "/etc/zen/policies/policies.json" 1
+        safelink  "$scriptDir/programs/browsers/firefox/zen/profiles.ini"                       "$HOME/.zen/profiles.ini"
+        sudo rm "$HOME/.zen/ingenarel/search.json.mozlz4" 1>/dev/null 2>&1
+        mozlz4 -z "$scriptDir/programs/browsers/firefox/zen/ingenarel/search.json"              "$HOME/.zen/ingenarel/search.json.mozlz4"
+        chmod u-w "$HOME/.zen/ingenarel/search.json.mozlz4"
+        [[ ! -f "$HOME/.zen/ingenarel/user.js" ]] && {
+            wget\
+                --no-clobber\
+                --directory-prefix="$HOME/.zen/ingenarel"\
+                'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/user.js'
+        }
+        [[ ! -f "$HOME/.zen/ingenarel/updater.sh" ]] && {
+            wget\
+                --no-clobber\
+                --directory-prefix="$HOME/.zen/ingenarel"\
+                'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/updater.sh'
+            chmod u+x "$HOME/.zen/ingenarel/updater.sh"
+        }
+        "$HOME/.zen/ingenarel/updater.sh" -su
+        safelink "$scriptDir/programs/browsers/firefox/zen/zen.js" "$HOME/.zen/ingenarel/user-overrides.js"
+        safelink "$scriptDir/programs/browsers/firefox/zen/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
+    }
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
     safelink "$scriptDir/programs/WM/sway"                                              "$HOME/.config/sway"
     safelink "$scriptDir/programs/WM/river"                                             "$HOME/.config/river"
