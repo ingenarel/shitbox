@@ -7,7 +7,6 @@ scriptDir="$(realpath --canonicalize-missing "$0/..")"
 [ -z "$DEVICE_NAME" ] && {
     die "DEVICE_NAME empty, are you running the root script?"
 }
-echo "hi"
 
 [ -z "$PARTITION_NAME" ] && {
     die "PARTITION_NAME empty, are you running the root script?"
