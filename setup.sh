@@ -55,5 +55,5 @@ fi
 if grep -qi 'arch' /etc/os-release && [ -d /run/archiso ]; then
     "$scriptDir/install/arch-pre.sh"
 elif grep -qi 'gentoo' /etc/os-release && [ "$HOST" = "livecd" ]; then
-    "$scriptDir/install/gentoo-pre.sh" "$DEVICE_NAME" "$PARTITION_NAME" "$BOOT_TYPE"
+    "$scriptDir/install/gentoo-pre.sh"
 fi
