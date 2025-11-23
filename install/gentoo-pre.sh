@@ -20,7 +20,7 @@ scriptDir="$(realpath --canonicalize-missing "$0/..")"
     die "HOST_NAME empty, are you running the root script?"
 }
 
-mbr(){
+dos(){
     echo "Formatting /dev/$PARTITION_NAME to ext4"
     if mkfs.ext4 "/dev/$PARTITION_NAME"; then
         echo "Formatted /dev/$PARTITION_NAME to ext4"
@@ -30,8 +30,8 @@ mbr(){
 }
 
 # if function because i'll do uefi later
-if [ -z "$BOOT_TYPE" ] || [ "$BOOT_TYPE" = "mbr" ]; then
-    mbr
+if [ -z "$BOOT_TYPE" ] || [ "$BOOT_TYPE" = "dos" ]; then
+    dos
 fi
 
 mount "/dev/$PARTITION_NAME" /mnt/gentoo\
@@ -141,5 +141,5 @@ arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/gentoo-post.sh > $gentooPostPath &&
     echo 'Installed post-chroot script' &&
     chown ingenarel $gentooPostPath && chmod +x $gentooPostPath && echo 'set up script permissions'
-    echo 'Executing post-install script' && sudo -u ingenarel $gentooPostPath $1 mbr && echo 'Executed post-install script'
+    echo 'Executing post-install script' && sudo -u ingenarel $gentooPostPath $1 dos && echo 'Executed post-install script'
 "

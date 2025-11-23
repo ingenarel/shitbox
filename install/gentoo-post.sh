@@ -13,7 +13,7 @@ sudo dmidecode -s system-manufacturer | grep -qEi 'qemu' && sudo systemctl enabl
 
 echo "GentooBaby" | sudo tee /etc/hostname && echo "Generated hostname"
 
-[[ -z $2 || $2 == "mbr" ]] &&\
+[[ -z $2 || $2 == "dos" ]] &&\
     echo "Installing grub" && sudo grub-install --target=i386-pc "/dev/$1" && echo "Installed grub" &&\
     echo "Generating grub config" && sudo grub-mkconfig -o /boot/grub/grub.cfg && echo "Generated grub config"
 
