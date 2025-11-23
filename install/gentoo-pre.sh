@@ -13,7 +13,10 @@ mbr(){
     fi
 }
 
-[[ -z $3 || $3 == "mbr" ]] && mbr "$2"
+# if function because i'll do uefi later
+if [ -z "$BOOT_TYPE" ] || [ "$BOOT_TYPE" = "mbr" ]; then
+    mbr
+fi
 
 echo "Mounted /dev/$2 to /mnt/gentoo" && mount "/dev/$2" /mnt/gentoo && echo "Mounted /dev/$2 to /mnt/gentoo"
 
