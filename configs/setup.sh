@@ -55,9 +55,6 @@ setupConfigs(){
     command -v zen-twilight && {
         safelink  "$scriptDir/programs/browsers/firefox/zen/policies.json"                      "/etc/zen/policies/policies.json" 1
         safelink  "$scriptDir/programs/browsers/firefox/zen/profiles.ini"                       "$HOME/.zen/profiles.ini"
-        sudo rm "$HOME/.zen/ingenarel/search.json.mozlz4" 1>/dev/null 2>&1
-        mozlz4 -z "$scriptDir/programs/browsers/firefox/zen/ingenarel/search.json"              "$HOME/.zen/ingenarel/search.json.mozlz4"
-        chmod u-w "$HOME/.zen/ingenarel/search.json.mozlz4"
         [[ ! -f "$HOME/.zen/ingenarel/user.js" ]] && {
             wget\
                 --no-clobber\

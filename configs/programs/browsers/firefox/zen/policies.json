@@ -101,6 +101,109 @@
         },
         "NoDefaultBookmarks": false,
         "OfferToSaveLogins": false,
-        "SanitizeOnShutdown": true
+        "SanitizeOnShutdown": true,
+        "SearchEngines": {
+            "Add": [
+                {
+                    "Alias": "@ddg",
+                    "IconURL": "https://icons.duckduckgo.com/ip3/duckduckgo.com.ico",
+                    "Name": "DuckDuckGo",
+                    "URLTemplate": "https://duckduckgo.com/?q={searchTerms}"
+                },
+                {
+                    "Alias": "@wp",
+                    "IconURL": "https://en.wikipedia.org/static/favicon/wikipedia.ico",
+                    "Name": "Wikipedia (en)",
+                    "URLTemplate": "https://en.wikipedia.org/w/index.php?search={searchTerms}"
+                },
+                {
+                    "Alias": "@nw",
+                    "IconURL": "https://wiki.nixos.org/favicon.ico",
+                    "Name": "nixwiki",
+                    "URLTemplate": "https://wiki.nixos.org/w/index.php?search={searchTerms}"
+                },
+                {
+                    "Alias": "@np",
+                    "IconURL": "https://search.nixos.org/favicon.ico",
+                    "Name": "NixPackages",
+                    "URLTemplate": "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}"
+                },
+                {
+                    "Alias": "@no",
+                    "IconURL": "https://search.nixos.org/favicon.ico",
+                    "Name": "NixOptions",
+                    "URLTemplate": "https://search.nixos.org/options?channel=unstable&type=packages&query={searchTerms}"
+                },
+                {
+                    "Alias": "@gw",
+                    "IconURL": "https://wiki.gentoo.org/favicon.ico",
+                    "Name": "GentooWiki",
+                    "URLTemplate": "https://wiki.gentoo.org/index.php?&search={searchTerms}"
+                },
+                {
+                    "Alias": "@gb",
+                    "IconURL": "https://bugs.gentoo.org/favicon.ico",
+                    "Name": "GentooBugzilla",
+                    "URLTemplate": "https://bugs.gentoo.org/buglist.cgi?quicksearch={searchTerms}"
+                },
+                {
+                    "Alias": "@gp",
+                    "IconURL": "https://packages.gentoo.org/favicon.ico",
+                    "Name": "GentooPackages",
+                    "URLTemplate": "https://packages.gentoo.org/packages/search?q={searchTerms}"
+                },
+                {
+                    "Alias": "@gf",
+                    "IconURL": "https://github.com/favicon.ico",
+                    "Name": "GuruFiles",
+                    "URLTemplate": "https://github.com/search?q=repo%3Agentoo%2Fguru+path%3A{searchTerms}&type=code"
+                },
+                {
+                    "Alias": "@gap",
+                    "IconURL": "https://gpo.zugaina.org/favicon.ico",
+                    "Name": "zugaina",
+                    "URLTemplate": "https://gpo.zugaina.org/Search?search={searchTerms}"
+                },
+                {
+                    "Alias": "@aw",
+                    "IconURL": "https://wiki.archlinux.org/favicon.ico",
+                    "Name": "ArchWiki",
+                    "URLTemplate": "https://wiki.archlinux.org/index.php?search={searchTerms}"
+                },
+                {
+                    "Alias": "@ap",
+                    "IconURL": "https://archlinux.org/favicon.ico",
+                    "Name": "ArchPackages",
+                    "URLTemplate": "https://archlinux.org/packages/?&q={searchTerms}"
+                },
+                {
+                    "Alias": "@au",
+                    "IconURL": "https://aur.archlinux.org/favicon.ico",
+                    "Name": "AUR packages",
+                    "URLTemplate": "https://aur.archlinux.org/packages?K={searchTerms}"
+                },
+                {
+                    "Alias": "@gh",
+                    "IconURL": "https://github.com/favicon.ico",
+                    "Name": "github",
+                    "URLTemplate": "https://github.com/search?q={searchTerms}"
+                },
+                {
+                    "Alias": "@fa",
+                    "IconURL": "https://addons.mozilla.org/favicon.ico",
+                    "Name": "FirefoxAddons",
+                    "URLTemplate": "https://addons.mozilla.org/en-US/firefox/search/?q={searchTerms}"
+                },
+                {
+                    "Alias": "@mm",
+                    "IconURL": "https://modrinth.com/favicon.ico",
+                    "Name": "ModrinthMods",
+                    "URLTemplate": "https://modrinth.com/mods?q={searchTerms}"
+                }
+            ],
+            "Default": "DuckDuckGo",
+            "PreventInstalls": true,
+            "Remove": true
+        }
     }
 }
