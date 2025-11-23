@@ -24,12 +24,10 @@ mbr(){
     fi
 }
 
-if [ -z "$ROOT_TYPE" ] || [ "$ROOT_TYPE" = "mbr" ]; then
+if [ -z "$BOOT_TYPE" ] || [ "$BOOT_TYPE" = "mbr" ]; then
     mbr || exit 1
 fi
 
-echo "Mounted /dev/$PARTITION_NAME to /mnt"\
-    &&
 mount "/dev/$PARTITION_NAME" /mnt\
     &&
 echo "Mounted /dev/$PARTITION_NAME to /mnt"
