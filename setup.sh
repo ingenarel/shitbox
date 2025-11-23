@@ -2,10 +2,18 @@
 
 scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
-[ -z "$DEVICE_NAME" ] && export DEVICE_NAME="$1"
-[ -z "$PARTITION_NAME" ] && export PARTITION_NAME="$2"
-[ -z "$BOOT_TYPE" ] && export BOOT_TYPE="$3"
-[ -z "$HOST_NAME" ] && export HOST_NAME="$4"
+[ -z "$DEVICE_NAME" ] && DEVICE_NAME="$1"
+export DEVICE_NAME
+
+[ -z "$PARTITION_NAME" ] && PARTITION_NAME="$2"
+export PARTITION_NAME
+
+[ -z "$BOOT_TYPE" ] && BOOT_TYPE="$3"
+[ -z "$BOOT_TYPE" ] && BOOT_TYPE="$(blkid --match-tag PTTYPE --output value "$DEVICE_NAME")"
+export BOOT_TYPE
+
+[ -z "$HOST_NAME" ] && HOST_NAME="$4"
+export HOST_NAME
 
 showHelp(){
     echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE"
