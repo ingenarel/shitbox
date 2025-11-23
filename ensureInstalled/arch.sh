@@ -134,6 +134,10 @@ for package in "${packages[@]}"; do
             ;;
         "hunspell")
             package="hunspell hunspell-en_us"
+            ;;
+        "weechat")
+            package="weechat-git"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
