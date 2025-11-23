@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
