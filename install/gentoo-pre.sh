@@ -76,9 +76,7 @@ dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCo
 echo "Creating Swap" && mkswap --size 4G --file /mnt/gentoo/swapFile && echo "Created swap"
 
 gentooPostPath="/tmp/gentoo-post.sh"
-arch-chroot /mnt/gentoo "/usr/bin/bash"\
-    "-c"\
-    "\
+arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
     echo 'doing webrsync' && emerge-webrsync && echo 'finished webrsync'
 
     echo 'syncing emerge' && emerge --sync && echo 'synced emerge'
