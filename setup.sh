@@ -16,8 +16,26 @@ export BOOT_TYPE
 export HOST_NAME
 
 showHelp(){
-    echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE"
-    echo "DEVICE_NAME, PARTITION_NAME, BOOT_TYPE can be an env var or passed in"
+    echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE HOST_NAME"
+    echo "your storage device should be already parititioned beforehand, otherwise it's risky and stupid"
+    echo "DEVICE_NAME, PARTITION_NAME, BOOT_TYPE, HOST_NAME can be an env var or passed in"
+    echo ""
+    echo "DEVICE_NAME:"
+    echo "should be the storage device name that grub is gonna be installed in",
+    echo "aka /dev/sda /dev/sdb"
+    echo ""
+    echo "PARTITION_NAME:"
+    echo "your root partition name, is gonna be wiped"
+    echo ""
+    echo "BOOT_TYPE:"
+    echo "script tries to automatically guess BOOT_TYPE by using blkid"
+    echo ""
+    echo "HOST_NAME:"
+    echo "gentoo-main for main machine (TODO)"
+    echo "gentoo-vm-tui for vm with tui config (TODO)"
+    echo "gentoo-vm-gui for vm with gui config (TODO)"
+    echo "gentoo-dist for a distfile maker (TODO)"
+    echo "for arch, no custom HOST_NAME for now"
 }
 
 if [ "$BOOT_TYPE" != "mbr" ]; then
