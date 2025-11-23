@@ -141,5 +141,5 @@ arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/gentoo-post.sh > $gentooPostPath &&
     echo 'Installed post-chroot script' &&
     chown ingenarel $gentooPostPath && chmod +x $gentooPostPath && echo 'set up script permissions'
-    echo 'Executing post-install script' && sudo -u ingenarel $gentooPostPath $1 dos && echo 'Executed post-install script'
+    echo 'Executing post-install script' && sudo -u ingenarel $gentooPostPath && echo 'Executed post-install script'
 "
