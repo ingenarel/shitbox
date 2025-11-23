@@ -2,6 +2,8 @@
 
 scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
+. "$scriptDir/../scripts/die.sh"
+
 mbr(){
     echo "Formatting /dev/$1 to ext4" && mkfs.ext4 "/dev/$1" && echo "Formatted /dev/$1 to ext4"
 }
