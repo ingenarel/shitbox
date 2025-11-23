@@ -51,6 +51,10 @@ elif [ -z "$PARTITION_NAME" ]; then
     echo "PARTITION_NAME empty"
     showHelp
     exit 1
+elif [ -z "$HOST_NAME" ]; then
+    echo "HOST_NAME empty"
+    showHelp
+    exit 1
 fi
 
 if grep -qi 'arch' /etc/os-release && [ -d /run/archiso ]; then
