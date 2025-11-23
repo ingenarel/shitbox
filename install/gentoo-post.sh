@@ -2,6 +2,7 @@
 
 sync
 sleep 1
+sync
 
 sudo emerge --ask n --oneshot genfstab
 
