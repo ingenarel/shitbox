@@ -32,7 +32,7 @@ showHelp(){
     echo ""
     echo "HOST_NAME:"
     echo "gentoo-main for main machine (TODO)"
-    echo "gentoo-vm-tui for vm with tui config (TODO)"
+    echo "gentoo-vm-tui for vm with tui config"
     echo "gentoo-vm-gui for vm with gui config (TODO)"
     echo "gentoo-dist for a distfile maker (TODO)"
     echo "for arch, no custom HOST_NAME for now"
