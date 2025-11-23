@@ -4,6 +4,23 @@ scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
 . "$scriptDir/../scripts/die.sh"
 
+[ -z "$DEVICE_NAME" ] && {
+    die "DEVICE_NAME empty, are you running the root script?"
+}
+echo "hi"
+
+[ -z "$PARTITION_NAME" ] && {
+    die "PARTITION_NAME empty, are you running the root script?"
+}
+
+[ -z "$BOOT_TYPE" ] && {
+    die "BOOT_TYPE empty, are you running the root script?"
+}
+
+[ -z "$HOST_NAME" ] && {
+    die "HOST_NAME empty, are you running the root script?"
+}
+
 mbr(){
     echo "Formatting /dev/$PARTITION_NAME to ext4"
     if mkfs.ext4 "/dev/$PARTITION_NAME"; then
