@@ -18,15 +18,16 @@ if [ -z "$BOOT_TYPE" ] || [ "$BOOT_TYPE" = "mbr" ]; then
     mbr
 fi
 
-echo "Mounted /dev/$2 to /mnt/gentoo" && mount "/dev/$2" /mnt/gentoo && echo "Mounted /dev/$2 to /mnt/gentoo"
+mount "/dev/$PARTITION_NAME" /mnt/gentoo\
+    &&
+echo "Mounted /dev/$PARTITION_NAME to /mnt/gentoo"
 
-wget --directory-prefix=/mnt/gentoo \
-    "$(
-        curl https://www.gentoo.org/downloads/\
+wget --directory-prefix=/mnt/gentoo "$(
+    curl https://www.gentoo.org/downloads/\
         |
-        grep -oE 'https://\S++stage3-amd64-systemd-\S+.tar.xz'\
+    grep -oE 'https://\S++stage3-amd64-systemd-\S+.tar.xz'\
         |
-        head -n1
+    head -n1
 )"
 
 sync
