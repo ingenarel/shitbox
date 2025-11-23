@@ -46,7 +46,7 @@ My fucking wish
 This is for me please don't try to install this and nuke your system
 
 ### Arch:
-`pacman -Sy && pacman -S git && git clone https://github.com/ingenarel/shitbox.git && cd shitbox && ./setup.sh sda sda1 mbr`
+`pacman -Sy && pacman -S git && git clone https://github.com/ingenarel/shitbox.git && cd shitbox`
 
 ### Gentoo:
-`git clone https://github.com/ingenarel/shitbox.git && cd shitbox && ./setup.sh sda sda1 mbr`
+`git clone https://github.com/ingenarel/shitbox.git && cd shitbox`
