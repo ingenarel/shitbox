@@ -49,20 +49,20 @@ dmidecode -s system-manufacturer | grep -qEi 'qemu' && {
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
 emergeCommand="emerge --ask n\
-    grub\
-    networkmanager\
+    sys-boot/grub\
+    net-misc/networkmanager\
     dev-vcs/git\
-    installkernel\
-    dracut\
-    man-db\
-    gentoo-kernel-bin\
-    eselect-repository\
-    gentoolkit\
+    sys-kernel/installkernel\
+    sys-kernel/dracut\
+    sys-apps/man-db\
+    sys-kernel/gentoo-kernel-bin\
+    app-eselect/eselect-repository\
+    app-portage/gentoolkit\
     net-misc/curl\
     app-admin/sudo\
     sys-apps/dmidecode"
 
-dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCommand} linux-firmware intel-microcode"
+dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCommand} sys-kernel/linux-firmware"
 echo "Creating Swap" && mkswap --size 4G --file /mnt/gentoo/swapFile && echo "Created swap"
 
 gentooPostPath="/tmp/gentoo-post.sh"
