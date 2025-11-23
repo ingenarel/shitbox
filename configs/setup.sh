@@ -71,9 +71,9 @@ setupConfigs(){
                 'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/updater.sh'
             chmod u+x "$HOME/.zen/ingenarel/updater.sh"
         }
-        "$HOME/.zen/ingenarel/updater.sh" -su
         safelink "$scriptDir/programs/browsers/firefox/zen/zen.js" "$HOME/.zen/ingenarel/user-overrides.js"
-        safelink "$scriptDir/programs/browsers/firefox/zen/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
+        "$HOME/.zen/ingenarel/updater.sh" -su
+        # safelink "$scriptDir/programs/browsers/firefox/zen/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
     }
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
