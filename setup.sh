@@ -29,6 +29,7 @@ showHelp(){
     echo ""
     echo "BOOT_TYPE:"
     echo "script tries to automatically guess BOOT_TYPE by using blkid"
+    echo "should be either dos (for bios boot) or gpt (for uefi boot)"
     echo ""
     echo "HOST_NAME:"
     echo "gentoo-main for main machine (TODO)"
@@ -38,7 +39,7 @@ showHelp(){
     echo "for arch, no custom HOST_NAME for now"
 }
 
-if [ "$BOOT_TYPE" != "mbr" ]; then
+if [ "$BOOT_TYPE" != "dos" ]; then
     echo "only mbr is currently supported at the time"
     showHelp
     exit 1
