@@ -5,7 +5,12 @@ scriptDir="$(realpath --canonicalize-missing "$0/..")"
 . "$scriptDir/../scripts/die.sh"
 
 mbr(){
-    echo "Formatting /dev/$1 to ext4" && mkfs.ext4 "/dev/$1" && echo "Formatted /dev/$1 to ext4"
+    echo "Formatting /dev/$PARTITION_NAME to ext4"
+    if mkfs.ext4 "/dev/$PARTITION_NAME"; then
+        echo "Formatted /dev/$PARTITION_NAME to ext4"
+    else
+        die "formatting /dev/$PARTITION_NAME failed"
+    fi
 }
 
 [[ -z $3 || $3 == "mbr" ]] && mbr "$2"
