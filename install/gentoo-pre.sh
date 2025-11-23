@@ -40,7 +40,6 @@ tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /
 
 rm /mnt/gentoo/stage3-*.tar.xz
 
-cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
     cp "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
         "/mnt/gentoo/etc/portage/make.conf" ||
@@ -54,6 +53,10 @@ if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
         "/mnt/gentoo/etc/portage/package.accept_keywords" ||
     die "cping package.accept_keywords failed"
 fi
+
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ || {
+    die "cping resolve.conf failed"
+}
 
 emergeCommand="emerge --ask n\
     sys-boot/grub\
