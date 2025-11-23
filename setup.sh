@@ -5,6 +5,7 @@ scriptDir="$(realpath --canonicalize-missing "$0/..")"
 [ -z "$DEVICE_NAME" ] && export DEVICE_NAME="$1"
 [ -z "$PARTITION_NAME" ] && export PARTITION_NAME="$2"
 [ -z "$BOOT_TYPE" ] && export BOOT_TYPE="$3"
+[ -z "$HOST_NAME" ] && export HOST_NAME="$4"
 
 showHelp(){
     echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE"
