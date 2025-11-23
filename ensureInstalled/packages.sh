@@ -44,6 +44,7 @@ packages=(
     rustup
     man-pages
     wgetpaste
+    zpaq
 )
 
 grep -qi 'gentoo' /etc/os-release && {

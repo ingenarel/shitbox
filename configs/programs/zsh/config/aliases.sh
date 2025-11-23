@@ -69,3 +69,13 @@ python-venv-update(){
         python3 -m pip install "$(basename "$dirName")" --upgrade
     done
 }
+
+ircback(){
+    local archiveDir
+    archiveDir="$HOME/.local/share/weechat/logs-archive"
+    [ ! -d "$archiveDir" ] && mkdir --parents "$archiveDir"
+    local archiveFile
+    archiveFile="$archiveDir/logs-$(cat /etc/machine-id).zpaq"
+    zpaq add "$archiveFile" "$HOME/.local/share/weechat/logs" -m5
+    rclone sync "$archiveFile" "drive-main:IRC-logs/$(basename "$archiveFile")" --progress --drive-use-trash=false --delete-excluded --copy-links
+}
