@@ -31,7 +31,9 @@ for package in "${packages[@]}"; do
             package="dev-util/gitlab-cli"
             ;;
         btop)
-            package="btop app-crypt/libmd"
+            package="btop"
+            sudo emerge app-crypt/libmd
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
