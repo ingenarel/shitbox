@@ -32,7 +32,8 @@ if [ "$BOOT_TYPE" = "dos" ]; then
         echo "Generating grub config"
         sudo grub-mkconfig -o /boot/grub/grub.cfg &&\
             echo "Generated grub config"
-        } || {
+    } ||
+    {
         echo "grub install failed"
         exit 1
     }
