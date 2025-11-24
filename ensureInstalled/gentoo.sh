@@ -20,19 +20,133 @@ groups=(wheel portage)
 
 for package in "${packages[@]}"; do
     case "$package" in
-        git)
+        "git")
             package="dev-vcs/git"
             ;;
-        greetd)
+        "greetd")
             package="gui-libs/greetd"
             systemServices+=(greetd)
             ;;
-        glab)
+        "glab")
             package="dev-util/gitlab-cli"
             ;;
-        btop)
+        "btop")
             package="btop"
             sudo emerge app-crypt/libmd
+            ;;
+        "fastfetch")
+            package="app-misc/fastfetch"
+            ;;
+        "fzf")
+            package="app-shells/fzf"
+            ;;
+        "lazygit")
+            package="dev-vcs/lazygit"
+            ;;
+        "neovim")
+            package="app-editors/neovim"
+            ;;
+        "ripgrep")
+            package="sys-apps/ripgrep"
+            ;;
+        "fd")
+            package="sys-apps/fd"
+            ;;
+        "tmux")
+            package="app-misc/tmux"
+            ;;
+        "zellij")
+            package="app-misc/zellij"
+            ;;
+        "yazi")
+            package="app-misc/yazi"
+            ;;
+        "superfile")
+            package="app-misc/superfile"
+            ;;
+        "zsh")
+            package="app-shells/zsh"
+            ;;
+        "tuigreet")
+            package="gui-apps/tuigreet"
+            ;;
+        "zoxide")
+            package="app-shells/zoxide"
+            ;;
+        "starship")
+            package="app-shells/starship"
+            ;;
+        "github-cli")
+            package="dev-util/github-cli"
+            ;;
+        "wget")
+            package="net-misc/wget"
+            ;;
+        "7zip")
+            package="app-arch/7zip"
+            ;;
+        "unzip")
+            package="app-arch/unzip"
+            ;;
+        "zip")
+            package="app-arch/zip"
+            ;;
+        "lsd")
+            package="sys-apps/lsd"
+            ;;
+        "inotify-tools")
+            package="sys-fs/inotify-tools"
+            ;;
+        "perl")
+            package="dev-lang/perl"
+            ;;
+        "diskonaut")
+            package="sys-fs/diskonaut"
+            ;;
+        "iamb")
+            package="net-im/iamb"
+            ;;
+        "weechat")
+            package="net-irc/weechat"
+            ;;
+        "hunspell")
+            package="app-text/hunspell"
+            ;;
+        "tinyxxd")
+            package="dev-util/tinyxxd"
+            ;;
+        "bat")
+            package="sys-apps/bat"
+            ;;
+        "git-delta")
+            package="dev-util/git-delta"
+            ;;
+        "tealdeer")
+            package="app-misc/tealdeer"
+            ;;
+        "task")
+            package="app-misc/task"
+            ;;
+        "torsocks")
+            package="net-proxy/torsocks"
+            ;;
+        "sherlock")
+            package="app-misc/sherlock"
+            ;;
+        "rclone")
+            package="net-misc/rclone"
+            ;;
+        "rustup")
+            package="dev-util/rustup"
+            ;;
+        "man-pages")
+            package="sys-apps/man-pages"
+            ;;
+        "wgetpaste")
+            package="app-text/wgetpaste"
+            ;;
+        "zpaq")
+            package="app-arch/zpaq"
             ;;
     esac
     packagesToInstall="$packagesToInstall $package"

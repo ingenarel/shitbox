@@ -49,7 +49,7 @@ packages=(
 
 grep -qi 'gentoo' /etc/os-release && {
     packages+=(
-        genlop
+        app-portage/genlop
         app-portage/smart-live-rebuild
         app-portage/eix
         dev-util/pkgdev
