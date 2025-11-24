@@ -32,4 +32,5 @@ sudo emerge --sync
 
 "$shitboxDir/ensureInstalled/gentoo.sh"
 command -v zsh && zsh -c "source ~/.zshrc"
-command -v nvim && nvim --headless
+# disable for now until i find a way to launch metapack properly in the correct env
+# command -v nvim && nvim
