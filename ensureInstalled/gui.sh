@@ -14,6 +14,7 @@
 
 packages+=(
     sway
+    xwayland
     autotiling
     xdg-desktop-portal-wlr
     sov
@@ -109,17 +110,17 @@ packages+=(
     python-mutagen
 )
 
-packages+=(
-    libinput
-    wayland
-    wlroots
-    xkbcommon
-    wayland-protocols
-    pkgconfig
-    libxcb
-    libxcb-wm
-    xwayland
-)
+# packages+=(
+#     libinput
+#     wayland
+#     wlroots
+#     xkbcommon
+#     wayland-protocols
+#     pkgconfig
+#     libxcb
+#     libxcb-wm
+#     xwayland
+# )
 
 packages+=(
     wine
