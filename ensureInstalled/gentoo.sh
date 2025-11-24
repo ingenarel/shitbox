@@ -16,7 +16,7 @@ extracommands=""
 
 systemServices=()
 userServices=()
-groups=(wheel)
+groups=(wheel portage)
 
 for package in "${packages[@]}"; do
     case "$package" in
