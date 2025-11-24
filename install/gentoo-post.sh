@@ -6,17 +6,37 @@ sync
 
 sudo emerge --ask n --oneshot genfstab
 
-echo "Generating fstab" && genfstab -U / | sudo tee /etc/fstab && echo "/swapFile none swap defaults" >> /etc/fstab && echo "Generated fstab"
+{
+    genfstab -U / | sudo tee --append /etc/fstab &&\
+        echo "/swapFile none swap defaults" | sudo tee --append /etc/fstab &&\
+        echo "Generated fstab"
+    } || {
+    echo "generating fstab failed"
+    exit 1
+}
 
-echo "Enabling NetworkManager" && sudo systemctl enable NetworkManager && echo "Enabled NetworkManager"
+sudo systemctl enable NetworkManager &&
+echo "Enabled NetworkManager"
 
-sudo dmidecode -s system-manufacturer | grep -qEi 'qemu' && sudo systemctl enable sshd && echo "Enabled sshd"
+[ "$HOST_NAME" = "gentoo-vm-tui" ] && {
+    sudo systemctl enable sshd &&
+    echo "Enabled sshd"
+}
 
-echo "GentooBaby" | sudo tee /etc/hostname && echo "Generated hostname"
+echo "$HOST_NAME" | sudo tee /etc/hostname && echo "Generated hostname"
 
-[[ "$BOOT_TYPE" == "dos" ]] &&\
-    echo "Installing grub" && sudo grub-install --target=i386-pc "/dev/$DEVICE_NAME" && echo "Installed grub" &&\
-    echo "Generating grub config" && sudo grub-mkconfig -o /boot/grub/grub.cfg && echo "Generated grub config"
+if [ "$BOOT_TYPE" = "dos" ]; then
+    echo "Installing grub"
+    sudo grub-install --target=i386-pc "/dev/$DEVICE_NAME" && {
+        echo "Installed grub"
+        echo "Generating grub config"
+        sudo grub-mkconfig -o /boot/grub/grub.cfg &&\
+            echo "Generated grub config"
+        } || {
+        echo "grub install failed"
+        exit 1
+    }
+fi
 
 shitboxDir="/home/ingenarel/.config/shitbox"
 git clone --recursive https://github.com/ingenarel/shitbox "$shitboxDir"
