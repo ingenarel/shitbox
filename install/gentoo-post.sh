@@ -19,7 +19,7 @@ echo "GentooBaby" | sudo tee /etc/hostname && echo "Generated hostname"
     echo "Generating grub config" && sudo grub-mkconfig -o /boot/grub/grub.cfg && echo "Generated grub config"
 
 shitboxDir="/home/ingenarel/.config/shitbox"
-git clone https://github.com/ingenarel/shitbox "$shitboxDir"
+git clone --recursive https://github.com/ingenarel/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
 sudo eselect repository remove -f gentoo
