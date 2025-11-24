@@ -92,14 +92,34 @@ dmidecode -s system-manufacturer | grep -qEi 'qemu' || emergeCommand="${emergeCo
 echo "Creating Swap" && mkswap --size 4G --file /mnt/gentoo/swapFile && echo "Created swap"
 
 gentooPostPath="/tmp/gentoo-post.sh"
-arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
-    echo 'doing webrsync' && emerge-webrsync && echo 'finished webrsync'
+arch-chroot /mnt/gentoo "/usr/bin/sh" "-c" "\
+    DEVICE_NAME='$DEVICE_NAME'
+    export DEVICE_NAME
 
-    echo 'syncing emerge' && emerge --sync && echo 'synced emerge'
+    PARTITION_NAME='$PARTITION_NAME'
+    export PARTITION_NAME
 
-    echo 'setting cpu flags' &&
-    emerge --ask n --oneshot app-portage/cpuid2cpuflags &&
-    echo \"*/* \$(cpuid2cpuflags)\" > /etc/portage/package.use/00cpu-flags
+    BOOT_TYPE='$BOOT_TYPE'
+    export BOOT_TYPE
+
+    HOST_NAME='$HOST_NAME'
+    export HOST_NAME
+
+    {
+        emerge-webrsync && echo 'finished webrsync'
+    } || {
+        echo 'emerge-webrsync failed'
+        exit 1
+    }
+
+    emerge --sync && echo 'synced emerge'
+
+    {
+        emerge --ask n --oneshot app-portage/cpuid2cpuflags &&
+        echo \"*/* \$(cpuid2cpuflags)\" > /etc/portage/package.use/00cpu-flags
+    } || {
+        echo 'SETTING CPU FLAGS FAILED'
+    }
 
     emerge --ask --verbose --update --deep --newuse @world
 
@@ -107,16 +127,20 @@ arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
 
     ln -sf ../usr/share/zoneinfo/Asia/Dhaka /etc/localtime
 
-    echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen &&
-    locale-gen &&
-    echo 'LANG=en_US.UTF-8' > /etc/locale.conf &&
-    echo 'Generated locales'
+    {
+        echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen &&
+        locale-gen &&
+        echo 'LANG=en_US.UTF-8' > /etc/locale.conf &&
+        echo 'Generated locales'
+    } || {
+        echo 'LOCAL GENERATION FAILED'
+    }
 
     env-update && source /etc/profile
 
     $emergeCommand
 
-    echo 'Creating user' && useradd --groups wheel,portage --create-home ingenarel && echo 'Created user'
+    useradd --groups wheel,portage --create-home ingenarel && echo 'Created user'
 
     setRootPassword(){
         echo 'enter the password for root'
@@ -137,9 +161,16 @@ arch-chroot /mnt/gentoo "/usr/bin/bash" "-c" "\
     &&
     echo 'set up Wheel group'
 
-    echo 'Installing post-install script' &&
+    echo 'Installing post-install script'
     curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/gentoo-post.sh > $gentooPostPath &&
     echo 'Installed post-chroot script' &&
-    chown ingenarel $gentooPostPath && chmod +x $gentooPostPath && echo 'set up script permissions'
-    echo 'Executing post-install script' && sudo -u ingenarel $gentooPostPath && echo 'Executed post-install script'
+    chown ingenarel $gentooPostPath &&\
+    chmod +x $gentooPostPath &&\
+    echo 'set up script permissions'
+
+    echo 'Executing post-install script'
+    sudo -u ingenarel\
+        --preserve-env=DEVICE_NAME,PARTITION_NAME,BOOT_TYPE,HOST_NAME\
+        $gentooPostPath &&\
+    echo 'Executed post-install script'
 "
