@@ -92,9 +92,9 @@ for package in "${packages[@]}"; do
             [[ ! -d /etc/xdg/reflector ]] && sudo mkdir --parents /etc/xdg/reflector
             sudo cp -r "$scriptDir/../configs/programs/reflector/reflector.conf" "/etc/xdg/reflector/reflector.conf"
             ;;
-        # "superfile")
-        #     package="superfile-git"
-        #     ;;
+            # "superfile")
+            #     package="superfile-git"
+            #     ;;
         "xkbcommon")
             package="libxkbcommon"
             ;;
@@ -138,6 +138,9 @@ for package in "${packages[@]}"; do
         "weechat")
             package="weechat-git"
             ;;
+        "protonup-rs")
+            package="protonup-rs-bin"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
@@ -151,7 +154,7 @@ command -v "$myshell" && {
 }
 
 [[ "${#systemServices[@]}" -gt 0 ]] && {
-    for service in "${systemServices[@]}"; do 
+    for service in "${systemServices[@]}"; do
         [[ "$(systemctl is-enabled "$service" )" == "enabled" ]] || {
             systemctl enable "$service" && systemctl start "$service"
         }
@@ -159,7 +162,7 @@ command -v "$myshell" && {
 }
 
 [[ "${#userServices[@]}" -gt 0 ]] && {
-    for service in "${userServices[@]}"; do 
+    for service in "${userServices[@]}"; do
         [[ "$(systemctl --user is-enabled "$service" )" == "enabled" ]] || {
             systemctl --user enable "$service" && systemctl --user start "$service"
         }

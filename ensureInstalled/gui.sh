@@ -124,7 +124,7 @@ packages+=(
 packages+=(
     wine
     lutris
-    protonup-rs-bin
+    protonup-rs
 )
 
 packages+=(
