@@ -152,7 +152,7 @@ for package in "${packages[@]}"; do
     packagesToInstall="$packagesToInstall $package"
 done
 
-[[ -n $packagesToInstall ]] && eval "sudo emerge --noreplace $packagesToInstall"
+[[ -n $packagesToInstall ]] && eval "sudo emerge --noreplace --keep-going $packagesToInstall"
 [[ -n $extracommands ]] && eval "$extracommands"
 
 myshell="$(which zsh)"
