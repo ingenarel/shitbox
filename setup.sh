@@ -19,7 +19,7 @@ export BOOT_TYPE
 export HOST_NAME
 
 [ -z "$HOST" ] && {
-    [ -n "$HOSTNAME" ] && export "$HOST"="$HOSTNAME" || {
+    [ -n "$HOSTNAME" ] && export HOST="$HOSTNAME" || {
         die "no valid HOST or HOSTNAME"
     }
 }
