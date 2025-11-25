@@ -2,6 +2,9 @@
 
 scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
+. "$scriptDir/scripts/die.sh"
+
+
 [ -z "$DEVICE_NAME" ] && DEVICE_NAME="$1"
 export DEVICE_NAME
 
@@ -14,6 +17,12 @@ export BOOT_TYPE
 
 [ -z "$HOST_NAME" ] && HOST_NAME="$4"
 export HOST_NAME
+
+[ -z "$HOST" ] && {
+    [ -n "$HOSTNAME" ] && export "$HOST"="$HOSTNAME" || {
+        die "no valid HOST or HOSTNAME"
+    }
+}
 
 showHelp(){
     echo "$scriptDir/setup.sh DEVICE_NAME PARTITION_NAME BOOT_TYPE HOST_NAME"
