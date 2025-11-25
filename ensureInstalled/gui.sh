@@ -75,7 +75,7 @@ packages+=(
 packages+=(
     keepassxc
     gnome-keyring
-    pavucontrol
+    pwvucontrol
     qbittorrent
     vimiv-qt
     vlc
