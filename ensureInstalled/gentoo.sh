@@ -148,6 +148,196 @@ for package in "${packages[@]}"; do
         "zpaq")
             package="app-arch/zpaq"
             ;;
+        "sway")
+            package="gui-wm/sway"
+            ;;
+        "xwayland")
+            package="x11-base/xwayland"
+            ;;
+        "autotiling")
+            package="x11-misc/autotiling"
+            ;;
+        "xdg-desktop-portal-wlr")
+            package="gui-libs/xdg-desktop-portal-wlr"
+            ;;
+        "sov")
+            # need to package
+            package=""
+            ;;
+        "waybar")
+            package="gui-apps/waybar"
+            ;;
+        "fuzzel")
+            package="gui-apps/fuzzel"
+            ;;
+        "libnotify")
+            package="x11-libs/libnotify"
+            ;;
+        "swaync")
+            package="gui-apps/swaync"
+            ;;
+        "sweet-gtk")
+            # need to pacakge
+            package=""
+            ;;
+        "swww")
+            package="gui-apps/swww"
+            ;;
+        "wl-clipboard")
+            package="gui-apps/wl-clipboard"
+            ;;
+        "ydotool")
+            package="x11-misc/ydotool"
+            ;;
+        "hyprpicker")
+            package="gui-apps/hyprpicker"
+            ;;
+        "pipewire-pulse")
+            package="media-video/pipewire"
+            ;;
+        "keyd")
+            package="app-misc/keyd"
+            ;;
+        "grim")
+            package="gui-apps/grim"
+            ;;
+        "slurp")
+            package="gui-apps/slurp"
+            ;;
+        "satty")
+            package="gui-apps/satty"
+            ;;
+        "kitty")
+            package="x11-terms/kitty"
+            ;;
+        "audacity")
+            package="media-sound/audacity app-doc/audacity"
+            ;;
+        "noise-suppression-for-voice")
+            package="media-libs/noise-suppression-for-voice"
+            ;;
+        "blender")
+            package="media-gfx/blender-bin"
+            ;;
+        "kdenlive")
+            package="kde-apps/kdenlive"
+            ;;
+        "obs-studio")
+            package="media-video/obs-studio"
+            ;;
+        "gimp")
+            package="media-gfx/gimp"
+            ;;
+        "vesktop")
+            package="net-im/vesktop-bin"
+            ;;
+        "element")
+            package="net-im/element-desktop-bin"
+            ;;
+        "qemu")
+            package="app-emulation/qemu"
+            ;;
+        "zen")
+            package="www-client/zen-bin"
+            ;;
+        "mozlz4")
+            # need to package
+            package=""
+            ;;
+        "keepassxc")
+            package="app-admin/keepassxc"
+            ;;
+        "gnome-keyring")
+            package="gnome-base/gnome-keyring"
+            ;;
+            # gonna try to move to pipewire
+            # "pavucontrol")
+            #     package=""
+            #     ;;
+        "pwvucontrol")
+            # need to be packaged
+            package=""
+            ;;
+        "qbittorrent")
+            package="net-p2p/qbittorrent"
+            ;;
+        "vimiv-qt")
+            package="media-gfx/vimiv-qt"
+            ;;
+        "vlc")
+            package="media-video/vlc"
+            ;;
+        "zathura")
+            package="app-text/zathura app-text/zathura-pdf-mupdf"
+            ;;
+        "hack-nerd")
+            package="media-fonts/nerdfonts"
+            ;;
+        "noto-fonts")
+            package="media-fonts/noto media-fonts/noto-cjk media-fonts/noto-emoji"
+            ;;
+        "mpd")
+            package="media-sound/mpd"
+            ;;
+        "mediainfo")
+            package="media-video/mediainfo"
+            ;;
+        "mpc")
+            package="media-sound/mpc"
+            ;;
+        "rmpc")
+            package="media-sound/rmpc"
+            ;;
+        "nicotine")
+            package="net-p2p/nicotine+"
+            ;;
+        "cava")
+            package="media-sound/cava"
+            ;;
+        "ncmpcpp")
+            package="media-sound/ncmpcpp"
+            ;;
+        "mpd-discord-rpc")
+            # need to package myself
+            package=""
+            ;;
+        "tailscale")
+            package="net-vpn/tailscale"
+            ;;
+        "ntfs-3g")
+            package="sys-fs/ntfs3g"
+            ;;
+        "ffmpeg")
+            package="media-video/ffmpeg"
+            ;;
+        "yt-dlp")
+            package="net-misc/yt-dlp"
+            ;;
+        "python-mutagen")
+            package="media-libs/mutagen"
+            ;;
+        "wine")
+            package="app-emulation/wine-proton virtual/wine"
+            ;;
+        "lutris")
+            package="games-util/lutris"
+            ;;
+        "protonup-rs")
+            # need to package myself
+            package=""
+            ;;
+        "neomutt")
+            package="mail-client/neomutt"
+            ;;
+        "mutt-wizard")
+            package="mail-client/mutt-wizard"
+            ;;
+        "elinks")
+            package="www-client/elinks"
+            ;;
+        "imagemagick")
+            package="media-gfx/imagemagick"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
