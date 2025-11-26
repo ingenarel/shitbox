@@ -57,7 +57,7 @@ tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /
 rm /mnt/gentoo/stage3-*.tar.xz
 
 if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
-    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
+    cp -Tf "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
         "/mnt/gentoo/etc/portage/make.conf" ||
     die "cping make failed"
 
