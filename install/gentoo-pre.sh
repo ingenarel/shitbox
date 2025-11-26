@@ -57,15 +57,15 @@ tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /
 rm /mnt/gentoo/stage3-*.tar.xz
 
 if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
-    cp "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
+    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
         "/mnt/gentoo/etc/portage/make.conf" ||
     die "cping make failed"
 
-    cp -r "$scriptDir/../configs/programs/portage/tui-vm/package.use"\
+    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.use"\
         "/mnt/gentoo/etc/portage/package.use" ||
     die "cping package.use failed"
 
-    cp -r "$scriptDir/../configs/programs/portage/tui-vm/package.accept_keywords"\
+    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.accept_keywords"\
         "/mnt/gentoo/etc/portage/package.accept_keywords" ||
     die "cping package.accept_keywords failed"
 fi
