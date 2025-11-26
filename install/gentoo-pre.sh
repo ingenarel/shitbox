@@ -61,11 +61,11 @@ if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
         "/mnt/gentoo/etc/portage/make.conf" ||
     die "cping make failed"
 
-    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.use"\
+    cp -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.use"\
         "/mnt/gentoo/etc/portage/package.use" ||
     die "cping package.use failed"
 
-    cp --parents -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.accept_keywords"\
+    cp -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.accept_keywords"\
         "/mnt/gentoo/etc/portage/package.accept_keywords" ||
     die "cping package.accept_keywords failed"
 fi
