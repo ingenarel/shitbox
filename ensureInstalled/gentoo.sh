@@ -32,7 +32,7 @@ for package in "${packages[@]}"; do
             ;;
         "btop")
             package="btop"
-            sudo emerge app-crypt/libmd
+            sudo emerge --noreplace --ask n app-crypt/libmd
             ;;
         "fastfetch")
             package="app-misc/fastfetch"
