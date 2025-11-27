@@ -93,6 +93,7 @@ echo "Creating Swap" && mkswap --size 4G --file /mnt/gentoo/swapFile && echo "Cr
 
 gentooPostPath="/tmp/gentoo-post.sh"
 arch-chroot /mnt/gentoo "/usr/bin/sh" "-c" "\
+    touch /etc/cmdline
     DEVICE_NAME='$DEVICE_NAME'
     export DEVICE_NAME
 
