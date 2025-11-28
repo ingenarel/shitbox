@@ -374,4 +374,10 @@ command -v "$myshell" && {
     done
 }
 
+{
+    command -v rustup-init-gentoo && ! command -v rustup
+    } && {
+    rustup-init-gentoo --symlink
+}
+
 # echo "${packagesToInstall[@]}"
