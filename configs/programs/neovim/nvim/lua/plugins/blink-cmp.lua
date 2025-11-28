@@ -5,7 +5,7 @@ local m = {
         "xzbdmw/colorful-menu.nvim",
         "onsails/lspkind.nvim",
     },
-    build = "cargo build --release",
+    build = "cargo +nightly build --release",
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
