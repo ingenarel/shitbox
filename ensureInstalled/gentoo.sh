@@ -10,7 +10,13 @@ source "$scriptDir/../utils/safelink.sh"
 #         ) / (1000 * 1000)
 # ))"
 
-packagesToInstall=""
+packagesToInstall="\
+    app-portage/genlop\
+    app-portage/smart-live-rebuild\
+    app-portage/eix\
+    dev-util/pkgdev\
+    app-portage/pycargoebuild\
+"
 
 extracommands=""
 

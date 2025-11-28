@@ -47,16 +47,6 @@ packages=(
     zpaq
 )
 
-grep -qi 'gentoo' /etc/os-release && {
-    packages+=(
-        app-portage/genlop
-        app-portage/smart-live-rebuild
-        app-portage/eix
-        dev-util/pkgdev
-        app-portage/pycargoebuild
-    )
-}
-
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {
     source "$nonvmshit"
     grep -qiE 'arch' /etc/os-release && {
