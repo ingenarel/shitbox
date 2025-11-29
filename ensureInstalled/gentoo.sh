@@ -344,6 +344,9 @@ for package in "${packages[@]}"; do
         "imagemagick")
             package="media-gfx/imagemagick"
             ;;
+        "sshfs")
+            package="net-fs/sshfs"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done

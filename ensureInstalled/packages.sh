@@ -45,6 +45,7 @@ packages=(
     man-pages
     wgetpaste
     zpaq
+    sshfs
 )
 
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {
