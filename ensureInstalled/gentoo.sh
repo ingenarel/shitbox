@@ -16,6 +16,7 @@ packagesToInstall="\
     app-portage/eix\
     dev-util/pkgdev\
     app-portage/pycargoebuild\
+    app-portage/pram\
 "
 
 extracommands=""
