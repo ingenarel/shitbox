@@ -82,7 +82,12 @@ setupConfigs(){
     grep -qEi "arch" /etc/os-release &&\
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
     grep -qEi "gentoo" /etc/os-release && {
-        if [ "$HOST" = "gentoo-tui-vm" ]; then
+        if [ "$HOST" = "gentoo-vm-tui" ]; then
+            portageDirToUse="tui-vm"
+        else
+            portageDirToUse="main"
+        fi
+        [ -z "$portageDirToUse" ] && {
             safelink "$scriptDir/programs/portage/tui-vm/make.conf"                         "/etc/portage/make.conf" 1
             find "$scriptDir/programs/portage/tui-vm/package.use" -type f | while IFS='' read -r line; do
                 safelink "$line" "/etc/portage/package.use/$(basename "$line")" 1
@@ -90,7 +95,7 @@ setupConfigs(){
             find "$scriptDir/programs/portage/tui-vm/package.accept_keywords" -type f | while IFS='' read -r line; do
                 safelink "$line" "/etc/portage/package.accept_keywords/$(basename "$line")" 1
             done
-        fi
+        }
         [[ -f "$HOME/.ssh/git" ]] && {
             [[ -d "$HOME/coding/git/gentoo" ]] || mkdir --parents "$HOME/coding/git/gentoo"
             [[ -d "$HOME/coding/git/gentoo/gentoo" ]] || {

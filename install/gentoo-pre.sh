@@ -57,18 +57,26 @@ tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /
 rm /mnt/gentoo/stage3-*.tar.xz
 
 if [ "$HOST_NAME" = "gentoo-vm-tui" ]; then
-    cp -Tf "$scriptDir/../configs/programs/portage/tui-vm/make.conf"\
+    portageDirToUse="tui-vm"
+else
+    portageDirToUse="main"
+fi
+
+[ -z "$portageDirToUse" ] && {
+    cp -Tf "$scriptDir/../configs/programs/portage/$portageDirToUse/make.conf"\
         "/mnt/gentoo/etc/portage/make.conf" ||
     die "cping make failed"
 
-    cp -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.use"\
+    cp -rTf "$scriptDir/../configs/programs/portage/$portageDirToUse/package.use"\
         "/mnt/gentoo/etc/portage/package.use" ||
     die "cping package.use failed"
 
-    cp -rTf "$scriptDir/../configs/programs/portage/tui-vm/package.accept_keywords"\
+    cp -rTf "$scriptDir/../configs/programs/portage/$portageDirToUse/package.accept_keywords"\
         "/mnt/gentoo/etc/portage/package.accept_keywords" ||
     die "cping package.accept_keywords failed"
-fi
+    } || {
+    exit
+}
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ || {
     die "cping resolve.conf failed"
