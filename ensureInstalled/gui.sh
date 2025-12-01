@@ -78,7 +78,8 @@ packages+=(
     pwvucontrol
     qbittorrent
     vimiv-qt
-    vlc
+    # vlc
+    mpv
     zathura
 )
 

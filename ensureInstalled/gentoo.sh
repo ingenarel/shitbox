@@ -348,6 +348,9 @@ for package in "${packages[@]}"; do
         "sshfs")
             package="net-fs/sshfs"
             ;;
+        "mpv")
+            package="media-video/mpv"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
