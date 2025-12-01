@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
+[ -z "$HOST" ] && {
+    HOST="$(hostname)"
+    export HOST
+}
 
 source "$scriptDir/../utils/safelink.sh"
 
@@ -46,7 +50,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/chatting/gui/discord/settings"                        "$HOME/.config/vesktop/settings"
     safelink "$scriptDir/programs/chatting/gui/discord/vesktop.desktop"                 "$HOME/.local/share/applications/vesktop.desktop"
     safelink "$scriptDir/programs/chatting/tui/iamb"                                    "$HOME/.config/iamb"
-    find "$scriptDir/programs/chatting/tui/weechat/conf" -type f | while IFS='' read -r line; do
+    find "$scriptDir/programs/chatting/tui/weechat/conf" -type f,l | while IFS='' read -r line; do
         safelink "$line" "$HOME/.config/weechat/$( basename "$line")"
     done
     safelink "$scriptDir/programs/chatting/tui/weechat/config.lua"                      "$HOME/.local/share/weechat/lua/autoload/config.lua"
@@ -82,17 +86,17 @@ setupConfigs(){
     grep -qEi "arch" /etc/os-release &&\
         safelink "$scriptDir/programs/pacman/pacman.conf"                               "/etc/pacman.conf" 1
     grep -qEi "gentoo" /etc/os-release && {
-        if [ "$HOST" = "gentoo-vm-tui" ]; then
+        if [ "$HOSTNAME" = "gentoo-vm-tui" ]; then
             portageDirToUse="tui-vm"
-        else
+        elif [ "$HOST" = "gentoo-main" ]; then
             portageDirToUse="main"
         fi
-        [ -z "$portageDirToUse" ] && {
-            safelink "$scriptDir/programs/portage/tui-vm/make.conf"                         "/etc/portage/make.conf" 1
-            find "$scriptDir/programs/portage/tui-vm/package.use" -type f | while IFS='' read -r line; do
+        [ -n "$portageDirToUse" ] && {
+            safelink "$scriptDir/programs/portage/$portageDirToUse/make.conf"                         "/etc/portage/make.conf" 1
+            find "$scriptDir/programs/portage/$portageDirToUse/package.use" -type f,l | while IFS='' read -r line; do
                 safelink "$line" "/etc/portage/package.use/$(basename "$line")" 1
             done
-            find "$scriptDir/programs/portage/tui-vm/package.accept_keywords" -type f | while IFS='' read -r line; do
+            find "$scriptDir/programs/portage/$portageDirToUse/package.accept_keywords" -type f,l | while IFS='' read -r line; do
                 safelink "$line" "/etc/portage/package.accept_keywords/$(basename "$line")" 1
             done
         }
