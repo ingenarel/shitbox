@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
         "PKGBUILD",
         "*.install",
         "makepkg.conf",
-        "*.ebuild",
+        -- "*.ebuild",
         "*.eclass",
         "color.map",
         "make.conf",
