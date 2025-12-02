@@ -1,0 +1,14 @@
+>=media-gfx/imagemagick-7.1.2.5 xml
+
+# required by media-gfx/imagemagick-7.1.2.5::gentoo[heif]
+# required by virtual/imagemagick-tools-1::gentoo[svg]
+# required by media-gfx/fig2dev-3.2.9a::gentoo[ghostscript]
+# required by app-text/dblatex-0.3.12-r4::gentoo
+# required by dev-util/ragel-7.0.4-r3::gentoo[doc]
+# required by dev-ruby/json-2.16.0::gentoo
+# required by dev-lang/ruby-3.3.10-r1::gentoo
+# required by dev-ruby/debug-1.11.0::gentoo[ruby_targets_ruby33]
+# required by dev-lang/ruby-3.2.9-r1::gentoo
+# required by dev-ruby/pp-0.6.3::gentoo[ruby_targets_ruby32]
+# required by dev-ruby/irb-1.15.3::gentoo[ruby_targets_ruby32]
+>=media-libs/libheif-1.20.2 x265
