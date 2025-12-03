@@ -360,6 +360,10 @@ for package in "${packages[@]}"; do
         "mpv")
             package="media-video/mpv"
             ;;
+        "gitleaks")
+            # need to package it myself
+            package=""
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
