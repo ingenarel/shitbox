@@ -95,7 +95,6 @@ packages+=(
     rmpc
     nicotine
     cava
-    ncmpcpp
     mpd-discord-rpc
 )
 
