@@ -127,6 +127,7 @@ setupConfigs(){
         grep -qE "$sourceLine" "$file" || echo "$sourceLine" >> "$file"
     done
 
+    safelink "$scriptDir/programs/aerc" "$HOME/.config/aerc"
     # [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]] && {
     #     rclone config create drive-main drive
     # }
