@@ -47,7 +47,7 @@ reply_mention = "Rune[r]"
 cancel = "Esc"
 delete = "Rune[d]"
 open = "Enter"
-yank_content = "Rune[y]"
+yank_content = "Rune[Y]"
 yank_url = "Rune[u]"
 yank_id = "Rune[i]"
 
@@ -56,7 +56,7 @@ send = "Enter"
 cancel = "Esc"
 tab_complete = "Tab"
 open_editor = "Ctrl+E"
-open_file_picker = "Ctrl+f"
+open_file_picker = "Alt+Rune[F]"
 
 [keys.mentions_list]
 up = "Up"
