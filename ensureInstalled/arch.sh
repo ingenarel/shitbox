@@ -141,6 +141,9 @@ for package in "${packages[@]}"; do
         "protonup-rs")
             package="protonup-rs-bin"
             ;;
+        "librewolf")
+            package="librewolf-bin"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
