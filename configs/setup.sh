@@ -57,8 +57,8 @@ setupConfigs(){
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
 
     command -v zen-twilight && {
-        safelink  "$scriptDir/programs/browsers/firefox/zen/policies.json"                      "/etc/zen/policies/policies.json" 1
-        safelink  "$scriptDir/programs/browsers/firefox/zen/profiles.ini"                       "$HOME/.zen/profiles.ini"
+        safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
+        safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.zen/profiles.ini"
         [[ ! -f "$HOME/.zen/ingenarel/user.js" ]] && {
             wget\
                 --no-clobber\
@@ -77,6 +77,12 @@ setupConfigs(){
         # safelink "$scriptDir/programs/browsers/firefox/zen/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
 
     }
+
+    command -v librewolf && {
+        safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/librewolf/policies/policies.json" 1
+        safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.librewolf/profiles.ini"
+    }
+
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
     safelink "$scriptDir/programs/WM/sway"                                              "$HOME/.config/sway"
     safelink "$scriptDir/programs/WM/river"                                             "$HOME/.config/river"
