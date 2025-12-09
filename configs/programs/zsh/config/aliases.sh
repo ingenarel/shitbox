@@ -12,6 +12,7 @@ alias yt-music='yt-dlp -x --embed-thumbnail --embed-metadata --audio-quality --a
 # https://stackoverflow.com/questions/1904860/how-to-remove-unreferenced-blobs-from-my-git-repository
 #
 alias crdeps="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/crdeps"
+alias gentoo-go-license="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/gentoo-go-license"
 
 f(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
