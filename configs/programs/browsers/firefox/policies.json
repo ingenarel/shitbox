@@ -22,14 +22,6 @@
                 "URL": "https://home-manager-options.extranix.com"
             },
             {
-                "Title": "instagram",
-                "URL": "https://www.instagram.com/direct"
-            },
-            {
-                "Title": "chatgpt",
-                "URL": "https://chatgpt.com"
-            },
-            {
                 "Title": "policies",
                 "URL": "https://mozilla.github.io/policy-templates"
             },
@@ -203,9 +195,16 @@
                     "IconURL": "https://modrinth.com/favicon.ico",
                     "Name": "ModrinthMods",
                     "URLTemplate": "https://modrinth.com/mods?q={searchTerms}"
+                },
+                {
+                    "Alias": "@sp",
+                    "IconURL": "https://www.startpage.com/favicon.ico",
+                    "Name": "StartPage",
+                    "SuggestURLTemplate": "https://www.startpage.com/osuggestions?q={searchTerms}",
+                    "URLTemplate": "https://www.startpage.com/sp/search?query={searchTerms}"
                 }
             ],
-            "Default": "DuckDuckGo",
+            "Default": "StartPage",
             "PreventInstalls": true
         }
     }
