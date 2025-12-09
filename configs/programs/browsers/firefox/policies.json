@@ -204,7 +204,7 @@
                     "URLTemplate": "https://www.startpage.com/sp/search?query={searchTerms}"
                 }
             ],
-            "Default": "StartPage",
+            "Default": "DuckDuckGo",
             "PreventInstalls": true
         }
     }
