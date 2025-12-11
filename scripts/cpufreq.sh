@@ -15,7 +15,7 @@ main(){
             return 1;
         }\
             ||
-        echo "$cpuFreq" | sudo tee "$core/cpufreq/scaling_max_freq"
+        echo "$cpuFreq" | tee "$core/cpufreq/scaling_max_freq"
     done
 }
 
