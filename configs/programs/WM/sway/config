@@ -43,7 +43,7 @@ set $sovEnd "pkill sov; swaymsg unbindsym Escape"
         bindsym ctrl+c exec "pkill --full 'ydotool type'"; mode "default"
     }
 
-    bindsym $mainMod+V mode "paste"; exec "$HOME/.config/shitbox/scripts/globalPaste.sh; swaymsg mode default"
+    bindsym $mainMod+Mod1+v mode "paste"; exec "$HOME/.config/shitbox/scripts/globalPaste.sh; swaymsg mode default"
 
     bindsym $mainMod+h focus left
     bindsym $mainMod+j focus down
