@@ -6,3 +6,10 @@ source ~/.config/zsh/plugins/fzf-tab-setup.zsh
 zinit load zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load hlissner/zsh-autopair
+
+zsh_better_tabs_path="$HOME/.config/shitbox/configs/programs/zsh/own-plugins/zsh-better-tabs/zsh-better-tabs.zsh"
+[ -f "$zsh_better_tabs_path" ] && {
+    source "$zsh_better_tabs_path"
+    } || {
+    zinit load ingenarel/zsh-better-tabs
+}

@@ -40,3 +40,6 @@
 [submodule "configs/programs/neovim/myPlugins/flex-stats.nvim"]
 	path = configs/programs/neovim/myPlugins/flex-stats.nvim
 	url = https://github.com/ingenarel/flex-stats.nvim
+[submodule "configs/programs/zsh/own-plugins/zsh-better-tabs"]
+	path = configs/programs/zsh/own-plugins/zsh-better-tabs
+	url = https://github.com/ingenarel/zsh-better-tabs.git
