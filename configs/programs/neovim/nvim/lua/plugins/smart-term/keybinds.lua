@@ -25,6 +25,7 @@ require("which-key").add {
         "<leader>Ff",
         function()
             term.open {
+                choices = { "zellij", "nvim" },
                 float = true,
                 widthPercentage = 95,
                 heightPercentage = 100,
@@ -37,6 +38,7 @@ require("which-key").add {
         "<leader>Fd",
         function()
             term.open {
+                choices = { "zellij", "nvim" },
                 float = true,
                 widthPercentage = 95,
                 heightPercentage = 100,
