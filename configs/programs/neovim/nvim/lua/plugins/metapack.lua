@@ -25,6 +25,7 @@ local m = {
                 { gentoo = { "yaml-language-server" }, default = "yaml-language-server" },
                 "rust-analyzer",
                 { gentoo = { "json-lsp" }, default = "json-lsp" },
+                "docker-language-server",
                 --lsp
                 --dap
                 "codelldb",

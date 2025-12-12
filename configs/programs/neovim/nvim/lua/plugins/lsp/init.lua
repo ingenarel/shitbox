@@ -53,5 +53,6 @@ return {
                 end
             end,
         })
+        vim.lsp.enable("docker_language_server")
     end,
 }
