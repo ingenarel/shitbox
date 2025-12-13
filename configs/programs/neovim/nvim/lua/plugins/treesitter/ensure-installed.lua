@@ -43,6 +43,7 @@ return {
     "hjson",
     "hlsl",
     "hlsplaylist",
+    "hocon",
     "html",
     "http",
     "hurl",

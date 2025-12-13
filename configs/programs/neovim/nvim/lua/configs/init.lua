@@ -54,6 +54,9 @@ vim.filetype.add {
     extension = {
         ebuild = "ebuild",
     },
+    extension = {
+        hocon = "hocon",
+    },
     pattern = {
         [".*/aerc/.*.conf"] = "ini",
     },
