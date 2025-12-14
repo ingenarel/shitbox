@@ -128,8 +128,7 @@ packages+=(
 )
 
 packages+=(
-    neomutt
-    mutt-wizard
-    elinks
+    aerc
+    w3m
     imagemagick
 )

@@ -31,11 +31,6 @@ c(){
     cd "$1"
 }
 
-discordo-setup(){
-    wl-copy --paste-once "$(keepassxc-cli show --show-protected --attributes token $HOME/.config/shitbox/configs/secrets/passwords/Passwords.kdbx discord)"
-    secret-tool store --label="Discord Token" service discordo username token
-}
-
 trscks(){
     systemctl --quiet is-active tor || systemctl --quiet start tor
     torsocks "$@"
