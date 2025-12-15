@@ -196,8 +196,8 @@ for package in "${packages[@]}"; do
             # need to pacakge
             package=""
             ;;
-        "swww")
-            package="gui-apps/swww"
+        "swww"|"awww")
+            package="gui-apps/awww"
             ;;
         "wl-clipboard")
             package="gui-apps/wl-clipboard"
