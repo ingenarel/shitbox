@@ -48,7 +48,7 @@ vim.opt.mouse = ""
 vim.opt.fileformats = "unix,dos"
 -- vo.matchpairs = "(:),{:},[:],<:>"
 vim.opt.matchpairs = "(:),{:},[:]"
-vim.opt.guifont = "Hack Nerd Font:h8"
+vim.opt.guifont = "Hack Nerd Font:h13"
 
 vim.filetype.add {
     extension = {
