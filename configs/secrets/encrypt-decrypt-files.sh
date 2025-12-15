@@ -87,7 +87,7 @@ elif [ "$4" = "decrypt" ]; then
     decryptSingleFiles "$3"
     recusiveMimeTypeCommand "$scriptDir/secrets/unlocked" "application/(x-pem-file|pgp-keys)" "chmod 600"
     if [ "$5" = "configure" ]; then
-        safelink "$scriptDir/secrets/unlocked/ssh/config" "$HOME/.ssh/config"
+        safelink "$scriptDir/../programs/ssh/config" "$HOME/.ssh/config"
         recusiveMimeTypeCommand "$scriptDir/secrets/unlocked/gpg" "application/pgp-keys" "gpg --import"
         gpg --list-keys --with-colons 'ingenarelitems@gmail.com' | sed -n -E 's/^fpr:+([^:]+):+/\1:6:/p'\
             |

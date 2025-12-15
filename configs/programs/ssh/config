@@ -1,0 +1,39 @@
+# vim:ft=sshconfig:
+
+Host github.com
+    User git
+    Hostname github.com
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+
+Host gitlab.com
+    User git
+    Hostname gitlab.com
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+
+Host git.gentoo.org
+    User git
+    Hostname git.gentoo.org
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+
+Host xeon-rig
+    User ingenarel
+    Hostname 100.123.157.85
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+
+Host gentoo-xeon
+    User ingenarel
+    HostName localhost
+    Port 10022
+    ProxyJump xeon-rig
