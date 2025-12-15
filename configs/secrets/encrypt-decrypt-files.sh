@@ -2,6 +2,8 @@
 
 scriptDir="$(realpath --canonicalize-missing "$0/..")"
 
+. "$scriptDir/../../utils/safelink.sh"
+
 UNLOCKED_DIR="$scriptDir/secrets/unlocked"
 LOCKED_DIR="$scriptDir/secrets/locked"
 
@@ -9,7 +11,7 @@ export UNLOCKED_DIR
 export LOCKED_DIR
 
 scriptHelp(){
-    echo "./encrypt-decrypt-files.sh ENCRYPTED_ARCHIVE_PASSWORD ARCHIVE_PASSWORD FILE_PASSWORD (encrypt|decrypt)"
+    echo "./encrypt-decrypt-files.sh ENCRYPTED_ARCHIVE_PASSWORD ARCHIVE_PASSWORD FILE_PASSWORD (encrypt|decrypt) configure?"
 }
 
 gpgEncrypt(){
@@ -60,16 +62,37 @@ decryptSingleFiles(){
     done
 }
 
+recusiveMimeTypeCommand(){
+    find "$1"\
+        -type f\
+        -exec file --no-pad --mime-type {} +\
+        |
+    awk -F ':' "BEGIN { ORS = \"\\0\" }; { if ( \$2 ~ \"$2\" ) print \$1 }"\
+        |
+    xargs --null $3
+}
+
+ENCRYPTED_ARCHIVE="$scriptDir/secrets.zpaq.gpg"
+
 if [ "$4" = "encrypt" ]; then
     encryptSingleFiles "$3"
     zpaq add "$scriptDir/secrets.zpaq" "$(
         realpath --relative-to "$scriptDir" "$LOCKED_DIR"
     )" -key "$2" -m5
-    gpgEncrypt "$scriptDir/secrets.zpaq" "$scriptDir/secrets.zpaq.gpg" "$1"
+    [ -f "$ENCRYPTED_ARCHIVE" ] && rm "$ENCRYPTED_ARCHIVE"
+    gpgEncrypt "$scriptDir/secrets.zpaq" "$ENCRYPTED_ARCHIVE" "$1"
 elif [ "$4" = "decrypt" ]; then
-    gpgDecrypt "$scriptDir/secrets.zpaq.gpg" "$scriptDir/secrets.zpaq" "$1"
+    gpgDecrypt "$ENCRYPTED_ARCHIVE" "$scriptDir/secrets.zpaq" "$1"
     zpaq extract "$scriptDir/secrets.zpaq" -key "$2" -force
     decryptSingleFiles "$3"
+    recusiveMimeTypeCommand "$scriptDir/secrets/unlocked" "application/(x-pem-file|pgp-keys)" "chmod 600"
+    if [ "$5" = "configure" ]; then
+        safelink "$scriptDir/secrets/unlocked/ssh/config" "$HOME/.ssh/config"
+        recusiveMimeTypeCommand "$scriptDir/secrets/unlocked/gpg" "application/pgp-keys" "gpg --import"
+        gpg --list-keys --with-colons 'ingenarelitems@gmail.com' | sed -n -E 's/^fpr:+([^:]+):+/\1:6:/p'\
+            |
+        gpg --import-ownertrust
+    fi
 else
     scriptHelp
 fi
