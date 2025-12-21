@@ -75,3 +75,16 @@ ircback(){
     zpaq add "$archiveFile" "$HOME/.local/share/weechat/logs" -m5
     rclone sync "$archiveFile" "drive-main:IRC-logs/$(basename "$archiveFile")" --progress --drive-use-trash=false --delete-excluded --copy-links
 }
+
+wshowkeys(){
+    command wshowkeys\
+        -a top\
+        -a right\
+        -m 0\
+        -t 1\
+        -F 20\
+        -b '#3c0049'\
+        -f '#f91dd1'\
+        -s '#1de7f9'
+}
+
