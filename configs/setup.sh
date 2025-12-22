@@ -15,6 +15,17 @@ setSudoConfigs(){
     sudo grep -qEi "$automountRegex" "$automountConfig" || echo "$automountLine" | sudo tee "$automountConfig"
 }
 
+FIREFOX_PROFILE_DIR='4bgq65me.ingenarel'
+export FIREFOX_PROFILE_DIR
+
+setupSharedFirefoxShit(){
+    safelink "$scriptDir/programs/browsers/firefox/policies.json"   "/etc/$1/policies/policies.json" 1
+    safelink "$scriptDir/programs/browsers/firefox/profiles.ini"    "$HOME/.$1/profiles.ini"
+    safelink "$scriptDir/programs/browsers/firefox/installs.ini"    "$HOME/.$1/installs.ini"
+    chmod -w "$HOME/.$1/profiles.ini"
+    [ ! -d "$HOME/.$1/$FIREFOX_PROFILE_DIR" ] && mkdir --parents "$HOME/.$1/$FIREFOX_PROFILE_DIR"
+}
+
 setupConfigs(){
     [[ $HOME == "/root" ]] && HOME="/home/ingenarel"
     safelink "$scriptDir/programs/neovim/nvim"                                          "$HOME/.config/nvim"
@@ -57,30 +68,27 @@ setupConfigs(){
     safelink "$scriptDir/programs/chatting/tui/discordo/config.toml"                    "$HOME/.config/discordo/config.toml"
 
     command -v zen-twilight && {
-        safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/zen/policies/policies.json" 1
-        safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.zen/profiles.ini"
-        [[ ! -f "$HOME/.zen/ingenarel/user.js" ]] && {
+        setupSharedFirefoxShit "zen"
+        [[ ! -f "$HOME/.zen/$FIREFOX_PROFILE_DIR/user.js" ]] && {
             wget\
                 --no-clobber\
-                --directory-prefix="$HOME/.zen/ingenarel"\
+                --directory-prefix="$HOME/.zen/$FIREFOX_PROFILE_DIR"\
                 'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/user.js'
         }
-        [[ ! -f "$HOME/.zen/ingenarel/updater.sh" ]] && {
+        [[ ! -f "$HOME/.zen/$FIREFOX_PROFILE_DIR/updater.sh" ]] && {
             wget\
                 --no-clobber\
-                --directory-prefix="$HOME/.zen/ingenarel"\
+                --directory-prefix="$HOME/.zen/$FIREFOX_PROFILE_DIR"\
                 'https://raw.githubusercontent.com/arkenfox/user.js/refs/heads/master/updater.sh'
-            chmod u+x "$HOME/.zen/ingenarel/updater.sh"
+            chmod u+x "$HOME/.zen/$FIREFOX_PROFILE_DIR/updater.sh"
         }
-        safelink "$scriptDir/programs/browsers/firefox/zen/zen.js" "$HOME/.zen/ingenarel/user-overrides.js"
-        "$HOME/.zen/ingenarel/updater.sh" -su
-        # safelink "$scriptDir/programs/browsers/firefox/zen/ingenarel/chrome/userChrome.css"     "$HOME/.zen/ingenarel/chrome/userChrome.css"
+        safelink "$scriptDir/programs/browsers/firefox/zen/zen.js" "$HOME/.zen/$FIREFOX_PROFILE_DIR/user-overrides.js"
+        "$HOME/.zen/$FIREFOX_PROFILE_DIR/updater.sh" -su
 
     }
 
     command -v librewolf && {
-        safelink  "$scriptDir/programs/browsers/firefox/policies.json"                      "/etc/librewolf/policies/policies.json" 1
-        safelink  "$scriptDir/programs/browsers/firefox/profiles.ini"                       "$HOME/.librewolf/profiles.ini"
+        setupSharedFirefoxShit "librewolf"
     }
 
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
@@ -142,14 +150,14 @@ setupConfigs(){
 
 setupConfigs
 setSudoConfigs
-"$scriptDir/mimes.sh"
-
-git -C "$scriptDir/.." submodule init
-git -C "$scriptDir/.." submodule update
-
-"$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
-
-git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
-
-git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
-git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
+# "$scriptDir/mimes.sh"
+#
+# git -C "$scriptDir/.." submodule init
+# git -C "$scriptDir/.." submodule update
+#
+# "$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
+#
+# git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
+#
+# git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
+# git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
