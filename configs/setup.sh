@@ -89,6 +89,8 @@ setupConfigs(){
 
     command -v librewolf && {
         setupSharedFirefoxShit "librewolf"
+        safelink "$scriptDir/programs/browsers/firefox/librewolf/user.js" "$HOME/.librewolf/$FIREFOX_PROFILE_DIR/user.js"
+        safelink "$scriptDir/programs/browsers/firefox/librewolf/userChrome.css" "$HOME/.librewolf/$FIREFOX_PROFILE_DIR/chrome/userChrome.css"
     }
 
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
