@@ -47,6 +47,7 @@ packages=(
     zpaq
     sshfs
     gitleaks
+    aerc
 )
 
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {
