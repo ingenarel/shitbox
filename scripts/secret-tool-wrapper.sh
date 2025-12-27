@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-secret-tool lookup mail main || {
+secret-tool lookup "$@" || {
     sleep 60
-    secret-tool lookup mail main
+    secret-tool lookup "$@"
 }
