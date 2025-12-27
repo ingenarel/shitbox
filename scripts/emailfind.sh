@@ -26,16 +26,16 @@ toTorOrNotToTor(){
 
 # domainName="$( echo "$2" | sed -n -E 's:\S+@(\S+\.)*([^.]+\.[^.]+)$:\2:p')"
 originalDomainName="${2#*@}"
-echo "$originalDomainName"
-domainName="$originalDomainName"
+echo "originalDomainName: $originalDomainName" >&2
 
-# echo "$domainName" >&2
+domainName="$originalDomainName"
+echo "domainName: $domainName" >&2
 
 domainLink="https://$domainName/"
-# echo "$domainLink" >&2
+echo "domainLink: $domainLink" >&2
 
 icoPath="$CACHE_PATH/$(echo "$originalDomainName" | sha256sum | awk '{print $1}' )"
-# echo "$icoPath" >&2
+echo "icoPath: $icoPath" >&2
 
 # ignore arch manually for now
 [ ! -f "$icoPath" ] && echo "$domainName" | grep -v -q -E "$DOMAIN_IGNORE" && {
@@ -87,9 +87,8 @@ icoPath="$CACHE_PATH/$(echo "$originalDomainName" | sha256sum | awk '{print $1}'
                 torChanged=false
                 _USETOR=true
             }
-
         done
     fi
 }
 
-notify-send --icon "$icoPath" "$2" hi
+echo "$icoPath"
