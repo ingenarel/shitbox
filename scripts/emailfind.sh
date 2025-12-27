@@ -24,14 +24,17 @@ toTorOrNotToTor(){
     fi
 }
 
-domainName="$( echo "$2" | sed -n -E 's:\S+@(\S+\.)*([^.]+\.[^.]+)$:\2:p')"
-# domainName="${2#*@}"
-echo "$domainName" >&2
+# domainName="$( echo "$2" | sed -n -E 's:\S+@(\S+\.)*([^.]+\.[^.]+)$:\2:p')"
+originalDomainName="${2#*@}"
+echo "$originalDomainName"
+domainName="$originalDomainName"
+
+# echo "$domainName" >&2
 
 domainLink="https://$domainName/"
 # echo "$domainLink" >&2
 
-icoPath="$CACHE_PATH/$(echo "$domainName" | sha256sum | awk '{print $1}' )"
+icoPath="$CACHE_PATH/$(echo "$originalDomainName" | sha256sum | awk '{print $1}' )"
 # echo "$icoPath" >&2
 
 # ignore arch manually for now
@@ -40,40 +43,53 @@ icoPath="$CACHE_PATH/$(echo "$domainName" | sha256sum | awk '{print $1}' )"
         _USETOR=false
         torChanged=true
     }
-    while true; do
-        redirURL="$(
+    while echo "$domainLink" | grep -q -E '[^.]+\.([^.]+\.)+[^.]+$'; do
+        toTorOrNotToTor curl --silent --out-null "$domainLink" &&
+        break ||
+        domainLink="$( echo "$domainLink" | sed -n -E 's:([^/]+//)[^.]+\.(.+):\1\2:p')"
+        domainChanged=true
+    done
+    newIcoPath="${domainLink#https://}"
+    newIcoPath="${newIcoPath%/}"
+    [ "$domainChanged" = true ] && newIcoPath="$CACHE_PATH/$( echo "$newIcoPath" | sha256sum | awk '{print $1}' )"
+    if [ -f "$newIcoPath" ]; then
+        ln -srf "$newIcoPath" "$icoPath"
+    else
+        while true; do
+            redirURL="$(
             toTorOrNotToTor curl --silent\
-                    --max-redirs=1\
-                    --out-null\
-                    --write-out '%{url_effective}'\
-                    --follow\
-                    "$domainLink" |
+                --max-redirs=1\
+                --out-null\
+                --write-out '%{url_effective}'\
+                --follow\
+                "$domainLink" |
             grep -oE 'https?://[^/]+/'
         )"
-        if ! toTorOrNotToTor wget --quiet "${domainLink}favicon.ico" -O "$icoPath"; then
-            RFC5988IconLinks="$(toTorOrNotToTor curl --silent "$domainLink" | sed -n -E 's:.*<link\s+rel="icon"\s+type="image/\S+"\s+href="([^"]+)".+:\1:p' )"
-            if [ -n "$RFC5988IconLinks" ]; then
-                echo "$RFC5988IconLinks" | while IFS='' read -r line; do
-                    toTorOrNotToTor wget --quiet "$domainLink$line" -O "$icoPath" && break
-                done
+            if ! toTorOrNotToTor wget --quiet "${domainLink}favicon.ico" -O "$icoPath"; then
+                RFC5988IconLinks="$(toTorOrNotToTor curl --silent "$domainLink" | sed -n -E 's:.*<link\s+rel="icon"\s+type="image/\S+"\s+href="([^"]+)".+:\1:p' )"
+                if [ -n "$RFC5988IconLinks" ]; then
+                    echo "$RFC5988IconLinks" | while IFS='' read -r line; do
+                        toTorOrNotToTor wget --quiet "$domainLink$line" -O "$icoPath" && break
+                    done
+                fi
+                # toTorOrNotToTor wget --quiet "$(
+                #     toTorOrNotToTor curl --silent --follow "$domainLink" | grep -o -E 'https://\S+\.ico'
+                #     )" -O "$icoPath" ||
             fi
-            # toTorOrNotToTor wget --quiet "$(
-            #     toTorOrNotToTor curl --silent --follow "$domainLink" | grep -o -E 'https://\S+\.ico'
-            #     )" -O "$icoPath" ||
-        fi
-        file --mime-type "$icoPath" | grep -q -E '.*: image/\S+*$' && break || {
-            if [ "$redirURL" != "$domainLink" ]; then
-                domainLink="$redirURL"
-            else
-                break
-            fi
-        }
-        "$torChanged" && {
-            torChanged=false
-            _USETOR=true
-        }
+            file --mime-type "$icoPath" | grep -q -E '.*: image/\S+*$' && break || {
+                if [ "$redirURL" != "$domainLink" ]; then
+                    domainLink="$redirURL"
+                else
+                    break
+                fi
+            }
+            [ "$torChanged" = true ] && {
+                torChanged=false
+                _USETOR=true
+            }
 
-    done
+        done
+    fi
 }
 
 notify-send --icon "$icoPath" "$2" hi
