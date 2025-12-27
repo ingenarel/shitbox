@@ -29,3 +29,4 @@ function yy() {
 }
 
 source ~/.config/zsh/scripts/autostart-ssh.sh
+setopt HIST_IGNORE_SPACE
