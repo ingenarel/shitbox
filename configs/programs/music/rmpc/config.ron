@@ -2,10 +2,10 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "127.0.0.1:6600",
     password: None,
     theme: "cyberpunk-neon",
-    cache_dir: None,
+    cache_dir: "~/.cache/rmpc/",
+    address: "/tmp/mpd_socket",
     on_song_change: None,
     volume_step: 1,
     max_fps: 120,
