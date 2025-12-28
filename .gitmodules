@@ -43,3 +43,6 @@
 [submodule "configs/programs/zsh/own-plugins/zsh-better-tabs"]
 	path = configs/programs/zsh/own-plugins/zsh-better-tabs
 	url = https://github.com/ingenarel/zsh-better-tabs.git
+[submodule "scripts/email-grabicon"]
+	path = scripts/email-grabicon
+	url = https://github.com/ingenarel/email-grabicon
