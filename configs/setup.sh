@@ -38,6 +38,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/music/cava/config"                                    "$HOME/.config/cava/config"
     safelink "$scriptDir/programs/music/ncmpcpp/config"                                 "$HOME/.config/ncmpcpp"
     safelink "$scriptDir/programs/music/rmpc/config.ron"                                "$HOME/.config/rmpc/config.ron"
+    safelink "$scriptDir/programs/music/mpd-discord-rpc.toml"                           "$HOME/.config/mpd-discord-rpc/config.toml"
     safelink "$scriptDir/programs/music/rmpc/themes/cyberpunk-neon.ron"                 "$HOME/.config/rmpc/themes/cyberpunk-neon.ron"
     safelink "$scriptDir/programs/neovim/lsp-configs/clangd"                            "$HOME/.config/clangd"
     safelink "$scriptDir/programs/terminal/emulators/foot/config"                       "$HOME/.config/foot"
