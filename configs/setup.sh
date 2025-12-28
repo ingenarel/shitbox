@@ -144,6 +144,7 @@ setupConfigs(){
     done
 
     safelink "$scriptDir/programs/aerc" "$HOME/.config/aerc"
+    chmod 600 "$HOME/.config/aerc/accounts.conf"
     # [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]] && {
     #     rclone config create drive-main drive
     # }
@@ -152,14 +153,27 @@ setupConfigs(){
 
 setupConfigs
 setSudoConfigs
-# "$scriptDir/mimes.sh"
-#
-# git -C "$scriptDir/.." submodule init
-# git -C "$scriptDir/.." submodule update
-#
-# "$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
-#
-# git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
-#
-# git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
-# git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
+
+recusiveMimeTypeCommand(){
+    find "$1"\
+        -type f\
+        -exec file --no-pad --mime-type {} +\
+        |
+    awk -F ':' "BEGIN { ORS = \"\\0\" }; { if ( \$2 ~ \"$2\" ) print \$1 }"\
+        |
+    xargs --null $3
+}
+
+recusiveMimeTypeCommand "$scriptDir/secrets/secrets/unlocked" "application/(x-pem-file|pgp-keys)" "chmod 600"
+
+"$scriptDir/mimes.sh"
+
+git -C "$scriptDir/.." submodule init
+git -C "$scriptDir/.." submodule update
+
+"$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
+
+git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
+
+git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
+git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
