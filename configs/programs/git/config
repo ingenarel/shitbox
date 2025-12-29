@@ -1,8 +1,8 @@
 # vim: filetype=gitconfig
 [user]
-	email = ingenarelitems@gmail.com
-	name = ingenarel
-	signingkey = 66D11DC0EFAC2F99D0A687F91E81128A3F325C35
+	email = ingenarel_neojesus@disroot.org
+	name = ingenarel (NeoJesus)
+	signingkey = 3BE603CEB96DE72B011412657928B48A173BA400
 [commit]
     gpgsign = true
 [core]
