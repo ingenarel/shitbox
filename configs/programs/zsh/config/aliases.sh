@@ -14,6 +14,8 @@ alias yt-music='yt-dlp -x --embed-thumbnail --embed-metadata --audio-quality --a
 alias crdeps="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/crdeps"
 alias gentoo-go-license="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/gentoo-go-license"
 
+alias aerc="torsocks aerc"
+
 f(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
     local filename="$(fd --color=always --type file | fzf --ansi --preview='bat --color=always --decorations=never {}')"
