@@ -368,6 +368,9 @@ for package in "${packages[@]}"; do
             sudo eselect repository add librewolf git https://codeberg.org/librewolf/gentoo.git
             package="www-client/librewolf-bin"
             ;;
+        "aerc")
+            package="mail-client/aerc"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
