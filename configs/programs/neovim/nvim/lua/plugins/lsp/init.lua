@@ -54,5 +54,26 @@ return {
             end,
         })
         vim.lsp.enable("docker_language_server")
+        vim.lsp.enable("ast_grep")
+        vim.lsp.config("ast_grep", {
+            -- these are the default options, you only need to specify
+            -- options you'd like to change from the default
+            cmd = { "ast-grep", "lsp" },
+            filetypes = {
+                "c",
+                "cpp",
+                "rust",
+                "go",
+                "java",
+                "python",
+                "javascript",
+                "typescript",
+                "html",
+                "css",
+                "kotlin",
+                "dart",
+                "lua",
+            },
+        })
     end,
 }
