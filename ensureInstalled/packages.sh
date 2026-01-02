@@ -6,7 +6,6 @@ packages=(
     fastfetch
     fzf
     lazygit
-    neovim
     ripgrep
     fd
     tmux
@@ -47,7 +46,17 @@ packages=(
     zpaq
     sshfs
     gitleaks
+)
+
+packages+=(
     aerc
+    glow
+    chawan
+)
+
+packages+=(
+    neovim
+    ast-grep
 )
 
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {

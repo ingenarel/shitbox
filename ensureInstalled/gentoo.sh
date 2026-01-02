@@ -177,7 +177,7 @@ for package in "${packages[@]}"; do
             package="gui-libs/xdg-desktop-portal-wlr"
             ;;
         "sov")
-            # need to package
+            #TODO: need to package
             package=""
             ;;
         "waybar")
@@ -193,7 +193,7 @@ for package in "${packages[@]}"; do
             package="gui-apps/swaync"
             ;;
         "sweet-gtk")
-            # need to pacakge
+            #TODO: need to pacakge
             package=""
             ;;
         "swww"|"awww")
@@ -257,7 +257,7 @@ for package in "${packages[@]}"; do
             package="www-client/zen-bin"
             ;;
         "mozlz4")
-            # need to package
+            #TODO: need to package
             package=""
             ;;
         "keepassxc")
@@ -271,7 +271,7 @@ for package in "${packages[@]}"; do
             #     package=""
             #     ;;
         "pwvucontrol")
-            # need to be packaged
+            #TODO: need to be packaged
             package=""
             ;;
         "qbittorrent")
@@ -314,7 +314,7 @@ for package in "${packages[@]}"; do
             package="media-sound/ncmpcpp"
             ;;
         "mpd-discord-rpc")
-            # need to package myself
+            #TODO: need to package myself
             package=""
             ;;
         "tailscale")
@@ -339,7 +339,7 @@ for package in "${packages[@]}"; do
             package="games-util/lutris"
             ;;
         "protonup-rs")
-            # need to package myself
+            #TODO: need to package myself
             package=""
             ;;
         "neomutt")
@@ -361,7 +361,7 @@ for package in "${packages[@]}"; do
             package="media-video/mpv"
             ;;
         "gitleaks")
-            # need to package it myself
+            #TODO: need to package it myself
             package=""
             ;;
         "librewolf")
@@ -370,6 +370,17 @@ for package in "${packages[@]}"; do
             ;;
         "aerc")
             package="mail-client/aerc"
+            ;;
+        "glow")
+            package="app-misc/glow"
+            ;;
+        "chawan")
+            #TODO: need to add
+            package=""
+            ;;
+        "ast-grep")
+            #TODO: need to add
+            package=""
             ;;
     esac
     packagesToInstall="$packagesToInstall $package"
