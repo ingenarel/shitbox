@@ -101,6 +101,12 @@ require("lazy").setup {
             --TODO: find a fix for noice skipping messages that were already shown
             -- require("plugins.noice"),
             require("plugins.flex-stats"),
+            {
+                "j-hui/fidget.nvim",
+                opts = {
+                    -- options
+                },
+            },
         },
     },
 }
