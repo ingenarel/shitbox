@@ -205,6 +205,12 @@
                     "Name": "StartPage",
                     "SuggestURLTemplate": "https://www.startpage.com/osuggestions?q={searchTerms}",
                     "URLTemplate": "https://www.startpage.com/sp/search?query={searchTerms}"
+                },
+                {
+                    "Alias": "@wm",
+                    "IconURL": "https://commons.wikimedia.org/favicon.ico",
+                    "Name": "WikimediaCommons",
+                    "URLTemplate": "https://commons.wikimedia.org/?search={searchTerms}"
                 }
             ],
             "Default": "DuckDuckGo",
