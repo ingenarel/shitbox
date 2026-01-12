@@ -8,3 +8,14 @@ message_user_color = true
 
 [layout]
 style = "restore"
+
+[macros."normal|visual"]
+"<A-h>" = "<C-w>h"
+"<A-j>" = "<C-w>j"
+"<A-k>" = "<C-w>k"
+"<A-l>" = "<C-w>l"
+"<A-w>>" = "<C-w>><A-w>"
+"<A-w><" = "<C-w><<A-w>"
+"<A-w>-" = "<C-w>-<A-w>"
+"<A-w>+" = "<C-w>+<A-w>"
+"<A-w>=" = "<C-w>="
