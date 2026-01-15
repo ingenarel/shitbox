@@ -9,6 +9,7 @@ local m = {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
+        cmdline = { enabled = false },
         keymap = {
             preset = "none",
             ["<CR>"] = { "accept", "fallback" },
