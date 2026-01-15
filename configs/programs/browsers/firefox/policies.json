@@ -40,6 +40,10 @@
             {
                 "Title": "PMS gentoo",
                 "URL": "https://projects.gentoo.org/pms/8/pms.html"
+            },
+            {
+                "Title": "git koolkid",
+                "URL": "https://git.koolkid6958.dev"
             }
         ],
         "Cookies": {
@@ -51,6 +55,7 @@
                 "https://codeberg.org",
                 "https://drive.google.com",
                 "https://gentoo.org",
+                "https://git.koolkid6958.dev",
                 "https://github.com",
                 "https://gitlab.com",
                 "https://gitlab.com",
