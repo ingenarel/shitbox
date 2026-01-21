@@ -44,6 +44,14 @@
             {
                 "Title": "git koolkid",
                 "URL": "https://git.koolkid6958.dev"
+            },
+            {
+                "Title": "consumer rights wiki",
+                "URL": "https://consumerrights.wiki"
+            },
+            {
+                "Title": "odysee",
+                "URL": "https://odysee.com"
             }
         ],
         "Cookies": {
@@ -53,6 +61,7 @@
                 "https://aternos.org",
                 "https://chatgpt.com",
                 "https://codeberg.org",
+                "https://consumerrights.wiki",
                 "https://drive.google.com",
                 "https://gentoo.org",
                 "https://git.koolkid6958.dev",
@@ -62,6 +71,7 @@
                 "https://itch.io",
                 "https://mail.google.com",
                 "https://nixos.org",
+                "https://odysee.com",
                 "https://sr.ht",
                 "https://typecraft.dev",
                 "https://webmail.disroot.org",
