@@ -52,7 +52,7 @@ sleep 1
 
 sync
 
-tar xpvf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+tar xpf /mnt/gentoo/stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo || die "extracting stage3 failed"
 
 rm /mnt/gentoo/stage3-*.tar.xz
 
@@ -62,7 +62,7 @@ else
     portageDirToUse="main"
 fi
 
-[ -z "$portageDirToUse" ] && {
+if [ -n "$portageDirToUse" ]; then
     cp -Tf "$scriptDir/../configs/programs/portage/$portageDirToUse/make.conf"\
         "/mnt/gentoo/etc/portage/make.conf" ||
     die "cping make failed"
@@ -74,9 +74,9 @@ fi
     cp -rTf "$scriptDir/../configs/programs/portage/$portageDirToUse/package.accept_keywords"\
         "/mnt/gentoo/etc/portage/package.accept_keywords" ||
     die "cping package.accept_keywords failed"
-    } || {
-    exit
-}
+else
+    die "portageDirToUse was empty"
+fi
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/ || {
     die "cping resolve.conf failed"
