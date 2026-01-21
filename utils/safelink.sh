@@ -10,7 +10,7 @@ safelink(){
             &&
         mkdir --parents "$parentPath"\
             ||
-        sudo mkdir --parents "$parentPath";
+        sudo mkdir --parents "$parentPath"
     }
 
     {
@@ -23,6 +23,6 @@ safelink(){
             ||
         sudo ln -sf "$1" "$2"\
             &&
-        echo "linked $1 to $2";
+        echo "linked $1 to $2"
     }
 }
