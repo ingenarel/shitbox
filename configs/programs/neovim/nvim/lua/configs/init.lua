@@ -1,8 +1,3 @@
--- leader map {{{1
-CK_SetKeymap_n("<Space>", "<Nop>")
-vim.g.mapleader = " "
--- leader map }}}1
-
 -- tab changes
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for

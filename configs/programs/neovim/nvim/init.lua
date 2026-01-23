@@ -43,5 +43,8 @@ function IGNORE_FILETYPES_ALL_FOR_CONFIG()
     }
 end -- }}}
 
+vim.keymap.set({ "n", "o", "x" }, "<Space>", "<Nop>")
+vim.g.mapleader = " "
+
 require("plugins")
 require("configs")
