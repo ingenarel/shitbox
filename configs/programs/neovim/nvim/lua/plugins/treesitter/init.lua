@@ -1,49 +1,40 @@
 return {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    main = "nvim-treesitter.configs",
-    config = {
-        textobjects = {
+    branch = "main",
+    config = function()
+        -- configuration
+        require("nvim-treesitter-textobjects").setup {
             select = {
-                enable = true,
                 lookahead = true,
-                keymaps = {
-                    ["af"] = { query = "@function.outer", desc = "Function" },
-                    ["if"] = { query = "@function.inner", desc = "Function" },
-                    ["ac"] = { query = "@class.outer", desc = "Class" },
-                    ["ic"] = { query = "@class.inner", desc = "Class" },
-                    ["al"] = { query = "@loop.outer", desc = "Loop" },
-                    ["il"] = { query = "@loop.inner", desc = "Loop" },
-                    ["aa"] = { query = "@assignment.outer", desc = "Assignment" },
-                    ["ia"] = { query = "@assignment.inner", desc = "Assignment" },
-                    ["H"] = { query = "@assignment.lhs", desc = "Assignment LHS" },
-                    ["L"] = { query = "@assignment.rhs", desc = "Assignment RHS" },
-                    ["ar"] = { query = "@regex.outer", desc = "Regex" },
-                    ["ir"] = { query = "@regex.inner", desc = "Regex" },
-                    ["aR"] = { query = "@return.outer", desc = "Return" },
-                    ["iR"] = { query = "@return.inner", desc = "Return" },
-                },
                 selection_modes = {
                     ["@parameter.outer"] = "v", -- charwise
                     ["@function.outer"] = "V", -- linewise
-                    ["@class.outer"] = "<c-q>", -- blockwise
+                    ["@function.inner"] = "V", -- linewise
+                    ["@class.outer"] = "V", -- linewise
+                    ["@class.inner"] = "V", -- linewise
+                    ["@loop.outer"] = "V", -- linewise
+                    ["@loop.inner"] = "V", -- linewise
                 },
-                include_surrounding_whitespace = true,
+                include_surrounding_whitespace = false,
             },
-        },
-    },
+        }
+        require("plugins.treesitter.keymaps")
+    end,
     dependencies = {
         {
             "nvim-treesitter/nvim-treesitter",
             build = ":TSUpdate",
+            lazy = false,
+            branch = "main",
             config = function()
-                require("nvim-treesitter.configs").setup {
-                    ensure_installed = require("plugins.treesitter.ensure-installed"),
-                    sync_install = false,
-                    auto_install = false,
-                    highlight = {
-                        enable = true,
-                    },
+                require("nvim-treesitter").setup {
+                    install_dir = vim.fn.stdpath("data") .. "/site",
                 }
+                local langs = {}
+                for lang, _ in pairs(require("nvim-treesitter.parsers")) do
+                    table.insert(langs, lang)
+                end
+                require("nvim-treesitter").install(langs, { max_jobs = 4 })
                 vim.treesitter.language.register("bash", "ebuild")
             end,
         },
