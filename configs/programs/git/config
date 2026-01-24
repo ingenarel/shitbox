@@ -24,3 +24,7 @@
 
 [diff]
     colorMoved = default
+
+[credential "https://git.koolkid6958.dev"]
+	username = ingenarel-NeoJesus
+    helper = "!a(){ printf 'password=%s' \"$(secret-tool lookup service git username main site 'https://git.koolkid6958.dev')\"; }; a"

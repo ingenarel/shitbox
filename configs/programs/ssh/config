@@ -16,6 +16,15 @@ Host gitlab.com
     AddKeysToAgent yes
     IdentitiesOnly yes
 
+Host git.koolkid6958.dev
+    User git
+    Hostname git.koolkid6958.dev
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+    Port 2222
+
 Host git.gentoo.org
     User git
     Hostname git.gentoo.org
