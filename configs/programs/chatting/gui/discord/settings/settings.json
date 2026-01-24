@@ -4,7 +4,7 @@
     "cloud": {
         "authenticated": false,
         "settingsSync": false,
-        "settingsSyncVersion": 1763464750977,
+        "settingsSyncVersion": 1769255446127,
         "url": "https://api.vencord.dev/"
     },
     "disableMinSize": true,
@@ -97,7 +97,7 @@
             "enabled": true
         },
         "ClearURLs": {
-            "enabled": true
+            "enabled": false
         },
         "ClientTheme": {
             "enabled": false
@@ -153,7 +153,7 @@
             "enabled": false
         },
         "DynamicImageModalAPI": {
-            "enabled": false
+            "enabled": true
         },
         "Experiments": {
             "enabled": false
@@ -188,10 +188,11 @@
             "enabled": false
         },
         "FixCodeblockGap": {
-            "enabled": false
+            "enabled": true
         },
         "FixImagesQuality": {
-            "enabled": false
+            "enabled": true,
+            "originalImagesInChat": false
         },
         "FixSpotifyEmbeds": {
             "enabled": false
@@ -374,7 +375,7 @@
             "enabled": false
         },
         "MutualGroupDMs": {
-            "enabled": false
+            "enabled": true
         },
         "NewGuildSettings": {
             "enabled": false
@@ -446,13 +447,18 @@
             "enabled": false
         },
         "PermissionsViewer": {
-            "enabled": false
+            "enabled": false,
+            "permissionsSortOrder": 0
         },
         "PictureInPicture": {
             "enabled": false
         },
         "PinDMs": {
-            "enabled": false
+            "enabled": true,
+            "canCollapseDmSection": false,
+            "userBasedCategoryList": {
+                "754525111800954980": []
+            }
         },
         "PlainFolderIcon": {
             "enabled": false
@@ -485,7 +491,8 @@
             "servers": true
         },
         "ReplaceGoogleSearch": {
-            "enabled": false
+            "enabled": true,
+            "replacementEngine": "DuckDuckGo"
         },
         "ReplyTimestamp": {
             "enabled": false
@@ -509,7 +516,7 @@
             "enabled": false
         },
         "ServerInfo": {
-            "enabled": false
+            "enabled": true
         },
         "ServerListAPI": {
             "enabled": true
@@ -588,7 +595,8 @@
             "enabled": false
         },
         "Translate": {
-            "enabled": true
+            "enabled": true,
+            "autoTranslate": false
         },
         "TypingIndicator": {
             "enabled": false
@@ -687,6 +695,9 @@
         },
         "ImageFilename": {
             "enabled": false
+        },
+        "MoreQuickReactions": {
+            "enabled": true
         }
     },
     "themeLinks": [],
@@ -694,5 +705,9 @@
     "useQuickCSS": true,
     "useQuickCss": true,
     "winCtrlQ": false,
-    "winNativeTitleBar": false
+    "winNativeTitleBar": false,
+    "uiElements": {
+        "chatBarButtons": {},
+        "messagePopoverButtons": {}
+    }
 }
