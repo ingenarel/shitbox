@@ -382,6 +382,10 @@ for package in "${packages[@]}"; do
             #TODO: need to add
             package=""
             ;;
+        "tree-sitter-cli")
+            #TODO: need to add
+            package="dev-util/tree-sitter-cli"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done

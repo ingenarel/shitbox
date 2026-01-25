@@ -57,6 +57,7 @@ packages+=(
 packages+=(
     neovim
     ast-grep
+    tree-sitter-cli
 )
 
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {

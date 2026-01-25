@@ -144,6 +144,9 @@ for package in "${packages[@]}"; do
         "librewolf")
             package="librewolf-bin"
             ;;
+        "tree-sitter-cli")
+            package="tree-sitter-cli-git"
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
