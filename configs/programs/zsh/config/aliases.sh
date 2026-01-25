@@ -98,3 +98,18 @@ fetch (){
     command fastfetch --logo-padding-left $(( ( $(tput cols) - "$maxWidth") / 2 ))
 }
 
+imgpaste(){
+    if [ -z "$1" ]; then
+        # shit can't read from proc hence tmp file
+        file="$(mktemp XXXXXXXXXX.png)"
+        wl-paste > "$file"
+        link="$(curl --silent -F "file=@$file" -Fexpires=24 https://0x0.st)"
+    else
+        link="$(curl --silent -F "file=@$1" -Fexpires=24 https://0x0.st)"
+    fi
+    [ -n "$link" ] && {
+        echo "$link"
+        wl-copy "$link"
+    }
+}
+
