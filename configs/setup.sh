@@ -118,13 +118,13 @@ setupConfigs(){
                 safelink "$line" "/etc/portage/package.accept_keywords/$(basename "$line")" 1
             done
         }
-        [[ -f "$HOME/.ssh/git" ]] && {
-            [[ -d "$HOME/coding/git/gentoo" ]] || mkdir --parents "$HOME/coding/git/gentoo"
-            [[ -d "$HOME/coding/git/gentoo/gentoo" ]] || {
+        [[ ! -f "$HOME/.ssh/git" ]] && {
+            [[ ! -d "$HOME/coding/git/gentoo" ]] && mkdir --parents "$HOME/coding/git/gentoo"
+            [[ ! -d "$HOME/coding/git/gentoo/gentoo" ]] && {
                 git clone -o upstream -b master --depth 1 https://github.com/gentoo/gentoo.git "$HOME/coding/git/gentoo/gentoo"
                 git -C "$HOME/coding/git/gentoo/gentoo" remote add github git@github.com:ingenarel/gentoo
             }
-            [[ -d "$HOME/coding/git/gentoo/guru" ]] || {
+            [[ ! -d "$HOME/coding/git/gentoo/guru" ]] && {
                 git clone -b dev --depth 1 git@git.gentoo.org:repo/proj/guru.git "$HOME/coding/git/gentoo/guru"
                 git -C "$HOME/coding/git/gentoo/guru" remote add distfiles git@github.com:ingenarel/guru-depfiles.git
                 git -C "$HOME/coding/git/gentoo/guru" config --local pull.ff only
