@@ -1,0 +1,327 @@
+// Based on #1576
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "kitty-icat",
+        "source": "/home/ingenarel/.config/shitbox/art/artwork/logo/logo-exported-1.25k.png",
+        "width": 80,
+        "padding": {
+            "top": 0,
+            "left": 0,
+            "right": 0
+        }
+    },
+    "display": {
+        "color": {
+            "keys": "38;2;255;0;0"
+        },
+        "separator": "",
+        // Constants are reusable strings referenced by {$1}, {$2}, etc.
+        // These contain ANSI escape codes for cursor positioning
+        "constants": [
+            "──────────────────────────────────────────────", // {$1} - horizontal line for borders
+            "\u001b[47D",                                     // {$2} - move cursor left 47 columns
+            "\u001b[47C",                                     // {$3} - move cursor right 47 columns
+            "\u001b[46C"                                      // {$4} - move cursor right 46 columns
+        ],
+        "brightColor": true
+    },
+    "modules": [
+        {
+            "type": "custom",
+            // "key": "┌───────────────┬─{$1}┐\u001b[41D",
+    "key": "{#38;2;255;0;0}┌{#38;2;255;24;0}─{#38;2;255;48;0}─{#38;2;255;72;0}─{#38;2;255;96;0}─{#38;2;255;120;0}─{#38;2;255;143;0}─{#38;2;255;167;0}─{#38;2;255;191;0}─{#38;2;255;215;0}─{#38;2;255;239;0}─{#38;2;247;255;0}─{#38;2;223;255;0}─{#38;2;199;255;0}─{#38;2;175;255;0}─{#38;2;151;255;0}─{#38;2;128;255;0}─{#38;2;104;255;0}─{#38;2;80;255;0}─{#38;2;56;255;0}─{#38;2;32;255;0}─{#38;2;8;255;0}─{#38;2;0;255;16}─{#38;2;0;255;40}─{#38;2;0;255;64}─{#38;2;0;255;88}─{#38;2;0;255;112}─{#38;2;0;255;135}─{#38;2;0;255;159}─{#38;2;0;255;183}s{#38;2;0;255;207}h{#38;2;0;255;231}i{#38;2;0;255;255}t{#38;2;0;231;255}b{#38;2;0;207;255}o{#38;2;0;183;255}x{#38;2;0;159;255}─{#38;2;0;135;255}─{#38;2;0;112;255}─{#38;2;0;88;255}─{#38;2;0;64;255}─{#38;2;0;40;255}─{#38;2;0;16;255}─{#38;2;8;0;255}─{#38;2;32;0;255}─{#38;2;56;0;255}─{#38;2;80;0;255}─{#38;2;104;0;255}─{#38;2;128;0;255}─{#38;2;151;0;255}─{#38;2;175;0;255}─{#38;2;199;0;255}─{#38;2;223;0;255}─{#38;2;247;0;255}─{#38;2;255;0;239}─{#38;2;255;0;215}─{#38;2;255;0;191}─{#38;2;255;0;167}─{#38;2;255;0;143}─{#38;2;255;0;120}─{#38;2;255;0;96}─{#38;2;255;0;72}─{#38;2;255;0;48}─{#38;2;255;0;24}─{#38;2;255;0;0}┐",
+            "format": ""
+        },
+        {
+            "type": "os",
+            // Key format breakdown for OS module:
+            // "│  {icon}  \u001b[s{sysname}\u001b[u\u001b[10C│{$3}│{$2}"
+            //
+            // │                    - Left border of key block
+            //   {icon}             - OS icon (defined internally by fastfetch)
+            //   \u001b[s           - ANSI escape: save cursor position (ESC[s)
+            // {sysname}            - Format variable: system name (e.g., "Linux", "Darwin")
+            // \u001b[u             - ANSI escape: restore cursor to saved position (ESC[u)
+            //                        Necessary because the length of `{sysname}` differs between different platforms
+            // \u001b[10C           - ANSI escape: move cursor right 10 columns (ESC[10C)
+            // │                    - Right border of key block (always 10 columns from left border)
+            // {$3}                 - Reference to constants[2]: move cursor right 47 columns
+            // │                    - Right border of value block
+            // {$2}                 - Reference to constants[1]: move cursor left 47 columns
+            //
+            // This creates a fixed-width layout where the key block is exactly 10 columns wide,
+            // regardless of the actual content length. The cursor manipulation ensures proper
+            // alignment for the table-like structure.
+            "key": "│  {##ffc8ff}{icon}  \u001b[s{sysname}\u001b[u\u001b[10C{##00ffff}│{$3}{##ff0000}│{$2}"
+        },
+        {
+            "type": "datetime",
+            "key": "│  {##ffc8ff}{icon}  Fetched   {##00ffff}│{$3}{##ff0000}│{$2}",
+            "format": "{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}:{second-pretty} {timezone-name}"
+        },
+        {
+            "type": "locale",
+            "key": "│  {##ffc8ff}{icon}  Locale    {##00ffff}│{$3}{##ff0000}│{$2}"
+        },
+
+        // Hardware section with cyan color theme
+        {
+            "type": "custom",
+            "key": "│{#cyan}┌──────────────┬{$1}┐{#keys}│\u001b[37D",
+            "format": "{#bright_cyan} Hardware "
+        },
+        {
+            "type": "memory",
+            "key": "│{#cyan}│ {icon}  RAM       │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "swap",
+            "key": "│{#cyan}│ {icon}  SWAP      │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "cpu",
+            "key": "│{#cyan}│ {icon}  CPU       │{$4}│{#keys}│{$2}",
+            "showPeCoreCount": true
+        },
+        {
+            "type": "gpu",
+            "key": "│{#cyan}│ {icon}  GPU       │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "disk",
+            "key": "│{#cyan}│ {icon}  Disk      │{$4}│{#keys}│{$2}",
+            "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}",
+        },
+        {
+            "type": "battery",
+            "key": "│{#cyan}│ {icon}  Battery   │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "custom",
+            "key": "│{#cyan}└──────────────┴{$1}┘{#keys}│",
+            "format": ""
+        },
+
+        // Desktop section with #63ff65 color theme
+        {
+            "type": "custom",
+            "key": "│{##63ff65}┌──────────────┬{$1}┐{#keys}│\u001b[37D",
+            "format": "{#bright_#63ff65} Desktop "
+        },
+        {
+            "type": "de",
+            "key": "│{##63ff65}│ {icon}  Desktop   │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "wm",
+            "key": "│{##63ff65}│ {icon}  Session   │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "display",
+            "key": "│{##63ff65}│ {icon}  Display   │{$4}│{#keys}│{$2}",
+            "compactType": "original-with-refresh-rate"
+        },
+        {
+            "type": "gpu",
+            "key": "│{##63ff65}│ {icon}  G-Driver  │{$4}│{#keys}│{$2}",
+            "format": "{driver}"
+        },
+        {
+            "type": "custom",
+            "key": "│{##63ff65}└──────────────┴{$1}┘{#keys}│",
+            "format": ""
+        },
+
+        // Terminal section with yellow color theme
+        {
+            "type": "custom",
+            "key": "│{#yellow}┌──────────────┬{$1}┐{#keys}│\u001b[37D",
+            "format": "{#bright_yellow} Terminal "
+        },
+        {
+            "type": "shell",
+            "key": "│{#yellow}│ {icon}  Shell     │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "terminal",
+            "key": "│{#yellow}│ {icon}  Terminal  │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "terminalfont",
+            "key": "│{#yellow}│ {icon}  Term Font │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "packages",
+            "key": "│{#yellow}│ {icon}  Packages  │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "custom",
+            "key": "│{#yellow}└──────────────┴{$1}┘{#keys}│",
+            "format": ""
+        },
+
+        // Development section with red color theme
+        {
+            "type": "custom",
+            "key": "│{#red}┌──────────────┬{$1}┐{#keys}│\u001b[39D",
+            "format": "{#bright_red} Development "
+        },
+        {
+            "type": "command",
+            "keyIcon": "",                                   // Custom icon override
+            "key": "│{#red}│ {##f74c00}{icon}  Rust{#red}      │{$4}│{#keys}│{$2}",
+            "text": "rustc --version",
+            "format": "rustc {~6,13}"                         // Print 6th to 13th characters (version number)
+        },
+        {
+            "type": "command",
+            "condition": {
+                "!system": "Windows"                          // Posix version
+            },
+            "keyIcon": "",
+            "key": "││ {##d4d4d4}{icon}  Clang{##ff0000}     │{$4}│{#keys}│{$2}",
+            "text": "clang --version | sed -n 's/.*version \\([0-9][0-9.]*\\).*/\\1/p'",
+            "format": "clang {}"
+        },
+        {
+            "type": "command",
+            "condition": {
+                "!system": "Windows"                          // Posix version
+            },
+            "keyIcon": "",
+            "key": "││ {##c09465}{icon}  gcc{#red}       │{$4}│{#keys}│{$2}",
+            "text": "gcc --version | sed -nE 's/.*\\(GCC\\)\\s+(.+)/\\1/p'",
+            "format": "gcc {}"
+        },
+        {
+            "type": "command",
+            "condition": {
+                "system": "Windows"                           // Windows version
+            },
+            "keyIcon": "",
+            "key": "│{#red}│ {icon}  Clang     │{$4}│{#keys}│{$2}",
+            "text": "clang --version | findstr version",      // Finds the line with "version"
+            "format": "clang {~-6}"                           // Prints the last 6 characters (version number)
+        },
+        {
+            "type": "command",
+            "keyIcon": "",
+            "key": "│{#red}│ {##5FA04E}{icon}  NodeJS{#red}    │{$4}│{#keys}│{$2}",
+            "text": "node --version",
+            "format": "node {~1}"                             // {~1} removes first character (v)
+        },
+        {
+            "type": "command",
+            "keyIcon": "",
+            "key": "│{#red}│ {##29BEB0}{icon}  Go{#red}        │{$4}│{#keys}│{$2}",
+            "text": "go version | cut -d' ' -f3",
+            "format": "go {~2}"                               // {~2} removes first 2 characters (go)
+        },
+        {
+            "type": "command",
+            "keyIcon": "",
+            "key": "│{#red}│ {icon}  Zig       │{$4}│{#keys}│{$2}",
+            "text": "zig version",
+            "format": "zig {}"
+        },
+        {
+            "type": "command",
+            "keyIcon": "",
+            "key": "│{#red}│ {##7FE05A}{icon}  neovim{#red}    │{$4}│{#keys}│{$2}",
+            "text": "nvim --version | head -n1",
+            "format": "{}"
+        },
+        // {
+        //     "type": "editor",
+        //     "key": "│{#red}│ {icon}  Editor    │{$4}│{#keys}│{$2}"
+        // },
+        {
+            "type": "command",
+            "keyIcon": "󰊢",
+            "key": "│{#red}│ {##F1502F}{icon}  Git{#red}       │{$4}│{#keys}│{$2}",
+            "text": "git version",
+            "format": "git {~12}"
+        },
+        {
+            "type": "font",
+            "key": "│{#red}│ {icon}  Interface │{$4}│{#keys}│{$2}"
+        },
+        {
+            "type": "custom",
+            "key": "│{#red}└──────────────┴{$1}┘{#keys}│",
+            "format": ""
+        },
+
+        // Uptime section with magenta color theme
+        {
+            "type": "custom",
+            "key": "│{#magenta}┌──────────────┬{$1}┐{#keys}│\u001b[36D",
+            "format": "{#bright_magenta} Uptime "
+        },
+        {
+            "type": "uptime",
+            "key": "│{#magenta}│ {icon}  Uptime    │{$4}│{#keys}│{$2}"
+        },
+        {
+            "condition": {                                    // Conditional module: only show on non-macOS
+                "!system": "macOS"
+            },
+            "type": "disk",
+            "keyIcon": "",
+            "key": "│{#magenta}│ {icon}  OS Age    │{$4}│{#keys}│{$2}",
+            "folders": "/",                                   // Check root filesystem
+            "format": "{create-time:10} [{days} days]"        // Show creation time and age in days
+        },
+        {
+            "condition": {                                    // Conditional module: only show on macOS
+                "system": "macOS"
+            },
+            "type": "disk",
+            "keyIcon": "",
+            "key": "│{#magenta}│ {icon}  OS Age    │{$4}│{#keys}│{$2}",
+            "folders": "/System/Volumes/VM",                 // Work around for APFS on macOS
+            "format": "{create-time:10} [{days} days]"
+        },
+        {
+            "type": "custom",
+            "key": "│{#magenta}└──────────────┴{$1}┘{#keys}│",
+            // // "key": "│{#magenta}└{#90}{#31}{#32}{#33}{#34}{#35}{#36}{#34}{#magenta}─{$1}{#36}{#35}{#34}{#33}{#32}{#31}{#90}{#34}┴{$1}┘{#keys}│",                // Bottom border of the entire layout
+            // "key": "│{#magenta}└{#90}{#31}{#32}{#33}{#34}{#35}{#36}{#34}{#magenta}───────┴───────────────────────────────────────{#36}{#35}{#34}{#33}{#32}{#31}{#90}{#34}{#magenta}┘{#keys}│",                // Bottom border of the entire layout
+            "format": ""
+        },
+        {
+            //                        |
+            // T─h─e───I─n─f─r─a─n─e─t───F─e─d─e─r─a─t─i─o─n
+            "type": "custom",
+            "key": "{#38;2;255;0;0}└{#38;2;255;24;0}─{#38;2;255;48;0}─{#38;2;255;72;0}─{#38;2;255;96;0}─{#38;2;255;120;0}─{#38;2;255;143;0}─{#38;2;255;167;0}─{#38;2;255;191;0}─{#38;2;255;215;0}─{#38;2;255;239;0}T{#38;2;247;255;0}─{#38;2;223;255;0}h{#38;2;199;255;0}─{#38;2;175;255;0}e{#38;2;151;255;0}─{#38;2;128;255;0}─{#38;2;104;255;0}─{#38;2;80;255;0}I{#38;2;56;255;0}─{#38;2;32;255;0}n{#38;2;8;255;0}─{#38;2;0;255;16}f{#38;2;0;255;40}─{#38;2;0;255;64}r{#38;2;0;255;88}─{#38;2;0;255;112}a{#38;2;0;255;135}─{#38;2;0;255;159}n{#38;2;0;255;183}─{#38;2;0;255;207}e{#38;2;0;255;231}─{#38;2;0;255;255}t{#38;2;0;231;255}─{#38;2;0;207;255}─{#38;2;0;183;255}─{#38;2;0;159;255}F{#38;2;0;135;255}─{#38;2;0;112;255}e{#38;2;0;88;255}─{#38;2;0;64;255}d{#38;2;0;40;255}─{#38;2;0;16;255}e{#38;2;8;0;255}─{#38;2;32;0;255}r{#38;2;56;0;255}─{#38;2;80;0;255}a{#38;2;104;0;255}─{#38;2;128;0;255}t{#38;2;151;0;255}─{#38;2;175;0;255}i{#38;2;199;0;255}─{#38;2;223;0;255}o{#38;2;247;0;255}─{#38;2;255;0;239}n{#38;2;255;0;215}─{#38;2;255;0;191}─{#38;2;255;0;167}─{#38;2;255;0;143}─{#38;2;255;0;120}─{#38;2;255;0;96}─{#38;2;255;0;72}─{#38;2;255;0;48}─{#38;2;255;0;24}─{#38;2;255;0;0}┘",                // Bottom border of the entire layout
+            // "key": "{#38;2;255;0;0}└{#38;2;255;24;0}─{#38;2;255;48;0}─{#38;2;255;72;0}─{#38;2;255;96;0}─{#38;2;255;120;0}─{#38;2;255;143;0}─{#38;2;255;167;0}─{#38;2;255;191;0}─{#38;2;255;215;0}T{#38;2;255;239;0}─{#38;2;247;255;0}h{#38;2;223;255;0}─{#38;2;199;255;0}e{#38;2;175;255;0}─{#38;2;151;255;0}─{#38;2;128;255;0}─{#38;2;104;255;0}I{#38;2;80;255;0}─{#38;2;56;255;0}n{#38;2;32;255;0}─{#38;2;8;255;0}f{#38;2;0;255;16}─{#38;2;0;255;40}r{#38;2;0;255;64}─{#38;2;0;255;88}a{#38;2;0;255;112}─{#38;2;0;255;135}n{#38;2;0;255;159}─{#38;2;0;255;183}e{#38;2;0;255;207}─{#38;2;0;255;231}t{#38;2;0;255;255}─{#38;2;0;231;255}─{#38;2;0;207;255}─{#38;2;0;183;255}F{#38;2;0;159;255}─{#38;2;0;135;255}e{#38;2;0;112;255}─{#38;2;0;88;255}d{#38;2;0;64;255}─{#38;2;0;40;255}e{#38;2;0;16;255}─{#38;2;8;0;255}r{#38;2;32;0;255}─{#38;2;56;0;255}a{#38;2;80;0;255}─{#38;2;104;0;255}t{#38;2;128;0;255}─{#38;2;151;0;255}i{#38;2;175;0;255}─{#38;2;199;0;255}o{#38;2;223;0;255}─{#38;2;247;0;255}n{#38;2;255;0;239}─{#38;2;255;0;215}─{#38;2;255;0;191}─{#38;2;255;0;167}─{#38;2;255;0;143}─{#38;2;255;0;120}─{#38;2;255;0;96}─{#38;2;255;0;72}─{#38;2;255;0;48}─{#38;2;255;0;24}─{#38;2;255;0;0}┘",                // Bottom border of the entire layout
+            // "key": "{#38;2;255;0;0}└{#38;2;255;24;0}─{#38;2;255;48;0}─{#38;2;255;72;0}─{#38;2;255;96;0}─{#38;2;255;120;0}─{#38;2;255;143;0}─{#38;2;255;167;0}─{#38;2;255;191;0}─{#38;2;255;215;0}T{#38;2;255;239;0}─{#38;2;247;255;0}h{#38;2;223;255;0}─{#38;2;199;255;0}e{#38;2;175;255;0}─{#38;2;151;255;0}─{#38;2;128;255;0}─{#38;2;104;255;0}I{#38;2;80;255;0}─{#38;2;56;255;0}n{#38;2;32;255;0}─{#38;2;8;255;0}f{#38;2;0;255;16}─{#38;2;0;255;40}r{#38;2;0;255;64}─{#38;2;0;255;88}a{#38;2;0;255;112}─{#38;2;0;255;135}n{#38;2;0;255;159}─{#38;2;0;255;183}e{#38;2;0;255;207}─{#38;2;0;255;231}t{#38;2;0;255;255}─{#38;2;0;231;255}─{#38;2;0;207;255}─{#38;2;0;183;255}F{#38;2;0;159;255}─{#38;2;0;135;255}e{#38;2;0;112;255}─{#38;2;0;88;255}d{#38;2;0;64;255}─{#38;2;0;40;255}e{#38;2;0;16;255}─{#38;2;8;0;255}r{#38;2;32;0;255}─{#38;2;56;0;255}a{#38;2;80;0;255}─{#38;2;104;0;255}t{#38;2;128;0;255}─{#38;2;151;0;255}i{#38;2;175;0;255}─{#38;2;199;0;255}o{#38;2;223;0;255}─{#38;2;247;0;255}n{#38;2;255;0;239}─{#38;2;255;0;215}─{#38;2;255;0;191}─{#38;2;255;0;167}─{#38;2;255;0;143}─{#38;2;255;0;120}─{#38;2;255;0;96}─{#38;2;255;0;72}─{#38;2;255;0;48}─{#38;2;255;0;24}─{#38;2;255;0;0}┘",                // Bottom border of the entire layout
+            // "key": "└─────────────────{$1}┘",                // Bottom border of the entire layout
+            "format": ""
+        }
+    ]
+}
+
+/*
+Key Format Structure Explanation:
+
+The key format uses a combination of:
+1. Unicode box drawing characters (│ ┌ ┐ └ ┘ ┬ ┴) for borders
+2. ANSI escape codes for cursor positioning (\u001b[...)
+3. Format variables ({icon}, {sysname}, etc.)
+4. Constant references ({$1}, {$2}, etc.)
+5. Color formatting ({#color})
+
+ANSI Escape Codes Used:
+- \u001b[s      - Save cursor position (ESC[s)
+- \u001b[u      - Restore cursor position (ESC[u)
+- \u001b[nC     - Move cursor right n columns (ESC[nC)
+- \u001b[nD     - Move cursor left n columns (ESC[nD)
+
+This creates a table-like layout with fixed column widths and proper alignment,
+regardless of the actual content length in each field.
+
+For more ANSI escape code reference, see:
+https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#cursor-controls
+*/

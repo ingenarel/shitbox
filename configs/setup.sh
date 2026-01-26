@@ -50,6 +50,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/zathurarc"                                            "$HOME/.config/zathura/zathurarc"
     safelink "$scriptDir/programs/gpg/gpg-agent.conf"                                   "$HOME/.gnupg/gpg-agent.conf"
     safelink "$scriptDir/programs/gpg/gpg.conf"                                         "$HOME/.gnupg/gpg.conf"
+    safelink "$scriptDir/programs/fastfetch.jsonc"                                      "$HOME/.config/fastfetch/config.jsonc"
 
     echo "source $HOME/.config/zsh/init.zsh" >                                          "$HOME/.zshrc"
 
