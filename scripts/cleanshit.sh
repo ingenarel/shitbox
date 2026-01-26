@@ -6,16 +6,17 @@ if grep -qEi "nixos" /etc/os-release ; then
 elif grep -qEi "gentoo" /etc/os-release ; then
     sudo emerge --deep --depclean
 elif grep -qEi "arch" /etc/os-release ; then
-    paru -Qtdq | paru -Rns -
-    paru -Sccd
+    pacman -Qtdq | sudo pacman -Rns -
+    sudo paru -Sccd
 fi
 sudo rm -rf\
     "$HOME/.cargo"\
     "$HOME/.npm"\
+    "$HOME/.java"\
+    "$HOME/.gradle"\
+    "$HOME/.nimble"\
     "$HOME/.local/share/Trash"\
     "$HOME/go"\
-    "$HOME/.java"\
-    /var/cache/*\
     "$HOME/.local/state/nvim/"*"log"
 
 find "$HOME/.cache/" -maxdepth 1\
