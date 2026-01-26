@@ -386,6 +386,9 @@ for package in "${packages[@]}"; do
             #TODO: need to add
             package="dev-util/tree-sitter-cli"
             ;;
+        "bash-language-server")
+            package="bash-language-server"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
