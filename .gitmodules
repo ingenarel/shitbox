@@ -46,3 +46,6 @@
 [submodule "scripts/email-grabicon"]
 	path = scripts/email-grabicon
 	url = https://github.com/ingenarel/email-grabicon
+[submodule "art/artwork"]
+	path = art/artwork
+	url = https://git.koolkid6958.dev/TIF/artwork.git
