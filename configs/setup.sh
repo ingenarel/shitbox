@@ -172,12 +172,14 @@ recusiveMimeTypeCommand "$scriptDir/secrets/secrets/unlocked" "application/(x-pe
 
 "$scriptDir/mimes.sh"
 
-git -C "$scriptDir/.." submodule init
-git -C "$scriptDir/.." submodule update
+[ "$1" != 'noclone' ] && {
+    git -C "$scriptDir/.." submodule init
+    git -C "$scriptDir/.." submodule update
 
-"$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
+    "$scriptDir/../utils/gitPost.sh" "$scriptDir/.."
 
-git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
+    git -C "$scriptDir/.." submodule foreach '"$toplevel/utils/gitPost.sh" "$toplevel/$sm_path"'
 
-git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
-git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
+    git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" switch dev
+    git -C "$scriptDir/programs/neovim/myPlugins/metapack.nvim" pull
+}
