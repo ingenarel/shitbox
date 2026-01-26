@@ -51,6 +51,7 @@ setupConfigs(){
     safelink "$scriptDir/programs/gpg/gpg-agent.conf"                                   "$HOME/.gnupg/gpg-agent.conf"
     safelink "$scriptDir/programs/gpg/gpg.conf"                                         "$HOME/.gnupg/gpg.conf"
     safelink "$scriptDir/programs/fastfetch.jsonc"                                      "$HOME/.config/fastfetch/config.jsonc"
+    safelink "$scriptDir/programs/mpv"                                                  "$HOME/.config/mpv"
 
     echo "source $HOME/.config/zsh/init.zsh" >                                          "$HOME/.zshrc"
 
