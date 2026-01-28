@@ -1,14 +1,14 @@
 # vim: filetype=gitconfig
 [user]
-	email = ingenarel_neojesus@disroot.org
-	name = ingenarel (NeoJesus)
-	signingkey = 3BE603CEB96DE72B011412657928B48A173BA400
+   email = ingenarel_neojesus@disroot.org
+   name = ingenarel (NeoJesus)
+   signingkey = 3BE603CEB96DE72B011412657928B48A173BA400
 [commit]
     gpgsign = true
 [core]
-	editor = nvim
+   editor = nvim
 [tag]
-	gpgSign = true
+   gpgSign = true
 
 [core]
     pager = delta
@@ -26,5 +26,5 @@
     colorMoved = default
 
 [credential "https://git.koolkid6958.dev"]
-	username = ingenarel-NeoJesus
-    helper = "!a(){ printf 'password=%s' \"$(secret-tool lookup service git username main site 'https://git.koolkid6958.dev')\"; }; a"
+   username = ingenarel-NeoJesus
+   helper = "!a(){ printf 'password=%s' \"$(secret-tool lookup service git username main site 'https://git.koolkid6958.dev')\"; }; a"
