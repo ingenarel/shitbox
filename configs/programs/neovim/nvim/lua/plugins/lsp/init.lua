@@ -10,14 +10,10 @@ return {
         require("plugins.lsp.python")
         require("plugins.lsp.lua")
         vim.lsp.enable("clangd")
-        vim.lsp.enable("bashls")
         vim.lsp.config("bashls", {
-            settings = {
-                bashIde = {
-                    globPattern = "*@(.sh|.inc|.bash|.command)",
-                },
-            },
+            filetypes = { "bash", "sh", "ebuild" },
         })
+        vim.lsp.enable("bashls")
 
         require("plugins.lsp.ltex_plus")
 

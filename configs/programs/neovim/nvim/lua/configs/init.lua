@@ -48,8 +48,6 @@ vim.opt.guifont = "Hack Nerd Font:h13"
 vim.filetype.add {
     extension = {
         ebuild = "ebuild",
-    },
-    extension = {
         hocon = "hocon",
     },
     pattern = {
