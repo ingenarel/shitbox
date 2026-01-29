@@ -115,3 +115,18 @@ imgpaste(){
     }
 }
 
+txtpaste(){
+    if [ -z "$1" ]; then
+        # shit can't read from proc hence tmp file
+        file="$(mktemp XXXXXXXXXX)"
+        wl-paste > "$file"
+        link="$(gh gist create --public "$file")"
+    else
+        link="$(gh gist create --public "$1")"
+    fi
+    [ -n "$link" ] && {
+        echo "$link"
+        notify-send 'paste completed at' "$link"
+        wl-copy "$link"
+    }
+}
