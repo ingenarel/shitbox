@@ -110,6 +110,7 @@ imgpaste(){
     fi
     [ -n "$link" ] && {
         echo "$link"
+        notify-send 'paste completed at' "$link"
         wl-copy "$link"
     }
 }
