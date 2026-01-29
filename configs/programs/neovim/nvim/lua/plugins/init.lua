@@ -94,7 +94,8 @@ require("lazy").setup {
             require("plugins.focus-mode"),
             {
                 "vyfor/cord.nvim",
-                build = ":Cord update",
+                branch = "master",
+                build = ":Cord update build",
                 opts = {},
             },
             require("plugins.zoxide"),

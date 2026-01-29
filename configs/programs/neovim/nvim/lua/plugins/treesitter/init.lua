@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
@@ -23,7 +24,17 @@ return {
     dependencies = {
         {
             "nvim-treesitter/nvim-treesitter",
-            build = ":TSUpdate",
+            build = function()
+                if #vim.api.nvim_list_uis() == 0 then
+                    vim.notify(
+                        "running in headless mode, installing treesitter parsers non asynchronously",
+                        vim.log.levels.WARN
+                    )
+                    require("nvim-treesitter").update(nil, { max_jobs = 4 }):wait()
+                else
+                    require("nvim-treesitter").update(nil, { max_jobs = 4 })
+                end
+            end,
             lazy = false,
             branch = "main",
             config = function()

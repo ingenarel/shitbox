@@ -48,3 +48,9 @@ vim.g.mapleader = " "
 
 require("plugins")
 require("configs")
+
+vim.api.nvim_create_user_command("Updateshit", function()
+    vim.cmd("Lazy update")
+    require("mason-registry").update(require("mason.api.command").MasonUpdate())
+    print("====================================================================================================")
+end, {})

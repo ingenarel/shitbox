@@ -54,5 +54,5 @@ update_stuff "$HOME/.zen/updater.sh -su"\
     "Updated arkenfox; updating tmux plugins..."
 update_stuff "$HOME/.tmux/plugins/tpm/bin/clean_plugins && $HOME/.tmux/plugins/tpm/bin/update_plugins all"\
     "Updated tmux plugins; updating neovim plugins..."
-update_stuff "nvim --headless '+Lazy! clean' '+Lazy! update' '+MasonUpdate' '+qa'"\
-    "Updated neovim plugins; updating neovim local plugins"
+update_stuff "nvim --headless '+Updateshit'"\
+    "Updated neovim plugins"

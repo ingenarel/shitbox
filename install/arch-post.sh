@@ -35,4 +35,4 @@ cd /tmp/paru && makepkg -si
 echo "installed $aurHelper"
 "$shitboxDir/ensureInstalled/arch.sh"
 command -v zsh && zsh -c "source ~/.zshrc"
-command -v nvim && nvim --headless
+# command -v nvim && nvim --headless
