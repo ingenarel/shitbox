@@ -34,7 +34,15 @@ return {
                 for lang, _ in pairs(require("nvim-treesitter.parsers")) do
                     table.insert(langs, lang)
                 end
-                require("nvim-treesitter").install(langs, { max_jobs = 4 })
+                if #vim.api.nvim_list_uis() == 0 then
+                    vim.notify(
+                        "running in headless mode, installing treesitter parsers non asynchronously",
+                        vim.log.levels.WARN
+                    )
+                    require("nvim-treesitter").install(langs, { max_jobs = 4 }):wait()
+                else
+                    require("nvim-treesitter").install(langs, { max_jobs = 4 })
+                end
                 vim.treesitter.language.register("bash", "ebuild")
             end,
         },
