@@ -7,6 +7,8 @@ return {
         { "barreiroleo/ltex_extra.nvim", branch = "dev" },
     },
     config = function()
+        vim.lsp.log.set_level("ERROR")
+        vim.lsp.linked_editing_range.enable(true)
         require("plugins.lsp.python")
         require("plugins.lsp.lua")
         vim.lsp.enable("clangd")
