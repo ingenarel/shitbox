@@ -19,18 +19,9 @@ return {
                 fileContent = mainfile:read("*a")
                 mainfile:close()
             end
-            local varFile = io.open(
-                "/home/ingenarel/.config/shitbox/configs/programs/neovim/nvim/lua/plugins/lsp/bashls-ebuild/ebuild-vars.sh",
-                "r"
-            )
-            local varContent
-            if varFile ~= nil then
-                varContent = varFile:read("*a")
-                varFile:close()
-            end
             local exportedFile = io.open(exportedFilePath, "w")
             if exportedFile ~= nil then
-                exportedFile:write(fileContent .. "\n" .. varContent)
+                exportedFile:write(fileContent .. "\n" .. require("plugins.nvim-lint.shellcheck_ebuild.ebuild-vars"))
                 exportedFile:close()
             end
             return exportedFilePath

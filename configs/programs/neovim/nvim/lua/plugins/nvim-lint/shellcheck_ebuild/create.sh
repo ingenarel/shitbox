@@ -10,6 +10,8 @@ endingTagSearch=false
 } &&
 curl --silent 'https://devmanual.gentoo.org/ebuild-writing/variables/index.html' > "$ebuildHTML"
 
+echo "return [[" > "$scriptDir/ebuild-vars.lua"
+
 while IFS='' read -r line; do
     $endingTagSearch && {
         case "$line" in
@@ -37,7 +39,7 @@ while IFS='' read -r line; do
         esac
     }
 done < "$ebuildHTML" |
-sed -nE 's|^\s*<td><code class="docutils literal"><span class="pre">([A-Z][^<]+)</span></code></td>$|export \1|p' > "$scriptDir/ebuild-vars.sh"
+sed -nE 's|^\s*<td><code class="docutils literal"><span class="pre">([A-Z][^<]+)</span></code></td>$|export \1|p' >> "$scriptDir/ebuild-vars.lua"
 
 eclassParse(){
     eclassHTML="$scriptDir/$1-eclass.html"
@@ -67,7 +69,7 @@ eclassParse(){
             esac
         }
     done < "$eclassHTML" |
-    sed -nE 's|^<DT><B>([^<]+)<.+|export \1|p' >> "$scriptDir/ebuild-vars.sh"
+    sed -nE 's|^<DT><B>([^<]+)<.+|export \1|p' >> "$scriptDir/ebuild-vars.lua"
 }
 
 eclassGroupsHTML="$scriptDir/eclass-list.html"
@@ -82,4 +84,6 @@ sed -nE 's|<li class="list-group-item"><a href="([^"]+)\.eclass.*|\1|p' "$eclass
     eclassParse "$eclass"
 done
 
-sed -i -E '/^export .*[&;].*/d' "$scriptDir/ebuild-vars.sh"
+echo "]]" >> "$scriptDir/ebuild-vars.lua"
+
+sed -i -E '/^export .*[&;].*/d' "$scriptDir/ebuild-vars.lua"

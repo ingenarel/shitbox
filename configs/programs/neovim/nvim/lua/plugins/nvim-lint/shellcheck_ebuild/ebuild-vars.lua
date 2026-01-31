@@ -1,3 +1,4 @@
+return [[
 export PN
 export PV
 export PR
@@ -867,3 +868,4 @@ export ZIG_TARGET
 export ZIG_CPU
 export ZIG_EXE
 export ZIG_VER
+]]
