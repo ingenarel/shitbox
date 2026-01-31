@@ -34,6 +34,8 @@ return {
             args = {
                 "--shell",
                 "bash",
+                "--enable",
+                "quote-safe-variables,require-variable-braces",
                 "--format",
                 "json1",
                 shellcheck_ebuild_custom_file,
