@@ -41,6 +41,7 @@ require("lazy").setup {
             require("plugins.gitsigns"),
             require("plugins.metapack"),
             require("plugins.lsp"),
+            require("plugins.nvim-lint"),
             require("plugins.dap"),
             require("plugins.treesitter"), -- config that has my lsp, dap and autocompletion config
             require("plugins.smart-term"),
