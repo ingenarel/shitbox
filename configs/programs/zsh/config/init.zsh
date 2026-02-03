@@ -7,8 +7,13 @@ autoload -U compinit
 compinit
 _comp_options+=(globdots)
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
@@ -29,4 +34,3 @@ function yy() {
 }
 
 source ~/.config/zsh/scripts/autostart-ssh.sh
-setopt HIST_IGNORE_SPACE
