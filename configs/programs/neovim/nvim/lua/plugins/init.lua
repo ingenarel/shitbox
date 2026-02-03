@@ -93,12 +93,7 @@ require("lazy").setup {
             require("plugins.cyberpunk-neon"), -- ingenarel/cyberpunk-neon.nvim
             require("plugins.simple-runner"),
             require("plugins.focus-mode"),
-            {
-                "vyfor/cord.nvim",
-                branch = "master",
-                build = ":Cord update build",
-                opts = {},
-            },
+            require("plugins.cord"),
             require("plugins.zoxide"),
             --TODO: find a fix for noice skipping messages that were already shown
             -- require("plugins.noice"),
