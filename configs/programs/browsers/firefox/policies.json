@@ -52,6 +52,14 @@
             {
                 "Title": "odysee",
                 "URL": "https://odysee.com"
+            },
+            {
+                "Title": "megathread",
+                "URL": "https://www.reddit.com/r/Piracy/wiki/megathread/all_purpose"
+            },
+            {
+                "Title": "1337x",
+                "URL": "https://x1337x.cc"
             }
         ],
         "Cookies": {
