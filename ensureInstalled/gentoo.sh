@@ -383,7 +383,6 @@ for package in "${packages[@]}"; do
             package=""
             ;;
         "tree-sitter-cli")
-            #TODO: need to add
             package="dev-util/tree-sitter-cli"
             ;;
         "bash-language-server")
