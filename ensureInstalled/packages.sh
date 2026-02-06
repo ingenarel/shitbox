@@ -38,7 +38,6 @@ packages=(
     tealdeer
     task
     torsocks
-    sherlock
     rclone
     rustup
     man-pages

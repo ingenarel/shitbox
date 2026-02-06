@@ -51,7 +51,7 @@ for package in "${packages[@]}"; do
             # figure out a way to autoinstall plugins if not installed
             ;;
         "vesktop")
-            package="vesktop-bin"
+            package="vesktop-git"
             ;;
         "cinny")
             package="cinny-desktop-bin"
@@ -124,7 +124,7 @@ for package in "${packages[@]}"; do
             package="element-desktop"
             ;;
         "iamb")
-            package="iamb-git"
+            package="iamb"
             ;;
         "vlc")
             package="vlc vlc-plugin-aom vlc-plugin-ffmpeg vlc-plugin-matroska vlc-plugin-svg vlc-plugin-x264 vlc-plugin-x265"
@@ -136,7 +136,7 @@ for package in "${packages[@]}"; do
             package="hunspell hunspell-en_us"
             ;;
         "weechat")
-            package="weechat-git"
+            package="weechat"
             ;;
         "protonup-rs")
             package="protonup-rs-bin"

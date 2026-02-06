@@ -127,7 +127,5 @@ packages+=(
 )
 
 packages+=(
-    aerc
-    w3m
     imagemagick
 )
