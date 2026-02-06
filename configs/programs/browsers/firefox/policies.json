@@ -60,6 +60,10 @@
             {
                 "Title": "1337x",
                 "URL": "https://x1337x.cc"
+            },
+            {
+                "Title": "lobste.rs",
+                "URL": "https://lobste.rs"
             }
         ],
         "Cookies": {
