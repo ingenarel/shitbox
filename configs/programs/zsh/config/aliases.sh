@@ -16,6 +16,8 @@ alias gentoo-go-license="$HOME/.config/shitbox/scripts/gentoo-dev-scripts/gentoo
 
 alias aerc="torsocks aerc"
 
+alias updateshit="$HOME/.config/shitbox/scripts/updateshit.sh"
+
 f(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
     local filename="$(fd --color=always --type file | fzf --ansi --preview='bat --color=always --decorations=never {}')"
