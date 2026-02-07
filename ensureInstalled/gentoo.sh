@@ -388,6 +388,14 @@ for package in "${packages[@]}"; do
         "bash-language-server")
             package="bash-language-server"
             ;;
+        "prettier")
+            #TODO: need to add
+            package=""
+            ;;
+        "prettierd")
+            #TODO: need to add
+            package=""
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done

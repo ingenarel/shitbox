@@ -57,6 +57,7 @@ return {
                 nix = { "alejandra" },
                 json = { "jq" },
                 rust = { "rustfmt" },
+                css = { "prettierd" },
             },
         }
         local autocmdID = createAutocmd()

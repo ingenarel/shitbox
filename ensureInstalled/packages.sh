@@ -58,6 +58,8 @@ packages+=(
     ast-grep
     tree-sitter-cli
     bash-language-server
+    prettier
+    prettierd
 )
 
 { dmidecode -s system-manufacturer || sudo dmidecode -s system-manufacturer; } | grep -qEi 'qemu' || {

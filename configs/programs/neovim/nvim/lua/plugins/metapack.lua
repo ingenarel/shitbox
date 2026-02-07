@@ -39,6 +39,8 @@ local m = {
                 "beautysh",
                 "alejandra",
                 "jq",
+                "prettier",
+                "prettierd",
                 --formatter
                 --linter
                 "shellcheck",
