@@ -1,0 +1,3 @@
+bind --mode=normal J tabnext
+bind --mode=normal K tabprev
+bind --mode=normal D fillcmdline tabclose
