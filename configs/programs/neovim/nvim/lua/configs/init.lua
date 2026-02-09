@@ -47,6 +47,10 @@ vim.filetype.add {
     extension = {
         ebuild = "ebuild",
         hocon = "hocon",
+        caddy = "caddy",
+    },
+    filename = {
+        Caddyfile = "caddy",
     },
     pattern = {
         [".*/aerc/.*.conf"] = "ini",
