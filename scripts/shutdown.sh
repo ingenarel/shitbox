@@ -3,7 +3,7 @@
 declare -A menusAndCommands=(
     ["⏻ Shutdown"]="systemctl poweroff"
     [" Reboot"]="systemctl reboot"
-    ["󰤄 Suspend"]="systemctl suspend"
+    [" Soft Reboot"]="systemctl soft-reboot"
     ["󰿅 Logout"]="hyprctl dispatch exit 1"
     ["󰷛 LockScreen"]="hyprlock"
 )
