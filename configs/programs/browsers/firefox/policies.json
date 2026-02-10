@@ -64,6 +64,14 @@
             {
                 "Title": "lobste.rs",
                 "URL": "https://lobste.rs"
+            },
+            {
+                "Title": "mangowc docs",
+                "URL": "https://mangowc.vercel.app/docs"
+            },
+            {
+                "Title": "alternative frontends",
+                "URL": "https://github.com/duyfken/alternative-front-ends"
             }
         ],
         "Cookies": {
