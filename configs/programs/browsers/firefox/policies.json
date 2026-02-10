@@ -238,9 +238,14 @@
                     "IconURL": "https://commons.wikimedia.org/favicon.ico",
                     "Name": "WikimediaCommons",
                     "URLTemplate": "https://commons.wikimedia.org/?search={searchTerms}"
+                },
+                {
+                    "Alias": "@sx",
+                    "Name": "ChadXNG",
+                    "URLTemplate": "https://localhost:8888/search?q={searchTerms}"
                 }
             ],
-            "Default": "DuckDuckGo",
+            "Default": "ChadXNG",
             "PreventInstalls": true
         }
     }
