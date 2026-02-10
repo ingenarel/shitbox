@@ -1,0 +1,173 @@
+{
+    "clock": {
+        "actions": {
+            "on-click-backward": "tz_down",
+            "on-click-forward": "tz_up",
+            "on-click-right": "mode",
+            "on-scroll-down": "shift_down",
+            "on-scroll-up": "shift_up"
+        },
+        "calendar": {
+            "format": {
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+            },
+            "mode": "year",
+            "mode-mon-col": 3,
+            "on-click-right": "mode",
+            "on-scroll": 1,
+            "weeks-pos": "right"
+        },
+        "format": "<span background='#ff0000' foreground='#000000' size='13000' rise='-3000'></span> {:%I:%M:%S %p}",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "<span background='#ff00e6' foreground='#00ff00' size='13000' rise='-3000'></span> {usage}% ",
+        "interval": 2,
+        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'",
+        "tooltip": true
+    },
+    "custom/notifs": {
+        "escape": true,
+        "exec": "swaync-client -swb",
+        "exec-if": "which swaync-client",
+        "format": "<span background='#000000' foreground='#c400ff' size='13000' rise='-3000'></span> {} {icon}",
+        "format-icons": {
+            "dnd-inhibited-none": " ",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": " ",
+            "dnd-notification": " <span foreground='red'><sup></sup></span>",
+            "inhibited-none": " ",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "none": " ",
+            "notification": "<span foreground='red'><sup></sup></span>"
+        },
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "return-type": "json",
+        "tooltip": false
+    },
+    "custom/seperatorBlack": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/seperatorCPU": {
+        "escape": false,
+        "format": "",
+        "tooltip": false
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        },
+        "numlock": true
+    },
+    "memory": {
+        "format": "<span background='#00ff00' foreground='#ff0000' size='13000' rise='-3000'></span> {}% ",
+        "interval": 2,
+        "on-click": "hyprctl dispatch exec '[float; size 80% 80%; center]' 'kitty -e sudo btop'",
+        "tooltip": true
+    },
+    "modules-center": [
+        "dwl/window"
+    ],
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "custom/seperatorCPU",
+        "cpu",
+        "memory",
+        "clock",
+        "custom/notifs",
+        "tray"
+    ],
+    "mpd": {
+        "consume-icons": {
+            "on": " "
+        },
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "interval": 5,
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "unknown-tag": "N/A"
+    },
+    "position": "top",
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-icons": {
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "hands-free": "",
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": ""
+        },
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "spacing": 0,
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-scroll": true,
+        "format": "{name} {windows}",
+        "warp-on-scroll": false,
+        "window-format": "<span color='#e0e0e0'>{name}</span>",
+        "window-rewrite": {
+            "class<.*kdenlive.*>": "🎬",
+            "class<audacity>": "🎙️",
+            "class<blender>": " ",
+            "class<com.obsproject.Studio>": "🎥",
+            "class<gimp>": " ",
+            "class<kitty|foot|wezterm>": " ",
+            "class<org.prismlauncher.PrismLauncher>": "󰍳",
+            "class<vesktop|discord|legcord>": " ",
+            "class<zen|firefox|librewolf>": "🌐",
+            "title<.*chatgpt*|.*gemini.*|.*copilot.*>": "🗑️",
+            "title<.*github.*>": " ",
+            "title<.*gitlab.*>": " ",
+            "title<.*instagram.*>": " ",
+            "title<.*keepassxc.*>": "🔑",
+            "title<.*ssh.*>": "<span color='#FFAAFB'>🖧</span>",
+            "title<.*youtube.*>": " "
+        },
+        "window-rewrite-default": " "
+    },
+    "tray": {
+        "spacing": 10
+    }
+}

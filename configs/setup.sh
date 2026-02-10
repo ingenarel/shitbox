@@ -100,6 +100,7 @@ setupConfigs(){
 
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
     safelink "$scriptDir/programs/WM/sway"                                              "$HOME/.config/sway"
+    safelink "$scriptDir/programs/WM/mango"                                             "$HOME/.config/mango"
     safelink "$scriptDir/programs/WM/river"                                             "$HOME/.config/river"
 
     safelink "$scriptDir/programs/keyd/default.conf"                                    "/etc/keyd/default.conf" 1

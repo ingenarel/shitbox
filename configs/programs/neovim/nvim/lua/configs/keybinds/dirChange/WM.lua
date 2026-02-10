@@ -23,4 +23,11 @@ return {
         end,
         desc = "river config",
     },
+    {
+        "<leader>cdwm",
+        function()
+            vim.cmd("cd ~/.config/shitbox/configs/programs/WM/mango | pwd ")
+        end,
+        desc = "mangowc config",
+    },
 }
