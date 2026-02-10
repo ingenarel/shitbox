@@ -127,6 +127,7 @@ txtpaste(){
         link="$(gh gist create --public "$1")"
     fi
     [ -n "$link" ] && {
+        link="https://gist.githubusercontent.com/ingenarel/$( echo "$link" | grep -oE '[^/]+$' )/raw"
         echo "$link"
         notify-send 'paste completed at' "$link"
         wl-copy "$link"
