@@ -20,7 +20,8 @@ set $sovEnd "pkill sov; swaymsg unbindsym Escape"
     floating_modifier $mainMod
     tiling_drag enable
 
-    bindsym $mainMod+q exec $terminal -e "$HOME/.config/shitbox/configs/programs/terminal/startups/start.sh" & sleep 0.5 && swaymsg fullscreen enable
+    bindsym $mainMod+q exec $terminal -e "$HOME/.config/shitbox/configs/programs/terminal/startups/start.sh"
+    bindsym $mainMod+Shift+q exec $terminal
 
     # Kill focused window
     bindsym $mainMod+Shift+Escape kill
