@@ -49,14 +49,14 @@ packages+=(
 #     ueberzugpp
 # )
 
-packages+=(
-    audacity
-    noise-suppression-for-voice
-    blender
-    kdenlive
-    obs-studio
-    gimp
-)
+# packages+=(
+#     audacity
+#     noise-suppression-for-voice
+#     blender
+#     kdenlive
+#     obs-studio
+#     gimp
+# )
 
 packages+=(
     vesktop
@@ -75,11 +75,11 @@ packages+=(
 packages+=(
     keepassxc
     pwvucontrol
-    qbittorrent
-    vimiv-qt
+    # qbittorrent
+    # vimiv-qt
     # vlc
     mpv
-    zathura
+    # zathura
 )
 
 packages+=(
@@ -120,11 +120,11 @@ packages+=(
 #     xwayland
 # )
 
-packages+=(
-    wine
-    lutris
-    protonup-rs
-)
+# packages+=(
+#     wine
+#     lutris
+#     protonup-rs
+# )
 
 packages+=(
     imagemagick
