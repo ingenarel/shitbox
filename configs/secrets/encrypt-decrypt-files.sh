@@ -92,6 +92,9 @@ elif [ "$4" = "decrypt" ]; then
         gpg --list-keys --with-colons 'ingenarelitems@gmail.com' | sed -n -E 's/^fpr:+([^:]+):+/\1:6:/p'\
             |
         gpg --import-ownertrust
+        chown -R "$(whoami)" "$HOME/.gnupg"
+        find "$HOME/.gnupg" -type f -exec chmod 600 {} \;
+        find "$HOME/.gnupg" -type d -exec chmod 700 {} \;
     fi
 else
     scriptHelp
