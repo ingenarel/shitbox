@@ -399,6 +399,9 @@ for package in "${packages[@]}"; do
             #TODO: need to add
             package=""
             ;;
+        "yaml-language-server")
+            package="dev-util/yaml-language-server"
+            ;;
         "tor")
             package="net-vpn/tor"
             systemServices+=(tor)

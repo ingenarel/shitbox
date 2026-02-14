@@ -61,6 +61,7 @@ packages+=(
     ast-grep
     tree-sitter-cli
     bash-language-server
+    yaml-language-server
     prettier
     prettierd
 )
