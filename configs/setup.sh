@@ -15,7 +15,7 @@ setSudoConfigs(){
     sudo grep -qEi "$automountRegex" "$automountConfig" || echo "$automountLine" | sudo tee "$automountConfig"
 }
 
-FIREFOX_PROFILE_DIR='4bgq65me.ingenarel'
+FIREFOX_PROFILE_DIR='93dsaww2.ingenarel'
 export FIREFOX_PROFILE_DIR
 
 setupSharedFirefoxShit(){
@@ -92,10 +92,13 @@ setupConfigs(){
 
     }
 
-    command -v librewolf && {
+    {
+        command -v librewolf || command -v librewolf-bin
+        } && {
         setupSharedFirefoxShit "librewolf"
         safelink "$scriptDir/programs/browsers/firefox/librewolf/user.js" "$HOME/.librewolf/$FIREFOX_PROFILE_DIR/user.js"
         safelink "$scriptDir/programs/browsers/firefox/librewolf/userChrome.css" "$HOME/.librewolf/$FIREFOX_PROFILE_DIR/chrome/userChrome.css"
+        [ -d "$HOME/.config/librewolf" ] && rm -rf "$HOME/.config/librewolf"
     }
 
     safelink "$scriptDir/programs/WM/hyprland/config"                                   "$HOME/.config/hypr"
