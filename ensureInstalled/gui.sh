@@ -31,7 +31,6 @@ packages+=(
     ydotool
     hyprpicker
     pipewire-pulse
-    keyd
 )
 
 packages+=(

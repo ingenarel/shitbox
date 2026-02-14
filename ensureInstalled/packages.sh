@@ -45,6 +45,7 @@ packages=(
     zpaq
     sshfs
     gitleaks
+    keyd
     tor
 )
 
