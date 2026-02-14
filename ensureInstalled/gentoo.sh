@@ -7,10 +7,6 @@
 scriptDir="$(realpath --canonicalize-missing "${BASH_SOURCE[0]}/..")"
 
 source "$scriptDir/packages.sh"
-
-[ "$HOST" = "gentoo-main" ] && {
-    source "$nonvmshit"
-}
 source "$scriptDir/../utils/safelink.sh"
 
 # ram="$((
