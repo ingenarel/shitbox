@@ -1,7 +1,8 @@
 #!/usr/bin/sh
 
 [ -n "$WAYLAND_DISPLAY" ] || [ -n "$DISPLAY" ]\
-    &&
-exec /usr/bin/pinentry-gtk "$@"\
-    ||
+    && {
+    command -v /usr/bin/pinentry-gtk 1>/dev/null && exec /usr/bin/pinentry-gtk "$@" ||
+    command -v /usr/bin/pinentry-gnome3 1>/dev/null && exec /usr/bin/pinentry-gnome3 "$@"
+} ||
 exec /usr/bin/pinentry-curses "$@"
