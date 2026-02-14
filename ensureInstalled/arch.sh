@@ -109,7 +109,6 @@ for package in "${packages[@]}"; do
             ;;
         "mpd-discord-rpc")
             package="mpd-discord-rpc-git"
-            userServices+=(mpd-discord-rpc)
             ;;
         "wezterm")
             package="wezterm-git"
