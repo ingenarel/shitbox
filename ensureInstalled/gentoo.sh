@@ -396,6 +396,10 @@ for package in "${packages[@]}"; do
             #TODO: need to add
             package=""
             ;;
+        "tor")
+            package="net-vpn/tor"
+            systemServices+=(tor)
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done

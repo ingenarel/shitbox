@@ -147,6 +147,9 @@ for package in "${packages[@]}"; do
         "tree-sitter-cli")
             package="tree-sitter-cli-git"
             ;;
+        "tor")
+            systemServices+=(tor)
+            ;;
     esac
     paru -Q "$package" || packagesToInstall="$packagesToInstall $package"
 done
