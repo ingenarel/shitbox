@@ -47,6 +47,7 @@ packages=(
     gitleaks
     keyd
     tor
+    pinentry
 )
 
 packages+=(

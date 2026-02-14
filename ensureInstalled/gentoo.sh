@@ -403,6 +403,9 @@ for package in "${packages[@]}"; do
             package="net-vpn/tor"
             systemServices+=(tor)
             ;;
+        "pinentry")
+            package="app-crypt/pinentry"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done
