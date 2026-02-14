@@ -204,6 +204,7 @@ for package in "${packages[@]}"; do
             ;;
         "ydotool")
             package="x11-misc/ydotool"
+            userServices+=(ydotool)
             ;;
         "hyprpicker")
             package="gui-apps/hyprpicker"
@@ -212,6 +213,7 @@ for package in "${packages[@]}"; do
             package="media-video/pipewire"
             ;;
         "keyd")
+            systemServices+=(keyd)
             package="app-misc/keyd"
             ;;
         "grim")
@@ -294,6 +296,7 @@ for package in "${packages[@]}"; do
             ;;
         "mpd")
             package="media-sound/mpd"
+            userServices+=(mpd)
             ;;
         "mediainfo")
             package="media-video/mediainfo"
@@ -415,7 +418,7 @@ command -v "$myshell" && {
 [[ "${#systemServices[@]}" -gt 0 ]] && {
     for service in "${systemServices[@]}"; do
         [[ "$(systemctl is-enabled "$service" )" == "enabled" ]] || {
-            sudo systemctl enable "$service" && systemctl start "$service"
+            sudo systemctl enable --now "$service"
         }
     done
 }
@@ -423,7 +426,7 @@ command -v "$myshell" && {
 [[ "${#userServices[@]}" -gt 0 ]] && {
     for service in "${userServices[@]}"; do
         [[ "$(systemctl --user is-enabled "$service" )" == "enabled" ]] || {
-            systemctl --user enable "$service" && systemctl --user start "$service"
+            systemctl --user enable --now "$service"
         }
     done
 }
