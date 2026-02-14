@@ -1,7 +1,7 @@
 * {
     font-family: Hack Nerd Font;
     font-size: 10px;
-    margin: -1px; 
+    margin: -1px;
 }
 
 window#waybar {
@@ -36,7 +36,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -45,7 +45,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -96,9 +96,10 @@ clock,
     color: #000000;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #26a65b;
 }
 
 @keyframes blink {
@@ -145,16 +146,16 @@ label:focus {
 #cpu {
     background-color: #00ff00;
     color: #000000;
-    padding-left: 0px
+    padding-left: 0px;
 }
 
 #memory {
     background-color: #ff0000;
-    padding-left: 0px
+    padding-left: 0px;
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #964b00;
 }
 
 #backlight {
@@ -169,20 +170,18 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
+#pulseaudio,
+#wireplumber {
     background-color: #ff00e6;
     color: #000000;
 }
 
-#pulseaudio.muted {
+#pulseaudio.muted,
+#wireplumber.muted {
     background-color: #90b1b1;
     color: #2a5c45;
 }
 
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
 #custom-notifs {
     padding-left: 0px;
     padding-right: 3px;
@@ -194,9 +193,6 @@ label:focus {
     padding-right: 10px;
     background-color: #ff005d;
     color: #000000;
-}
-#wireplumber.muted {
-    background-color: #f53c3c;
 }
 
 #custom-media {
@@ -295,7 +291,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {

@@ -83,7 +83,7 @@
         "sway/workspaces"
     ],
     "modules-right": [
-        "pulseaudio",
+        "wireplumber",
         "custom/seperatorCPU",
         "cpu",
         "memory",
@@ -118,28 +118,6 @@
         "unknown-tag": "N/A"
     },
     "position": "top",
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-icons": {
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ],
-            "hands-free": "",
-            "headphone": "",
-            "headset": "",
-            "phone": "",
-            "portable": ""
-        },
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "on-click": "pavucontrol"
-    },
     "spacing": 0,
     "sway/workspaces": {
         "all-outputs": true,
@@ -169,5 +147,24 @@
     },
     "tray": {
         "spacing": 10
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "hands-free": "",
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": ""
+        },
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pwvucontrol"
     }
 }
