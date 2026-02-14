@@ -1,0 +1,2 @@
+# need to comment this out because of https://bugs.gentoo.org/969860
+# media-sound/mpd sqlite

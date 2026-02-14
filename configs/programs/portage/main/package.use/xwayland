@@ -1,0 +1,8 @@
+# required by x11-base/xwayland-24.1.9::gentoo
+# required by gui-libs/wlroots-0.19.2::gentoo[X]
+# required by gui-wm/sway-1.11::gentoo
+# required by gui-wm/sway (argument)
+>=media-libs/mesa-26.0.0 X
+# required by gui-wm/sway-1.11::gentoo
+# required by gui-wm/sway (argument)
+>=gui-libs/wlroots-0.19.2 X

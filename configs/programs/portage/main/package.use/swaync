@@ -1,0 +1,3 @@
+# required by gui-apps/swaync-0.12.4::guru
+# required by gui-apps/swaync (argument)
+>=gui-libs/gtk4-layer-shell-1.1.1-r1 vala introspection

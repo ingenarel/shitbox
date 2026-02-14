@@ -1,2 +1,3 @@
 >=x11-libs/cairo-1.18.4-r1 X
+>=dev-cpp/cairomm-1.14.5 X
 >=dev-python/pycairo-1.28.0 X
