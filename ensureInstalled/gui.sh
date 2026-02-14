@@ -29,7 +29,7 @@ packages+=(
     swww
     wl-clipboard
     ydotool
-    hyprpicker
+    # hyprpicker
     pipewire-pulse
 )
 
@@ -63,7 +63,7 @@ packages+=(
 )
 
 packages+=(
-    qemu
+    # qemu
 )
 
 packages+=(
