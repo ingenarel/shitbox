@@ -22,3 +22,4 @@ fix and update mpd for ::gentoo
   - ast-grep
   - prettier
   - prettierd
+  - https://github.com/tombi-toml/tombi
