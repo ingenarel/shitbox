@@ -225,7 +225,7 @@ for package in "${packages[@]}"; do
             package="x11-terms/kitty"
             ;;
         "audacity")
-            package="media-sound/audacity app-doc/audacity"
+            package="media-sound/audacity"
             ;;
         "noise-suppression-for-voice")
             package="media-libs/noise-suppression-for-voice"
