@@ -126,6 +126,7 @@
         "Extensions": {
             "Install": [
                 "https://addons.mozilla.org/firefox/downloads/latest/adnauseam/latest.xpi",
+                "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/latest.xpi",
                 "https://addons.mozilla.org/firefox/downloads/latest/internet_archive_downloader/latest.xpi",
                 "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi",
                 "https://addons.mozilla.org/firefox/downloads/latest/proton-vpn-firefox-extension/latest.xpi",
