@@ -71,5 +71,6 @@ return {
                 "lua",
             },
         })
+        vim.lsp.enable("tombi")
     end,
 }

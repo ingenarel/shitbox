@@ -58,6 +58,7 @@ return {
                 json = { "jq" },
                 rust = { "rustfmt" },
                 css = { "prettierd" },
+                toml = { lsp_format = "first" },
             },
         }
         local autocmdID = createAutocmd()

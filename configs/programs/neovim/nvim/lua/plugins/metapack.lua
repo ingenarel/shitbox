@@ -26,6 +26,7 @@ local m = {
                 "rust-analyzer",
                 { gentoo = { "json-lsp" }, default = "json-lsp" },
                 "docker-language-server",
+                "tombi",
                 --lsp
                 --dap
                 "codelldb",
