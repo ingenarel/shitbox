@@ -22,6 +22,10 @@ prepend_previewers = [
   { mime = "application/pie-executable", run = 'faster-piper -- xxd -R always -- "$1"' },
   { url = "*.md", run = 'faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"' },
 ]
+prepend_fetchers = [
+  { id = "git", url = "*", run = "git" },
+  { id = "git", url = "*/", run = "git" },
+]
 append_spotters = [
   { url = "*", run = "file-extra-metadata" },
 ]
