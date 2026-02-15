@@ -3,12 +3,16 @@ Package oxicord for guru
 try out https://github.com/vicinaehq/vicinae
 fix and update mpd for ::gentoo
 
+# gentoo:
+- update:
+  - mpd
+
 # guru:
 - fix:
   - my version of src_unpack
   - LICENSES? (need to check if there are any more)
 - update:
-  - tinyxxd
+  - ghq
   - need to check other packages that I'm notified on my email
 - package add:
   - sov
