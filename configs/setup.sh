@@ -18,6 +18,13 @@ setSudoConfigs(){
 FIREFOX_PROFILE_DIR='93dsaww2.ingenarel'
 export FIREFOX_PROFILE_DIR
 
+linkMusicDirs(){
+    for directory in cousin downloads lyrics own soulseek; do
+        rootDir="/mnt/sdb5/system files(G)/music/$directory"
+        [ -d "$rootDir" ] && safelink "$rootDir" "$HOME/Music/$directory"
+    done
+}
+
 setupSharedFirefoxShit(){
     safelink "$scriptDir/programs/browsers/firefox/policies.json"   "/etc/$1/policies/policies.json" 1
     safelink "$scriptDir/programs/browsers/firefox/profiles.ini"    "$HOME/.$1/profiles.ini"
@@ -163,6 +170,7 @@ setupConfigs(){
 }
 
 setupConfigs
+linkMusicDirs
 setSudoConfigs
 
 recusiveMimeTypeCommand(){
