@@ -6,13 +6,21 @@ show_hidden = true
 scrolloff = 32
 
 [plugin]
+prepend_preloaders = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+]
 prepend_previewers = [
-  { mime = "audio/*", run = "exifaudio" },
   { mime = "*.ebuild", run = "code" },
   { mime = "application/gentoo.pkgmetadata+xml", run = "code" },
   { mime = "*Manifest", run = "code" },
-  { mime = "", run = "code" },
-  { url = "*", run = "file-extra-metadata" },
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+  { mime = "application/octet-stream", run = 'faster-piper -- tinyxxd -R always -- "$1"' },
+  { mime = "application/pie-executable", run = 'faster-piper -- tinyxxd -R always -- "$1"' },
+  { url = "*.md", run = 'faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"' },
 ]
 append_spotters = [
   { url = "*", run = "file-extra-metadata" },
