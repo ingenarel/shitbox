@@ -15,9 +15,10 @@ browserName=""
 [ -n "$SWAYSOCK" ] && {
     execCommand='swaymsg exec'
 }
-command -v librewolf && browserName='librewolf' || {
-    command -v zen-twilight && browserName='zen-twilight'
-}
+
+for name in librewolf librewolf-bin zen-twilight zen-twilight-bin; do
+    command -v "$name" && browserName="$name" && break
+done
 
 [ -n "$browserName" ] && [ -n "$execCommand" ] && {
 
