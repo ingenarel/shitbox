@@ -74,7 +74,7 @@ packages+=(
 packages+=(
     keepassxc
     pwvucontrol
-    # qbittorrent
+    qbittorrent
     # vimiv-qt
     # vlc
     mpv
