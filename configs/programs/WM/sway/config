@@ -4,6 +4,8 @@ set $waybar "waybar --config $HOME/.config/shitbox/configs/programs/waybar/confi
 exec autotiling
 exec $HOME/.config/sway/scripts/hot-reload.sh
 exec $HOME/.config/shitbox/scripts/startup.sh $waybar
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user restart xdg-desktop-portal
 
 set $mainMod Mod4
 set $left h
