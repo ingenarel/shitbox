@@ -405,6 +405,11 @@ for package in "${packages[@]}"; do
         "pinentry")
             package="app-crypt/pinentry"
             ;;
+        "imv")
+            package="media-gfx/imv"
+            ;;
+            # run this to make this the default
+            # xdg-mime default /usr/share/applications/imv.desktop $(sed -n -E 's|MimeType=(.+)|\1|p' /usr/share/applications/imv.desktop | tr ';' ' ')
     esac
     packagesToInstall="$packagesToInstall $package"
 done
