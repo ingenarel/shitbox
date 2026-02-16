@@ -3,8 +3,7 @@
 >=dev-cpp/gtkmm-3.24.10:3.0 X
 
 # tray is commented out cz https://bugs.gentoo.org/883767
-# gui-apps/waybar experimental mpd mpris network tray
-gui-apps/waybar experimental mpd mpris network
+gui-apps/waybar experimental mpd mpris network tray
 
 # required by gui-apps/waybar-0.14.0::gentoo[tray]
 # required by gui-apps/waybar (argument)
