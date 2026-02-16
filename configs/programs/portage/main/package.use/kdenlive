@@ -1,0 +1,30 @@
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=media-video/ffmpeg-8.0.1 X
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=media-libs/mlt-7.34.1-r1 xml qt6 frei0r
+# required by kde-frameworks/qqc2-desktop-style-6.23.0::gentoo
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=kde-frameworks/sonnet-6.23.0 qml
+# required by media-libs/mlt-7.34.1-r1::gentoo[sdl]
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=media-libs/libsdl2-2.32.8 X
+# required by media-plugins/frei0r-plugins-2.4.1-r1::gentoo
+# required by media-libs/mlt-7.34.1-r1::gentoo[frei0r]
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=media-libs/opencv-4.12.0-r1 features2d contribdnn contrib
+# required by kde-frameworks/purpose-6.23.0::gentoo
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=kde-frameworks/prison-6.23.0 qml
+
+>=media-libs/libcanberra-0.30-r8 alsa
+
+# required by kde-frameworks/kfilemetadata-6.23.0::gentoo[pdf]
+# required by kde-apps/kdenlive-25.12.2::gentoo
+# required by kdenlive (argument)
+>=app-text/poppler-26.02.0 qt6
