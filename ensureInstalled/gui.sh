@@ -48,14 +48,14 @@ packages+=(
 #     ueberzugpp
 # )
 
-# packages+=(
-#     audacity
-#     noise-suppression-for-voice
-#     blender
-#     kdenlive
-#     obs-studio
-#     gimp
-# )
+packages+=(
+    audacity
+    # noise-suppression-for-voice
+    # blender
+    kdenlive
+    obs-studio
+    gimp
+)
 
 packages+=(
     vesktop
@@ -78,7 +78,7 @@ packages+=(
     imv
     # vlc
     mpv
-    # zathura
+    zathura
 )
 
 packages+=(
