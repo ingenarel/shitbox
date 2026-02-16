@@ -75,7 +75,7 @@ packages+=(
     keepassxc
     pwvucontrol
     qbittorrent
-    # vimiv-qt
+    imv
     # vlc
     mpv
     # zathura
