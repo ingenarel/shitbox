@@ -18,3 +18,4 @@ export MANPAGER='nvim +Man!'
 
 export DEPS_SCRIPT_GENTOO_REPO="ingenarel/gentoo"
 export DEPS_SCRIPT_GURU_REPO="ingenarel/guru-depfiles"
+export PATH="${HOME}/.cargo/bin:${HOME}/.config/shitbox/scripts/gentoo-dev-scripts/bins:${PATH}"
