@@ -13,6 +13,7 @@ alias yt-music='yt-dlp -x --embed-thumbnail --embed-metadata --audio-quality --a
 alias aerc="torsocks aerc"
 
 alias updateshit="$HOME/.config/shitbox/scripts/updateshit.sh"
+alias nvim="$HOME/.config/shitbox/scripts/start-nvim.sh"
 
 f(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
