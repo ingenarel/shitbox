@@ -135,12 +135,14 @@ agitpush(){
     local origin="$1"
     local ref="$2"
     local topic="$3"
+    local ammendArg="$4"
+    local force="$5"
     { [[ -z "$origin" ]] || [[ -z "$ref" ]] || [[ -z "$topic" ]]; } && exit 1
     local file
     file="/tmp/$( sha256sum <<< "${ref}${topic}" | grep -oE '^\S+' )"
-    if [[ "$4" == "-na" ]] || [[ "$4" == "--no-ammend" ]] || [[ -z "$4" ]]; then
+    if [[ "$ammendArg" == "-na" ]] || [[ "$ammendArg" == "--no-ammend" ]] || [[ -z "$ammendArg" ]]; then
         echo "" > "$file"
-    elif [[ "$4" == "-a" ]] || [[ "$4" == "--ammend" ]]; then
+    elif [[ "$ammendArg" == "-a" ]] || [[ "$ammendArg" == "--ammend" ]]; then
         :
     fi
     command nvim "$file" +'lua vim.opt.filetype = "gitcommit"'
@@ -152,6 +154,6 @@ agitpush(){
         echo "'$title'"
         description="{base64}$( tail -n +2 "$file" | base64 --wrap=0 )"
         echo "'$description'"
-        git push "$origin" "$ref" -o topic="$topic" -o title="$title" -o description="$description"
+        git push "$origin" "$ref" -o "topic=$topic" -o "title=$title" -o "description=$description" -o "force-push=$force"
     }
 }
