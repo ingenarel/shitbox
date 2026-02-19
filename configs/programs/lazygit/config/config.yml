@@ -1,5 +1,5 @@
 gui:
-  mouseEvents: false
+  mouseEvents: true
   theme:
     activeBorderColor:
       - '#ff0000'
