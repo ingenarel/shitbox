@@ -101,7 +101,7 @@ fetch (){
 imgpaste(){
     if [ -z "$1" ]; then
         # shit can't read from proc hence tmp file
-        file="$(mktemp XXXXXXXXXX.png)"
+        file="$(mktemp --tmpdir="/tmp" XXXXXXXXXX.png)"
         wl-paste > "$file"
         link="$(curl --silent -F "file=@$file" -Fexpires=24 https://0x0.st)"
     else
@@ -117,7 +117,7 @@ imgpaste(){
 txtpaste(){
     if [ -z "$1" ]; then
         # shit can't read from proc hence tmp file
-        file="$(mktemp XXXXXXXXXX)"
+        file="$(mktemp --tmpdir="/tmp" XXXXXXXXXX)"
         wl-paste > "$file"
         link="$(gh gist create --public "$file")"
     else
