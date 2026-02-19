@@ -1,11 +1,7 @@
-Change qtwayland to .qtwayland in portage main
 Package oxicord for guru
 try out https://github.com/vicinaehq/vicinae
-fix and update mpd for ::gentoo
 
-# gentoo:
-- update:
-  - mpd
+dev-python/notify2-0.3.1-r3::gentoo is needed for weechat's notif plugin
 
 # guru:
 - fix:
