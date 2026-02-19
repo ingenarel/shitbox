@@ -130,3 +130,28 @@ txtpaste(){
         wl-copy "$link"
     }
 }
+
+agitpush(){
+    local origin="$1"
+    local ref="$2"
+    local topic="$3"
+    { [[ -z "$origin" ]] || [[ -z "$ref" ]] || [[ -z "$topic" ]]; } && exit 1
+    local file
+    file="/tmp/$( sha256sum <<< "${ref}${topic}" | grep -oE '^\S+' )"
+    if [[ "$4" == "-na" ]] || [[ "$4" == "--no-ammend" ]] || [[ -z "$4" ]]; then
+        echo "" > "$file"
+    elif [[ "$4" == "-a" ]] || [[ "$4" == "--ammend" ]]; then
+        :
+    fi
+    command nvim "$file" +'lua vim.opt.filetype = "gitcommit"'
+    local bytes
+    bytes="$(tr -d '[:space:]' < "$file" | wc -c)"
+    [[ "$bytes" -gt 0 ]] && {
+        local title
+        title="$( head -n1 "$file" )"
+        echo "'$title'"
+        description="{base64}$( tail -n +2 "$file" | base64 --wrap=0 )"
+        echo "'$description'"
+        git push "$origin" "$ref" -o topic="$topic" -o title="$title" -o description="$description"
+    }
+}
