@@ -410,6 +410,9 @@ for package in "${packages[@]}"; do
             ;;
             # run this to make this the default
             # xdg-mime default /usr/share/applications/imv.desktop $(sed -n -E 's|MimeType=(.+)|\1|p' /usr/share/applications/imv.desktop | tr ';' ' ')
+        "qman")
+            package="app-misc/qman"
+            ;;
     esac
     packagesToInstall="$packagesToInstall $package"
 done

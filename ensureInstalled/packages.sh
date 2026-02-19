@@ -48,6 +48,7 @@ packages=(
     keyd
     tor
     pinentry
+    qman
 )
 
 packages+=(

@@ -14,6 +14,8 @@ alias aerc="torsocks aerc"
 
 alias updateshit="$HOME/.config/shitbox/scripts/updateshit.sh"
 alias nvim="$HOME/.config/shitbox/scripts/start-nvim.sh"
+alias man=qman
+compdef _man qman
 
 f(){
     localGitDir="$(git rev-parse --show-toplevel 2>/dev/null)" && cd "$localGitDir"
