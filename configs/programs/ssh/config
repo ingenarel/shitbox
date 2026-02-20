@@ -33,6 +33,14 @@ Host git.gentoo.org
     AddKeysToAgent yes
     IdentitiesOnly yes
 
+Host codeberg.org
+    User git
+    Hostname codeberg.org
+    PreferredAuthentications publickey
+    IdentityFile /home/ingenarel/.config/shitbox/configs/secrets/secrets/unlocked/ssh/git
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+
 Host xeon-rig
     User ingenarel
     Hostname 100.123.157.85
