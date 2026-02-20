@@ -1,4 +1,3 @@
-Package oxicord for guru
 try out https://github.com/vicinaehq/vicinae
 
 dev-python/notify2-0.3.1-r3::gentoo is needed for weechat's notif plugin
@@ -13,7 +12,10 @@ setup protonmail with hydroxide
   - ghq
   - hydroxide
   - need to check other packages that I'm notified on my email
+  - pnpm-bin
 - package add:
+  - oxicord
+  - dorion
   - sov
   - sweet-gtk
   - mozlz4
