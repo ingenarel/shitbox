@@ -1,5 +1,4 @@
 app-editors/neovim **
-app-misc/yazi **
 dev-vcs/lazygit **
 dev-libs/tree-sitter **
 dev-util/tree-sitter-cli **
