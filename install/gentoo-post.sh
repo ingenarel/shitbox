@@ -40,7 +40,7 @@ if [ "$BOOT_TYPE" = "dos" ]; then
 fi
 
 shitboxDir="/home/ingenarel/.config/shitbox"
-git clone --recursive https://github.com/ingenarel/shitbox "$shitboxDir"
+git clone --recursive https://codeberg.org/ingenarel-NeoJesus/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
 sudo eselect repository remove -f gentoo

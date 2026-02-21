@@ -46,10 +46,10 @@ My fucking wish
 This is for me please don't try to install this and nuke your system
 
 ### Arch:
-`pacman -Sy && pacman -S git && git clone https://github.com/ingenarel/shitbox.git && cd shitbox`
+`pacman -Sy && pacman -S git && git clone https://codeberg.org/ingenarel-NeoJesus/shitbox.git && cd shitbox`
 
 ### Gentoo:
-`git clone https://github.com/ingenarel/shitbox.git && cd shitbox`
+`git clone https://codeberg.org/ingenarel-NeoJesus/shitbox.git && cd shitbox`
 
 
 <sub>Congrats, you made it to the bottom</sub>

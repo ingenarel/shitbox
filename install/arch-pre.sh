@@ -71,7 +71,7 @@ arch-chroot /mnt\
     echo 'Creating user' && useradd --groups wheel --create-home ingenarel && echo 'Created user'
 
     echo 'Installing post-install script' &&\
-    curl https://raw.githubusercontent.com/ingenarel/shitbox/refs/heads/master/install/arch-post.sh > $archPostPath &&\
+    curl https://codeberg.org/ingenarel-NeoJesus/shitbox/raw/branch/master/install/arch-post.sh > $archPostPath &&\
     echo 'Installed post-chroot script'
 
     chown ingenarel $archPostPath && chmod +x $archPostPath && echo 'set up script permissions'

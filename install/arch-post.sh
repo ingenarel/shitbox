@@ -22,7 +22,7 @@ echo "ArchLinuxBaby" | sudo tee /etc/hostname && echo "Generated hostname"
     echo "Generating grub config" && sudo grub-mkconfig -o /boot/grub/grub.cfg && echo "Generated grub config"
 
 shitboxDir="/home/ingenarel/.config/shitbox"
-git clone https://github.com/ingenarel/shitbox "$shitboxDir"
+git clone https://codeberg.org/ingenarel-NeoJesus/shitbox "$shitboxDir"
 "$shitboxDir/configs/setup.sh"
 
 aurHelper="paru"
