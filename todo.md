@@ -8,12 +8,15 @@ setup protonmail with hydroxide
 - fix:
   - my version of src_unpack
   - LICENSES? (need to check if there are any more)
+  - tridactyl PR /usr/lib stuff
 - update:
   - ghq
   - hydroxide
   - need to check other packages that I'm notified on my email
   - pnpm-bin
 - package add:
+  - https://typodermicfonts.com/zekton
+  - https://codeberg.org/Aviac/codeberg-cli
   - oxicord
   - dorion
   - sov
