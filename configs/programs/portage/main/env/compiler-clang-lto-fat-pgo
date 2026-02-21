@@ -1,0 +1,13 @@
+# :vim:ft=env:
+CFLAGS="${CFLAGS} -flto -ffat-lto-objects"
+CXXFLAGS="${CXXFLAGS} -flto -ffat-lto-objects"
+RUSTFLAGS="${RUSTFLAGS} -Clinker=clang -C lto=fat, -C lto=true -Clinker-plugin-lto -Clink-arg=-fuse-ld=lld"
+ 
+CC="clang"
+CXX="clang++"
+CPP="clang-cpp"
+AR="llvm-ar"
+NM="llvm-nm"
+RANLIB="llvm-ranlib"
+
+USE="${USE} lto pgo"
