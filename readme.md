@@ -1,3 +1,5 @@
+# Project moved to [codeberg](https://codeberg.org/ingenarel-NeoJesus/shitbox)
+
 # What is Shitbox?
 
 It's a \<distro independent\>? setup for system(s) that I use
